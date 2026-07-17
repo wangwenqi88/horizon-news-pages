@@ -18,8 +18,10 @@ title: GitHub Pages 部署
    - Build output directory: `docs`
 5. GitHub 仓库启用 Actions。
 6. GitHub 仓库 Secrets 配置：
-   - `OPENAI_API_KEY`：默认 GitHub Actions 配置读取的模型密钥。
-   - `ANTHROPIC_API_KEY`、`GOOGLE_API_KEY`、`LWN_KEY`：按需配置。
+   - `HORIZON_AI_API_KEY`：自由模型或自有模型网关密钥。
+   - `HORIZON_AI_BASE_URL`：OpenAI-compatible 模型网关地址，例如 `https://example.com/v1`。
+   - `HORIZON_AI_MODEL`：模型名称。
+   - `HORIZON_GITHUB_TOKEN`：可选，用于提高 GitHub API 访问额度；不配置时 workflow 使用 GitHub Actions 内置 token。
 7. 手动运行一次 `Daily Horizon Summary` workflow。
 8. 等待 workflow 把 `docs/index.html` 和 `docs/daily/*.html` 提交到 `main` 后，Cloudflare 会自动部署。
 
@@ -32,7 +34,7 @@ schedule:
   - cron: '30 0 * * *'
 ```
 
-任务会执行 `uv run horizon --hours 48`，生成 `docs/_posts/YYYY-MM-DD-summary-{lang}.md`，再执行 `scripts/build_static_pages.py` 生成：
+任务会复制 `data/config.github.json` 为运行配置，执行 `uv run horizon --hours 24`，生成 `docs/_posts/YYYY-MM-DD-summary-{lang}.md`，再执行 `scripts/build_static_pages.py` 生成：
 
 - `docs/index.html`
 - `docs/daily/YYYY-MM-DD-zh.html`
@@ -53,3 +55,4 @@ schedule:
 
 - `docs/_posts/*.md` 会随生成的 HTML 一起提交，方便回看每日 Markdown 源文件。
 - 不要把 `.env`、`data/config.json` 或任何真实密钥提交到 GitHub。
+- GitHub Actions 使用 `data/config.github.json`，本地运行使用 `data/config.json`；两者应保持信源、阈值和模型接入方式一致。

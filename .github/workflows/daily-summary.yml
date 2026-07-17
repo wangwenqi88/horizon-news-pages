@@ -31,13 +31,11 @@ jobs:
 
       - name: Run Horizon
         env:
-          # Map secrets to environment variables expected by config.json
-          # Modify these based on your data/config.github.json provider settings
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          LWN_KEY: ${{ secrets.LWN_KEY }}
-        run: uv run horizon --hours 48
+          HORIZON_AI_API_KEY: ${{ secrets.HORIZON_AI_API_KEY }}
+          HORIZON_AI_BASE_URL: ${{ secrets.HORIZON_AI_BASE_URL }}
+          HORIZON_AI_MODEL: ${{ secrets.HORIZON_AI_MODEL }}
+          GITHUB_TOKEN: ${{ secrets.HORIZON_GITHUB_TOKEN || github.token }}
+        run: uv run horizon --hours 24
 
       - name: Build static HTML for Cloudflare Pages
         run: uv run python scripts/build_static_pages.py
