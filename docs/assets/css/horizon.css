@@ -32,6 +32,9 @@
 body {
   background-color: var(--hz-bg) !important;
   color: var(--hz-text) !important;
+  margin: 0;
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65;
 }
 
 a {
@@ -69,6 +72,32 @@ h1, h2, h3, h4, h5, h6 {
 .page-header .project-tagline,
 .page-header a {
   color: #fff !important;
+}
+
+.page-header {
+  padding: 2.4rem 1.5rem;
+  text-align: center;
+}
+
+.project-name {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.project-tagline {
+  margin: 0.45rem 0 0;
+  font-size: 1rem;
+  opacity: 0.86;
+}
+
+.main-content {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.main-content img {
+  max-width: 100%;
 }
 
 /* --- Score Badge --- */
@@ -229,6 +258,23 @@ h1, h2, h3, h4, h5, h6 {
 .digest-title {
   min-width: 0;
   color: var(--hz-text-muted);
+}
+
+.static-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--hz-border);
+}
+
+.digest-page > .eyebrow {
+  color: var(--hz-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
 }
 
 @media (max-width: 560px) {
