@@ -1,0 +1,23 @@
+theme: jekyll-theme-cayman
+title: AI 资讯精读
+description: Daily AI news reading list
+baseurl: "/horizon-news-pages" # change this to the GitHub repository name if needed
+url: "https://wangwenqi88.github.io" # change this if the GitHub username is different
+
+# Build settings
+markdown: kramdown
+future: true # Allow future posts to be published
+plugins:
+  - jekyll-feed
+feed:
+  path: feed.xml
+exclude:
+  - ".github"
+  - "node_modules"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
