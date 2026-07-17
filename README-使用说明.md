@@ -28,6 +28,8 @@
 
 ### 方式一：本地运行
 
+只采集并生成 Markdown，不发布：
+
 ```bash
 cd G:\ai-workspace\code\horizon-news
 set HORIZON_AI_API_KEY=sk-你的key
@@ -36,9 +38,22 @@ set HORIZON_AI_MODEL=你的模型名
 uv run horizon --hours 24
 ```
 
+完整执行“采集 -> HTML -> GitHub 同步 -> Cloudflare 自动发布”：
+
+```bash
+cd G:\ai-workspace\code\horizon-news
+uv run python scripts/publish_daily.py
+```
+
+只生成本地提交、不推送 GitHub：
+
+```bash
+uv run python scripts/publish_daily.py --no-push
+```
+
 ### 方式二：服务器定时运行
 
-已在阿里云服务器配置 crontab，每天 8:00 自动运行。
+服务器脚本为 `scripts/daily-run.sh`。它执行完整链路：采集、生成 HTML、提交 `docs/` 公开产物并推送到 GitHub。
 
 ### 方式三：由 Claude 代为运行
 
@@ -86,6 +101,7 @@ GitHub Actions 每天北京时间 08:30 执行一次采集和生成：
 
 - 运行配置：`data/config.github.json`
 - GitHub Action：`.github/workflows/daily-summary.yml`
+- 本地/服务器手动发布脚本：`scripts/publish_daily.py`、`scripts/daily-run.sh`
 - Markdown 源文件：`docs/_posts/YYYY-MM-DD-summary-{zh,en}.md`
 - HTML 主页：`docs/index.html`
 - 每日 HTML：`docs/daily/YYYY-MM-DD-{zh,en}.html`
@@ -100,6 +116,13 @@ HORIZON_AI_MODEL=你的模型名
 ```
 
 可选配置 `HORIZON_GITHUB_TOKEN`，用于提高 GitHub API 访问额度；不配置时 workflow 使用 GitHub Actions 内置 token。
+
+日常口径：
+
+- 用户说“收集资讯”时，默认执行完整发布链路。
+- 如果只想本地生成、不发布，需要明确说“只本地收集”。
+- GitHub 只提交公开产物：`docs/index.html`、`docs/daily/`、`docs/data/`、`docs/_posts/`。
+- `.env`、`data/config.json` 和真实密钥永远不提交。
 
 ## 维护规则
 

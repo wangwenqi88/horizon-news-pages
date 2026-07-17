@@ -1,45 +1,57 @@
 #!/usr/bin/env bash
-# Horizon daily run + deploy to GitHub Pages
-# Usage: ./scripts/daily-run.sh
-# Cron:  0 8 * * * /path/to/horizon/scripts/daily-run.sh >> /path/to/horizon/logs/cron.log 2>&1
+# Horizon daily collection + static HTML build + GitHub sync for Cloudflare Pages.
+# Usage:
+#   ./scripts/daily-run.sh
+#   ./scripts/daily-run.sh --no-push
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 LOG_PREFIX="[$(date '+%Y-%m-%d %H:%M:%S')]"
+REMOTE="${HORIZON_PUBLISH_REMOTE:-pages}"
+BRANCH="${HORIZON_PUBLISH_BRANCH:-main}"
+HOURS="${HORIZON_PUBLISH_HOURS:-24}"
+PUSH=1
+
+if [[ "${1:-}" == "--no-push" ]]; then
+  PUSH=0
+fi
 
 cd "$PROJECT_DIR"
 
-echo "$LOG_PREFIX Starting Horizon daily run..."
+echo "$LOG_PREFIX Starting Horizon daily publish workflow..."
 
-# 1. Pull latest code
-git pull --quiet origin main
+if ! git diff --cached --quiet; then
+  echo "$LOG_PREFIX Git index already has staged changes. Commit, unstage, or review them before publishing."
+  exit 1
+fi
 
-# 2. Install/update dependencies
+echo "$LOG_PREFIX Installing/updating dependencies..."
 uv sync --quiet
 
-# 3. Run Horizon
-uv run horizon --hours 24
+echo "$LOG_PREFIX Collecting news for the last ${HOURS} hours..."
+uv run horizon --hours "$HOURS"
 
-# 4. Deploy docs to gh-pages
-echo "$LOG_PREFIX Deploying to gh-pages..."
+echo "$LOG_PREFIX Building static HTML..."
+uv run python scripts/build_static_pages.py
 
-# Use a temporary worktree to update gh-pages without switching branches
-TMPDIR=$(mktemp -d)
-trap "rm -rf $TMPDIR" EXIT
+echo "$LOG_PREFIX Staging public artifacts..."
+git add docs/index.html docs/daily docs/data docs/_posts
 
-git fetch origin gh-pages:gh-pages 2>/dev/null || git checkout --orphan gh-pages && git checkout main
+if git diff --cached --quiet; then
+  echo "$LOG_PREFIX No public artifact changes to commit."
+  exit 0
+fi
 
-git worktree add "$TMPDIR" gh-pages
-cp -r docs/* "$TMPDIR/"
+DATE="$(date '+%Y-%m-%d')"
+git commit -m "Daily HTML summary: ${DATE}"
 
-cd "$TMPDIR"
-git add -A
-git commit -m "Daily Summary: $(date '+%Y-%m-%d')" || { echo "$LOG_PREFIX Nothing to commit."; exit 0; }
-git push origin gh-pages
-
-cd "$PROJECT_DIR"
-git worktree remove "$TMPDIR"
+if [[ "$PUSH" -eq 1 ]]; then
+  echo "$LOG_PREFIX Pushing to ${REMOTE}/${BRANCH}..."
+  git push "$REMOTE" "HEAD:${BRANCH}"
+else
+  echo "$LOG_PREFIX --no-push set; commit created locally only."
+fi
 
 echo "$LOG_PREFIX Done."

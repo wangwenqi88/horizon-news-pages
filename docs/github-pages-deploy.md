@@ -7,6 +7,14 @@ title: GitHub Pages 部署
 
 本项目的公开阅读站点由 `docs/` 目录承载，日报精读会生成真实 HTML 文件并提交到 GitHub。Cloudflare Pages 只需要从 GitHub 仓库发布 `docs/` 目录。
 
+标准链路是：
+
+1. Horizon 采集 24 小时资讯。
+2. AI 筛选并生成中英文 Markdown。
+3. `scripts/build_static_pages.py` 生成静态 HTML 和 `docs/data/` 数据文件。
+4. GitHub 同步 `docs/` 公开产物。
+5. Cloudflare Pages 监听 GitHub `main` 分支并自动发布 `docs/`。
+
 ## 发布方式
 
 1. 在 Cloudflare Dashboard 打开 Workers & Pages。
@@ -42,6 +50,28 @@ schedule:
 
 这些 HTML 文件会提交回 `main`，Cloudflare Pages 监听 GitHub 更新后自动发布。
 
+## 手动发布
+
+本地手动跑资讯时，应使用完整发布脚本：
+
+```bash
+uv run python scripts/publish_daily.py
+```
+
+该脚本会依次执行：
+
+- `python -m src.main --hours 24`
+- `python scripts/build_static_pages.py`
+- `git add docs/index.html docs/daily docs/data docs/_posts`
+- `git commit -m "Daily HTML summary: YYYY-MM-DD"`
+- `git push pages HEAD:main`
+
+如果只想验证生成效果，不推送 GitHub：
+
+```bash
+uv run python scripts/publish_daily.py --no-push
+```
+
 ## 内容结构
 
 - `docs/index.html`：Cloudflare 发布的资讯主页。
@@ -54,5 +84,6 @@ schedule:
 ## 注意事项
 
 - `docs/_posts/*.md` 会随生成的 HTML 一起提交，方便回看每日 Markdown 源文件。
+- `docs/data/` 会随 HTML 一起提交，供后续小程序或轻量前端读取结构化资讯。
 - 不要把 `.env`、`data/config.json` 或任何真实密钥提交到 GitHub。
 - GitHub Actions 使用 `data/config.github.json`，本地运行使用 `data/config.json`；两者应保持信源、阈值和模型接入方式一致。
