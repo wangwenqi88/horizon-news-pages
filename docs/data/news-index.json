@@ -1,0 +1,510 @@
+{
+  "updated_at": "2026-07-17T15:02:23.605430+00:00",
+  "source": "horizon-news",
+  "items": [
+    {
+      "id": "2026-07-17-zh-01-kimi-k3-ai-b61a1c61",
+      "date": "2026-07-17",
+      "lang": "zh",
+      "title": "Kimi K3 推动开放前沿 AI。",
+      "category": "AI",
+      "source": "hackernews",
+      "source_tier": "B",
+      "summary": "Kimi 发布了 Kimi K3，并称其为迄今最强的旗舰模型和开放前沿 AI 模型。此次发布强调了强劲的基准测试表现、原生视觉能力、100 万标记上下文窗口，以及正在与领先商业大语言模型比较的激进定价。 Kimi K3 对前沿 AI 的经济模式施加了压力，因为它表明高端模型能力可能变得更便宜、更容易获得。这可能影响中美 AI 实验室、模型 API 提供商、基础设施厂商，以及在封闭和开放模型生态之间做选择的开发者。 根据 Kimi 的资料，Kimi K3 拥有 2.8 万亿参数，并基于 Kimi Delta Attention 这种混合线性注意力机制以及 Attention Residuals 构建。该模型还支持原生视觉理解和 100 万标记上下文窗口，而 Artificial Analysis 的第三方分析将其质量、价格、速度和上下文窗口指标与其他模型进行比较。",
+      "manager_takeaway": "前沿 AI 模型是指能力很强、在当前 AI 性能前沿附近竞争的通用模型。开放模型策略可以降低对封闭 API 的依赖，并可能加剧价格竞争，因为开发者能更容易地比较不同提供商的能力和成本。上下文窗口大小很重要，因为它决定了模型在一次请求中能考虑多少文本、代码或其他输入。视觉能力意味着模型除了文本之外还能处理图像，从而扩大其在多模态应用中的用途。",
+      "detail_url": "/data/news-detail/2026-07-17-zh-01-kimi-k3-ai-b61a1c61.json",
+      "html_url": "/daily/2026-07-17-zh.html#item-1",
+      "audio_url": "",
+      "tags": [
+        "AI",
+        "LLMs",
+        "open-models",
+        "AI-economics",
+        "China-tech"
+      ]
+    },
+    {
+      "id": "2026-07-17-zh-02-google-ai-mode-24605e62",
+      "date": "2026-07-17",
+      "lang": "zh",
+      "title": "Google AI Mode 增加应用互动功能。",
+      "category": "AI assistants",
+      "source": "rss",
+      "source_tier": "A",
+      "summary": "2026 年 7 月 16 日，Google 扩展了 AI Mode，使用户可以关联并与部分应用互动。此次更新让 AI Mode 不再只回答问题，而是开始帮助用户在常用应用中完成任务。 这很重要，因为它反映了 AI 助手从对话式搜索工具转向能够跨服务执行操作的智能体系统这一更广泛趋势。如果被广泛采用，它可能让 Google 的助手体验对消费者更有用，也让接入 Google Search 的应用生态更具战略意义。 该消息称此功能适用于部分应用，但所提供的信息没有列出具体应用，也没有说明权限模型、支持的操作或推出范围。一个关键限制是，任务完成功能高度依赖应用集成、用户同意、可靠性，以及防止误操作的保护机制。",
+      "manager_takeaway": "Google 将 AI Mode 描述为一种可以提出开放式问题、获得 AI 驱动回答，并通过追问和有用网页链接继续探索的方式。此前对 AI Mode 的描述主要将其定位为 AI 增强的搜索体验，包括部分美国 Google One AI Premium 订阅用户可通过 Search Labs 使用。新的应用关联能力表明它正从信息检索迈向智能体式 AI，也就是系统不仅生成答案，还被期望协调并执行操作。",
+      "detail_url": "/data/news-detail/2026-07-17-zh-02-google-ai-mode-24605e62.json",
+      "html_url": "/daily/2026-07-17-zh.html#item-2",
+      "audio_url": "",
+      "tags": [
+        "AI assistants",
+        "Google",
+        "agentic AI",
+        "consumer apps",
+        "automation"
+      ]
+    },
+    {
+      "id": "2026-07-17-zh-03-originblame-ai-e3cadc5f",
+      "date": "2026-07-17",
+      "lang": "zh",
+      "title": "OriginBlame 追踪 AI 训练数据来源。",
+      "category": "AI governance",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "一篇新的 arXiv 论文提出了 OriginBlame，这是一个在记录级和词元级追踪数据来源的系统，可在 AI 数据处理流水线中传播作者身份信息。它能将数据贡献者的删除请求解析为精确的遗忘集，用于后续数据删除和机器遗忘。 这项工作针对一个实际治理缺口：机器遗忘方法需要准确知道哪些训练样本应被移除，但许多数据集只在文件或数据集这种粗粒度层面追踪来源。更精确的数据来源记录可以减少不必要的数据删除，并让 AI 模型训练方更容易处理贡献者撤回请求。 在对 219,555 个维基百科页面的评估中，记录级来源追踪将过度删除从 101 倍降至 1.3 倍。论文报告称，在维基数据上集成该系统会给 HuggingFace 流水线带来 1.3–4.0% 的吞吐开销，给 Datatrove 带来 2.1–19.0% 的吞吐开销，并在一个 1.7B 参数模型上相对于随机基线带来 42% 的机器遗忘改进。",
+      "manager_takeaway": "机器遗忘是指从已经训练好的模型中移除特定训练数据影响的方法。遗忘集是应被删除或遗忘的训练数据子集，因此准确识别它是许多机器遗忘流程的前提。数据来源记录描述数据来自哪里，以及它在处理过程中如何变化；OriginBlame 关注在记录级和词元级转换中保留作者身份，而不只是停留在数据集或文件层面。Datatrove 是 HuggingFace 的一个项目，提供可定制、跨平台的大规模数据处理流水线模块。",
+      "detail_url": "/data/news-detail/2026-07-17-zh-03-originblame-ai-e3cadc5f.json",
+      "html_url": "/daily/2026-07-17-zh.html#item-3",
+      "audio_url": "",
+      "tags": [
+        "AI governance",
+        "data provenance",
+        "machine unlearning",
+        "training datasets",
+        "ML systems"
+      ]
+    },
+    {
+      "id": "2026-07-17-zh-04-spine-eebcc9e9",
+      "date": "2026-07-17",
+      "lang": "zh",
+      "title": "SPINE 旨在简化双臂机器人部署。",
+      "category": "robotics",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "一篇新的 arXiv 论文介绍了 SPINE，即可扩展物理集成与智能体专家能力框架，它是一个用于双臂机器人建档、调试和部署的智能体式多智能体框架。在七个 DOBOT X-Trainer 场景中，使用 SPINE 的新手相比以较少结构化方式使用 Claude Code 的操作者，将可运行部署成功率从 75% 提升到 100%，并把平均达到遥操作的时间从 16 分 45 秒降至 13 分 47 秒。 这项工作针对具身 AI 的一个现实瓶颈：让模型驱动的机器人行为可靠运行在真实硬件上，通常仍需要专家进行校准和排障。如果 SPINE 这类方法能够泛化，机器人团队、实验室和教育机构就可能更快部署双臂平台，并减少对稀缺机器人专家的依赖。 SPINE 使用两个协同工作流：一个为特定机器人创建上下文的配置建档器，以及一个循环执行诊断、修复和验证直到遥操作可用的调试器。该评估结果较有希望但范围有限：主要新手实验只覆盖七个 DOBOT X-Trainer 调试场景，迁移测试中 SPINE 在 AgileX PiPER 上解决了 10 个植入故障中的全部 10 个，而专家基线解决了 9 个，耗时几乎相同。",
+      "manager_takeaway": "双臂机器人有两条需要协同工作的机械臂，因此其部署通常比单臂机器人更复杂，因为传感器、控制器、通信总线和运动约束都必须正确配合。遥操作是指由人远程控制机器人，它常用于验证平台是否可正常运行，也常用于为机器人学习收集示范数据。DOBOT 将 X-Trainer 描述为面向 AGI 研究和实际 AI 项目的数据采集与训练机器人系统，这与论文试图让非专家更容易完成机器人部署的目标相符。",
+      "detail_url": "/data/news-detail/2026-07-17-zh-04-spine-eebcc9e9.json",
+      "html_url": "/daily/2026-07-17-zh.html#item-4",
+      "audio_url": "",
+      "tags": [
+        "robotics",
+        "embodied-ai",
+        "agentic-ai",
+        "automation",
+        "debugging"
+      ]
+    },
+    {
+      "id": "2026-07-17-zh-05-item-dae08682",
+      "date": "2026-07-17",
+      "lang": "zh",
+      "title": "黑盒审计测试大模型推理是否依赖前提",
+      "category": "LLM evaluation",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "一篇新的 arXiv 论文提出了干预式根基审计，这是一种黑盒方法，通过把某个前提中的谓词替换为全新符号，检查大模型的思维链步骤是否随之改变。该方法在 50 个 ProntoQA 问题上使用 GPT-4o 进行评估，报告的证明树依赖检测 F1 值为 0.806，谓词决定性依赖检测 F1 值为 0.885，优于 F1 值为 0.343 的自一致性基线。 这项工作针对一个关键的可解释性问题：思维链文本看起来可能逻辑正确，但模型答案未必真正依赖其声称使用的前提。如果这种方法能在合成基准之外得到验证，它可能帮助研究人员和评测者发现大模型推理系统中的“答案正确但推理错误”现象。 该审计在步骤层面运行，会把每个结论规范化为标准谓词形式，并比较一致谓词替换前后的输出变化。论文还报告称，在正确解答的问题中有 66% 至少包含一个对直接证明树依赖不敏感的对齐步骤，但这些都涉及实体引入前提，反映了一致替换评估器的一个盲点。",
+      "manager_takeaway": "思维链推理要求大模型输出中间推理步骤，而不只是最终答案，但这些步骤并不一定忠实反映模型得出答案的真实过程。ProntoQA 是一个基于形式逻辑式本体构建的合成演绎推理基准，因此可以把生成的推理与已知证明链进行比较。证明树记录哪些前提支撑每个中间结论，因此可作为测试某个推理步骤是否应当依赖某个前提的真实标注。",
+      "detail_url": "/data/news-detail/2026-07-17-zh-05-item-dae08682.json",
+      "html_url": "/daily/2026-07-17-zh.html#item-5",
+      "audio_url": "",
+      "tags": [
+        "LLM evaluation",
+        "chain-of-thought",
+        "AI interpretability",
+        "reasoning",
+        "arXiv"
+      ]
+    },
+    {
+      "id": "2026-07-17-zh-06-ai-9bcdccdb",
+      "date": "2026-07-17",
+      "lang": "zh",
+      "title": "一篇综述梳理自我改进型 AI 智能体。",
+      "category": "AI agents",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "一篇新的 arXiv 论文《Self-Improvements in Modern Agentic Systems: A Survey》（arXiv:2607.13104v1）综述了自我改进型自主智能体，并将其定义为能够把经验转化为累积能力提升的自适应系统。论文提出了一个系统级框架，把自我改进形式化为对基础模型参数或智能体脚手架组件的自发更新，包括提示词、记忆、工具和控制逻辑。 这篇综述的重要性在于，智能体 AI 正在从单独的研究演示走向可能以很少甚至无需人工输入进行适应的部署系统。围绕“更新什么”和“由什么信号驱动更新”建立共同分类，有助于研究人员和实践者比较方法、评估风险，并设计更可控的智能体系统。 论文按照更新目标对既有工作进行组织，包括模型参数和脚手架组件，并按照触发变化的信号进行分类，随后讨论应用、评估、开放问题和未来方向。它是一篇综述而不是一项新的原始技术突破，作者还维护了一个相关技术更新仓库：https://github.com/selfimproving-agent/awesome-Self-Improving-Agents。",
+      "manager_takeaway": "在基于 LLM 的智能体中，基础模型通常充当中央控制器或“大脑”，负责规划步骤、使用工具、存取记忆并根据观察结果作出反应。围绕模型的提示词、记忆系统、工具接口和控制循环通常被称为智能体脚手架，因为它们把语言模型转化为面向目标的系统。在这一语境下，自我改进指智能体在经历任务或反馈后改变自身的某个部分，例如优化提示词、更新记忆、调整工具使用、修改控制逻辑，或在某些情况下更新模型参数。",
+      "detail_url": "/data/news-detail/2026-07-17-zh-06-ai-9bcdccdb.json",
+      "html_url": "/daily/2026-07-17-zh.html#item-6",
+      "audio_url": "",
+      "tags": [
+        "AI agents",
+        "self-improvement",
+        "LLMs",
+        "autonomous systems",
+        "survey"
+      ]
+    },
+    {
+      "id": "2026-07-17-en-01-kimi-k3-pushes-open-frontier-ai-f29f27fe",
+      "date": "2026-07-17",
+      "lang": "en",
+      "title": "Kimi K3 pushes open frontier AI.",
+      "category": "AI",
+      "source": "hackernews",
+      "source_tier": "B",
+      "summary": "Kimi introduced Kimi K3, described as its most capable flagship model and an open frontier AI model. The release highlights strong benchmark performance, native vision, a 1-million-token context window, and aggressive pricing that is being compared with leading commercial LLMs. Kimi K3 adds pressure to the economics of frontier AI by suggesting that high-end model capability may become cheaper and more widely available. This could affect U.S. and Chinese AI labs, model API providers, infrastructure vendors, and developers choosing between closed and open model ecosystems. According to Kimi’s materials, Kimi K3 has 2.8 trillion parameters and is built on Kimi Delta Attention, a hybrid linear attention mechanism, plus Attention Residuals. The model also supports native visual understanding and a 1M-token context window, while third-party analysis from Artificial Analysis tracks its quality, price, speed, and context-window metrics against other models.",
+      "manager_takeaway": "A frontier AI model is a high-capability general-purpose model that competes near the leading edge of current AI performance. An open model strategy can reduce dependence on closed APIs and may intensify price competition because developers can compare capabilities and costs across providers more easily. Context window size matters because it determines how much text, code, or other input a model can consider in one request. Vision capability means the model can process images in addition to text, broadening its usefulness for multimodal applications.",
+      "detail_url": "/data/news-detail/2026-07-17-en-01-kimi-k3-pushes-open-frontier-ai-f29f27fe.json",
+      "html_url": "/daily/2026-07-17-en.html#item-1",
+      "audio_url": "",
+      "tags": [
+        "AI",
+        "LLMs",
+        "open-models",
+        "AI-economics",
+        "China-tech"
+      ]
+    },
+    {
+      "id": "2026-07-17-en-02-google-ai-mode-adds-app-interactions-3e4b01a8",
+      "date": "2026-07-17",
+      "lang": "en",
+      "title": "Google AI Mode adds app interactions.",
+      "category": "AI assistants",
+      "source": "rss",
+      "source_tier": "A",
+      "summary": "On July 16, 2026, Google expanded AI Mode so users can link and interact with select apps. The update moves AI Mode beyond answering questions toward helping users complete tasks inside apps they use regularly. This is significant because it reflects a broader shift in AI assistants from conversational search tools to agentic systems that can act across services. If widely adopted, it could make Google’s assistant experience more useful for consumers and more strategically important for app ecosystems connected to Google Search. The announcement says the feature works with select apps, but the provided information does not name those apps or describe the permission model, supported actions, or rollout scope. A key caveat is that task-completion features depend heavily on app integrations, user consent, reliability, and safeguards against unintended actions.",
+      "manager_takeaway": "Google describes AI Mode as a way to ask open-ended questions, receive AI-powered responses, and continue exploring with follow-up questions and useful web links. Earlier descriptions of AI Mode positioned it primarily as an AI-enhanced search experience, including availability through Search Labs for some Google One AI Premium subscribers in the United States. The new app-linking capability suggests a step beyond information retrieval into agentic AI, where the system is expected to coordinate actions rather than only generate answers.",
+      "detail_url": "/data/news-detail/2026-07-17-en-02-google-ai-mode-adds-app-interactions-3e4b01a8.json",
+      "html_url": "/daily/2026-07-17-en.html#item-2",
+      "audio_url": "",
+      "tags": [
+        "AI assistants",
+        "Google",
+        "agentic AI",
+        "consumer apps",
+        "automation"
+      ]
+    },
+    {
+      "id": "2026-07-17-en-03-originblame-traces-ai-training-data-prov-1a99658d",
+      "date": "2026-07-17",
+      "lang": "en",
+      "title": "OriginBlame traces AI training data provenance.",
+      "category": "AI governance",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "A new arXiv paper, OriginBlame, introduces a record- and token-level provenance system that propagates author identity through AI data processing pipelines. It resolves contributor removal requests into precise forget sets for downstream data removal and machine unlearning. The work addresses a practical governance gap: unlearning methods need to know exactly which training examples to remove, but many datasets only track provenance at coarse file or dataset granularity. More precise provenance could reduce unnecessary data deletion and make contributor revocation workflows more feasible for AI model trainers. In an evaluation on 219,555 Wikipedia pages, record-level provenance reduced over-deletion from 101x to 1.3x. The paper reports integration overhead of 1.3–4.0% throughput in HuggingFace pipelines and 2.1–19.0% in Datatrove on wiki data, plus a 42% unlearning improvement over random baselines on a 1.7B-parameter model.",
+      "manager_takeaway": "Machine unlearning refers to methods for removing the influence of selected training data from an already trained model. A forget set is the subset of training data that should be removed or unlearned, so identifying it accurately is a prerequisite for many unlearning workflows. Data provenance records where data came from and how it changed through processing; OriginBlame focuses on preserving author identity through record- and token-level transformations rather than only at dataset or file level. Datatrove is a HuggingFace project that provides customizable, platform-agnostic pipeline blocks for large-scale data processing.",
+      "detail_url": "/data/news-detail/2026-07-17-en-03-originblame-traces-ai-training-data-prov-1a99658d.json",
+      "html_url": "/daily/2026-07-17-en.html#item-3",
+      "audio_url": "",
+      "tags": [
+        "AI governance",
+        "data provenance",
+        "machine unlearning",
+        "training datasets",
+        "ML systems"
+      ]
+    },
+    {
+      "id": "2026-07-17-en-04-spine-aims-to-simplify-bimanual-robot-de-cbb75b58",
+      "date": "2026-07-17",
+      "lang": "en",
+      "title": "SPINE aims to simplify bimanual robot deployment.",
+      "category": "robotics",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "A new arXiv paper introduces SPINE, short for Scalable Physical Integration with ageNtic Expertise, an agentic multi-agent framework for profiling, debugging, and deploying bimanual robots. In seven DOBOT X-Trainer scenarios, a novice using SPINE improved operationalization success from 75% to 100% versus less-structured Claude Code use, while reducing mean time-to-teleoperation from 16 minutes 45 seconds to 13 minutes 47 seconds. The work targets a practical bottleneck in embodied AI: getting model-driven robot behavior to run reliably on real hardware still often requires expert calibration and troubleshooting. If approaches like SPINE generalize, robotics teams, labs, and educators could deploy bimanual platforms faster with less dependence on scarce robotics specialists. SPINE uses two orchestrated workflows: a profile builder that creates robot-specific context and a debugger that iterates through diagnosis, repair, and validation until teleoperation works. The evaluation is promising but narrow: the main novice study used seven DOBOT X-Trainer debugging scenarios, and a transfer test on AgileX PiPER resolved 10 of 10 implanted bugs compared with 9 of 10 for an expert baseline in nearly the same time.",
+      "manager_takeaway": "Bimanual robots have two coordinated arms, which makes setup more complex than for a single-arm robot because sensors, controllers, communication buses, and motion constraints must all work together. Teleoperation means a human remotely controls the robot, and it is often used both to verify that a platform is operational and to collect demonstration data for robot learning. DOBOT describes X-Trainer as an AI data collection and training robotic system for AGI research and practical AI projects, which fits the paper’s focus on making robot deployment easier for non-experts.",
+      "detail_url": "/data/news-detail/2026-07-17-en-04-spine-aims-to-simplify-bimanual-robot-de-cbb75b58.json",
+      "html_url": "/daily/2026-07-17-en.html#item-4",
+      "audio_url": "",
+      "tags": [
+        "robotics",
+        "embodied-ai",
+        "agentic-ai",
+        "automation",
+        "debugging"
+      ]
+    },
+    {
+      "id": "2026-07-17-en-05-black-box-audits-test-whether-llm-reason-fee1b7ac",
+      "date": "2026-07-17",
+      "lang": "en",
+      "title": "Black-box audits test whether LLM reasoning uses its premises",
+      "category": "LLM evaluation",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "A new arXiv paper introduces interventional grounding audits, a black-box method that substitutes a premise predicate with a fresh symbol and checks whether an LLM’s chain-of-thought steps change accordingly. On 50 ProntoQA problems using GPT-4o, the method reports F1 = 0.806 for proof-tree dependency detection and F1 = 0.885 for predicate-determining dependencies, outperforming a self-consistency baseline with F1 = 0.343. The work targets a key interpretability problem: chain-of-thought text can look logically valid even when the model’s answer may not actually depend on the stated premises. If validated beyond synthetic benchmarks, this kind of intervention could help researchers and evaluators detect “right answer, wrong reasoning” behavior in LLM reasoning systems. The audit operates at the step level by normalizing each conclusion into a canonical predicate form and comparing outputs before and after a consistent predicate substitution. The paper also reports that 66% of correctly solved problems had at least one aligned step insensitive to a direct proof-tree dependency, but notes this involved entity-introduction premises and reflects a blind spot of the consistent-substitution evaluator.",
+      "manager_takeaway": "Chain-of-thought reasoning asks an LLM to produce intermediate reasoning steps rather than only a final answer, but those steps are not guaranteed to be faithful explanations of how the model reached the answer. ProntoQA is a synthetic deductive reasoning benchmark built from formal logic-style ontologies, which makes it possible to compare generated reasoning against known proof chains. A proof tree records which premises support each intermediate conclusion, so it provides ground truth for testing whether a reasoning step should depend on a given premise.",
+      "detail_url": "/data/news-detail/2026-07-17-en-05-black-box-audits-test-whether-llm-reason-fee1b7ac.json",
+      "html_url": "/daily/2026-07-17-en.html#item-5",
+      "audio_url": "",
+      "tags": [
+        "LLM evaluation",
+        "chain-of-thought",
+        "AI interpretability",
+        "reasoning",
+        "arXiv"
+      ]
+    },
+    {
+      "id": "2026-07-17-en-06-a-survey-maps-self-improving-ai-agents-34995ac4",
+      "date": "2026-07-17",
+      "lang": "en",
+      "title": "A survey maps self-improving AI agents.",
+      "category": "AI agents",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "A new arXiv paper, “Self-Improvements in Modern Agentic Systems: A Survey” (arXiv:2607.13104v1), surveys self-improving autonomous agents and frames them as adaptive systems that turn experience into accumulated capability gains. It proposes a system-level framework in which self-improvement is a self-induced update to either foundation model parameters or agent scaffolding such as prompts, memory, tools, and control logic. The survey is significant because agentic AI is shifting from isolated demos toward deployed systems that may adapt with little or no human input. A shared taxonomy for what gets updated and what signals drive the update can help researchers and practitioners compare approaches, evaluate risks, and design more controllable agent systems. The paper organizes prior work by update target, including model parameters and scaffold components, and by the signals that cause change, then discusses applications, evaluation, open problems, and future directions. It is a survey rather than a primary technical breakthrough, and the authors also maintain a related technical-update repository at https://github.com/selfimproving-agent/awesome-Self-Improving-Agents.",
+      "manager_takeaway": "In LLM-based agents, a foundation model often acts as the central controller or “brain” that plans steps, uses tools, stores or retrieves memory, and reacts to observations. The surrounding prompts, memory systems, tool interfaces, and control loops are often called an agent scaffold because they turn a language model into a goal-directed system. Self-improvement in this context means the agent changes some part of itself after experience, such as refining prompts, updating memory, changing tool use, modifying control logic, or in some cases updating model parameters.",
+      "detail_url": "/data/news-detail/2026-07-17-en-06-a-survey-maps-self-improving-ai-agents-34995ac4.json",
+      "html_url": "/daily/2026-07-17-en.html#item-6",
+      "audio_url": "",
+      "tags": [
+        "AI agents",
+        "self-improvement",
+        "LLMs",
+        "autonomous systems",
+        "survey"
+      ]
+    },
+    {
+      "id": "2026-07-16-zh-01-thinking-machines-inkling-b72e7f4b",
+      "date": "2026-07-16",
+      "lang": "zh",
+      "title": "Thinking Machines 发布开放权重多模态模型 Inkling。",
+      "category": "AI",
+      "source": "hackernews",
+      "source_tier": "B",
+      "summary": "Thinking Machines 于 2026 年 7 月 15 日推出 Inkling，这是其首个公开发布的开放权重通用多模态模型。该模型可接受文本、图像和音频输入并生成文本输出，其定位是可定制的基础模型，而不是当前综合能力最强的模型。 Inkling 为研究人员、开发者和企业提供了另一条构建专用人工智能系统的路径，尤其适合需要音频和多模态输入的工作流，并且权重可本地或自主控制。它与 Tinker 的结合也体现了一种商业模式：企业可以针对具体任务微调开放权重基础模型，而不必完全依赖封闭的前沿模型接口。 根据现有模型信息，Inkling 是一个混合专家模型，总参数量为 9750 亿，每个任务大约激活 410 亿参数。Thinking Machines 表示该模型以两种检查点格式分发，而社区成员已经在关注本地推理支持，例如 llama.cpp 分支以及 GGUF 和 NVFP4 转换版本。",
+      "manager_takeaway": "开放权重模型会发布训练后的参数，使用户能够更直接地运行或改造模型，但这并不总是等同于完整开源训练代码和数据。多模态模型可以处理不止一种输入类型，而 Inkling 明确支持文本、图像和音频作为输入。Tinker 是 Thinking Machines 用于通过 LoRA 高效微调开源模型的接口，LoRA 通过训练较小的附加参数矩阵来适配模型，而不是更新全部权重。",
+      "detail_url": "/data/news-detail/2026-07-16-zh-01-thinking-machines-inkling-b72e7f4b.json",
+      "html_url": "/daily/2026-07-16-zh.html#item-1",
+      "audio_url": "",
+      "tags": [
+        "AI",
+        "open-weights",
+        "multimodal-models",
+        "fine-tuning",
+        "LLMs"
+      ]
+    },
+    {
+      "id": "2026-07-16-zh-02-xai-grok-build-06c768c3",
+      "date": "2026-07-16",
+      "lang": "zh",
+      "title": "xAI 开源 Grok Build。",
+      "category": "open-source",
+      "source": "hackernews",
+      "source_tier": "S",
+      "summary": "xAI 已经开源 Grok Build，这是其面向终端的 AI 编程代理和命令行界面，源代码已于 7 月 15 日在 GitHub 上提供。此次发布让开发者可以检查、修改和分叉 Grok Build 的编程代理框架与终端界面实现。 这件事重要，因为 Grok Build 来自一家主要 AI 公司，开源可能会加速围绕 AI 编程代理、终端工作流和第三方集成的实验。它也把隐私、遥测和信任问题变成社区可以直接审查的内容，而不只是从产品行为中推测。 根据 xAI 的产品页面，Grok Build 由 Grok 4.5 驱动，并包含原生子代理视图、Plan Mode 集成、鼠标支持和全屏终端界面。社区审阅者还注意到一些少见的实现组件，包括一个使用 Unicode 制表符在终端中渲染部分 Mermaid 图表的自包含渲染器。",
+      "manager_takeaway": "命令行界面是一种通过输入命令来控制的工具，而不是传统图形应用，因此很受在终端中工作的开发者欢迎。终端用户界面则在仍然运行于终端的前提下，提供更丰富的交互式界面。AI 编程代理使用大语言模型来帮助编写、修改、审查或规划代码变更，许多团队都在竞争让这类代理更自然地融入现有开发工作流。开源这类工具意味着其他人可以阅读代码、从源码构建、移除或改变某些行为，并创建注重隐私或支持多提供商的分叉版本。",
+      "detail_url": "/data/news-detail/2026-07-16-zh-02-xai-grok-build-06c768c3.json",
+      "html_url": "/daily/2026-07-16-zh.html#item-2",
+      "audio_url": "",
+      "tags": [
+        "open-source",
+        "AI-tools",
+        "developer-tools",
+        "privacy",
+        "xAI"
+      ]
+    },
+    {
+      "id": "2026-07-16-zh-03-item-8a5424bc",
+      "date": "2026-07-16",
+      "lang": "zh",
+      "title": "自定义按钮是在重造浏览器。",
+      "category": "accessibility",
+      "source": "hackernews",
+      "source_tier": "B",
+      "summary": "Mad Campos 发表了一篇文章，指出从零创建按钮意味着要重新实现大量浏览器原生行为，尤其是无障碍相关行为。文章用讽刺性的表达说明，当开发者用自定义元素替代真正的 HTML 按钮时，会失去许多内建功能。 这件事很重要，因为自定义 UI 组件在现代前端开发中非常常见，但很小的错误就可能让键盘用户和依赖辅助技术的用户无法正常使用界面。文章强调了一个更广泛的无障碍经验：原生 HTML 控件通常提供了很难可靠复刻的正确性和兼容性。 MDN 指出，给其他元素添加 role=\"button\" 只是让辅助技术把它识别为按钮，并不会自动提供原生点击行为、键盘处理或焦点行为。一个技术上正确的自定义按钮必须处理可聚焦性、Enter 和空格键激活、无障碍名称、禁用状态，以及不同浏览器和辅助技术之间的交互差异。",
+      "manager_takeaway": "HTML 提供了原生 button 元素，浏览器和操作系统已经知道如何把它呈现给用户、键盘和无障碍 API。ARIA 可以添加语义含义，例如 role=\"button\"，但它通常不会自己添加原生元素的完整行为。无障碍名称是辅助技术用来识别控件的标签，浏览器会根据可见文本、ARIA 属性和相关标记来计算它。",
+      "detail_url": "/data/news-detail/2026-07-16-zh-03-item-8a5424bc.json",
+      "html_url": "/daily/2026-07-16-zh.html#item-3",
+      "audio_url": "",
+      "tags": [
+        "accessibility",
+        "web-development",
+        "ui-components",
+        "html",
+        "frontend"
+      ]
+    },
+    {
+      "id": "2026-07-16-zh-04-ai-c495746c",
+      "date": "2026-07-16",
+      "lang": "zh",
+      "title": "开源 AI 需要公共投资。",
+      "category": "open-source-ai",
+      "source": "hackernews",
+      "source_tier": "B",
+      "summary": "David Siegel 的一篇与《财富》相关的 PDF 文章主张，政府、企业和非营利组织应更大力度投资免费和开源 AI。文章将开放 AI 描述为一种公共利益基础设施，认为它需要超越私营前沿实验室的资金支持。 如果开源 AI 获得持续资助，更多研究人员、初创企业、公共机构和个人就可能使用有能力的模型，而不必完全依赖封闭的商业供应商。这一观点也关系到竞争政策、公共利益技术，以及谁来控制最重要 AI 能力的问题。 相关讨论区分了普通自由开源软件与前沿 AI 开发，因为后者可能需要大规模算力、受薪研究团队、数据流水线和评测基础设施。评论者还提出了定向激励奖金、公共研究计划和开放权重模型等可能的资助或治理机制。",
+      "manager_takeaway": "自由开源软件通常指源代码可以在相应许可下被查看、修改和再分发的软件。在 AI 领域，“开源”的含义更复杂，因为一个可用系统可能包括模型代码、训练数据、学习到的权重、评测方法和部署工具。开放权重模型会公开模型参数，但不一定提供完整复现模型所需的全部训练数据或代码。前沿 AI 指能力很强、处于技术前沿的系统，其开发成本可能很高，因为训练和评测通常需要专用硬件和大型研究团队。",
+      "detail_url": "/data/news-detail/2026-07-16-zh-04-ai-c495746c.json",
+      "html_url": "/daily/2026-07-16-zh.html#item-4",
+      "audio_url": "",
+      "tags": [
+        "open-source-ai",
+        "ai-policy",
+        "ai-funding",
+        "public-interest-technology",
+        "ai-governance"
+      ]
+    },
+    {
+      "id": "2026-07-16-zh-05-originblame-ai-e31d2fb5",
+      "date": "2026-07-16",
+      "lang": "zh",
+      "title": "OriginBlame 追踪 AI 数据集来源。",
+      "category": "AI data provenance",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "一篇新的 arXiv 论文介绍了 OriginBlame，也称 ob，这是一种在记录级和词元级追踪作者身份并贯穿 AI 数据集处理流水线的来源系统。该系统在 219,555 个 Wikipedia 页面上的评估中，将过度删除从 101 倍降至 1.3 倍，并在一个 1.7B 参数模型上生成了比随机基线的遗忘效果高 42% 的遗忘集。 这项工作解决了 AI 数据治理中的一个实际瓶颈：当作者要求移除数据时，训练方需要准确知道哪些训练样本或词元对应于该作者。更精确的数据来源追踪可以减少不必要的数据删除，并让模型构建者在处理隐私、许可或贡献者撤回请求时更容易执行机器遗忘流程。 论文报告的集成开销较小但并非为零：在 wiki 数据上，HuggingFace 流水线的吞吐开销为 1.3% 至 4.0%，Datatrove 的吞吐开销为 2.1% 至 19.0%。这些结果很有前景，但仍应视为早期证据，因为这是一篇初始 arXiv 论文，评估范围集中在特定的 Wikipedia 流水线和一个 1.7B 模型上，尚不是经过广泛验证的生产标准。",
+      "manager_takeaway": "数据来源追踪指的是记录数据来自哪里，以及它在处理步骤中如何发生变化。在 AI 训练中，这种谱系会变得很复杂，因为大型语言模型数据集可能合并许多来源，并在训练前经过抽取、过滤、去重和词元化等步骤。机器遗忘是指从已训练模型中移除特定训练数据影响的过程，而许多遗忘方法假设这些不需要的数据可以被明确识别为一个具体的遗忘集。Datatrove 是 Hugging Face 的一个项目，提供用于大规模数据集处理的可定制流水线模块，而这类流水线正是细粒度来源追踪可能发挥作用的场景。",
+      "detail_url": "/data/news-detail/2026-07-16-zh-05-originblame-ai-e31d2fb5.json",
+      "html_url": "/daily/2026-07-16-zh.html#item-5",
+      "audio_url": "",
+      "tags": [
+        "AI data provenance",
+        "machine unlearning",
+        "dataset governance",
+        "LLM training",
+        "privacy"
+      ]
+    },
+    {
+      "id": "2026-07-16-zh-06-item-65cec248",
+      "date": "2026-07-16",
+      "lang": "zh",
+      "title": "一篇新综述梳理了自改进智能体系统。",
+      "category": "AI agents",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "arXiv 论文《Self-Improvements in Modern Agentic Systems: A Survey》以 2607.13104v1 版本发布，系统综述了自改进自主智能体。论文提出了一个框架，将智能体表示为基础模型与由提示、记忆、工具和控制逻辑组成的运行脚手架，并按更新目标和驱动信号对自发更新进行分类。 这篇综述很重要，因为自改进智能体正在从研究原型走向部署系统，而不可控的适应过程可能影响可靠性、安全性和评估方式。它提供的分类法为 AI 研究人员和实践者比较模型更新、脚手架变化、反馈信号、应用场景和开放问题提供了共同语言。 论文的一个核心区分是，改进究竟改变模型参数，还是改变提示、记忆、工具和控制逻辑等脚手架组件。论文将自改进形式化为一种自发更新算子，强调可控的能力累积提升，而不是一次性的提示技巧。",
+      "manager_takeaway": "在现代智能体 AI 系统中，LLM 通常不会单独使用，而是会被一层脚手架包围，用来处理规划、记忆、工具调用、工作流和编排。这样的脚手架可以把简单的提示—回答模型变成更面向目标、能够执行多步骤任务的系统。自改进 LLM 智能体进一步利用经验、反馈、不确定性或任务结果，随时间修改模型本身或其外围智能体系统。",
+      "detail_url": "/data/news-detail/2026-07-16-zh-06-item-65cec248.json",
+      "html_url": "/daily/2026-07-16-zh.html#item-6",
+      "audio_url": "",
+      "tags": [
+        "AI agents",
+        "self-improvement",
+        "LLMs",
+        "survey",
+        "agentic systems"
+      ]
+    },
+    {
+      "id": "2026-07-16-en-01-thinking-machines-releases-inkling-as-an-9cac7fb0",
+      "date": "2026-07-16",
+      "lang": "en",
+      "title": "Thinking Machines releases Inkling as an open-weights multimodal model.",
+      "category": "AI",
+      "source": "hackernews",
+      "source_tier": "B",
+      "summary": "Thinking Machines introduced Inkling, its first public open-weights general-purpose multimodal model, on July 15, 2026. The model accepts text, image, and audio inputs, generates text outputs, and is positioned as a customizable base model rather than the strongest overall model. Inkling gives researchers, developers, and enterprises another path to build specialized AI systems with local or self-controlled weights, especially for workflows that need audio and multimodal inputs. Its connection to Tinker also points to a business model where companies can fine-tune open-weight base models for narrow tasks instead of relying only on closed frontier APIs. According to the available model information, Inkling is a mixture-of-experts model with 975 billion total parameters and about 41 billion active parameters per task. Thinking Machines says the model is distributed in two checkpoint formats, while community members are already pointing to local-inference efforts such as llama.cpp branches and GGUF/NVFP4 conversions.",
+      "manager_takeaway": "An open-weights model releases the trained parameters so users can run or adapt the model more directly, even though it is not always equivalent to fully open-source training code and data. A multimodal model can process more than one kind of input, and Inkling specifically supports text, images, and audio as inputs. Tinker is Thinking Machines’ API for fine-tuning open-source models efficiently with LoRA, a technique that adapts models by training smaller additional parameter matrices instead of updating every weight.",
+      "detail_url": "/data/news-detail/2026-07-16-en-01-thinking-machines-releases-inkling-as-an-9cac7fb0.json",
+      "html_url": "/daily/2026-07-16-en.html#item-1",
+      "audio_url": "",
+      "tags": [
+        "AI",
+        "open-weights",
+        "multimodal-models",
+        "fine-tuning",
+        "LLMs"
+      ]
+    },
+    {
+      "id": "2026-07-16-en-02-xai-open-sources-grok-build-300d7fa7",
+      "date": "2026-07-16",
+      "lang": "en",
+      "title": "xAI open-sources Grok Build.",
+      "category": "open-source",
+      "source": "hackernews",
+      "source_tier": "S",
+      "summary": "xAI has open-sourced Grok Build, its terminal-native AI coding agent and command-line interface, with the source code now available on GitHub as of July 15. The release exposes the implementation of Grok Build’s coding-agent harness and terminal UI for developers to inspect, modify, and fork. This matters because Grok Build is a developer tool from a major AI company, and open-sourcing it may accelerate experimentation around AI coding agents, terminal workflows, and third-party integrations. It also turns privacy, telemetry, and trust questions into issues the community can audit directly rather than only infer from product behavior. According to xAI’s product page, Grok Build is powered by Grok 4.5 and includes a native subagent view, Plan Mode integration, mouse support, and a fullscreen terminal UI. Community reviewers also noticed unusual implementation pieces, including a self-contained terminal renderer for a subset of Mermaid diagrams using Unicode box-drawing characters.",
+      "manager_takeaway": "A command-line interface, or CLI, is a tool controlled through typed commands rather than a graphical app, which makes it popular with developers who work inside terminals. A terminal user interface, or TUI, adds richer interactive screens while still running in the terminal. AI coding agents use large language models to help write, edit, review, or plan code changes, and many teams are competing to make these agents fit naturally into existing developer workflows. Open-sourcing such a tool means others can read the code, build from source, remove or change behavior, and create privacy-focused or multi-provider forks.",
+      "detail_url": "/data/news-detail/2026-07-16-en-02-xai-open-sources-grok-build-300d7fa7.json",
+      "html_url": "/daily/2026-07-16-en.html#item-2",
+      "audio_url": "",
+      "tags": [
+        "open-source",
+        "AI-tools",
+        "developer-tools",
+        "privacy",
+        "xAI"
+      ]
+    },
+    {
+      "id": "2026-07-16-en-03-custom-buttons-recreate-the-browser-437de94a",
+      "date": "2026-07-16",
+      "lang": "en",
+      "title": "Custom buttons recreate the browser.",
+      "category": "accessibility",
+      "source": "hackernews",
+      "source_tier": "B",
+      "summary": "Mad Campos published an article arguing that creating a button from scratch means reimplementing a large amount of native browser behavior, especially accessibility behavior. The piece uses a satirical framing to show how much functionality developers lose when they replace a real HTML button with a custom element. This matters because custom UI components are common in modern frontend development, but small mistakes can make interfaces unusable for keyboard users and people relying on assistive technologies. The article reinforces a broader accessibility lesson: native HTML controls often provide correctness and compatibility that are difficult to reproduce reliably. MDN notes that adding role=\"button\" to another element only exposes it as a button to assistive technology; it does not automatically provide native click behavior, keyboard handling, or focus behavior. A technically correct custom button must handle focusability, Enter and Space activation, accessible naming, disabled states, and interaction differences across browsers and assistive technologies.",
+      "manager_takeaway": "HTML includes a native button element that browsers and operating systems already know how to expose to users, keyboards, and accessibility APIs. ARIA can add semantic meaning, such as role=\"button\", but it generally does not add the full behavior of the native element by itself. Accessible names are the labels that assistive technologies use to identify controls, and browsers compute them from visible text, ARIA attributes, and related markup.",
+      "detail_url": "/data/news-detail/2026-07-16-en-03-custom-buttons-recreate-the-browser-437de94a.json",
+      "html_url": "/daily/2026-07-16-en.html#item-3",
+      "audio_url": "",
+      "tags": [
+        "accessibility",
+        "web-development",
+        "ui-components",
+        "html",
+        "frontend"
+      ]
+    },
+    {
+      "id": "2026-07-16-en-04-open-source-ai-needs-public-investment-061389a7",
+      "date": "2026-07-16",
+      "lang": "en",
+      "title": "Open-source AI needs public investment.",
+      "category": "open-source-ai",
+      "source": "hackernews",
+      "source_tier": "B",
+      "summary": "A Fortune-linked PDF by David Siegel argues that governments, companies, and nonprofits should invest more heavily in free and open-source AI. The piece frames open AI as public-interest infrastructure that needs funding beyond private frontier labs. If open-source AI receives sustained funding, more researchers, startups, public institutions, and individuals could access capable models without depending entirely on closed commercial providers. The argument also connects to competition policy, public-interest technology, and the question of who controls the most important AI capabilities. The discussion distinguishes between ordinary free and open-source software and frontier AI development, where model training can require large-scale compute, paid research teams, data pipelines, and evaluation infrastructure. Commenters also raised targeted inducement prizes, public research programs, and open-weight models as possible funding or governance mechanisms.",
+      "manager_takeaway": "Free and open-source software usually means software whose source code can be inspected, modified, and redistributed under permissive or reciprocal licenses. In AI, “open source” can be more complicated because a useful system may include model code, training data, learned weights, evaluation methods, and deployment tooling. Open-weight models make model parameters available, but they may not provide all training data or code needed to fully reproduce the model. Frontier AI refers to highly capable, cutting-edge systems whose development can be expensive because training and evaluation often require specialized hardware and large research teams.",
+      "detail_url": "/data/news-detail/2026-07-16-en-04-open-source-ai-needs-public-investment-061389a7.json",
+      "html_url": "/daily/2026-07-16-en.html#item-4",
+      "audio_url": "",
+      "tags": [
+        "open-source-ai",
+        "ai-policy",
+        "ai-funding",
+        "public-interest-technology",
+        "ai-governance"
+      ]
+    },
+    {
+      "id": "2026-07-16-en-05-originblame-tracks-ai-dataset-provenance-bc1b9f9d",
+      "date": "2026-07-16",
+      "lang": "en",
+      "title": "OriginBlame tracks AI dataset provenance.",
+      "category": "AI data provenance",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "A new arXiv paper introduces OriginBlame, or ob, a provenance system that propagates author identity through AI dataset processing pipelines at record and token level. In an evaluation on 219,555 Wikipedia pages, it reduced over-deletion from 101x to 1.3x and produced forget sets that improved unlearning by 42% over random baselines on a 1.7B-parameter model. The work addresses a practical bottleneck in AI data governance: when an author asks for removal, trainers need to know exactly which training examples or tokens correspond to that person. More precise provenance could reduce unnecessary data deletion while making machine unlearning workflows more actionable for model builders handling privacy, licensing, or contributor revocation requests. The paper reports modest but nonzero integration overhead: 1.3–4.0% throughput overhead with HuggingFace pipelines and 2.1–19.0% with Datatrove on wiki data. The results are promising but should be treated as early evidence because this is an initial arXiv release evaluated on specific Wikipedia-based pipelines and a 1.7B model, not yet a broadly validated production standard.",
+      "manager_takeaway": "Data provenance means tracking where data came from and how it changed as it moved through processing steps. In AI training, that lineage becomes difficult because large language model datasets may combine many sources and pass through extraction, filtering, deduplication, and tokenization before training. Machine unlearning is the effort to remove the influence of selected training data from a trained model, and many unlearning methods assume that the unwanted data can be identified as a concrete forget set. Datatrove is a Hugging Face project that provides customizable pipeline blocks for large-scale dataset processing, which is the type of pipeline where fine-grained provenance can matter.",
+      "detail_url": "/data/news-detail/2026-07-16-en-05-originblame-tracks-ai-dataset-provenance-bc1b9f9d.json",
+      "html_url": "/daily/2026-07-16-en.html#item-5",
+      "audio_url": "",
+      "tags": [
+        "AI data provenance",
+        "machine unlearning",
+        "dataset governance",
+        "LLM training",
+        "privacy"
+      ]
+    },
+    {
+      "id": "2026-07-16-en-06-a-new-survey-maps-self-improving-agentic-cae1e949",
+      "date": "2026-07-16",
+      "lang": "en",
+      "title": "A new survey maps self-improving agentic systems.",
+      "category": "AI agents",
+      "source": "rss",
+      "source_tier": "S",
+      "summary": "The arXiv paper “Self-Improvements in Modern Agentic Systems: A Survey” was posted as version 2607.13104v1 and surveys self-improving autonomous agents. It introduces a framework that models an agent as a foundation model plus an operational scaffold of prompts, memory, tools, and control logic, then classifies self-induced updates by their targets and driving signals. The survey is useful because self-improving agents are moving from prototypes toward deployed systems, where uncontrolled adaptation can affect reliability, safety, and evaluation. Its taxonomy gives AI researchers and practitioners a common language for comparing model updates, scaffold changes, feedback signals, applications, and open problems. A central distinction in the paper is whether improvement changes model parameters or scaffold components such as prompts, memory, tools, and control logic. The paper frames self-improvement as a self-induced update operator, emphasizing controllable accumulated capability gains rather than one-off prompting tricks.",
+      "manager_takeaway": "In modern agentic AI systems, an LLM is often not used alone; it is wrapped in scaffolding that handles planning, memory, tool use, workflows, and orchestration. This scaffolding helps turn a prompt-response model into a more goal-directed system that can act across multiple steps. Self-improving LLM agents extend this idea by using experience, feedback, uncertainty, or task outcomes to modify either the model or the surrounding agent system over time.",
+      "detail_url": "/data/news-detail/2026-07-16-en-06-a-new-survey-maps-self-improving-agentic-cae1e949.json",
+      "html_url": "/daily/2026-07-16-en.html#item-6",
+      "audio_url": "",
+      "tags": [
+        "AI agents",
+        "self-improvement",
+        "LLMs",
+        "survey",
+        "agentic systems"
+      ]
+    }
+  ]
+}

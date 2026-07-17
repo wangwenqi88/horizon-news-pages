@@ -1,0 +1,32 @@
+{
+  "id": "2026-07-16-en-01-thinking-machines-releases-inkling-as-an-9cac7fb0",
+  "date": "2026-07-16",
+  "lang": "en",
+  "title": "Thinking Machines releases Inkling as an open-weights multimodal model.",
+  "source": "hackernews",
+  "source_url": "https://thinkingmachines.ai/news/introducing-inkling/",
+  "source_tier": "B",
+  "published_at": "2026-07-16",
+  "category": "AI",
+  "summary": "Thinking Machines introduced Inkling, its first public open-weights general-purpose multimodal model, on July 15, 2026. The model accepts text, image, and audio inputs, generates text outputs, and is positioned as a customizable base model rather than the strongest overall model. Inkling gives researchers, developers, and enterprises another path to build specialized AI systems with local or self-controlled weights, especially for workflows that need audio and multimodal inputs. Its connection to Tinker also points to a business model where companies can fine-tune open-weight base models for narrow tasks instead of relying only on closed frontier APIs. According to the available model information, Inkling is a mixture-of-experts model with 975 billion total parameters and about 41 billion active parameters per task. Thinking Machines says the model is distributed in two checkpoint formats, while community members are already pointing to local-inference efforts such as llama.cpp branches and GGUF/NVFP4 conversions.",
+  "what_happened": "Thinking Machines introduced Inkling, its first public open-weights general-purpose multimodal model, on July 15, 2026. The model accepts text, image, and audio inputs, generates text outputs, and is positioned as a customizable base model rather than the strongest overall model. Inkling gives researchers, developers, and enterprises another path to build specialized AI systems with local or self-controlled weights, especially for workflows that need audio and multimodal inputs. Its connection to Tinker also points to a business model where companies can fine-tune open-weight base models for narrow tasks instead of relying only on closed frontier APIs. According to the available model information, Inkling is a mixture-of-experts model with 975 billion total parameters and about 41 billion active parameters per task. Thinking Machines says the model is distributed in two checkpoint formats, while community members are already pointing to local-inference efforts such as llama.cpp branches and GGUF/NVFP4 conversions.",
+  "why_it_matters": "An open-weights model releases the trained parameters so users can run or adapt the model more directly, even though it is not always equivalent to fully open-source training code and data. A multimodal model can process more than one kind of input, and Inkling specifically supports text, images, and audio as inputs. Tinker is Thinking Machines’ API for fine-tuning open-source models efficiently with LoRA, a technique that adapts models by training smaller additional parameter matrices instead of updating every weight.",
+  "manager_takeaway": "An open-weights model releases the trained parameters so users can run or adapt the model more directly, even though it is not always equivalent to fully open-source training code and data. A multimodal model can process more than one kind of input, and Inkling specifically supports text, images, and audio as inputs. Tinker is Thinking Machines’ API for fine-tuning open-source models efficiently with LoRA, a technique that adapts models by training smaller additional parameter matrices instead of updating every weight.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI, open-weights.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The Hacker News discussion is broadly positive but pragmatic: commenters like the open-weights release, audio support, and the possibility of local inference, while asking how strong the audio capability really is. Several commenters frame Inkling as a potential U.S. answer to open Chinese models such as DeepSeek or Z.ai, and others see Tinker-based fine-tuning as a compelling enterprise business model. There is also discussion about how complex modern model development has become, with many separate optimization and evaluation steps beyond simple architecture or loss-function changes."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-16-en.html#item-1",
+  "tags": [
+    "AI",
+    "open-weights",
+    "multimodal-models",
+    "fine-tuning",
+    "LLMs"
+  ]
+}

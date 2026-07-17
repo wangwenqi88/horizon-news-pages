@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-17-en-02-google-ai-mode-adds-app-interactions-3e4b01a8",
+  "date": "2026-07-17",
+  "lang": "en",
+  "title": "Google AI Mode adds app interactions.",
+  "source": "rss",
+  "source_url": "https://techcrunch.com/2026/07/16/googles-ai-mode-now-lets-you-link-and-interact-with-select-apps/",
+  "source_tier": "A",
+  "published_at": "2026-07-17",
+  "category": "AI assistants",
+  "summary": "On July 16, 2026, Google expanded AI Mode so users can link and interact with select apps. The update moves AI Mode beyond answering questions toward helping users complete tasks inside apps they use regularly. This is significant because it reflects a broader shift in AI assistants from conversational search tools to agentic systems that can act across services. If widely adopted, it could make Google’s assistant experience more useful for consumers and more strategically important for app ecosystems connected to Google Search. The announcement says the feature works with select apps, but the provided information does not name those apps or describe the permission model, supported actions, or rollout scope. A key caveat is that task-completion features depend heavily on app integrations, user consent, reliability, and safeguards against unintended actions.",
+  "what_happened": "On July 16, 2026, Google expanded AI Mode so users can link and interact with select apps. The update moves AI Mode beyond answering questions toward helping users complete tasks inside apps they use regularly. This is significant because it reflects a broader shift in AI assistants from conversational search tools to agentic systems that can act across services. If widely adopted, it could make Google’s assistant experience more useful for consumers and more strategically important for app ecosystems connected to Google Search. The announcement says the feature works with select apps, but the provided information does not name those apps or describe the permission model, supported actions, or rollout scope. A key caveat is that task-completion features depend heavily on app integrations, user consent, reliability, and safeguards against unintended actions.",
+  "why_it_matters": "Google describes AI Mode as a way to ask open-ended questions, receive AI-powered responses, and continue exploring with follow-up questions and useful web links. Earlier descriptions of AI Mode positioned it primarily as an AI-enhanced search experience, including availability through Search Labs for some Google One AI Premium subscribers in the United States. The new app-linking capability suggests a step beyond information retrieval into agentic AI, where the system is expected to coordinate actions rather than only generate answers.",
+  "manager_takeaway": "Google describes AI Mode as a way to ask open-ended questions, receive AI-powered responses, and continue exploring with follow-up questions and useful web links. Earlier descriptions of AI Mode positioned it primarily as an AI-enhanced search experience, including availability through Search Labs for some Google One AI Premium subscribers in the United States. The new app-linking capability suggests a step beyond information retrieval into agentic AI, where the system is expected to coordinate actions rather than only generate answers.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI assistants, Google.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-17-en.html#item-2",
+  "tags": [
+    "AI assistants",
+    "Google",
+    "agentic AI",
+    "consumer apps",
+    "automation"
+  ]
+}

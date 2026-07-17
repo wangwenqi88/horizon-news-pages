@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-17-en-03-originblame-traces-ai-training-data-prov-1a99658d",
+  "date": "2026-07-17",
+  "lang": "en",
+  "title": "OriginBlame traces AI training data provenance.",
+  "source": "rss",
+  "source_url": "https://arxiv.org/abs/2607.13037",
+  "source_tier": "S",
+  "published_at": "2026-07-17",
+  "category": "AI governance",
+  "summary": "A new arXiv paper, OriginBlame, introduces a record- and token-level provenance system that propagates author identity through AI data processing pipelines. It resolves contributor removal requests into precise forget sets for downstream data removal and machine unlearning. The work addresses a practical governance gap: unlearning methods need to know exactly which training examples to remove, but many datasets only track provenance at coarse file or dataset granularity. More precise provenance could reduce unnecessary data deletion and make contributor revocation workflows more feasible for AI model trainers. In an evaluation on 219,555 Wikipedia pages, record-level provenance reduced over-deletion from 101x to 1.3x. The paper reports integration overhead of 1.3–4.0% throughput in HuggingFace pipelines and 2.1–19.0% in Datatrove on wiki data, plus a 42% unlearning improvement over random baselines on a 1.7B-parameter model.",
+  "what_happened": "A new arXiv paper, OriginBlame, introduces a record- and token-level provenance system that propagates author identity through AI data processing pipelines. It resolves contributor removal requests into precise forget sets for downstream data removal and machine unlearning. The work addresses a practical governance gap: unlearning methods need to know exactly which training examples to remove, but many datasets only track provenance at coarse file or dataset granularity. More precise provenance could reduce unnecessary data deletion and make contributor revocation workflows more feasible for AI model trainers. In an evaluation on 219,555 Wikipedia pages, record-level provenance reduced over-deletion from 101x to 1.3x. The paper reports integration overhead of 1.3–4.0% throughput in HuggingFace pipelines and 2.1–19.0% in Datatrove on wiki data, plus a 42% unlearning improvement over random baselines on a 1.7B-parameter model.",
+  "why_it_matters": "Machine unlearning refers to methods for removing the influence of selected training data from an already trained model. A forget set is the subset of training data that should be removed or unlearned, so identifying it accurately is a prerequisite for many unlearning workflows. Data provenance records where data came from and how it changed through processing; OriginBlame focuses on preserving author identity through record- and token-level transformations rather than only at dataset or file level. Datatrove is a HuggingFace project that provides customizable, platform-agnostic pipeline blocks for large-scale data processing.",
+  "manager_takeaway": "Machine unlearning refers to methods for removing the influence of selected training data from an already trained model. A forget set is the subset of training data that should be removed or unlearned, so identifying it accurately is a prerequisite for many unlearning workflows. Data provenance records where data came from and how it changed through processing; OriginBlame focuses on preserving author identity through record- and token-level transformations rather than only at dataset or file level. Datatrove is a HuggingFace project that provides customizable, platform-agnostic pipeline blocks for large-scale data processing.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI governance, data provenance.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-17-en.html#item-3",
+  "tags": [
+    "AI governance",
+    "data provenance",
+    "machine unlearning",
+    "training datasets",
+    "ML systems"
+  ]
+}
