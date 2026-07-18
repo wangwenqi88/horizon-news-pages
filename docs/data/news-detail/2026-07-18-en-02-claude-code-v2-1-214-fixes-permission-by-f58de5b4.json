@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-18-en-02-claude-code-v2-1-214-fixes-permission-by-f58de5b4",
+  "date": "2026-07-18",
+  "lang": "en",
+  "title": "Claude Code v2.1.214 fixes permission bypasses.",
+  "source": "github",
+  "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.214",
+  "source_tier": "S",
+  "published_at": "2026-07-18",
+  "category": "AI tooling",
+  "summary": "Anthropic released Claude Code v2.1.214 with fixes for multiple command and file permission-check vulnerabilities across Bash, Windows PowerShell 5.1, remote sessions, Docker or Podman daemon redirects, and path allow rules. The release also adds EndConversation, long-running tool-call heartbeats, memory-file timestamps, and more OpenTelemetry correlation fields. This matters because Claude Code can execute shell commands and edit files, so permission-check bypasses can turn an AI coding assistant into an unintended way to modify files or run unsafe commands without user approval. Teams using Claude Code in local, Windows, remote, or container-adjacent workflows should update promptly to reduce fail-open behavior. A notable path-rule fix makes single-segment rules such as Edit(src/**) apply only under /src instead of auto-approving writes to nested src/ directories anywhere in the tree. Bash commands longer than 10,000 characters now always prompt, oversized settings files over 2 MiB fail at startup, and several Windows PowerShell issues around stdin, encodings, redirects, and command return codes were corrected.",
+  "what_happened": "Anthropic released Claude Code v2.1.214 with fixes for multiple command and file permission-check vulnerabilities across Bash, Windows PowerShell 5.1, remote sessions, Docker or Podman daemon redirects, and path allow rules. The release also adds EndConversation, long-running tool-call heartbeats, memory-file timestamps, and more OpenTelemetry correlation fields. This matters because Claude Code can execute shell commands and edit files, so permission-check bypasses can turn an AI coding assistant into an unintended way to modify files or run unsafe commands without user approval. Teams using Claude Code in local, Windows, remote, or container-adjacent workflows should update promptly to reduce fail-open behavior. A notable path-rule fix makes single-segment rules such as Edit(src/**) apply only under /src instead of auto-approving writes to nested src/ directories anywhere in the tree. Bash commands longer than 10,000 characters now always prompt, oversized settings files over 2 MiB fail at startup, and several Windows PowerShell issues around stdin, encodings, redirects, and command return codes were corrected.",
+  "why_it_matters": "Claude Code uses permission rules to decide which tools, file paths, and commands can run automatically and which must ask the user first. Shells such as Bash, zsh, and PowerShell have complex parsing rules for redirects, substitutions, and command arguments, so a permission analyzer must match shell behavior closely to avoid approving something different from what the shell will actually execute. OpenTelemetry is a standard observability framework, and the new log attributes are meant to make message-level tracing and tool provenance easier in instrumented deployments.",
+  "manager_takeaway": "Claude Code uses permission rules to decide which tools, file paths, and commands can run automatically and which must ask the user first. Shells such as Bash, zsh, and PowerShell have complex parsing rules for redirects, substitutions, and command arguments, so a permission analyzer must match shell behavior closely to avoid approving something different from what the shell will actually execute. OpenTelemetry is a standard observability framework, and the new log attributes are meant to make message-level tracing and tool provenance easier in instrumented deployments.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI tooling, security.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-18-en.html#item-2",
+  "tags": [
+    "AI tooling",
+    "security",
+    "developer tools",
+    "Claude Code",
+    "release"
+  ]
+}

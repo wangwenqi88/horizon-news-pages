@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizon Summary: 2026-07-18 (ZH)</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="project-name">AI 资讯精读</h1>
+    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  </header>
+  <main class="main-content">
+    <nav class="static-nav">
+      <a href="../index.html">返回首页</a>
+      <a href="2026-07-18-en.html">English</a>
+    </nav>
+    <article class="digest-page" data-lang="zh">
+      <p class="eyebrow">2026-07-18 · ZH</p>
+      <h1>Horizon Summary: 2026-07-18 (ZH)</h1>
+      <blockquote>
+<p>从 11 条内容中筛选出 3 条重要资讯。</p>
+</blockquote>
+<hr>
+<ol>
+<li><a href="#item-1">GPT-5.6 证明声明引发优化理论关注。</a> ⭐️ 8.0/10</li>
+<li><a href="#item-2">Claude Code v2.1.214 修复权限绕过问题。</a> ⭐️ 7.0/10</li>
+<li><a href="#item-3">LG 显示器会触发 Windows 静默安装应用。</a> ⭐️ 7.0/10</li>
+</ol>
+<hr>
+<p><a id="item-1"></a></p>
+<h2><a href="https://old.reddit.com/r/math/comments/1uxj3cy/after_openais_cdc_proof_announcement_gpt56_used_a/">GPT-5.6 证明声明引发优化理论关注。</a> ⭐️ 8.0/10</h2>
+<p>Reddit 和 Hacker News 的讨论声称，GPT-5.6 帮助产出了一项证明，弥合了凸优化复杂性理论中约 30 年的空白。该结果据称涉及凸的 Lipschitz 函数上的优化问题，但目前提供的信息主要来自社区讨论，而不是已经被完全独立核验的正式发表成果。 如果得到核验，这将是 LLM 参与非平凡理论计算机科学研究的一个重要案例，而不只是解决基准测试式的数学题。它也会强化这样一种判断：面向数学的 AI 工具可以帮助研究人员在优化复杂性等专门领域探索证明策略。 一位自称了解该领域的评论者认为，这个猜想比近期与 OpenAI 相关的循环双覆盖猜想更小众，但如果正确，仍然是真实的贡献。同一评论还指出，把定义域限制在球面上可能不是很大的限制，因为有界定义域通常可以通过变量替换来处理。</p>
+<p>hackernews · mbustamanter · 7月18日 13:00 · <a href="https://news.ycombinator.com/item?id=48957779">社区讨论</a></p>
+<p><strong>背景</strong>: 凸优化研究目标函数或可行区域具有凸结构的问题，这类问题通常比一般非凸问题更容易找到全局解。优化复杂性理论关注的是，为了把某一类问题求解到所需精度，需要多少计算步骤、查询次数或其他资源。Lipschitz 函数是变化速率有上界的函数，这一条件可以让最坏情况分析更加明确。大型语言模型正越来越多地被探索为定理证明助手，通常负责提出证明思路，再由形式化工具或人类检查正确性。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf">Convex Optimization</a></li>
+<li><a href="https://arxiv.org/abs/2404.12534">Lean Copilot: Large Language Models as Copilots for Theorem ...</a></li>
+<li><a href="https://aclanthology.org/2024.nlp4science-1.18/">Benchmarking Automated Theorem Proving with Large Language Models</a></li>
+
+</ul>
+</details>
+
+<p><strong>社区讨论</strong>: 社区讨论整体上表现出谨慎的兴趣：有评论者认为该声明如果属实，是一个真实但较专门的数学贡献；也有人讨论 LLM 是否会让低难度或中等难度研究问题不再适合作为人类训练材料。若干评论还把话题扩展到 AI 是否会替代智力劳动，并有人提出，像望月新一关于 abc 猜想的难读证明这类人类难以消化的材料，或许适合由 LLM 辅助分析。</p>
+<p><strong>标签</strong>: <code>#AI for math</code>, <code>#convex optimization</code>, <code>#LLMs</code>, <code>#theoretical computer science</code>, <code>#automated reasoning</code></p>
+<hr>
+<p><a id="item-2"></a></p>
+<h2><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.214">Claude Code v2.1.214 修复权限绕过问题。</a> ⭐️ 7.0/10</h2>
+<p>Anthropic 发布了 Claude Code v2.1.214，修复了 Bash、Windows PowerShell 5.1、远程会话、Docker 或 Podman 守护进程重定向以及路径允许规则中的多项命令和文件权限检查漏洞。该版本还新增了 EndConversation、长时间运行工具调用的心跳提示、内存文件时间戳，以及更多 OpenTelemetry 关联字段。 这很重要，因为 Claude Code 可以执行 shell 命令并编辑文件，权限检查绕过可能让 AI 编程助手在未经用户确认的情况下修改文件或运行不安全命令。使用 Claude Code 进行本地、Windows、远程或容器相关开发流程的团队，应尽快更新以减少默认放行风险。 一个值得注意的路径规则修复是，像 <code>Edit(src/**)</code> 这样的单段规则现在只适用于 <code>&lt;cwd&gt;/src</code> 之下，而不会自动批准目录树任意位置的嵌套 <code>src/</code> 目录写入。超过 10,000 个字符的 Bash 命令现在总是会触发确认提示，超过 2 MiB 的设置文件会在启动时明确失败，多个与 Windows PowerShell 的标准输入、编码、重定向和命令返回码相关的问题也已修复。</p>
+<p>github · ashwin-ant · 7月18日 01:20</p>
+<p><strong>背景</strong>: Claude Code 使用权限规则来决定哪些工具、文件路径和命令可以自动运行，哪些必须先请求用户确认。Bash、zsh 和 PowerShell 等 shell 对重定向、替换和命令参数有复杂的解析规则，因此权限分析器必须尽量贴近 shell 的真实行为，否则可能批准与实际执行内容不同的操作。OpenTelemetry 是一种标准化的可观测性框架，本次新增的日志属性旨在让已接入观测系统的部署更容易进行消息级追踪和工具来源分析。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://code.claude.com/docs/en/permissions">Configure permissions - Claude Code Docs</a></li>
+<li><a href="https://zsh.sourceforge.io/Doc/Release/Expansion.html">14 Expansion (zsh)</a></li>
+<li><a href="https://stackoverflow.com/questions/70375450/not-getting-expected-error-while-trying-to-redirect-an-input-file-descriptor-fro">bash - Not getting expected error while trying to redirect an input file descriptor from output file descriptor - Stack Overflow</a></li>
+
+</ul>
+</details>
+
+<p><strong>标签</strong>: <code>#AI tooling</code>, <code>#security</code>, <code>#developer tools</code>, <code>#Claude Code</code>, <code>#release</code></p>
+<hr>
+<p><a id="item-3"></a></p>
+<h2><a href="https://videocardz.com/newz/lg-monitors-silently-install-software-through-windows-update-without-user-consent">LG 显示器会触发 Windows 静默安装应用。</a> ⭐️ 7.0/10</h2>
+<p>VideoCardz 报道称，部分 LG 显示器可能通过 Windows Update 和设备元数据机制，让 Windows 自动安装 LG 配套软件，而不会弹出明确的用户同意提示。该行为由设备识别触发，例如连接 LG 显示器，而不是用户手动下载 LG 软件。 这件事重要，因为它把常规硬件识别变成了软件安装渠道，引发了隐私、安全和企业终端管理方面的担忧。它也凸显了 Windows 对 OEM 设备元数据以及通过 Microsoft 控制的更新路径分发配套应用的信任程度。 Microsoft 文档说明，制造商可以通过与硬件关联的设备元数据，配置 UWP 设备应用在设备连接时自动安装。社区给出的缓解方法包括通过组策略禁用自动下载制造商应用，或在家庭版 Windows 中通过设备安装设置关闭该选项。</p>
+<p>hackernews · baranul · 7月18日 10:21 · <a href="https://news.ycombinator.com/item?id=48956688">社区讨论</a></p>
+<p><strong>背景</strong>: Windows 设备元数据是用于识别已连接设备的信息，并且可以把该设备关联到驱动程序、图标、服务或配套应用。Microsoft 的 Windows 驱动文档说明，设备制造商可以为外设创建 UWP 设备应用，并将其配置为在设备连接时自动安装。这个机制原本是为了简化硬件设置，但如果非必要的厂商工具在缺少明确同意步骤的情况下出现，就可能让用户感到意外。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/devapps/auto-install-for-uwp-device-apps">Automatic Installation for UWP Device Apps - Windows drivers</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/devapps/step-2--create-device-metadata">Step 2: Create device metadata for your UWP device app</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/devapps/step-1--create-a-uwp-device-app">Step 1 Create a UWP Device App - Windows drivers | Microsoft Learn</a></li>
+
+</ul>
+</details>
+
+<p><strong>社区讨论</strong>: 社区讨论整体上强烈批评这一做法，许多评论者认为真正的平台问题在于 Windows 允许在识别设备后自动安装第三方软件。也有人分享了通过组策略和设备安装设置进行缓解的具体方法，另一些人强调显示器本身并不会安装软件，实际执行安装的是 Windows 及其设备应用机制。</p>
+<p><strong>标签</strong>: <code>#windows</code>, <code>#security</code>, <code>#privacy</code>, <code>#device-drivers</code>, <code>#endpoint-management</code></p>
+<hr>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

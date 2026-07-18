@@ -1,0 +1,32 @@
+{
+  "id": "2026-07-18-en-01-gpt-5-6-proof-claim-draws-optimization-s-ebbfce54",
+  "date": "2026-07-18",
+  "lang": "en",
+  "title": "GPT-5.6 proof claim draws optimization scrutiny.",
+  "source": "hackernews",
+  "source_url": "https://old.reddit.com/r/math/comments/1uxj3cy/after_openais_cdc_proof_announcement_gpt56_used_a/",
+  "source_tier": "B",
+  "published_at": "2026-07-18",
+  "category": "AI for math",
+  "summary": "A Reddit and Hacker News discussion claims that GPT-5.6 helped produce a proof closing a roughly 30-year gap in the complexity theory of convex optimization. The reported result concerns optimization over convex, Lipschitz functions, but the available item is a community discussion rather than a fully independently verified publication. If verified, this would be a meaningful example of an LLM contributing to nontrivial theoretical computer science rather than only solving benchmark-style math problems. It would also strengthen the case that AI-for-math tools can help researchers explore proof strategies in specialized areas such as optimization complexity. A knowledgeable commenter characterized the conjecture as more niche than the cyclic double cover conjecture recently discussed in connection with OpenAI, but still a real contribution if correct. The same comment notes that restricting the domain to a sphere may not be a major limitation because bounded domains can often be transformed by a change of variables.",
+  "what_happened": "A Reddit and Hacker News discussion claims that GPT-5.6 helped produce a proof closing a roughly 30-year gap in the complexity theory of convex optimization. The reported result concerns optimization over convex, Lipschitz functions, but the available item is a community discussion rather than a fully independently verified publication. If verified, this would be a meaningful example of an LLM contributing to nontrivial theoretical computer science rather than only solving benchmark-style math problems. It would also strengthen the case that AI-for-math tools can help researchers explore proof strategies in specialized areas such as optimization complexity. A knowledgeable commenter characterized the conjecture as more niche than the cyclic double cover conjecture recently discussed in connection with OpenAI, but still a real contribution if correct. The same comment notes that restricting the domain to a sphere may not be a major limitation because bounded domains can often be transformed by a change of variables.",
+  "why_it_matters": "Convex optimization studies problems where the objective or feasible region has convex structure, which often makes global optimization more tractable than in general nonconvex settings. Complexity theory for optimization asks how many computational steps, oracle calls, or other resources are needed to solve a class of problems to a desired accuracy. Lipschitz functions are functions whose rate of change is bounded, a condition that can make worst-case analysis more precise. Large language models are increasingly being explored as assistants for theorem proving, often by suggesting proof ideas while formal tools or humans check correctness.",
+  "manager_takeaway": "Convex optimization studies problems where the objective or feasible region has convex structure, which often makes global optimization more tractable than in general nonconvex settings. Complexity theory for optimization asks how many computational steps, oracle calls, or other resources are needed to solve a class of problems to a desired accuracy. Lipschitz functions are functions whose rate of change is bounded, a condition that can make worst-case analysis more precise. Large language models are increasingly being explored as assistants for theorem proving, often by suggesting proof ideas while formal tools or humans check correctness.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI for math, convex optimization.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The discussion is cautiously intrigued: some commenters see the claim as a real but specialized mathematical contribution, while others debate whether LLMs will make low- or medium-difficulty research problems less suitable for human training. Several comments also broaden the topic into speculation about AI replacing intellectual labor, with at least one commenter asking whether hard-to-read human proofs, such as Mochizuki's claimed abc conjecture proof, might be an ideal target for LLM assistance."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-18-en.html#item-1",
+  "tags": [
+    "AI for math",
+    "convex optimization",
+    "LLMs",
+    "theoretical computer science",
+    "automated reasoning"
+  ]
+}
