@@ -138,6 +138,29 @@ class TestOpenAIClientInit:
 
         assert str(client.client.base_url).rstrip("/") == "http://nas.local:11434/v1"
 
+    def test_custom_provider_uses_configured_base_url(self, monkeypatch):
+        monkeypatch.setenv("HORIZON_AI_API_KEY", "test-key")
+        client = OpenAIClient(_make_config(
+            provider=AIProvider.CUSTOM,
+            model="custom-model",
+            api_key_env="HORIZON_AI_API_KEY",
+            base_url="https://models.example.com/v1",
+        ))
+
+        assert client.provider == "custom"
+        assert str(client.client.base_url).rstrip("/") == "https://models.example.com/v1"
+
+    def test_custom_provider_uses_base_url_from_env(self, monkeypatch):
+        monkeypatch.setenv("HORIZON_AI_API_KEY", "test-key")
+        monkeypatch.setenv("HORIZON_AI_BASE_URL", "https://gateway.example.com/v1")
+        client = OpenAIClient(_make_config(
+            provider=AIProvider.CUSTOM,
+            model="custom-model",
+            api_key_env="HORIZON_AI_API_KEY",
+        ))
+
+        assert str(client.client.base_url).rstrip("/") == "https://gateway.example.com/v1"
+
 
 class TestOpenAIClientComplete:
     def test_basic_completion(self, monkeypatch):
@@ -202,6 +225,23 @@ class TestOpenAIClientComplete:
 
         call_kwargs = mock_create.call_args[1]
         assert call_kwargs.get("response_format") == {"type": "json_object"}
+
+    def test_accepts_raw_string_response_from_custom_gateway(self, monkeypatch):
+        monkeypatch.setenv("HORIZON_AI_API_KEY", "test-key")
+        client = OpenAIClient(_make_config(
+            provider=AIProvider.CUSTOM,
+            model="custom-model",
+            api_key_env="HORIZON_AI_API_KEY",
+            base_url="https://models.example.com/v1",
+        ))
+
+        with patch.object(
+            client.client.chat.completions, "create", new_callable=AsyncMock
+        ) as mock_create:
+            mock_create.return_value = '{"score": 8}'
+            result = asyncio.run(client.complete(system="test", user="hello"))
+
+        assert result == '{"score": 8}'
 
 
 class TestTemperatureFallback:
@@ -337,8 +377,23 @@ class TestFactoryFunction:
         assert isinstance(client, OpenAIClient)
         assert client.provider == "deepseek"
 
+    def test_creates_openai_client_for_custom_provider(self, monkeypatch):
+        monkeypatch.setenv("HORIZON_AI_API_KEY", "test-key")
+        config = _make_config(
+            provider=AIProvider.CUSTOM,
+            model="custom-model",
+            api_key_env="HORIZON_AI_API_KEY",
+            base_url="https://models.example.com/v1",
+        )
+        client = create_ai_client(config)
+        assert isinstance(client, OpenAIClient)
+        assert client.provider == "custom"
+
     def test_minimax_provider_enum(self):
         assert AIProvider.MINIMAX.value == "minimax"
 
     def test_deepseek_provider_enum(self):
         assert AIProvider.DEEPSEEK.value == "deepseek"
+
+    def test_custom_provider_enum(self):
+        assert AIProvider.CUSTOM.value == "custom"

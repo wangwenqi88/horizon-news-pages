@@ -221,6 +221,11 @@ class ContentEnricher:
                 val = result[f"community_discussion_{lang}"]
                 item.metadata[f"community_discussion_{lang}"] = val.get("text") or str(val) if isinstance(val, dict) else str(val)
 
+            for field in ("practical_takeaways", "implementation_notes", "personal_application"):
+                if result.get(f"{field}_{lang}"):
+                    val = result[f"{field}_{lang}"]
+                    item.metadata[f"{field}_{lang}"] = val.get("text") or str(val) if isinstance(val, dict) else str(val)
+
         # Store citation sources — only URLs that actually came from our search results
         if result.get("sources") and available_urls:
             valid = [

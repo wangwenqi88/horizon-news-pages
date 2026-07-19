@@ -124,6 +124,32 @@ def test_generate_summary_zh_uses_localized_selection_header_and_numeric_date():
     assert "Apr 25, 08:00" not in result
 
 
+def test_generate_summary_splits_news_and_practice_sections():
+    summarizer = DailySummarizer()
+    news = _make_item(1)
+    news.metadata["digest_section"] = "first_hand_news"
+    practice = _make_item(2)
+    practice.metadata["digest_section"] = "practice_insight"
+    practice.metadata["practical_takeaways_zh"] = "把复杂任务拆成可验证的步骤。"
+    practice.metadata["implementation_notes_zh"] = "先定义输入输出，再设计回归测试。"
+    practice.metadata["personal_application_zh"] = "可用于 AI 工作流和项目交付复盘。"
+
+    result = _run_async(
+        summarizer.generate_summary(
+            [news, practice],
+            date="2026-04-25",
+            total_fetched=10,
+            language="zh",
+        )
+    )
+
+    assert "## A. 一手资讯速递" in result
+    assert "## B. 实战与专家洞察" in result
+    assert "**可复用方法**: 把复杂任务拆成可验证的步骤。" in result
+    assert "**实操要点**: 先定义输入输出，再设计回归测试。" in result
+    assert "**我可以怎么用**: 可用于 AI 工作流和项目交付复盘。" in result
+
+
 def test_generate_empty_summary_zh_uses_localized_analyzed_line():
     summarizer = DailySummarizer()
 

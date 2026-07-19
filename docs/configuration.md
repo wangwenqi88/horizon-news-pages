@@ -36,6 +36,7 @@ Common API key variable names:
 | Aliyun DashScope | `DASHSCOPE_API_KEY` |
 | Doubao | `DOUBAO_API_KEY` |
 | DeepSeek | `DEEPSEEK_API_KEY` |
+| Custom OpenAI-compatible | `HORIZON_AI_API_KEY` |
 
 **Anthropic Claude**:
 
@@ -193,6 +194,37 @@ By default, AI scoring and enrichment run one item at a time. If your API endpoi
 
 For OpenAI-compatible gateways, Horizon sends `temperature` by default. If a newer reasoning-style model rejects that parameter with an error such as `temperature is deprecated for this model`, Horizon retries once without it and remembers that capability for later requests.
 
+**Custom OpenAI-compatible model gateway**:
+
+Use this for self-hosted gateways, free-model gateways, OpenRouter, SiliconFlow,
+or any provider that exposes an OpenAI-compatible `/v1/chat/completions` API.
+
+```json
+{
+  "ai": {
+    "provider": "custom",
+    "model": "${HORIZON_AI_MODEL}",
+    "base_url": "${HORIZON_AI_BASE_URL}",
+    "api_key_env": "HORIZON_AI_API_KEY",
+    "temperature": 0.3,
+    "max_tokens": 4096,
+    "throttle_sec": 0
+  }
+}
+```
+
+Then set the actual values in `.env`:
+
+```bash
+HORIZON_AI_API_KEY=your-key
+HORIZON_AI_BASE_URL=https://your-openai-compatible-gateway/v1
+HORIZON_AI_MODEL=your-model-name
+```
+
+If `base_url` is omitted from `data/config.json`, Horizon also checks
+`HORIZON_AI_BASE_URL`, `CUSTOM_OPENAI_BASE_URL`, and
+`OPENAI_COMPATIBLE_BASE_URL` in the environment.
+
 ## Information Sources
 
 All sources are configured under the top-level `sources` key in `config.json`.
@@ -243,12 +275,17 @@ All sources are configured under the top-level `sources` key in `config.json`.
         "name": "Blog Name",
         "url": "https://example.com/feed.xml",
         "enabled": true,
-        "category": "ai-ml"
+        "category": "ai-ml",
+        "max_items": 20
       }
     ]
   }
 }
 ```
+
+- `max_items`: Optional per-feed cap after the time-window filter. Useful for
+  high-volume feeds such as arXiv so one source does not consume the whole AI
+  analysis budget.
 
 ### Reddit
 

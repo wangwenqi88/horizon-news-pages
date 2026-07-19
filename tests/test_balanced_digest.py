@@ -31,6 +31,12 @@ def make_item(item_id: str, score: float, category: str | None) -> ContentItem:
     )
 
 
+def make_section_item(item_id: str, score: float, section: str) -> ContentItem:
+    item = make_item(item_id, score, None)
+    item.metadata["digest_section"] = section
+    return item
+
+
 def make_orchestrator(filtering: FilteringConfig) -> HorizonOrchestrator:
     orchestrator = HorizonOrchestrator.__new__(HorizonOrchestrator)
     orchestrator.config = SimpleNamespace(filtering=filtering)
@@ -104,6 +110,37 @@ def test_max_items_works_without_category_groups() -> None:
     assert [item.id for item in result.items] == ["higher"]
 
 
+def test_digest_sections_apply_two_track_quotas() -> None:
+    filtering = FilteringConfig(
+        max_items=20,
+        category_groups={
+            "first_hand_news": CategoryGroupConfig(
+                name="一手资讯速递",
+                limit=15,
+                categories=["first_hand_news"],
+            ),
+            "practice_insight": CategoryGroupConfig(
+                name="实战与专家洞察",
+                limit=5,
+                categories=["practice_insight"],
+            ),
+        },
+        default_group_limit=0,
+    )
+    items = [
+        *[make_section_item(f"news-{i}", 9.0 - i * 0.01, "first_hand_news") for i in range(18)],
+        *[make_section_item(f"practice-{i}", 8.0 - i * 0.01, "practice_insight") for i in range(7)],
+        make_item("uncategorized", 10.0, None),
+    ]
+
+    result = make_orchestrator(filtering).apply_balanced_digest(items)
+
+    assert len(result.items) == 20
+    assert sum(item.metadata.get("digest_section") == "first_hand_news" for item in result.items) == 15
+    assert sum(item.metadata.get("digest_section") == "practice_insight" for item in result.items) == 5
+    assert "uncategorized" not in [item.id for item in result.items]
+
+
 def test_duplicate_category_warns_and_first_group_wins() -> None:
     filtering = FilteringConfig(
         category_groups={
@@ -126,7 +163,6 @@ def test_duplicate_category_warns_and_first_group_wins() -> None:
     "kwargs",
     [
         {"max_items": 0},
-        {"default_group_limit": 0},
         {"category_groups": {"ai": {"limit": 0, "categories": ["ai"]}}},
         {"category_groups": {"ai": {"limit": 1, "categories": []}}},
     ],

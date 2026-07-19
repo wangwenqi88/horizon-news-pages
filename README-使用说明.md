@@ -7,7 +7,7 @@
 
 ## 工作流定位
 
-本项目只负责 **自动采集、AI 初筛、日报生成**。资讯进入知识库后，按以下 Wiki 工作流继续处理：
+本项目负责 **自动采集、AI 初筛、双轨日报生成、HTML 发布**。资讯进入知识库后，按以下 Wiki 工作流继续处理：
 
 - 工作流标准：`G:\ai-workspace\wiki\学习\资讯\AI资讯工作流.md`
 - 信源清单：`G:\ai-workspace\wiki\学习\资讯\AI资讯信源清单.md`
@@ -23,6 +23,18 @@
 | `learning_score` | 是否值得深度学习沉淀，0-5 分 |
 | `domain` | 内容领域，如 AI Agent、AI 工具、Obsidian+AI、开源生态 |
 | `source_tier` | 信源等级：S 原始/官方，A 专业，B 聚合/社区，C 线索 |
+| `digest_section` | 日报栏目：`first_hand_news` 一手资讯 / `practice_insight` 实战与专家洞察 |
+| `practice_score` | 是否有实操价值，0-10 分 |
+| `expert_score` | 是否有专家观点价值，0-10 分 |
+
+## 日报结构
+
+日报固定分为两部分：
+
+| 栏目 | 数量 | 内容要求 |
+|:-----|---:|:---------|
+| A. 一手资讯速递 | 15 条 | 官方发布、产品更新、论文、Release、行业动态；短而准，保留原文链接和 AI 观点 |
+| B. 实战与专家洞察 | 5 条 | 实际操作、项目实战、专家观点、工程复盘、AI 发展方向；详而可用，必须给出可复用方法和实操要点 |
 
 ## 使用方式
 
@@ -79,15 +91,15 @@ GitHub Actions 每天北京时间 08:30 执行一次采集和生成：
 | `ai.model` | 从 `.env` 的 `HORIZON_AI_MODEL` 读取 |
 | `ai.base_url` | 从 `.env` 的 `HORIZON_AI_BASE_URL` 读取 |
 | `ai.api_key_env` | 默认读取 `HORIZON_AI_API_KEY` |
-| `sources.hackernews` | HN Top 10 热门，最低 100 分 |
+| `sources.hackernews` | HN Top 30 热门，最低 80 分 |
 | `sources.reddit` | 当前默认停用，保留 6 个 AI 相关 subreddit 配置 |
-| `sources.rss` | 当前启用 TechCrunch AI、ArXiv ML、OpenAI Blog、智谱AI；其余源保留但停用 |
-| `sources.github` | 10 个热门 AI 仓库 Release |
+| `sources.rss` | 一手资讯源 + Simon Willison、Chip Huyen、Latent Space、Hugging Face、LangChain、LlamaIndex 等实战源 |
+| `sources.github` | 10 个 AI Agent / AI 工程仓库 Release，默认归入实战与专家洞察候选 |
 | `sources.rss[].max_items` | 单个 RSS 源最多进入分析的条数，ArXiv 当前限 5 条 |
 | `filtering.ai_score_threshold` | Horizon 重要性评分阈值，当前为 7 分 |
 | `filtering.time_window_hours` | 每次采集窗口，当前为 24 小时 |
-| `filtering.max_items` | 每期最多进入日报的条目数 |
-| `filtering.category_groups` | 按“深度学习优先 / 选题优先 / 工具观察”做配额 |
+| `filtering.max_items` | 每期最多 20 条 |
+| `filtering.category_groups` | 按“一手资讯速递 15 条 / 实战与专家洞察 5 条”做配额 |
 
 ## 信息源覆盖
 

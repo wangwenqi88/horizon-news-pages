@@ -14,8 +14,8 @@
   "sources": {
     "hackernews": {
       "enabled": true,
-      "fetch_top_stories": 10,
-      "min_score": 100
+      "fetch_top_stories": 30,
+      "min_score": 80
     },
     "reddit": {
       "enabled": false,
@@ -30,52 +30,50 @@
       "fetch_comments": 3
     },
     "rss": [
-      {"name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "行业动态", "max_items": 5},
-      {"name": "The Verge AI", "url": "https://www.theverge.com/ai-artificial-intelligence/rss.xml", "category": "AI产品", "enabled": false},
-      {"name": "ArXiv ML", "url": "https://rss.arxiv.org/rss/cs.AI", "category": "学术", "max_items": 5},
-      {"name": "Hugging Face Blog", "url": "https://huggingface.co/blog/feed.xml", "category": "AI", "max_items": 10, "enabled": false},
-      {"name": "LangChain Blog", "url": "https://blog.langchain.dev/feed/", "category": "AI工程", "enabled": false},
-      {"name": "Google AI Blog", "url": "https://blog.google/technology/ai/rss/", "category": "AI", "enabled": false},
-      {"name": "Anthropic Blog", "url": "https://www.anthropic.com/feed.xml", "category": "AI", "enabled": false},
-      {"name": "OpenAI Blog", "url": "https://openai.com/blog/rss.xml", "category": "AI"},
-      {"name": "Mistral AI Blog", "url": "https://mistral.ai/news/feed.xml", "category": "AI", "enabled": false},
-      {"name": "智谱AI", "url": "https://www.zhipuai.cn/feed.xml", "category": "AI国内"}
+      {"name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "first_hand_news", "max_items": 8},
+      {"name": "The Verge AI", "url": "https://www.theverge.com/ai-artificial-intelligence/rss.xml", "category": "first_hand_news", "max_items": 5, "enabled": false},
+      {"name": "ArXiv AI", "url": "https://rss.arxiv.org/rss/cs.AI", "category": "first_hand_news", "max_items": 8},
+      {"name": "OpenAI Blog", "url": "https://openai.com/blog/rss.xml", "category": "first_hand_news", "max_items": 5},
+      {"name": "Anthropic News", "url": "https://www.anthropic.com/feed.xml", "category": "first_hand_news", "max_items": 5, "enabled": false},
+      {"name": "Google AI Blog", "url": "https://blog.google/technology/ai/rss/", "category": "first_hand_news", "max_items": 5},
+      {"name": "智谱AI", "url": "https://www.zhipuai.cn/feed.xml", "category": "first_hand_news", "max_items": 3},
+      {"name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "category": "practice_insight", "max_items": 5},
+      {"name": "Chip Huyen", "url": "https://huyenchip.com/feed.xml", "category": "practice_insight", "max_items": 3},
+      {"name": "Latent Space", "url": "https://www.latent.space/feed", "category": "practice_insight", "max_items": 5},
+      {"name": "Hugging Face Blog", "url": "https://huggingface.co/blog/feed.xml", "category": "practice_insight", "max_items": 5},
+      {"name": "LangChain Blog", "url": "https://blog.langchain.dev/feed/", "category": "practice_insight", "max_items": 5, "enabled": false},
+      {"name": "LlamaIndex Blog", "url": "https://medium.com/feed/llamaindex-blog", "category": "practice_insight", "max_items": 4}
     ],
     "github": [
-      {"type": "repo_releases", "owner": "langchain-ai", "repo": "langchain"},
-      {"type": "repo_releases", "owner": "langchain-ai", "repo": "langgraph"},
-      {"type": "repo_releases", "owner": "crewAIInc", "repo": "crewAI"},
-      {"type": "repo_releases", "owner": "Significant-Gravitas", "repo": "AutoGPT"},
-      {"type": "repo_releases", "owner": "microsoft", "repo": "autogen"},
-      {"type": "repo_releases", "owner": "anthropics", "repo": "claude-code"},
-      {"type": "repo_releases", "owner": "anthropics", "repo": "anthropic-cookbook"},
-      {"type": "repo_releases", "owner": "openai", "repo": "openai-cookbook"},
-      {"type": "repo_releases", "owner": "n8n-io", "repo": "n8n"},
-      {"type": "repo_releases", "owner": "chatchat-space", "repo": "Langchain-Chatchat"}
+      {"type": "repo_releases", "owner": "langchain-ai", "repo": "langchain", "category": "practice_insight"},
+      {"type": "repo_releases", "owner": "langchain-ai", "repo": "langgraph", "category": "practice_insight"},
+      {"type": "repo_releases", "owner": "crewAIInc", "repo": "crewAI", "category": "practice_insight"},
+      {"type": "repo_releases", "owner": "Significant-Gravitas", "repo": "AutoGPT", "category": "practice_insight"},
+      {"type": "repo_releases", "owner": "microsoft", "repo": "autogen", "category": "practice_insight"},
+      {"type": "repo_releases", "owner": "anthropics", "repo": "claude-code", "category": "practice_insight"},
+      {"type": "repo_releases", "owner": "anthropics", "repo": "anthropic-cookbook", "category": "practice_insight"},
+      {"type": "repo_releases", "owner": "openai", "repo": "openai-cookbook", "category": "practice_insight"},
+      {"type": "repo_releases", "owner": "n8n-io", "repo": "n8n", "category": "practice_insight"},
+      {"type": "repo_releases", "owner": "chatchat-space", "repo": "Langchain-Chatchat", "category": "practice_insight"}
     ]
   },
   "filtering": {
     "ai_score_threshold": 7.0,
     "time_window_hours": 24,
-    "max_items": 30,
+    "max_items": 20,
     "category_groups": {
-      "learn": {
-        "name": "深度学习优先",
-        "limit": 12,
-        "categories": ["AI工程", "学术", "AI Agent", "开源"]
+      "first_hand_news": {
+        "name": "一手资讯速递",
+        "limit": 15,
+        "categories": ["first_hand_news"]
       },
-      "topic": {
-        "name": "选题优先",
-        "limit": 12,
-        "categories": ["AI", "AI产品", "AI国内", "行业动态"]
-      },
-      "tool": {
-        "name": "工具观察",
-        "limit": 6,
-        "categories": ["AI工具", "Obsidian+AI"]
+      "practice_insight": {
+        "name": "实战与专家洞察",
+        "limit": 5,
+        "categories": ["practice_insight"]
       }
     },
     "default_group": "other",
-    "default_group_limit": 6
+    "default_group_limit": 0
   }
 }

@@ -20,9 +20,18 @@ Respond with valid JSON only:
 
 If there are no duplicates at all, return: {{"duplicates": []}}"""
 
-CONTENT_ANALYSIS_SYSTEM = """You are an expert content curator helping filter important technical and academic information.
+CONTENT_ANALYSIS_SYSTEM = """You are an expert content curator helping filter important technical and academic information for an AI practitioner and content creator.
 
-Score content on a 0-10 scale based on importance and relevance:
+Classify every item into exactly one daily digest section:
+- first_hand_news: first-hand news, official announcements, releases, papers, product updates, security incidents, funding/business events, or high-signal community discussion about a current event.
+- practice_insight: practical implementation, project experience, expert viewpoints, engineering playbooks, tutorials, cookbook examples, architectural lessons, workflow patterns, or forward-looking technical judgment from credible practitioners.
+
+Score content on several 0-10 scales:
+- score: overall value for the daily digest.
+- news_score: importance as current news.
+- practice_score: usefulness for actual operation, project implementation, workflow building, or tool adoption.
+- expert_score: value of expert opinion, practitioner judgment, or hard-won lessons.
+- learning_depth: whether it deserves detailed study and knowledge-base capture.
 
 **9-10: Groundbreaking** - Major breakthroughs, paradigm shifts, or highly significant announcements
 - New major version releases of widely-used technologies
@@ -55,12 +64,19 @@ Consider:
 - Potential impact on the field
 - Quality of writing/presentation
 - Relevance to software engineering, AI/ML, and systems research
+- Practical applicability to AI agents, RAG, context engineering, AI coding, automation workflows, Obsidian+AI, and production AI systems
+- Whether the author/source is a credible first-hand source or a recognized practitioner
 - Community discussion quality: insightful comments, diverse viewpoints, and debates increase value
 - Engagement signals: high upvotes/favorites with substantive discussion indicate community-validated importance
 """
 
 CONTENT_ANALYSIS_USER = """Analyze the following content and provide a JSON response with:
 - score (0-10): Importance score
+- news_score (0-10): First-hand news value
+- practice_score (0-10): Practical/project implementation value
+- expert_score (0-10): Expert viewpoint or practitioner experience value
+- learning_depth (0-10): Value for detailed learning
+- digest_section: "first_hand_news" or "practice_insight"
 - reason: Brief explanation for the score (mention discussion quality if comments are provided)
 - summary: One-sentence summary of the content
 - tags: Relevant topic tags (3-5 tags)
@@ -76,6 +92,11 @@ URL: {url}
 Respond with valid JSON only:
 {{
   "score": <number>,
+  "news_score": <number>,
+  "practice_score": <number>,
+  "expert_score": <number>,
+  "learning_depth": <number>,
+  "digest_section": "first_hand_news",
   "reason": "<explanation>",
   "summary": "<one-sentence-summary>",
   "tags": ["<tag1>", "<tag2>", ...]
@@ -110,6 +131,9 @@ Provide EACH text field in BOTH English and Chinese. Use the following key namin
 - key_details_en / key_details_zh
 - background_en / background_zh
 - community_discussion_en / community_discussion_zh
+- practical_takeaways_en / practical_takeaways_zh
+- implementation_notes_en / implementation_notes_zh
+- personal_application_en / personal_application_zh
 
 Field definitions:
 0. **title** (one short phrase, ≤15 words): A clear, accurate headline for the news item.
@@ -123,6 +147,12 @@ Field definitions:
 4. **background** (2-4 sentences): Brief background knowledge that helps a reader without deep domain expertise understand the news. Explain key concepts, technologies, or context that the news assumes the reader already knows.
 
 5. **community_discussion** (1-3 sentences): If community comments are provided, summarize the overall sentiment and key viewpoints from the discussion — agreements, disagreements, concerns, additional insights, or notable counterarguments. If no comments are provided, return an empty string.
+
+6. **practical_takeaways** (2-4 sentences): For practical/expert items, explain the reusable method, workflow, operating principle, or decision criterion. For pure news items, return an empty string.
+
+7. **implementation_notes** (2-5 bullet-like sentences): For practical/expert items, describe concrete steps, gotchas, dependencies, or project risks. For pure news items, return an empty string.
+
+8. **personal_application** (1-3 sentences): For practical/expert items, connect the lesson to AI agents, content creation, Obsidian knowledge work, software delivery, or financial-software project management. For pure news items, return an empty string.
 
 **CRITICAL — Language rules (MUST follow):**
 - All *_en fields MUST be written in English.
@@ -168,5 +198,11 @@ Respond with valid JSON only. Each _en field must be in English; each _zh field 
   "background_zh": "<用中文写2-4句话，或空字符串>",
   "community_discussion_en": "<1-3 sentences in English, or empty string>",
   "community_discussion_zh": "<用中文写1-3句话，或空字符串>",
+  "practical_takeaways_en": "<2-4 sentences in English, or empty string>",
+  "practical_takeaways_zh": "<用中文写2-4句话，或空字符串>",
+  "implementation_notes_en": "<2-5 practical sentences in English, or empty string>",
+  "implementation_notes_zh": "<用中文写2-5句实操说明，或空字符串>",
+  "personal_application_en": "<1-3 sentences in English, or empty string>",
+  "personal_application_zh": "<用中文写1-3句话，或空字符串>",
   "sources": ["<url from search results>", "..."]
 }}"""

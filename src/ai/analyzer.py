@@ -160,3 +160,25 @@ class ContentAnalyzer:
         item.ai_reason = result.get("reason", "")
         item.ai_summary = result.get("summary", item.title)
         item.ai_tags = result.get("tags", [])
+
+        metadata = item.metadata
+        for key in ("news_score", "practice_score", "expert_score", "learning_depth"):
+            try:
+                metadata[key] = float(result.get(key, 0))
+            except (TypeError, ValueError):
+                metadata[key] = 0.0
+
+        section = str(result.get("digest_section") or "").strip()
+        if section not in {"first_hand_news", "practice_insight"}:
+            practice_signal = max(metadata["practice_score"], metadata["expert_score"])
+            section = "practice_insight" if practice_signal >= metadata["news_score"] else "first_hand_news"
+        metadata["digest_section"] = section
+
+        # Let strong practical/expert pieces pass the legacy importance filter
+        # even when they are not breaking news.
+        item.ai_score = max(
+            item.ai_score,
+            metadata["practice_score"],
+            metadata["expert_score"],
+            metadata["learning_depth"],
+        )

@@ -25,6 +25,12 @@ LABELS = {
         "discussion": "Discussion",
         "references": "References",
         "tags": "Tags",
+        "first_hand_news": "A. First-Hand News",
+        "practice_insight": "B. Practice & Expert Insights",
+        "practical_takeaways": "Practical Takeaways",
+        "implementation_notes": "Implementation Notes",
+        "personal_application": "How I Can Use This",
+        "ai_view": "AI View",
         "selected_items": "From {total} items, {selected} important content pieces were selected",
         "empty_analyzed": "Analyzed {total} items, but none met the importance threshold.",
         "empty_body": (
@@ -45,6 +51,12 @@ LABELS = {
         "discussion": "社区讨论",
         "references": "参考链接",
         "tags": "标签",
+        "first_hand_news": "A. 一手资讯速递",
+        "practice_insight": "B. 实战与专家洞察",
+        "practical_takeaways": "可复用方法",
+        "implementation_notes": "实操要点",
+        "personal_application": "我可以怎么用",
+        "ai_view": "AI 观点",
         "selected_items": "从 {total} 条内容中筛选出 {selected} 条重要资讯。",
         "empty_analyzed": "已分析 {total} 条内容，但没有达到重要性阈值的条目。",
         "empty_body": (
@@ -98,18 +110,48 @@ class DailySummarizer:
             "---\n\n"
         )
 
-        # TOC
-        toc_entries = []
-        for i, item in enumerate(items):
-            _t = item.metadata.get(f"title_{language}") or item.title
-            t = str(_t).replace("[", "(").replace("]", ")")
-            if language == "zh":
-                t = _pangu(t)
-            score = item.ai_score or "?"
-            toc_entries.append(f"{i + 1}. [{t}](#item-{i + 1}) \u2b50\ufe0f {score}/10")
-        toc = "\n".join(toc_entries) + "\n\n---\n\n"
+        news_items, practice_items = self._split_sections(items)
 
-        parts = [self._format_item(item, labels, language, i + 1) for i, item in enumerate(items)]
+        toc_parts = []
+        index = 1
+        for section_key, section_items in (
+            ("first_hand_news", news_items),
+            ("practice_insight", practice_items),
+        ):
+            if not section_items:
+                continue
+            toc_parts.append(f"## {labels[section_key]}")
+            for item in section_items:
+                _t = item.metadata.get(f"title_{language}") or item.title
+                t = str(_t).replace("[", "(").replace("]", ")")
+                if language == "zh":
+                    t = _pangu(t)
+                score = item.ai_score or "?"
+                toc_parts.append(f"{index}. [{t}](#item-{index}) \u2b50\ufe0f {score}/10")
+                index += 1
+            toc_parts.append("")
+        toc = "\n".join(toc_parts).rstrip() + "\n\n---\n\n"
+
+        parts = []
+        index = 1
+        for section_key, section_items in (
+            ("first_hand_news", news_items),
+            ("practice_insight", practice_items),
+        ):
+            if not section_items:
+                continue
+            parts.append(f"## {labels[section_key]}\n\n")
+            for item in section_items:
+                parts.append(
+                    self._format_item(
+                        item,
+                        labels,
+                        language,
+                        index,
+                        detailed=section_key == "practice_insight",
+                    )
+                )
+                index += 1
 
         return header + toc + "".join(parts)
 
@@ -160,7 +202,26 @@ class DailySummarizer:
         prefix = f"第 {index}/{total} 条\n\n" if language == "zh" else f"Item {index}/{total}\n\n"
         return prefix + self._format_item(item, labels, language, index).rstrip("-\n ")
 
-    def _format_item(self, item: ContentItem, labels: dict, language: str, index: int) -> str:
+    @staticmethod
+    def _split_sections(items: List[ContentItem]) -> tuple[List[ContentItem], List[ContentItem]]:
+        news_items: List[ContentItem] = []
+        practice_items: List[ContentItem] = []
+        for item in items:
+            if item.metadata.get("digest_section") == "practice_insight":
+                practice_items.append(item)
+            else:
+                news_items.append(item)
+        return news_items, practice_items
+
+    def _format_item(
+        self,
+        item: ContentItem,
+        labels: dict,
+        language: str,
+        index: int,
+        *,
+        detailed: bool = False,
+    ) -> str:
         """Format a single ContentItem into Markdown."""
         _title = item.metadata.get(f"title_{language}") or item.title
         title = str(_title).replace("[", "(").replace("]", ")")
@@ -180,12 +241,18 @@ class DailySummarizer:
             or meta.get("community_discussion")
             or ""
         )
+        practical_takeaways = meta.get(f"practical_takeaways_{language}") or ""
+        implementation_notes = meta.get(f"implementation_notes_{language}") or ""
+        personal_application = meta.get(f"personal_application_{language}") or ""
 
         if language == "zh":
             title = _pangu(title)
             summary = _pangu(summary)
             background = _pangu(background)
             discussion = _pangu(discussion)
+            practical_takeaways = _pangu(practical_takeaways)
+            implementation_notes = _pangu(implementation_notes)
+            personal_application = _pangu(personal_application)
 
         # Source line with parts joined by " · ", link appended at end
         source_type = item.source_type.value
@@ -225,6 +292,20 @@ class DailySummarizer:
         if background:
             lines.append("")
             lines.append(f"**{labels['background']}**: {background}")
+
+        if detailed:
+            if item.ai_reason:
+                lines.append("")
+                lines.append(f"**{labels['ai_view']}**: {item.ai_reason}")
+            if practical_takeaways:
+                lines.append("")
+                lines.append(f"**{labels['practical_takeaways']}**: {practical_takeaways}")
+            if implementation_notes:
+                lines.append("")
+                lines.append(f"**{labels['implementation_notes']}**: {implementation_notes}")
+            if personal_application:
+                lines.append("")
+                lines.append(f"**{labels['personal_application']}**: {personal_application}")
 
         sources = meta.get("sources") or []
         if sources:

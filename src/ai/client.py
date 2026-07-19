@@ -33,6 +33,7 @@ _DEFAULT_API_KEY_ENVS = {
     AIProvider.DOUBAO: "DOUBAO_API_KEY",
     AIProvider.MINIMAX: "MINIMAX_API_KEY",
     AIProvider.DEEPSEEK: "DEEPSEEK_API_KEY",
+    AIProvider.CUSTOM: "HORIZON_AI_API_KEY",
 }
 
 
@@ -184,6 +185,11 @@ class OpenAIClient(AIClient):
     }
 
     _BASE_URL_ENVS = {
+        "custom": (
+            "HORIZON_AI_BASE_URL",
+            "CUSTOM_OPENAI_BASE_URL",
+            "OPENAI_COMPATIBLE_BASE_URL",
+        ),
         "ollama": (
             "HORIZON_OLLAMA_BASE_URL",
             "OLLAMA_BASE_URL",
@@ -291,6 +297,8 @@ class OpenAIClient(AIClient):
                 input_tokens=getattr(usage, "prompt_tokens", 0),
                 output_tokens=getattr(usage, "completion_tokens", 0),
             )
+        if isinstance(response, str):
+            return response
         return response.choices[0].message.content
 
     async def _do_request(
@@ -529,6 +537,7 @@ def _create_single_client(config: AIConfig) -> AIClient:
         AIProvider.MINIMAX,
         AIProvider.DEEPSEEK,
         AIProvider.OLLAMA,
+        AIProvider.CUSTOM,
     }:
         return OpenAIClient(config)
     else:

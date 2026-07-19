@@ -51,6 +51,7 @@ class AIProvider(str, Enum):
     MINIMAX = "minimax"
     DEEPSEEK = "deepseek"
     OLLAMA = "ollama"
+    CUSTOM = "custom"
 
 
 # Default models and API key env vars for each provider
@@ -91,6 +92,9 @@ AI_PROVIDER_DEFAULTS = {
         "model": "llama3.1",
         "api_key_env": "",
     },
+    AIProvider.CUSTOM: {
+        "api_key_env": "HORIZON_AI_API_KEY",
+    },
 }
 
 
@@ -120,6 +124,7 @@ class GitHubSourceConfig(BaseModel):
     username: Optional[str] = None
     owner: Optional[str] = None
     repo: Optional[str] = None
+    category: Optional[str] = None
     enabled: bool = True
 
 
@@ -138,6 +143,7 @@ class RSSSourceConfig(BaseModel):
     url: HttpUrl
     enabled: bool = True
     category: Optional[str] = None
+    max_items: Optional[int] = Field(default=None, gt=0)
 
 
 class RedditSubredditConfig(BaseModel):
@@ -377,7 +383,7 @@ class FilteringConfig(BaseModel):
     max_items: Optional[int] = Field(default=None, gt=0)
     category_groups: Dict[str, CategoryGroupConfig] = Field(default_factory=dict)
     default_group: str = "other"
-    default_group_limit: Optional[int] = Field(default=None, gt=0)
+    default_group_limit: Optional[int] = Field(default=None, ge=0)
 
 
 class Config(BaseModel):

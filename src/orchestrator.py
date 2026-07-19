@@ -533,12 +533,7 @@ class HorizonOrchestrator:
         default_group = filtering.default_group
 
         for item in sorted_items:
-            category = item.metadata.get("category")
-            group_key = (
-                category_to_group.get(category, default_group)
-                if isinstance(category, str)
-                else default_group
-            )
+            group_key = self._digest_group_key(item, category_to_group, default_group)
 
             if group_key in groups:
                 limit = groups[group_key].limit
@@ -594,6 +589,27 @@ class HorizonOrchestrator:
             group_limits=group_limits,
             duplicate_categories=sorted(set(duplicate_categories)),
         )
+
+    @staticmethod
+    def _digest_group_key(
+        item: ContentItem,
+        category_to_group: Dict[str, str],
+        default_group: str,
+    ) -> str:
+        """Resolve the quota group for an item.
+
+        New daily digests use ``metadata.digest_section`` for the two-track
+        layout. Older configs still work because ``metadata.category`` remains
+        a fallback.
+        """
+        candidates = [
+            item.metadata.get("digest_section"),
+            item.metadata.get("category"),
+        ]
+        for candidate in candidates:
+            if isinstance(candidate, str) and candidate in category_to_group:
+                return category_to_group[candidate]
+        return default_group
 
     async def _expand_twitter_discussion(self, items: List[ContentItem]) -> None:
         """Second-stage: fetch reply text for important Twitter items and re-analyze.

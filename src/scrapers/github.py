@@ -61,7 +61,7 @@ class GitHubScraper(BaseScraper):
                 items.extend(user_items)
             elif source.type == "repo_releases" and source.owner and source.repo:
                 release_items = await self._fetch_repo_releases(
-                    source.owner, source.repo, since
+                    source.owner, source.repo, since, source.category
                 )
                 items.extend(release_items)
 
@@ -172,7 +172,8 @@ class GitHubScraper(BaseScraper):
         self,
         owner: str,
         repo: str,
-        since: datetime
+        since: datetime,
+        category: Optional[str] = None,
     ) -> List[ContentItem]:
         """Fetch releases for a repository.
 
@@ -212,6 +213,7 @@ class GitHubScraper(BaseScraper):
                         "repo": f"{owner}/{repo}",
                         "tag": release["tag_name"],
                         "prerelease": release.get("prerelease", False),
+                        "category": category,
                     }
                 )
                 items.append(item)
