@@ -165,6 +165,127 @@ pre {
   text-decoration: none;
 }
 
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  border: 1px solid var(--hz-border);
+  border-radius: 8px;
+  padding: 1.15rem 1.25rem;
+  background:
+    linear-gradient(120deg, rgba(34, 211, 238, 0.14), transparent 44%),
+    rgba(15, 23, 42, 0.6);
+}
+
+.home-hero .eyebrow,
+.history-panel .eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--hz-green);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.home-hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  line-height: 1.15;
+}
+
+.home-hero p {
+  margin: 0.45rem 0 0;
+  color: var(--hz-text-muted);
+}
+
+.home-stats {
+  min-width: 108px;
+  border: 1px solid rgba(103, 232, 249, 0.18);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  background: rgba(2, 6, 23, 0.34);
+}
+
+.home-stats span {
+  display: block;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.home-stats small {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--hz-text-muted);
+}
+
+.home-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.history-panel {
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+  border: 1px solid var(--hz-border);
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(8, 13, 25, 0.84);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+}
+
+.history-panel h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+.history-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history-list a {
+  display: grid;
+  gap: 0.2rem;
+  border: 1px solid rgba(103, 232, 249, 0.14);
+  border-radius: 8px;
+  padding: 0.72rem;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.history-list a:hover {
+  border-color: var(--hz-border-strong);
+  text-decoration: none;
+}
+
+.history-list span {
+  color: var(--hz-green);
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 0.8rem;
+}
+
+.history-list strong {
+  color: var(--hz-text);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.history-empty {
+  color: var(--hz-text-muted);
+}
+
 .digest-page {
   position: relative;
   overflow: hidden;
@@ -506,6 +627,21 @@ hr + .tracks-layout {
 
   .digest-page {
     padding: 1rem;
+  }
+
+  .home-hero,
+  .home-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .home-stats {
+    width: fit-content;
+  }
+
+  .history-panel {
+    position: static;
+    max-height: none;
+    order: -1;
   }
 
   .tracks-layout {

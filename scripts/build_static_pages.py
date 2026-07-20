@@ -159,8 +159,26 @@ def post_count(posts: list[Post], lang: str) -> int:
     return sum(1 for post in posts if post.lang == lang)
 
 
+def build_history_list(posts: list[Post], latest: Post) -> str:
+    zh_posts = [post for post in posts if post.lang == "zh" and post.output_name != latest.output_name]
+    if not zh_posts:
+        return '<p class="history-empty">暂无历史日报。</p>'
+
+    entries = []
+    for post in zh_posts:
+        entries.append(
+            f"""        <li>
+          <a href="daily/{html.escape(post.output_name)}">
+            <span>{html.escape(post.date)}</span>
+            <strong>{html.escape(post.title)}</strong>
+          </a>
+        </li>"""
+        )
+    return "      <ul class=\"history-list\">\n" + "\n".join(entries) + "\n      </ul>"
+
+
 def build_index(posts: list[Post]) -> str:
-    """Render the latest Chinese digest as the public homepage."""
+    """Render a homepage with today's digest and historical navigation."""
     latest = next((post for post in posts if post.lang == "zh"), None)
     if latest is None and posts:
         latest = posts[0]
@@ -178,14 +196,36 @@ def build_index(posts: list[Post]) -> str:
     if sibling:
         sibling_link = f'<a href="daily/{html.escape(sibling.output_name)}">English</a>'
 
+    history_html = build_history_list(posts, latest)
+    history_count = max(post_count(posts, "zh") - 1, 0)
     body = f"""    <nav class="static-nav">
       {sibling_link}
     </nav>
-    <article class="digest-page" data-lang="{html.escape(latest.lang)}">
-      <p class="eyebrow">{html.escape(latest.date)} · {html.escape(latest.lang.upper())}</p>
-      <h1>{html.escape(latest.title)}</h1>
-      {latest.body_html}
-    </article>
+    <section class="home-hero">
+      <div>
+        <p class="eyebrow">Today · {html.escape(latest.date)}</p>
+        <h1>今日 AI 资讯精读</h1>
+        <p>首页展示当天双轨日报；历史日报可从右侧列表跳转查看。</p>
+      </div>
+      <div class="home-stats">
+        <span>{history_count}</span>
+        <small>历史日报</small>
+      </div>
+    </section>
+    <div class="home-layout">
+      <article class="digest-page" data-lang="{html.escape(latest.lang)}">
+        <p class="eyebrow">{html.escape(latest.date)} · {html.escape(latest.lang.upper())}</p>
+        <h1>{html.escape(latest.title)}</h1>
+        {latest.body_html}
+      </article>
+      <aside class="history-panel" aria-label="历史日报">
+        <div class="history-panel-header">
+          <p class="eyebrow">Archive</p>
+          <h2>历史日报</h2>
+        </div>
+{history_html}
+      </aside>
+    </div>
 """
     return page_shell(latest.title, body, "assets/css/horizon.css", "assets/js/horizon.js")
 
