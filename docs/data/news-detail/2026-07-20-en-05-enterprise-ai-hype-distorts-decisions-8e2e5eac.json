@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-20-en-05-enterprise-ai-hype-distorts-decisions-8e2e5eac",
+  "date": "2026-07-20",
+  "lang": "en",
+  "title": "Enterprise AI Hype Distorts Decisions.",
+  "source": "rss",
+  "source_url": "https://simonwillison.net/2026/Jul/19/ai-mania/#atom-everything",
+  "source_tier": "A",
+  "published_at": "2026-07-20",
+  "category": "AI adoption",
+  "summary": "Simon Willison highlighted Nik Suresh’s critique of AI mania inside large companies, based on anonymous consulting anecdotes about executives, vendors, and engineers. The examples include an executive who had never used ChatGPT drafting an AI-centered strategy for a $2B-plus organization and an engineer using AI-driven rewrite work to satisfy a token leaderboard. The piece matters because it frames enterprise AI adoption as an incentive and governance problem, not just a technology problem. If executives, vendors, and employees are rewarded for visible AI activity rather than validated outcomes, organizations may make expensive strategic and technical decisions on weak evidence. The anecdotes emphasize misaligned incentives: executives avoid contradicting customers’ exaggerated productivity claims because doing so could threaten enterprise contracts. The Go-to-Zig rewrite example is presented not as sound engineering practice, but as a symptom of measuring AI usage through token consumption or leaderboard-style metrics.",
+  "what_happened": "Simon Willison highlighted Nik Suresh’s critique of AI mania inside large companies, based on anonymous consulting anecdotes about executives, vendors, and engineers. The examples include an executive who had never used ChatGPT drafting an AI-centered strategy for a $2B-plus organization and an engineer using AI-driven rewrite work to satisfy a token leaderboard. The piece matters because it frames enterprise AI adoption as an incentive and governance problem, not just a technology problem. If executives, vendors, and employees are rewarded for visible AI activity rather than validated outcomes, organizations may make expensive strategic and technical decisions on weak evidence. The anecdotes emphasize misaligned incentives: executives avoid contradicting customers’ exaggerated productivity claims because doing so could threaten enterprise contracts. The Go-to-Zig rewrite example is presented not as sound engineering practice, but as a symptom of measuring AI usage through token consumption or leaderboard-style metrics.",
+  "why_it_matters": "ChatGPT is a widely used AI tool based on large language models, and many companies are trying to convert such tools into productivity gains. Tokens are the text units that many language-model systems process and bill for, so token counts can become a visible but crude proxy for AI usage. Go is a programming language often used for backend and infrastructure software, while Zig is described by its project as a general-purpose language and toolchain for robust, optimal, and reusable software. A language rewrite can be risky because it changes tooling, operational knowledge, libraries, and maintenance assumptions, even if an AI system can generate large volumes of code.",
+  "manager_takeaway": "ChatGPT is a widely used AI tool based on large language models, and many companies are trying to convert such tools into productivity gains. Tokens are the text units that many language-model systems process and bill for, so token counts can become a visible but crude proxy for AI usage. Go is a programming language often used for backend and infrastructure software, while Zig is described by its project as a general-purpose language and toolchain for robust, optimal, and reusable software. A language rewrite can be risky because it changes tooling, operational knowledge, libraries, and maintenance assumptions, even if an AI system can generate large volumes of code.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI adoption, enterprise AI.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-20-en.html#item-5",
+  "tags": [
+    "AI adoption",
+    "enterprise AI",
+    "AI hype",
+    "organizational decision-making",
+    "practitioner commentary"
+  ]
+}
