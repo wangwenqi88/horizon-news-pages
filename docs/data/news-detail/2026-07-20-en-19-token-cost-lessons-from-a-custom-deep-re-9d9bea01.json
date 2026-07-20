@@ -1,0 +1,32 @@
+{
+  "id": "2026-07-20-en-19-token-cost-lessons-from-a-custom-deep-re-9d9bea01",
+  "date": "2026-07-20",
+  "lang": "en",
+  "title": "Token-cost lessons from a custom deep research pipeline",
+  "source": "hackernews",
+  "source_url": "https://quesma.com/blog/custom-deep-research-pipeline/",
+  "source_tier": "B",
+  "published_at": "2026-07-20",
+  "category": "AI agents",
+  "summary": "Quesma published a practical post about trying to reduce token costs in a custom AI deep research pipeline. The write-up prompted discussion about whether token-saving techniques, model routing, and cheaper preliminary models can make such pipelines economically worthwhile. Deep research agents can consume large amounts of context, intermediate reasoning, search results, and generated reports, so token cost can become a real product constraint. The post is useful for teams building AI workflows because it frames cost optimization as an architectural problem, not just a prompt-writing problem. The discussion highlights model routing as a recurring strategy: send simpler exploration or filtering work to cheaper models, then escalate only the most valuable findings to stronger frontier models. A major caveat is that rules, validators, or secondary models may reduce obvious errors but cannot guarantee “no hallucinations.”",
+  "what_happened": "Quesma published a practical post about trying to reduce token costs in a custom AI deep research pipeline. The write-up prompted discussion about whether token-saving techniques, model routing, and cheaper preliminary models can make such pipelines economically worthwhile. Deep research agents can consume large amounts of context, intermediate reasoning, search results, and generated reports, so token cost can become a real product constraint. The post is useful for teams building AI workflows because it frames cost optimization as an architectural problem, not just a prompt-writing problem. The discussion highlights model routing as a recurring strategy: send simpler exploration or filtering work to cheaper models, then escalate only the most valuable findings to stronger frontier models. A major caveat is that rules, validators, or secondary models may reduce obvious errors but cannot guarantee “no hallucinations.”",
+  "why_it_matters": "A deep research pipeline is an agentic workflow that gathers context, explores sources, develops questions, and synthesizes a report. Search results describe deep research as involving stages such as planning, question development, web exploration, and report generation. LLM model routing is a middleware pattern that chooses which provider or model should handle each request, usually based on cost, latency, quality, or task type. Token optimization techniques include prompt compression, output limits, and pruning irrelevant context before sending requests to a model.",
+  "manager_takeaway": "A deep research pipeline is an agentic workflow that gathers context, explores sources, develops questions, and synthesizes a report. Search results describe deep research as involving stages such as planning, question development, web exploration, and report generation. LLM model routing is a middleware pattern that chooses which provider or model should handle each request, usually based on cost, latency, quality, or task type. Token optimization techniques include prompt compression, output limits, and pruning irrelevant context before sending requests to a model.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI agents, token optimization.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The Hacker News discussion was skeptical but constructive: several commenters questioned whether the pipeline’s cloud AI costs were justified, and one objected to any claim of eliminating hallucinations. Others suggested a practical 80/20 or 90/10 approach, using local or cheaper models for most work and reserving frontier models for the hardest cases."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-20-en.html#item-19",
+  "tags": [
+    "AI agents",
+    "token optimization",
+    "deep research",
+    "LLM workflows",
+    "cost management"
+  ]
+}

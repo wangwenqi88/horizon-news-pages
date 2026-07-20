@@ -1,0 +1,32 @@
+{
+  "id": "2026-07-20-en-18-mikrotik-powers-a-home-router-25f6c275",
+  "date": "2026-07-20",
+  "lang": "en",
+  "title": "MikroTik powers a home router.",
+  "source": "hackernews",
+  "source_url": "https://justsomebody.dev/blog/mikrotik-home-router",
+  "source_tier": "B",
+  "published_at": "2026-07-20",
+  "category": "homelab",
+  "summary": "A hands-on HomeLab post walks through using MikroTik as a home router, and the accompanying discussion adds real-world notes on RouterOS usability, VPN setup, bufferbloat, and alternatives. The item is practical rather than breaking news, but it surfaces current practitioner tradeoffs for self-hosters choosing a home routing platform. MikroTik devices are powerful and flexible for home labs, but that flexibility comes with configuration complexity that can surprise people expecting consumer-router defaults. The discussion matters for network practitioners, self-hosters, and homelab builders deciding between MikroTik, VyOS, OPNsense, or a Linux-based router. Commenters repeatedly highlight that RouterOS can do advanced routing, firewalling, VPN, and switching tasks, but its UI assumes the operator understands networking concepts and MikroTik-specific workflows. Specific pain points mentioned include manual FQ-CoDel and bufferbloat configuration, port forwarding and hairpin NAT, and the need to review services exposed through RouterOS administrative tools.",
+  "what_happened": "A hands-on HomeLab post walks through using MikroTik as a home router, and the accompanying discussion adds real-world notes on RouterOS usability, VPN setup, bufferbloat, and alternatives. The item is practical rather than breaking news, but it surfaces current practitioner tradeoffs for self-hosters choosing a home routing platform. MikroTik devices are powerful and flexible for home labs, but that flexibility comes with configuration complexity that can surprise people expecting consumer-router defaults. The discussion matters for network practitioners, self-hosters, and homelab builders deciding between MikroTik, VyOS, OPNsense, or a Linux-based router. Commenters repeatedly highlight that RouterOS can do advanced routing, firewalling, VPN, and switching tasks, but its UI assumes the operator understands networking concepts and MikroTik-specific workflows. Specific pain points mentioned include manual FQ-CoDel and bufferbloat configuration, port forwarding and hairpin NAT, and the need to review services exposed through RouterOS administrative tools.",
+  "why_it_matters": "MikroTik RouterOS is the operating system used on MikroTik routers and switches, and it exposes many features that consumer routers often hide behind simplified presets. A typical home-router setup needs a WAN interface for the ISP connection, LAN interfaces for internal devices, firewall rules, DHCP, DNS forwarding, and sometimes Wi-Fi or VPN configuration. MikroTik documentation notes that default configurations may include firewall protection on the public interface, but administrators may still need to disable or restrict RouterOS services. In homelab contexts, users often compare dedicated router appliances with virtualized routers such as OPNsense or VyOS on Proxmox, or with a general Linux system using multiple network interfaces.",
+  "manager_takeaway": "MikroTik RouterOS is the operating system used on MikroTik routers and switches, and it exposes many features that consumer routers often hide behind simplified presets. A typical home-router setup needs a WAN interface for the ISP connection, LAN interfaces for internal devices, firewall rules, DHCP, DNS forwarding, and sometimes Wi-Fi or VPN configuration. MikroTik documentation notes that default configurations may include firewall protection on the public interface, but administrators may still need to disable or restrict RouterOS services. In homelab contexts, users often compare dedicated router appliances with virtualized routers such as OPNsense or VyOS on Proxmox, or with a general Linux system using multiple network interfaces.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for homelab, networking.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The discussion is broadly respectful of MikroTik’s power but critical of its user experience for home-router users who are not already comfortable with RouterOS. Some commenters say LLMs now make MikroTik configuration easier, especially for site-to-site VPNs, while others prefer VyOS, OPNsense on Proxmox, or a plain Debian-based Linux router for openness and control. Several comments distinguish between liking MikroTik switches and finding MikroTik routing or Wi-Fi configuration painful."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-20-en.html#item-18",
+  "tags": [
+    "homelab",
+    "networking",
+    "mikrotik",
+    "router-configuration",
+    "self-hosting"
+  ]
+}

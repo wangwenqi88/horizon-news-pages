@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-20-en-13-claude-fable-5-stays-in-subscriptions-0db56749",
+  "date": "2026-07-20",
+  "lang": "en",
+  "title": "Claude Fable 5 stays in subscriptions",
+  "source": "rss",
+  "source_url": "https://simonwillison.net/2026/Jul/18/claude-make-fable-5-permanent/#atom-everything",
+  "source_tier": "A",
+  "published_at": "2026-07-20",
+  "category": "Claude",
+  "summary": "Anthropic said that beginning July 20, Claude Fable 5 will remain included in Claude Max and Team Premium plans, but at 50% of normal limits. Pro and Team Standard users will keep access through usage credits and receive a one-time $100 credit. This reverses a plan to make Anthropic’s best model effectively API-only for subscribers, preserving the value of higher-priced Claude subscriptions. Simon Willison frames the move as a response to competitive pressure from GPT-5.6 Sol and, to a lesser extent, Kimi 3. The cheaper $20-per-month Claude plan still does not include Fable 5; the relevant Max plans cost $100 and $200 per month. Anthropic’s original exclusion plan was reportedly driven by compute-capacity concerns, so reduced limits may be a compromise between subscriber access and GPU availability.",
+  "what_happened": "Anthropic said that beginning July 20, Claude Fable 5 will remain included in Claude Max and Team Premium plans, but at 50% of normal limits. Pro and Team Standard users will keep access through usage credits and receive a one-time $100 credit. This reverses a plan to make Anthropic’s best model effectively API-only for subscribers, preserving the value of higher-priced Claude subscriptions. Simon Willison frames the move as a response to competitive pressure from GPT-5.6 Sol and, to a lesser extent, Kimi 3. The cheaper $20-per-month Claude plan still does not include Fable 5; the relevant Max plans cost $100 and $200 per month. Anthropic’s original exclusion plan was reportedly driven by compute-capacity concerns, so reduced limits may be a compromise between subscriber access and GPU availability.",
+  "why_it_matters": "Claude Fable 5 is described by Anthropic as a model aimed at document-heavy and enterprise workflows, including work with diagrams, charts, tables, files, and PDFs. Platform documentation says Fable 5 includes safety classifiers that can decline requests, which means integrations may need refusal handling, fallback behavior, and updated billing logic. The competitive context matters because OpenAI’s GPT-5.6 Sol is presented as a strong model for coding, science, and cybersecurity, while Kimi K3 is described as a flagship model with a 1M-token context window.",
+  "manager_takeaway": "Claude Fable 5 is described by Anthropic as a model aimed at document-heavy and enterprise workflows, including work with diagrams, charts, tables, files, and PDFs. Platform documentation says Fable 5 includes safety classifiers that can decline requests, which means integrations may need refusal handling, fallback behavior, and updated billing logic. The competitive context matters because OpenAI’s GPT-5.6 Sol is presented as a strong model for coding, science, and cybersecurity, while Kimi K3 is described as a flagship model with a 1M-token context window.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for Claude, Anthropic.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-20-en.html#item-13",
+  "tags": [
+    "Claude",
+    "Anthropic",
+    "AI-models",
+    "pricing",
+    "LLM-products"
+  ]
+}

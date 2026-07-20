@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-20-zh-05-claude-code-v2-1-214-ebe3f5a1",
+  "date": "2026-07-20",
+  "lang": "zh",
+  "title": "Claude Code v2.1.214 修复权限绕过问题。",
+  "source": "github",
+  "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.214",
+  "source_tier": "S",
+  "published_at": "2026-07-20",
+  "category": "claude-code",
+  "summary": "Anthropic 发布了 Claude Code v2.1.214，修复了多项与权限检查、命令自动批准、远程确认提示以及 Windows PowerShell 行为相关的安全问题。该版本还加入了 EndConversation 工具、OpenTelemetry 关联字段、可配置的遥测内容长度限制，以及长时间运行工具调用的进度心跳。 Claude Code 可以在开发者机器上运行 shell 命令并编辑文件，因此权限分析中的错误可能把便利功能变成非预期写入或命令执行路径。对于在代码仓库、远程会话、Windows 环境中使用 AI 编码代理，或依赖自动批准规则的团队来说，这些修复尤其重要。 该版本修复了单段允许规则问题，例如 Edit(src/**) 这类模式曾可能批准写入预期当前工作目录范围之外的嵌套 src/ 目录。它还把多个 shell 分析场景改为保守失败，包括 PowerShell 5.1 绕过、Bash 文件描述符重定向解析不一致、超过 10000 个字符的命令、[[ ]] 中的 zsh 下标或修饰符处理，以及某些 help、man 和 Docker 或 Podman 远程守护进程选项。",
+  "what_happened": "Anthropic 发布了 Claude Code v2.1.214，修复了多项与权限检查、命令自动批准、远程确认提示以及 Windows PowerShell 行为相关的安全问题。该版本还加入了 EndConversation 工具、OpenTelemetry 关联字段、可配置的遥测内容长度限制，以及长时间运行工具调用的进度心跳。 Claude Code 可以在开发者机器上运行 shell 命令并编辑文件，因此权限分析中的错误可能把便利功能变成非预期写入或命令执行路径。对于在代码仓库、远程会话、Windows 环境中使用 AI 编码代理，或依赖自动批准规则的团队来说，这些修复尤其重要。 该版本修复了单段允许规则问题，例如 Edit(src/**) 这类模式曾可能批准写入预期当前工作目录范围之外的嵌套 src/ 目录。它还把多个 shell 分析场景改为保守失败，包括 PowerShell 5.1 绕过、Bash 文件描述符重定向解析不一致、超过 10000 个字符的命令、[[ ]] 中的 zsh 下标或修饰符处理，以及某些 help、man 和 Docker 或 Podman 远程守护进程选项。",
+  "why_it_matters": "Claude Code 使用允许、询问和拒绝等权限规则来决定某个工具操作是否可以自动运行，还是必须先提示用户确认。允许规则可以减少操作阻力，但它依赖于对文件路径、shell 语法和命令选项的准确解释。Bash 重定向和 zsh 展开规则比较微妙，因为 shell 可能会把字符解释为文件描述符、替换、数组下标或修饰符，而不是普通文本。OpenTelemetry 是常见的可观测性框架，因此新增的消息与工具来源属性有助于在日志中关联 Claude Code 事件。",
+  "manager_takeaway": "Claude Code 使用允许、询问和拒绝等权限规则来决定某个工具操作是否可以自动运行，还是必须先提示用户确认。允许规则可以减少操作阻力，但它依赖于对文件路径、shell 语法和命令选项的准确解释。Bash 重定向和 zsh 展开规则比较微妙，因为 shell 可能会把字符解释为文件描述符、替换、数组下标或修饰符，而不是普通文本。OpenTelemetry 是常见的可观测性框架，因此新增的消息与工具来源属性有助于在日志中关联 Claude Code 事件。",
+  "actions": [
+    "判断团队近期是否有和claude-code、security相关的试用场景。",
+    "核对数据安全、权限边界和成本变化。",
+    "如果价值明确，安排一次小范围验证并记录复盘。"
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-20-zh.html#item-5",
+  "tags": [
+    "claude-code",
+    "security",
+    "ai-coding",
+    "developer-tools",
+    "release"
+  ]
+}

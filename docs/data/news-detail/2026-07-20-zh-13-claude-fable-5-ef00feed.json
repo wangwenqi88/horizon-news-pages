@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-20-zh-13-claude-fable-5-ef00feed",
+  "date": "2026-07-20",
+  "lang": "zh",
+  "title": "Claude Fable 5 保留在订阅中",
+  "source": "rss",
+  "source_url": "https://simonwillison.net/2026/Jul/18/claude-make-fable-5-permanent/#atom-everything",
+  "source_tier": "A",
+  "published_at": "2026-07-20",
+  "category": "Claude",
+  "summary": "Anthropic 表示，从 7 月 20 日开始，Claude Fable 5 将继续包含在 Claude Max 和 Team Premium 方案中，但使用额度为正常额度的 50%。Pro 和 Team Standard 用户将继续通过用量点数访问该模型，并获得一次性 100 美元点数。 这扭转了 Anthropic 原本让订阅用户基本只能通过 API 使用其最佳模型的计划，从而保住了高价 Claude 订阅的价值。Simon Willison 将此举解读为对 GPT-5.6 Sol 以及程度较低的 Kimi 3 所带来竞争压力的回应。 较便宜的每月 20 美元 Claude 方案仍不包含 Fable 5；相关的 Max 方案价格为每月 100 美元和 200 美元。Anthropic 原本的排除计划据称源于算力容量压力，因此降低额度可能是在订阅访问和 GPU 可用性之间取得的折中。",
+  "what_happened": "Anthropic 表示，从 7 月 20 日开始，Claude Fable 5 将继续包含在 Claude Max 和 Team Premium 方案中，但使用额度为正常额度的 50%。Pro 和 Team Standard 用户将继续通过用量点数访问该模型，并获得一次性 100 美元点数。 这扭转了 Anthropic 原本让订阅用户基本只能通过 API 使用其最佳模型的计划，从而保住了高价 Claude 订阅的价值。Simon Willison 将此举解读为对 GPT-5.6 Sol 以及程度较低的 Kimi 3 所带来竞争压力的回应。 较便宜的每月 20 美元 Claude 方案仍不包含 Fable 5；相关的 Max 方案价格为每月 100 美元和 200 美元。Anthropic 原本的排除计划据称源于算力容量压力，因此降低额度可能是在订阅访问和 GPU 可用性之间取得的折中。",
+  "why_it_matters": "Claude Fable 5 被 Anthropic 描述为面向文档密集型和企业工作流的模型，可处理图表、表格、文件和 PDF 等内容。平台文档称 Fable 5 包含可能拒绝请求的安全分类器，因此集成方可能需要处理拒绝响应、备用模型回退以及新的计费逻辑。竞争背景很重要，因为 OpenAI 的 GPT-5.6 Sol 被定位为在编程、科学和网络安全方面更强的模型，而 Kimi K3 被描述为具备 100 万 token 上下文窗口的旗舰模型。",
+  "manager_takeaway": "Claude Fable 5 被 Anthropic 描述为面向文档密集型和企业工作流的模型，可处理图表、表格、文件和 PDF 等内容。平台文档称 Fable 5 包含可能拒绝请求的安全分类器，因此集成方可能需要处理拒绝响应、备用模型回退以及新的计费逻辑。竞争背景很重要，因为 OpenAI 的 GPT-5.6 Sol 被定位为在编程、科学和网络安全方面更强的模型，而 Kimi K3 被描述为具备 100 万 token 上下文窗口的旗舰模型。",
+  "actions": [
+    "判断团队近期是否有和Claude、Anthropic相关的试用场景。",
+    "核对数据安全、权限边界和成本变化。",
+    "如果价值明确，安排一次小范围验证并记录复盘。"
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-20-zh.html#item-13",
+  "tags": [
+    "Claude",
+    "Anthropic",
+    "AI-models",
+    "pricing",
+    "LLM-products"
+  ]
+}

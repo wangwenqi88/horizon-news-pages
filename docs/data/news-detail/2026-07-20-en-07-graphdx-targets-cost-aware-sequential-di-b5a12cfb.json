@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-20-en-07-graphdx-targets-cost-aware-sequential-di-b5a12cfb",
+  "date": "2026-07-20",
+  "lang": "en",
+  "title": "GraphDx targets cost-aware sequential diagnosis.",
+  "source": "rss",
+  "source_url": "https://arxiv.org/abs/2607.15280",
+  "source_tier": "S",
+  "published_at": "2026-07-20",
+  "category": "multi-agent-systems",
+  "summary": "A new arXiv paper, GraphDx: A Cost-Aware Knowledge-Enhanced Multi-Agent Framework for Sequential Diagnosis, proposes a medical diagnosis framework that combines Medical Diagnosis Knowledge Graphs with three collaborating agents. In experiments on MedQA and MIMIC-IV using DeepSeek-V3, Kimi-k2, and Llama-3.3, the authors report diagnostic success rising from 50–68% to 79–93% while test costs fall by 20–54%. The work addresses a core weakness of LLM-based medical agents: they may know medical facts but still choose inefficient or excessive diagnostic tests when costs matter. If validated further, this pattern could influence agentic AI systems that must make stepwise decisions under budget, risk, or resource constraints. GraphDx separates language-facing tasks from deterministic reasoning: Perception and Decision Agents handle understanding and generation, while the Reasoning Agent performs evidence scoring and cost-aware planning on the MDKG. The abstract reports strong benchmark gains, but practical adoption still depends on reviewing the full evaluation setup, clinical validity, reproducibility, and whether code or external validation is available.",
+  "what_happened": "A new arXiv paper, GraphDx: A Cost-Aware Knowledge-Enhanced Multi-Agent Framework for Sequential Diagnosis, proposes a medical diagnosis framework that combines Medical Diagnosis Knowledge Graphs with three collaborating agents. In experiments on MedQA and MIMIC-IV using DeepSeek-V3, Kimi-k2, and Llama-3.3, the authors report diagnostic success rising from 50–68% to 79–93% while test costs fall by 20–54%. The work addresses a core weakness of LLM-based medical agents: they may know medical facts but still choose inefficient or excessive diagnostic tests when costs matter. If validated further, this pattern could influence agentic AI systems that must make stepwise decisions under budget, risk, or resource constraints. GraphDx separates language-facing tasks from deterministic reasoning: Perception and Decision Agents handle understanding and generation, while the Reasoning Agent performs evidence scoring and cost-aware planning on the MDKG. The abstract reports strong benchmark gains, but practical adoption still depends on reviewing the full evaluation setup, clinical validity, reproducibility, and whether code or external validation is available.",
+  "why_it_matters": "Sequential diagnosis means collecting information over multiple steps, such as asking about symptoms or ordering tests, rather than making a one-shot diagnosis. A medical diagnosis knowledge graph represents relationships among diseases, symptoms, tests, actions, and costs in a graph structure so that a system can reason over connected evidence. Cost-effectiveness is already a standard concern in diagnostic testing because a test can improve certainty while also consuming money, time, and clinical resources. Multi-agent medical diagnosis frameworks are an active research direction, with related work exploring interactive consultation, knowledge retrieval, and diagnosis strategy agents.",
+  "manager_takeaway": "Sequential diagnosis means collecting information over multiple steps, such as asking about symptoms or ordering tests, rather than making a one-shot diagnosis. A medical diagnosis knowledge graph represents relationships among diseases, symptoms, tests, actions, and costs in a graph structure so that a system can reason over connected evidence. Cost-effectiveness is already a standard concern in diagnostic testing because a test can improve certainty while also consuming money, time, and clinical resources. Multi-agent medical diagnosis frameworks are an active research direction, with related work exploring interactive consultation, knowledge retrieval, and diagnosis strategy agents.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for multi-agent-systems, medical-ai.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-20-en.html#item-7",
+  "tags": [
+    "multi-agent-systems",
+    "medical-ai",
+    "knowledge-graphs",
+    "cost-aware-reasoning",
+    "llm-agents"
+  ]
+}

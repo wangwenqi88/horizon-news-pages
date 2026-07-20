@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-20-zh-11-sqlite-1b4dd50b",
+  "date": "2026-07-20",
+  "lang": "zh",
+  "title": "SQLite 查询解释器在浏览器中运行。",
+  "source": "rss",
+  "source_url": "https://simonwillison.net/2026/Jul/18/sqlite-query-explainer/#atom-everything",
+  "source_tier": "A",
+  "published_at": "2026-07-20",
+  "category": "sqlite",
+  "summary": "Simon Willison 发布了 SQLite 查询解释器，这是一个基于浏览器的交互式工具，通过 Python、Pyodide 和 WebAssembly 运行 SQLite。它会为 SQLite 的 EXPLAIN 和 EXPLAIN QUERY PLAN 输出添加解释性文字。 SQLite 查询计划很有用，但通常不容易读懂，尤其是对正在学习索引、扫描、排序和字节码执行如何影响性能的开发者而言。一个纯浏览器解释工具降低了试验查询优化的门槛，不需要安装本地工具。 这个工具的灵感来自 Julia Evans 提到自己也许有一天会学会阅读查询计划，Willison 表示 Fable 帮助构建了它。最重要的限制是作者明确提醒：Willison 说自己对 SQLite 查询计划的了解还不足以完全验证解释结果，因此用户应把输出视为学习辅助，而不是权威结论。",
+  "what_happened": "Simon Willison 发布了 SQLite 查询解释器，这是一个基于浏览器的交互式工具，通过 Python、Pyodide 和 WebAssembly 运行 SQLite。它会为 SQLite 的 EXPLAIN 和 EXPLAIN QUERY PLAN 输出添加解释性文字。 SQLite 查询计划很有用，但通常不容易读懂，尤其是对正在学习索引、扫描、排序和字节码执行如何影响性能的开发者而言。一个纯浏览器解释工具降低了试验查询优化的门槛，不需要安装本地工具。 这个工具的灵感来自 Julia Evans 提到自己也许有一天会学会阅读查询计划，Willison 表示 Fable 帮助构建了它。最重要的限制是作者明确提醒：Willison 说自己对 SQLite 查询计划的了解还不足以完全验证解释结果，因此用户应把输出视为学习辅助，而不是权威结论。",
+  "why_it_matters": "SQLite 提供 EXPLAIN QUERY PLAN，用来显示它打算如何执行查询，包括是否扫描表、是否使用索引，或者是否为了排序和分组创建临时结构。SQLite 的 EXPLAIN 更底层：SQLite 会把 SQL 语句转换为虚拟机字节码，而 EXPLAIN 会展示这些字节码，而不是按普通方式执行语句。Pyodide 通过 WebAssembly 把 Python 带到浏览器中，因此这类工具可以在客户端运行由 Python 支撑的 SQLite 实验。",
+  "manager_takeaway": "SQLite 提供 EXPLAIN QUERY PLAN，用来显示它打算如何执行查询，包括是否扫描表、是否使用索引，或者是否为了排序和分组创建临时结构。SQLite 的 EXPLAIN 更底层：SQLite 会把 SQL 语句转换为虚拟机字节码，而 EXPLAIN 会展示这些字节码，而不是按普通方式执行语句。Pyodide 通过 WebAssembly 把 Python 带到浏览器中，因此这类工具可以在客户端运行由 Python 支撑的 SQLite 实验。",
+  "actions": [
+    "判断团队近期是否有和sqlite、sql相关的试用场景。",
+    "核对数据安全、权限边界和成本变化。",
+    "如果价值明确，安排一次小范围验证并记录复盘。"
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-20-zh.html#item-11",
+  "tags": [
+    "sqlite",
+    "sql",
+    "developer-tools",
+    "query-optimization",
+    "webassembly"
+  ]
+}
