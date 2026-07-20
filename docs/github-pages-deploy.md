@@ -74,7 +74,7 @@ uv run python scripts/publish_daily.py --no-push
 
 ## 内容结构
 
-- `docs/index.html`：Cloudflare 发布的资讯主页。
+- `docs/index.html`：Cloudflare 发布入口，直接渲染最新中文日报。
 - `docs/daily/`：Cloudflare 发布的每日精读 HTML 页面。
 - `docs/index.md`：Jekyll 兼容入口，保留作备用。
 - `docs/_posts/`：每日精读 Markdown 源文件，运行时生成并强制提交。

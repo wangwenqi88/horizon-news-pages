@@ -115,7 +115,7 @@ GitHub Actions 每天北京时间 08:30 执行一次采集和生成：
 - GitHub Action：`.github/workflows/daily-summary.yml`
 - 本地/服务器手动发布脚本：`scripts/publish_daily.py`、`scripts/daily-run.sh`
 - Markdown 源文件：`docs/_posts/YYYY-MM-DD-summary-{zh,en}.md`
-- HTML 主页：`docs/index.html`
+- HTML 主页：`docs/index.html`，直接展示最新中文日报
 - 每日 HTML：`docs/daily/YYYY-MM-DD-{zh,en}.html`
 - Cloudflare Pages 输出目录：`docs`
 

@@ -160,44 +160,34 @@ def post_count(posts: list[Post], lang: str) -> int:
 
 
 def build_index(posts: list[Post]) -> str:
-    def section(lang: str, title: str, description: str, empty: str) -> str:
-        items = [post for post in posts if post.lang == lang]
-        count = post_count(posts, lang)
-        if items:
-            entries = "\n".join(
-                f"""      <li class="digest-item">
-        <a class="digest-date" href="daily/{html.escape(post.output_name)}">{html.escape(post.date)}</a>
-        <span class="digest-title">{html.escape(post.title)}</span>
-      </li>"""
-                for post in items
-            )
-        else:
-            entries = f"      <li><em>{html.escape(empty)}</em></li>"
-
-        return f"""    <div id="lang-{lang}" class="lang-section">
-      <section class="news-hero">
-        <div>
-          <p class="eyebrow">Daily AI Reading</p>
-          <h2>{html.escape(title)}</h2>
-          <p>{html.escape(description)}</p>
-        </div>
-        <div class="news-hero-stats">
-          <span>{count}</span>
-          <small>{'中文精读' if lang == 'zh' else 'English digests'}</small>
-        </div>
-      </section>
-      <h2>{'资讯主页' if lang == 'zh' else 'Daily Digest'}</h2>
-      <ul class="digest-list">
-{entries}
-      </ul>
-    </div>"""
-
-    body = f"""    <h1>AI 资讯精读</h1>
-    <p>每天自动收集 AI Agent、开发者工具、开源生态和工程实践资讯，筛选后生成可追溯来源的精读页面。</p>
-{section('zh', '按日期查看每日精读', '点击日期进入当天页面，查看重点资讯、背景解释、社区讨论和参考链接。', '暂无内容')}
-{section('en', 'Browse by Date', 'Open a date to read the curated digest, background context, discussion summary, and references.', 'No posts yet')}
+    """Render the latest Chinese digest as the public homepage."""
+    latest = next((post for post in posts if post.lang == "zh"), None)
+    if latest is None and posts:
+        latest = posts[0]
+    if latest is None:
+        body = """    <h1>AI 资讯精读</h1>
+    <p>暂无内容。</p>
 """
-    return page_shell("AI 资讯精读", body, "assets/css/horizon.css", "assets/js/horizon.js")
+        return page_shell("AI 资讯精读", body, "assets/css/horizon.css", "assets/js/horizon.js")
+
+    sibling = next(
+        (item for item in posts if item.date == latest.date and item.lang == "en"),
+        None,
+    )
+    sibling_link = ""
+    if sibling:
+        sibling_link = f'<a href="daily/{html.escape(sibling.output_name)}">English</a>'
+
+    body = f"""    <nav class="static-nav">
+      {sibling_link}
+    </nav>
+    <article class="digest-page" data-lang="{html.escape(latest.lang)}">
+      <p class="eyebrow">{html.escape(latest.date)} · {html.escape(latest.lang.upper())}</p>
+      <h1>{html.escape(latest.title)}</h1>
+      {latest.body_html}
+    </article>
+"""
+    return page_shell(latest.title, body, "assets/css/horizon.css", "assets/js/horizon.js")
 
 
 def strip_markdown(value: str) -> str:
