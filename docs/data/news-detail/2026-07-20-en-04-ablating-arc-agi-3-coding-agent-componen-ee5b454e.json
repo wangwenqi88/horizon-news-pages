@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-20-en-04-ablating-arc-agi-3-coding-agent-componen-ee5b454e",
+  "date": "2026-07-20",
+  "lang": "en",
+  "title": "Ablating ARC-AGI-3 coding-agent components",
+  "source": "rss",
+  "source_url": "https://arxiv.org/abs/2607.15439",
+  "source_tier": "S",
+  "published_at": "2026-07-20",
+  "category": "AI agents",
+  "summary": "A new arXiv paper, 2607.15439v1, evaluates four nested Codex-based agents on public ARC-AGI-3 games to isolate the effects of executable world modeling, scheduled simplification, and exact replay verification. The study tests gpt-5.4 and gpt-5.5 at high and xhigh reasoning effort, with exploratory gpt-5.6-sol follow-ups. The results challenge the assumption that adding an executable world model is automatically better for coding agents, while reinforcing that stronger base models and higher reasoning effort reliably improve outcomes. This matters for agent researchers designing evaluation-time reasoning systems, because verification and simplification may be more valuable than a flexible executable deliverable alone. The textual baseline outperformed the flexible-interface executable world model in both gpt-5.5 settings, while scheduled simplification helped in three of four model-effort settings. The full verification treatment ranked first in all four main settings but used substantially more resources, and the gpt-5.6-sol public-set result is cautioned as saturation because the model postdates the games and held-out performance was not tested.",
+  "what_happened": "A new arXiv paper, 2607.15439v1, evaluates four nested Codex-based agents on public ARC-AGI-3 games to isolate the effects of executable world modeling, scheduled simplification, and exact replay verification. The study tests gpt-5.4 and gpt-5.5 at high and xhigh reasoning effort, with exploratory gpt-5.6-sol follow-ups. The results challenge the assumption that adding an executable world model is automatically better for coding agents, while reinforcing that stronger base models and higher reasoning effort reliably improve outcomes. This matters for agent researchers designing evaluation-time reasoning systems, because verification and simplification may be more valuable than a flexible executable deliverable alone. The textual baseline outperformed the flexible-interface executable world model in both gpt-5.5 settings, while scheduled simplification helped in three of four model-effort settings. The full verification treatment ranked first in all four main settings but used substantially more resources, and the gpt-5.6-sol public-set result is cautioned as saturation because the model postdates the games and held-out performance was not tested.",
+  "why_it_matters": "ARC-AGI-3 is described by ARC Prize as an interactive reasoning benchmark for AI agents, where agents must explore unfamiliar environments, infer goals, and act effectively. The ARC-AGI-3 paper frames the benchmark around novel, abstract, turn-based environments that require agents to build internal models of dynamics and plan. In this context, an executable world model means the agent maintains runnable code, such as Python, that predicts or simulates environment behavior before acting.",
+  "manager_takeaway": "ARC-AGI-3 is described by ARC Prize as an interactive reasoning benchmark for AI agents, where agents must explore unfamiliar environments, infer goals, and act effectively. The ARC-AGI-3 paper frames the benchmark around novel, abstract, turn-based environments that require agents to build internal models of dynamics and plan. In this context, an executable world model means the agent maintains runnable code, such as Python, that predicts or simulates environment behavior before acting.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI agents, ARC-AGI.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-20-en.html#item-4",
+  "tags": [
+    "AI agents",
+    "ARC-AGI",
+    "coding agents",
+    "LLM evaluation",
+    "world models"
+  ]
+}

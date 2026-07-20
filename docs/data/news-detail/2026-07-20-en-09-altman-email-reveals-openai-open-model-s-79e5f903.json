@@ -1,0 +1,30 @@
+{
+  "id": "2026-07-20-en-09-altman-email-reveals-openai-open-model-s-79e5f903",
+  "date": "2026-07-20",
+  "lang": "en",
+  "title": "Altman email reveals OpenAI open-model strategy.",
+  "source": "rss",
+  "source_url": "https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything",
+  "source_tier": "A",
+  "published_at": "2026-07-20",
+  "category": "openai",
+  "summary": "Simon Willison highlighted a newly exposed October 1, 2022 email from Sam Altman to OpenAI’s board, made public in Musk v. Altman in 2026. In the email, Altman described a plan to release a GPT-3-class language model that could run locally on consumer hardware, partly before Stability or another competitor did so. The email is significant because it frames open-model release not only as a technical or public-benefit decision, but also as a competitive strategy to shape the market. It adds context to ongoing debates about open-source AI, open weights, safety, and whether major AI labs use openness to enable or deter competitors. Altman’s quoted rationale said such a release could discourage others from releasing similarly powerful models and make it harder for new efforts to get funded. The quoted post does not show whether OpenAI built or released that specific GPT-3-class local model, nor does it specify licensing terms, training data, or whether the plan meant open source or merely open weights.",
+  "what_happened": "Simon Willison highlighted a newly exposed October 1, 2022 email from Sam Altman to OpenAI’s board, made public in Musk v. Altman in 2026. In the email, Altman described a plan to release a GPT-3-class language model that could run locally on consumer hardware, partly before Stability or another competitor did so. The email is significant because it frames open-model release not only as a technical or public-benefit decision, but also as a competitive strategy to shape the market. It adds context to ongoing debates about open-source AI, open weights, safety, and whether major AI labs use openness to enable or deter competitors. Altman’s quoted rationale said such a release could discourage others from releasing similarly powerful models and make it harder for new efforts to get funded. The quoted post does not show whether OpenAI built or released that specific GPT-3-class local model, nor does it specify licensing terms, training data, or whether the plan meant open source or merely open weights.",
+  "why_it_matters": "GPT-3 is an OpenAI language model family that became a reference point for large language model capability, so “GPT-3-class” implies a model with broadly comparable usefulness rather than a tiny toy model. A local model is one that can run on a user’s own machine instead of requiring a cloud API, which can change privacy, cost, latency, and distribution dynamics. In AI, “open source” and “open weights” are often different: open weights may let users download trained parameters, while full open source generally also includes training code, data details, and permissive rights to modify and redistribute. Stability AI is relevant here because it became strongly associated with open generative models, especially through releases such as Stable Diffusion and related model repositories.",
+  "manager_takeaway": "GPT-3 is an OpenAI language model family that became a reference point for large language model capability, so “GPT-3-class” implies a model with broadly comparable usefulness rather than a tiny toy model. A local model is one that can run on a user’s own machine instead of requiring a cloud API, which can change privacy, cost, latency, and distribution dynamics. In AI, “open source” and “open weights” are often different: open weights may let users download trained parameters, while full open source generally also includes training code, data details, and permissive rights to modify and redistribute. Stability AI is relevant here because it became strongly associated with open generative models, especially through releases such as Stable Diffusion and related model repositories.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for openai, ai-ethics.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-20-en.html#item-9",
+  "tags": [
+    "openai",
+    "ai-ethics",
+    "open-source-ai",
+    "sam-altman",
+    "ai-industry"
+  ]
+}
