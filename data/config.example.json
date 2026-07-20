@@ -111,6 +111,7 @@
   },
   "filtering": {
     "ai_score_threshold": 6.0,
+    "quota_fill_score_threshold": 5.0,
     "time_window_hours": 24,
     "max_items": null,
     "category_groups": {},

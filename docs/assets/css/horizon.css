@@ -238,22 +238,30 @@ pre {
 }
 
 .track-heading {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin: 2.1rem 0 0.95rem;
+  position: relative;
+  display: block;
+  margin: 2.4rem 0 1rem;
+  border: 1px solid rgba(103, 232, 249, 0.2);
+  border-radius: 8px;
+  padding: 1rem 1rem 1rem 4.7rem;
   color: #fff !important;
-  font-size: clamp(1.22rem, 2.5vw, 1.7rem);
+  background:
+    linear-gradient(90deg, rgba(34, 211, 238, 0.18), rgba(15, 23, 42, 0.28)),
+    rgba(15, 23, 42, 0.58);
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
   line-height: 1.25;
+  font-weight: 900;
 }
 
 .track-heading::before {
   content: attr(data-track);
-  display: inline-grid;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  display: grid;
   place-items: center;
-  width: 2.15rem;
-  height: 2.15rem;
-  flex: 0 0 auto;
+  width: 2.7rem;
+  height: 2.7rem;
   border: 1px solid rgba(103, 232, 249, 0.35);
   border-radius: 8px;
   color: var(--hz-bg);
@@ -261,10 +269,27 @@ pre {
   font-size: 0.86rem;
   font-weight: 900;
   box-shadow: 0 0 28px rgba(34, 211, 238, 0.22);
+  transform: translateY(-50%);
 }
 
-.track-heading[data-track="B"]::before {
+.track-heading[data-track="02"]::before {
   background: linear-gradient(135deg, var(--hz-rose), var(--hz-amber));
+}
+
+.track-heading::after {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--hz-text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.track-heading[data-track="01"]::after {
+  content: "快速掌握今天值得知道的一手动态、发布、论文和产品更新";
+}
+
+.track-heading[data-track="02"]::after {
+  content: "沉淀可以复用的实操方法、项目经验、专家判断和工作流启发";
 }
 
 .track-toc {
@@ -301,7 +326,8 @@ pre {
   font-weight: 720;
 }
 
-.digest-page h2:not(.track-heading) {
+.digest-page h2:not(.track-heading),
+.item-heading {
   margin: 2rem 0 0.85rem;
   border-left: 3px solid var(--hz-cyan);
   padding-left: 0.85rem;
@@ -309,11 +335,22 @@ pre {
   line-height: 1.35;
 }
 
-.digest-page h2:not(.track-heading) a {
+.item-heading {
+  margin-top: 1.9rem;
+  border: 1px solid rgba(103, 232, 249, 0.16);
+  border-left: 4px solid var(--hz-cyan);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.digest-page h2:not(.track-heading) a,
+.item-heading a {
   color: #eef8ff;
 }
 
-.digest-page h2:not(.track-heading) + p {
+.digest-page h2:not(.track-heading) + p,
+.item-heading + p {
   margin-top: 0.6rem;
 }
 

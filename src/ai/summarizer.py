@@ -25,8 +25,8 @@ LABELS = {
         "discussion": "Discussion",
         "references": "References",
         "tags": "Tags",
-        "first_hand_news": "A. First-Hand News",
-        "practice_insight": "B. Practice & Expert Insights",
+        "first_hand_news": "First-Hand News",
+        "practice_insight": "Practice & Expert Insights",
         "practical_takeaways": "Practical Takeaways",
         "implementation_notes": "Implementation Notes",
         "personal_application": "How I Can Use This",
@@ -51,8 +51,8 @@ LABELS = {
         "discussion": "社区讨论",
         "references": "参考链接",
         "tags": "标签",
-        "first_hand_news": "A. 一手资讯速递",
-        "practice_insight": "B. 实战与专家洞察",
+        "first_hand_news": "一手资讯速递",
+        "practice_insight": "实战与专家洞察",
         "practical_takeaways": "可复用方法",
         "implementation_notes": "实操要点",
         "personal_application": "我可以怎么用",
@@ -282,7 +282,7 @@ class DailySummarizer:
 
         lines = [
             f'<a id="item-{index}"></a>',
-            f"## [{title}]({url}) \u2b50\ufe0f {score}/10",  # ⭐️
+            f"### [{title}]({url}) \u2b50\ufe0f {score}/10",  # ⭐️
             "",
             summary,
             "",

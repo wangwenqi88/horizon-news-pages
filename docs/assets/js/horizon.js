@@ -43,15 +43,15 @@
     var headings = document.querySelectorAll('.digest-page h2');
     headings.forEach(function (heading) {
       var text = heading.textContent.trim();
-      if (/^A\.\s*/.test(text)) {
+      if (/^(A\.\s*)?(一手资讯速递|First-Hand News)/i.test(text)) {
         heading.classList.add('track-heading');
-        heading.setAttribute('data-track', 'A');
+        heading.setAttribute('data-track', '01');
         heading.textContent = text.replace(/^A\.\s*/, '');
         return;
       }
-      if (/^B\.\s*/.test(text)) {
+      if (/^(B\.\s*)?(实战与专家洞察|Practice & Expert Insights)/i.test(text)) {
         heading.classList.add('track-heading');
-        heading.setAttribute('data-track', 'B');
+        heading.setAttribute('data-track', '02');
         heading.textContent = text.replace(/^B\.\s*/, '');
       }
     });
@@ -62,6 +62,11 @@
       if (next && next.tagName === 'OL') {
         next.classList.add('track-toc');
       }
+    });
+
+    var itemHeadings = document.querySelectorAll('.digest-page h3');
+    itemHeadings.forEach(function (heading) {
+      heading.classList.add('item-heading');
     });
   }
 

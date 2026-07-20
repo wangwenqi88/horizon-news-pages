@@ -210,7 +210,7 @@ def slugify(value: str) -> str:
 
 def extract_heading(markdown_text: str) -> tuple[str, str]:
     heading = markdown_text.splitlines()[0].strip()
-    match = re.match(r"##\s+\[([^\]]+)\]\(([^)]+)\)", heading)
+    match = re.match(r"#{2,3}\s+\[([^\]]+)\]\(([^)]+)\)", heading)
     if match:
         return strip_markdown(match.group(1)), match.group(2).strip()
     return strip_markdown(heading.lstrip("# ")), ""
@@ -282,8 +282,12 @@ def build_actions(lang: str, tags: list[str]) -> list[str]:
 
 
 def split_news_sections(post: Post) -> list[str]:
-    sections = re.split(r"\n(?=##\s+\[)", post.body_markdown)
-    return [section.strip() for section in sections if section.strip().startswith("## [")]
+    sections = re.split(r"\n(?=#{2,3}\s+\[)", post.body_markdown)
+    return [
+        section.strip()
+        for section in sections
+        if re.match(r"^#{2,3}\s+\[", section.strip())
+    ]
 
 
 def extract_news_items(posts: list[Post]) -> list[NewsItem]:

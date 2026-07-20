@@ -224,3 +224,66 @@ def test_run_applies_balanced_digest_before_enrichment(tmp_path, monkeypatch) ->
     asyncio.run(orchestrator.run())
 
     assert enriched_ids == ["ai"]
+
+
+def test_run_uses_quota_fill_pool_when_groups_are_configured(tmp_path, monkeypatch) -> None:
+    config = Config(
+        ai=AIConfig(
+            provider="openai",
+            model="test",
+            api_key_env="TEST_API_KEY",
+            languages=[],
+        ),
+        sources=SourcesConfig(),
+        filtering=FilteringConfig(
+            ai_score_threshold=7.0,
+            quota_fill_score_threshold=5.0,
+            max_items=20,
+            category_groups={
+                "first_hand_news": CategoryGroupConfig(
+                    limit=15,
+                    categories=["first_hand_news"],
+                ),
+                "practice_insight": CategoryGroupConfig(
+                    limit=5,
+                    categories=["practice_insight"],
+                ),
+            },
+            default_group_limit=0,
+        ),
+    )
+    storage = SimpleNamespace()
+    orchestrator = HorizonOrchestrator(config, storage)
+    items = [
+        *[make_section_item(f"news-{i}", 6.5 - i * 0.01, "first_hand_news") for i in range(16)],
+        *[make_section_item(f"practice-{i}", 6.0 - i * 0.01, "practice_insight") for i in range(6)],
+    ]
+    enriched_ids: list[str] = []
+
+    async def fetch_all_sources(since):  # type: ignore[no-untyped-def]
+        return items
+
+    async def analyze_content(input_items):  # type: ignore[no-untyped-def]
+        return input_items
+
+    async def merge_topic_duplicates(input_items):  # type: ignore[no-untyped-def]
+        return input_items
+
+    async def expand_twitter_discussion(input_items):  # type: ignore[no-untyped-def]
+        return None
+
+    async def enrich_important_items(input_items):  # type: ignore[no-untyped-def]
+        enriched_ids.extend(item.id for item in input_items)
+
+    monkeypatch.setattr(orchestrator, "fetch_all_sources", fetch_all_sources)
+    monkeypatch.setattr(orchestrator, "_analyze_content", analyze_content)
+    monkeypatch.setattr(orchestrator, "merge_topic_duplicates", merge_topic_duplicates)
+    monkeypatch.setattr(orchestrator, "_expand_twitter_discussion", expand_twitter_discussion)
+    monkeypatch.setattr(orchestrator, "_enrich_important_items", enrich_important_items)
+    monkeypatch.chdir(tmp_path)
+
+    asyncio.run(orchestrator.run())
+
+    assert len(enriched_ids) == 20
+    assert sum(item_id.startswith("news-") for item_id in enriched_ids) == 15
+    assert sum(item_id.startswith("practice-") for item_id in enriched_ids) == 5

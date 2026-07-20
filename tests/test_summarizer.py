@@ -143,8 +143,10 @@ def test_generate_summary_splits_news_and_practice_sections():
         )
     )
 
-    assert "## A. 一手资讯速递" in result
-    assert "## B. 实战与专家洞察" in result
+    assert "## 一手资讯速递" in result
+    assert "## 实战与专家洞察" in result
+    assert "### [Important Item 1](https://example.com/items/1)" in result
+    assert "### [Important Item 2](https://example.com/items/2)" in result
     assert "**可复用方法**: 把复杂任务拆成可验证的步骤。" in result
     assert "**实操要点**: 先定义输入输出，再设计回归测试。" in result
     assert "**我可以怎么用**: 可用于 AI 工作流和项目交付复盘。" in result

@@ -103,7 +103,8 @@ class HorizonOrchestrator:
             analyzed_items = await self._analyze_content(merged_items)
             self.console.print(f"🤖 Analyzed {len(analyzed_items)} items with AI\n")
 
-            # 5. Filter by score threshold
+            # 5. Filter candidates. When quota groups are configured, use a
+            # wider candidate pool so daily section targets can be filled.
             threshold = self.config.filtering.ai_score_threshold
             important_items = [
                 item for item in analyzed_items
@@ -114,6 +115,19 @@ class HorizonOrchestrator:
             self.console.print(
                 f"⭐️ {len(important_items)} items scored ≥ {threshold}\n"
             )
+            quota_fill_threshold = self.config.filtering.quota_fill_score_threshold
+            if self.config.filtering.category_groups and quota_fill_threshold is not None:
+                quota_candidates = [
+                    item for item in analyzed_items
+                    if item.ai_score and item.ai_score >= quota_fill_threshold
+                ]
+                quota_candidates.sort(key=lambda x: x.ai_score or 0, reverse=True)
+                if len(quota_candidates) > len(important_items):
+                    self.console.print(
+                        f"📌 Quota fill pool: {len(quota_candidates)} items scored "
+                        f"≥ {quota_fill_threshold}\n"
+                    )
+                    important_items = quota_candidates
 
             # 5.5 Semantic deduplication: drop items covering the same topic
             deduped_items = await self.merge_topic_duplicates(important_items)
