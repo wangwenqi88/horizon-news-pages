@@ -39,6 +39,30 @@
         return;
       }
     });
+
+    var headings = document.querySelectorAll('.digest-page h2');
+    headings.forEach(function (heading) {
+      var text = heading.textContent.trim();
+      if (/^A\.\s*/.test(text)) {
+        heading.classList.add('track-heading');
+        heading.setAttribute('data-track', 'A');
+        heading.textContent = text.replace(/^A\.\s*/, '');
+        return;
+      }
+      if (/^B\.\s*/.test(text)) {
+        heading.classList.add('track-heading');
+        heading.setAttribute('data-track', 'B');
+        heading.textContent = text.replace(/^B\.\s*/, '');
+      }
+    });
+
+    var trackHeadings = document.querySelectorAll('.track-heading');
+    trackHeadings.forEach(function (heading) {
+      var next = heading.nextElementSibling;
+      if (next && next.tagName === 'OL') {
+        next.classList.add('track-toc');
+      }
+    });
   }
 
   /** Set up EN/中文 language toggle as a page-level control */
@@ -93,6 +117,12 @@
 
     // Article page: redirect to the other language version
     function switchArticleLang(lang) {
+      var directLink = document.querySelector('.static-nav a[href*="-' + lang + '.html"]');
+      if (directLink) {
+        window.location.href = directLink.getAttribute('href');
+        return;
+      }
+
       var path = window.location.pathname;
       var target = null;
       if (lang === 'en' && /-zh(?:\.html)?$/.test(path.replace(/\/$/, ''))) {
