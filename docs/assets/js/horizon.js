@@ -68,6 +68,56 @@
     itemHeadings.forEach(function (heading) {
       heading.classList.add('item-heading');
     });
+
+    setupTrackLayout();
+  }
+
+  function setupTrackLayout() {
+    var digest = document.querySelector('.digest-page');
+    if (!digest) return;
+
+    var headings = Array.prototype.slice.call(digest.querySelectorAll('.track-heading'));
+    headings.forEach(function (heading) {
+      if (heading.closest('.track-section')) return;
+
+      var section = document.createElement('section');
+      section.className = 'track-section';
+      section.setAttribute('data-track', heading.getAttribute('data-track') || '');
+
+      digest.insertBefore(section, heading);
+      var node = heading;
+      while (node) {
+        var next = node.nextSibling;
+        if (
+          node !== heading &&
+          node.nodeType === 1 &&
+          node.classList.contains('track-heading')
+        ) {
+          break;
+        }
+        section.appendChild(node);
+        node = next;
+      }
+    });
+
+    var current = digest.firstElementChild;
+    while (current) {
+      var nextElement = current.nextElementSibling;
+      if (
+        current.classList.contains('track-section') &&
+        nextElement &&
+        nextElement.classList.contains('track-section')
+      ) {
+        var layout = document.createElement('div');
+        layout.className = 'tracks-layout';
+        digest.insertBefore(layout, current);
+        layout.appendChild(current);
+        layout.appendChild(nextElement);
+        current = layout.nextElementSibling;
+      } else {
+        current = nextElement;
+      }
+    }
   }
 
   /** Set up EN/中文 language toggle as a page-level control */
