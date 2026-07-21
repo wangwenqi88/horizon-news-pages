@@ -40,6 +40,12 @@ jobs:
       - name: Build static HTML for Cloudflare Pages
         env:
           HORIZON_TTS_API_KEY: ${{ secrets.HORIZON_TTS_API_KEY }}
+          HORIZON_TTS_PROVIDER: ${{ vars.HORIZON_TTS_PROVIDER || 'tencent' }}
+          TENCENTCLOUD_SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
+          TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
+          HORIZON_TENCENT_TTS_REGION: ${{ vars.HORIZON_TENCENT_TTS_REGION || 'ap-guangzhou' }}
+          HORIZON_TENCENT_TTS_VOICE_TYPE: ${{ vars.HORIZON_TENCENT_TTS_VOICE_TYPE || '101001' }}
+          HORIZON_TENCENT_TTS_CODEC: ${{ vars.HORIZON_TENCENT_TTS_CODEC || 'mp3' }}
           HORIZON_TTS_MODEL: ${{ vars.HORIZON_TTS_MODEL || 'gpt-4o-mini-tts' }}
           HORIZON_TTS_VOICE: ${{ vars.HORIZON_TTS_VOICE || 'alloy' }}
         run: uv run python scripts/build_static_pages.py

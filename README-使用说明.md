@@ -156,3 +156,12 @@ HORIZON_AI_MODEL=你的模型名
 ```
 
 例如使用本地或内网网关时，只需要替换 `HORIZON_AI_BASE_URL` 和 `HORIZON_AI_MODEL`，不用改代码。
+# 语音播报
+
+小程序语音播报配置见：
+
+```text
+docs/tts-setup.md
+```
+
+当前推荐使用腾讯云 TTS，脚本会生成近 7 天中文简报 MP3，并通过 Cloudflare Pages 静态托管。

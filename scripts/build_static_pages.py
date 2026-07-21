@@ -14,6 +14,8 @@ import os
 import re
 import subprocess
 import tempfile
+import uuid
+from base64 import b64decode
 from dataclasses import dataclass
 from dataclasses import replace
 from datetime import datetime, timezone
@@ -893,6 +895,68 @@ def run_openai_tts(text: str, output_path: Path) -> bool:
     return output_path.exists() and output_path.stat().st_size > 0
 
 
+def split_tts_text(text: str, *, max_len: int = 140) -> list[str]:
+    parts: list[str] = []
+    current = ""
+    for sentence in re.split(r"(?<=[。！？；])", text):
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+        if len(sentence) > max_len:
+            for start in range(0, len(sentence), max_len):
+                parts.append(sentence[start : start + max_len])
+            continue
+        if current and len(current) + len(sentence) > max_len:
+            parts.append(current)
+            current = sentence
+        else:
+            current += sentence
+    if current:
+        parts.append(current)
+    return parts
+
+
+def run_tencent_tts(text: str, output_path: Path) -> bool:
+    secret_id = os.getenv("TENCENTCLOUD_SECRET_ID") or os.getenv("HORIZON_TENCENT_SECRET_ID")
+    secret_key = os.getenv("TENCENTCLOUD_SECRET_KEY") or os.getenv("HORIZON_TENCENT_SECRET_KEY")
+    if not secret_id or not secret_key:
+        return False
+
+    from tencentcloud.common import credential
+    from tencentcloud.common.profile.client_profile import ClientProfile
+    from tencentcloud.common.profile.http_profile import HttpProfile
+    from tencentcloud.tts.v20190823 import models, tts_client
+
+    cred = credential.Credential(secret_id, secret_key)
+    http_profile = HttpProfile()
+    http_profile.endpoint = os.getenv("HORIZON_TENCENT_TTS_ENDPOINT", "tts.tencentcloudapi.com")
+    client_profile = ClientProfile()
+    client_profile.httpProfile = http_profile
+    region = os.getenv("HORIZON_TENCENT_TTS_REGION", "ap-guangzhou")
+    client = tts_client.TtsClient(cred, region, client_profile)
+
+    audio_chunks: list[bytes] = []
+    for index, part in enumerate(split_tts_text(text), start=1):
+        request = models.TextToVoiceRequest()
+        request.Text = part
+        request.SessionId = f"horizon-{uuid.uuid4().hex}-{index}"
+        request.ModelType = int(os.getenv("HORIZON_TENCENT_TTS_MODEL_TYPE", "1"))
+        request.Codec = os.getenv("HORIZON_TENCENT_TTS_CODEC", "mp3")
+        request.VoiceType = int(os.getenv("HORIZON_TENCENT_TTS_VOICE_TYPE", "101001"))
+        request.Speed = float(os.getenv("HORIZON_TENCENT_TTS_SPEED", "0"))
+        request.Volume = float(os.getenv("HORIZON_TENCENT_TTS_VOLUME", "0"))
+        request.PrimaryLanguage = int(os.getenv("HORIZON_TENCENT_TTS_PRIMARY_LANGUAGE", "1"))
+        request.SampleRate = int(os.getenv("HORIZON_TENCENT_TTS_SAMPLE_RATE", "16000"))
+        response = client.TextToVoice(request)
+        audio_chunks.append(b64decode(response.Audio))
+
+    if not audio_chunks:
+        return False
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_bytes(b"".join(audio_chunks))
+    return output_path.exists() and output_path.stat().st_size > 0
+
+
 def run_windows_sapi_tts(text: str, output_path: Path) -> bool:
     if os.name != "nt":
         return False
@@ -970,6 +1034,8 @@ def generate_daily_audio(items: list[NewsItem]) -> dict[tuple[str, str], str]:
             try:
                 provider = os.getenv("HORIZON_TTS_PROVIDER", "auto").lower()
                 generated = False
+                if provider in {"auto", "tencent", "tencentcloud"}:
+                    generated = run_tencent_tts(text, output_path)
                 if provider in {"auto", "openai"}:
                     generated = run_openai_tts(text, output_path)
                 if not generated and provider in {"auto", "windows_sapi"}:
