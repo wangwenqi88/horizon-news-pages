@@ -8,6 +8,8 @@
   "source_tier": "B",
   "published_at": "2026-07-20",
   "category": "agentic-coding",
+  "group": "practice_insight",
+  "score": "7.0",
   "summary": "A critical blog post titled “Stop Using OpenCode” triggered an active Hacker News discussion about OpenCode’s design, security assumptions, prompt-cache behavior, filesystem scanning, and architecture. The debate uses OpenCode as a concrete example of broader risks in agentic coding CLIs. Agentic coding tools increasingly run inside developers’ terminals and can read files, execute commands, and modify code, so weak defaults or unclear trust boundaries can become real security and productivity risks. The discussion matters to developers, security teams, and tool builders who need to balance automation, control, and usability. The post reportedly criticizes repeated filesystem globbing, re-reading AGENTS.md, turn-0 system prompt changes such as inserting the current date, and the resulting prompt-cache misses across SSE turns. Commenters dispute whether these are severe security flaws, fixable annoyances, or misunderstandings of features such as command filtering, which some users see as steering rather than security enforcement.",
   "what_happened": "A critical blog post titled “Stop Using OpenCode” triggered an active Hacker News discussion about OpenCode’s design, security assumptions, prompt-cache behavior, filesystem scanning, and architecture. The debate uses OpenCode as a concrete example of broader risks in agentic coding CLIs. Agentic coding tools increasingly run inside developers’ terminals and can read files, execute commands, and modify code, so weak defaults or unclear trust boundaries can become real security and productivity risks. The discussion matters to developers, security teams, and tool builders who need to balance automation, control, and usability. The post reportedly criticizes repeated filesystem globbing, re-reading AGENTS.md, turn-0 system prompt changes such as inserting the current date, and the resulting prompt-cache misses across SSE turns. Commenters dispute whether these are severe security flaws, fixable annoyances, or misunderstandings of features such as command filtering, which some users see as steering rather than security enforcement.",
   "why_it_matters": "OpenCode is described by its project site as an open-source AI coding agent that works in the terminal, IDE, or desktop. Its GitHub page describes it as a Go-based CLI application with a terminal user interface for interacting with AI models on coding, debugging, and related tasks. Agentic coding CLIs differ from passive autocomplete tools because they can coordinate multiple steps, inspect project files, call tools, and sometimes execute shell commands. That power makes prompt injection, credential leakage, unsafe tool use, and overtrust in AI output recurring concerns for this category of software.",
@@ -22,6 +24,7 @@
   ],
   "audio_url": "",
   "html_url": "/daily/2026-07-20-en.html#item-17",
+  "read_url": "/read/2026-07-20-en-17-opencode-faces-agentic-cli-scrutiny-e0d8cb4d.html",
   "tags": [
     "agentic-coding",
     "OpenCode",

@@ -8,6 +8,8 @@
   "source_tier": "S",
   "published_at": "2026-07-20",
   "category": "multi-agent-systems",
+  "group": "first_hand_news",
+  "score": "8.0",
   "summary": "A new arXiv paper, “Precise but Uncoupled,” evaluated 4,181 verifier-grounded Omni-MATH problems using matched gpt-oss-120b actors and found that broadcast-style peer discussion outperformed a planner-executor-reviewer pipeline on harder math tiers. The key finding is that the PER reviewer was more precise than the broadcast reviewers, 0.861 versus 0.644, but its useful critiques were less likely to change the next candidate answer. The study challenges a common assumption in multi-agent LLM design: adding a specialized reviewer is not enough if the system does not reliably act on the review. For teams building agent workflows, the result suggests that architecture should optimize for critique uptake and answer repair, not just reviewer accuracy or error detection. Collaboration added little on the easiest tiers, but from tier 4 onward the performance gains widened, with broadcast discussion achieving higher final accuracy than PER in the harder regime. Forcing explicit acknowledgment of reviewer feedback lowered final accuracy, while embedding reviewer guidance directly into the solver’s working context improved follow-through only partially and did not close the gap.",
   "what_happened": "A new arXiv paper, “Precise but Uncoupled,” evaluated 4,181 verifier-grounded Omni-MATH problems using matched gpt-oss-120b actors and found that broadcast-style peer discussion outperformed a planner-executor-reviewer pipeline on harder math tiers. The key finding is that the PER reviewer was more precise than the broadcast reviewers, 0.861 versus 0.644, but its useful critiques were less likely to change the next candidate answer. The study challenges a common assumption in multi-agent LLM design: adding a specialized reviewer is not enough if the system does not reliably act on the review. For teams building agent workflows, the result suggests that architecture should optimize for critique uptake and answer repair, not just reviewer accuracy or error detection. Collaboration added little on the easiest tiers, but from tier 4 onward the performance gains widened, with broadcast discussion achieving higher final accuracy than PER in the harder regime. Forcing explicit acknowledgment of reviewer feedback lowered final accuracy, while embedding reviewer guidance directly into the solver’s working context improved follow-through only partially and did not close the gap.",
   "why_it_matters": "Omni-MATH is an Olympiad-level mathematical reasoning benchmark designed to evaluate LLM performance on difficult competition-style math problems. A planner-executor-reviewer pipeline separates work into planning, solving, and checking roles, with the expectation that the reviewer will identify errors and guide correction. gpt-oss-120b is an open-weight reasoning model described by OpenAI as a 117B-parameter model with 5.1B active parameters that can fit on a single H100-class GPU.",
@@ -20,6 +22,7 @@
   "risks": [],
   "audio_url": "",
   "html_url": "/daily/2026-07-20-en.html#item-3",
+  "read_url": "/read/2026-07-20-en-03-reviewer-precision-does-not-ensure-criti-3c986536.html",
   "tags": [
     "multi-agent-systems",
     "AI-reasoning",

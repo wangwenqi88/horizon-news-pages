@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Causal-Audit makes LLM causal reasoning auditable</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="project-name">AI 资讯精读</h1>
+    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  </header>
+  <main class="main-content">
+    <nav class="static-nav">
+      <a href="../index.html">返回首页</a>
+      <a href="https://arxiv.org/abs/2607.15281" target="_blank" rel="noopener noreferrer">原文</a>
+    </nav>
+    <section class="read-hero">
+      <p class="eyebrow">2026-07-20 · Horizon News AI 精读</p>
+      <h1>Causal-Audit makes LLM causal reasoning auditable</h1>
+      <p>The arXiv paper Causal-Audit introduces a target-aware causal graph construction framework for context-free intervention-based question answering with LLMs. It replaces implicit end-to-end language prediction with four modular stages over an explicit causal graph and reports stronger results than existing LLM-based methods on three benchmarks. The work matters because causal and intervention-style questions require reasoning about what would change under an action, not just pattern matching from text. If validated in broader settings, an auditable graph-based approach could improve interpretability and reliability for LLM reasoning pipelines and agentic systems. The core mechanism treats the target variable as a constraint during graph expansion, which is intended to suppress irrelevant variables, spurious causal relations, and reasoning noise. The paper also describes path-level causal evidence aggregation, combining multiple causal paths while accounting for both reinforcing and counteracting effects.</p>
+    </section>
+    <div class="read-layout">
+      <aside class="read-nav" aria-label="本页内容">
+        <p class="eyebrow">本页内容</p>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+      </aside>
+      <article class="read-article">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>The arXiv paper Causal-Audit introduces a target-aware causal graph construction framework for context-free intervention-based question answering with LLMs. It replaces implicit end-to-end language prediction with four modular stages over an explicit causal graph and reports stronger results than existing LLM-based methods on three benchmarks. The work matters because causal and intervention-style questions require reasoning about what would change under an action, not just pattern matching from text. If validated in broader settings, an auditable graph-based approach could improve interpretability and reliability for LLM reasoning pipelines and agentic systems. The core mechanism treats the target variable as a constraint during graph expansion, which is intended to suppress irrelevant variables, spurious causal relations, and reasoning noise. The paper also describes path-level causal evidence aggregation, combining multiple causal paths while accounting for both reinforcing and counteracting effects.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：rss</li><li>评分：7.0/10</li><li>标签：causal-reasoning、LLM-reasoning、interpretability、graph-based-reasoning、arxiv</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://arxiv.org/abs/2607.15281" rel="noopener noreferrer" target="_blank">Causal-Audit makes LLM causal reasoning auditable</a> ⭐️ 7.0/10</h3>
+<p>The arXiv paper Causal-Audit introduces a target-aware causal graph construction framework for context-free intervention-based question answering with LLMs. It replaces implicit end-to-end language prediction with four modular stages over an explicit causal graph and reports stronger results than existing LLM-based methods on three benchmarks. The work matters because causal and intervention-style questions require reasoning about what would change under an action, not just pattern matching from text. If validated in broader settings, an auditable graph-based approach could improve interpretability and reliability for LLM reasoning pipelines and agentic systems. The core mechanism treats the target variable as a constraint during graph expansion, which is intended to suppress irrelevant variables, spurious causal relations, and reasoning noise. The paper also describes path-level causal evidence aggregation, combining multiple causal paths while accounting for both reinforcing and counteracting effects.</p>
+<p>rss · ArXiv AI · Jul 20, 04:00</p>
+<p><strong>Background</strong>: Causal reasoning is the process of identifying cause-and-effect relationships rather than merely observing correlations. Intervention-based question answering asks what would happen if some variable were changed or acted upon, so the reasoning path must distinguish direct, indirect, and possibly conflicting effects. Many LLM approaches express reasoning in natural language, which can make assumptions hard to inspect or verify. A graph-based representation makes variables and causal links explicit, so a human or downstream system can audit the reasoning trace.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://arxiv.org/abs/2607.15281" rel="noopener noreferrer" target="_blank">Causal-Audit: Explicit and Auditable Graph-based Reasoning ...</a></li>
+<li><a href="https://arxiv.org/html/2607.15281v1" rel="noopener noreferrer" target="_blank">Causal-Audit: Explicit and Auditable Graph-based Reasoning ...</a></li>
+<li><a href="https://aclanthology.org/2026.findings-acl.607/" rel="noopener noreferrer" target="_blank">Causal-Audit: Explicit and Auditable Graph-based Reasoning ...</a></li>
+</ul>
+</details>
+<p><strong>Tags</strong>: <code>#causal-reasoning</code>, <code>#LLM-reasoning</code>, <code>#interpretability</code>, <code>#graph-based-reasoning</code>, <code>#arxiv</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>Causal reasoning is the process of identifying cause-and-effect relationships rather than merely observing correlations. Intervention-based question answering asks what would happen if some variable were changed or acted upon, so the reasoning path must distinguish direct, indirect, and possibly conflicting effects. Many LLM approaches express reasoning in natural language, which can make assumptions hard to inspect or verify. A graph-based representation makes variables and causal links explicit, so a human or downstream system can audit the reasoning trace.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>Causal reasoning is the process of identifying cause-and-effect relationships rather than merely observing correlations. Intervention-based question answering asks what would happen if some variable were changed or acted upon, so the reasoning path must distinguish direct, indirect, and possibly conflicting effects. Many LLM approaches express reasoning in natural language, which can make assumptions hard to inspect or verify. A graph-based representation makes variables and causal links explicit, so a human or downstream system can audit the reasoning trace.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>Causal reasoning is the process of identifying cause-and-effect relationships rather than merely observing correlations. Intervention-based question answering asks what would happen if some variable were changed or acted upon, so the reasoning path must distinguish direct, indirect, and possibly conflicting effects. Many LLM approaches express reasoning in natural language, which can make assumptions hard to inspect or verify. A graph-based representation makes variables and causal links explicit, so a human or downstream system can audit the reasoning trace.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for causal-reasoning, LLM-reasoning.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://arxiv.org/abs/2607.15281" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-20-en.html#item-6">返回当日日报定位</a></p>
+        </section>
+      </article>
+    </div>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

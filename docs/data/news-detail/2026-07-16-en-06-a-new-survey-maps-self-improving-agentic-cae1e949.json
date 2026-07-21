@@ -8,6 +8,8 @@
   "source_tier": "S",
   "published_at": "2026-07-16",
   "category": "AI agents",
+  "group": "first_hand_news",
+  "score": "7.0",
   "summary": "The arXiv paper “Self-Improvements in Modern Agentic Systems: A Survey” was posted as version 2607.13104v1 and surveys self-improving autonomous agents. It introduces a framework that models an agent as a foundation model plus an operational scaffold of prompts, memory, tools, and control logic, then classifies self-induced updates by their targets and driving signals. The survey is useful because self-improving agents are moving from prototypes toward deployed systems, where uncontrolled adaptation can affect reliability, safety, and evaluation. Its taxonomy gives AI researchers and practitioners a common language for comparing model updates, scaffold changes, feedback signals, applications, and open problems. A central distinction in the paper is whether improvement changes model parameters or scaffold components such as prompts, memory, tools, and control logic. The paper frames self-improvement as a self-induced update operator, emphasizing controllable accumulated capability gains rather than one-off prompting tricks.",
   "what_happened": "The arXiv paper “Self-Improvements in Modern Agentic Systems: A Survey” was posted as version 2607.13104v1 and surveys self-improving autonomous agents. It introduces a framework that models an agent as a foundation model plus an operational scaffold of prompts, memory, tools, and control logic, then classifies self-induced updates by their targets and driving signals. The survey is useful because self-improving agents are moving from prototypes toward deployed systems, where uncontrolled adaptation can affect reliability, safety, and evaluation. Its taxonomy gives AI researchers and practitioners a common language for comparing model updates, scaffold changes, feedback signals, applications, and open problems. A central distinction in the paper is whether improvement changes model parameters or scaffold components such as prompts, memory, tools, and control logic. The paper frames self-improvement as a self-induced update operator, emphasizing controllable accumulated capability gains rather than one-off prompting tricks.",
   "why_it_matters": "In modern agentic AI systems, an LLM is often not used alone; it is wrapped in scaffolding that handles planning, memory, tool use, workflows, and orchestration. This scaffolding helps turn a prompt-response model into a more goal-directed system that can act across multiple steps. Self-improving LLM agents extend this idea by using experience, feedback, uncertainty, or task outcomes to modify either the model or the surrounding agent system over time.",
@@ -20,6 +22,7 @@
   "risks": [],
   "audio_url": "",
   "html_url": "/daily/2026-07-16-en.html#item-6",
+  "read_url": "/read/2026-07-16-en-06-a-new-survey-maps-self-improving-agentic-cae1e949.html",
   "tags": [
     "AI agents",
     "self-improvement",

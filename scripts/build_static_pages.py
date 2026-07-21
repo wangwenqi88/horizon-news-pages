@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import markdown
+from bs4 import BeautifulSoup
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,6 +25,31 @@ POSTS_DIR = DOCS_DIR / "_posts"
 DAILY_DIR = DOCS_DIR / "daily"
 DATA_DIR = DOCS_DIR / "data"
 DETAIL_DIR = DATA_DIR / "news-detail"
+READ_DIR = DOCS_DIR / "read"
+ALLOWED_HTML_TAGS = {
+    "a",
+    "blockquote",
+    "br",
+    "code",
+    "details",
+    "em",
+    "h2",
+    "h3",
+    "hr",
+    "li",
+    "ol",
+    "p",
+    "pre",
+    "span",
+    "strong",
+    "summary",
+    "ul",
+}
+ALLOWED_HTML_ATTRS = {
+    "a": {"href", "target", "rel"},
+    "span": {"class", "data-tier"},
+}
+SAFE_URL_PREFIXES = ("http://", "https://", "mailto:", "#", "../", "/")
 
 
 @dataclass(frozen=True)
@@ -47,6 +73,8 @@ class NewsItem:
     source: str
     source_url: str
     source_tier: str
+    group: str
+    score: str
     summary: str
     manager_takeaway: str
     actions: list[str]
@@ -54,6 +82,9 @@ class NewsItem:
     tags: list[str]
     detail_url: str
     html_url: str
+    read_url: str
+    section_markdown: str
+    section_html: str
     audio_url: str = ""
 
 
@@ -97,6 +128,30 @@ def post_from_markdown(path: Path) -> Post:
         body_markdown=body,
         body_html=body_html,
     )
+
+
+def sanitize_html_fragment(value: str) -> str:
+    """Keep readable Markdown HTML while removing executable/raw HTML risk."""
+    soup = BeautifulSoup(value, "html.parser")
+    for tag in list(soup.find_all(True)):
+        if tag.name not in ALLOWED_HTML_TAGS:
+            tag.unwrap()
+            continue
+
+        allowed_attrs = ALLOWED_HTML_ATTRS.get(tag.name, set())
+        for attr in list(tag.attrs):
+            if attr not in allowed_attrs:
+                del tag.attrs[attr]
+
+        if tag.name == "a":
+            href = str(tag.get("href", "")).strip()
+            if not href or not href.lower().startswith(SAFE_URL_PREFIXES):
+                tag.unwrap()
+                continue
+            if href.startswith(("http://", "https://")):
+                tag["target"] = "_blank"
+                tag["rel"] = "noopener noreferrer"
+    return str(soup)
 
 
 def load_posts() -> list[Post]:
@@ -178,7 +233,7 @@ def build_history_list(posts: list[Post], latest: Post) -> str:
 
 
 def build_index(posts: list[Post]) -> str:
-    """Render a homepage with today's digest and historical navigation."""
+    """Render a homepage with selected content and historical navigation."""
     latest = next((post for post in posts if post.lang == "zh"), None)
     if latest is None and posts:
         latest = posts[0]
@@ -196,6 +251,14 @@ def build_index(posts: list[Post]) -> str:
     if sibling:
         sibling_link = f'<a href="daily/{html.escape(sibling.output_name)}">English</a>'
 
+    items = [item for item in extract_news_items([latest]) if item.lang == latest.lang]
+    news_items = [item for item in items if item.group == "first_hand_news"]
+    insight_items = [item for item in items if item.group == "practice_insight"]
+    highlights = sorted(
+        items,
+        key=lambda item: float(item.score or 0),
+        reverse=True,
+    )[:3]
     history_html = build_history_list(posts, latest)
     history_count = max(post_count(posts, "zh") - 1, 0)
     body = f"""    <nav class="static-nav">
@@ -204,20 +267,45 @@ def build_index(posts: list[Post]) -> str:
     <section class="home-hero">
       <div>
         <p class="eyebrow">Today · {html.escape(latest.date)}</p>
-        <h1>今日 AI 资讯精读</h1>
-        <p>首页展示当天双轨日报；历史日报可从右侧列表跳转查看。</p>
+        <h1>Horizon News</h1>
+        <p>首页只展示精选内容；完整日报分为一手资讯速递和实战与专家洞察两个页面。</p>
       </div>
       <div class="home-stats">
         <span>{history_count}</span>
         <small>历史日报</small>
       </div>
     </section>
+    <section class="home-actions" aria-label="日报入口">
+      <a href="firsthand.html">一手资讯速递</a>
+      <a href="insights.html">实战与专家洞察</a>
+      <a href="daily/{html.escape(latest.output_name)}">完整日报</a>
+    </section>
     <div class="home-layout">
-      <article class="digest-page" data-lang="{html.escape(latest.lang)}">
-        <p class="eyebrow">{html.escape(latest.date)} · {html.escape(latest.lang.upper())}</p>
-        <h1>{html.escape(latest.title)}</h1>
-        {latest.body_html}
-      </article>
+      <div class="portal-stack">
+        <section class="portal-section">
+          <div class="portal-section-head">
+            <p class="eyebrow">Highlights</p>
+            <h2>今日必读</h2>
+          </div>
+          {render_item_cards(highlights, limit=3, compact=True)}
+        </section>
+        <section class="portal-section">
+          <div class="portal-section-head">
+            <p class="eyebrow">First-Hand News</p>
+            <h2>一手资讯精选</h2>
+            <a href="firsthand.html">查看 15 条</a>
+          </div>
+          {render_item_cards(news_items, limit=4)}
+        </section>
+        <section class="portal-section">
+          <div class="portal-section-head">
+            <p class="eyebrow">Practice</p>
+            <h2>实战与专家洞察精选</h2>
+            <a href="insights.html">查看 5 条</a>
+          </div>
+          {render_item_cards(insight_items, limit=2)}
+        </section>
+      </div>
       <aside class="history-panel" aria-label="历史日报">
         <div class="history-panel-header">
           <p class="eyebrow">Archive</p>
@@ -228,6 +316,177 @@ def build_index(posts: list[Post]) -> str:
     </div>
 """
     return page_shell(latest.title, body, "assets/css/horizon.css", "assets/js/horizon.js")
+
+
+def root_href(url: str) -> str:
+    return url.lstrip("/") if url.startswith("/") else url
+
+
+def render_item_cards(items: list[NewsItem], *, limit: int, compact: bool = False) -> str:
+    if not items:
+        return '<p class="history-empty">暂无内容。</p>'
+    cards = []
+    for item in items[:limit]:
+        summary = html.escape(item.summary)
+        score = html.escape(item.score or "?")
+        detail = ""
+        if not compact:
+            detail = f"""          <details>
+            <summary>AI 总结</summary>
+            <p>{summary}</p>
+          </details>"""
+        else:
+            detail = f"          <p>{summary}</p>"
+        cards.append(
+            f"""        <article class="portal-card">
+          <div class="portal-card-meta">
+            <span>{html.escape(item.source)}</span>
+            <strong>{score}/10</strong>
+          </div>
+          <h3><a href="{html.escape(root_href(item.read_url))}">{html.escape(item.title)}</a></h3>
+{detail}
+          <div class="portal-card-actions">
+            <a href="{html.escape(root_href(item.read_url))}">AI 精读</a>
+            <a href="{html.escape(item.source_url)}" target="_blank" rel="noopener noreferrer">原文</a>
+          </div>
+        </article>"""
+        )
+    return "\n".join(cards)
+
+
+def build_track_page(post: Post, group: str, title: str, subtitle: str) -> str:
+    items = [
+        item for item in extract_news_items([post])
+        if item.lang == post.lang and item.group == group
+    ]
+    body = f"""    <nav class="static-nav">
+      <a href="index.html">返回首页</a>
+      <a href="daily/{html.escape(post.output_name)}">完整日报</a>
+    </nav>
+    <section class="home-hero">
+      <div>
+        <p class="eyebrow">{html.escape(post.date)} · {html.escape(post.lang.upper())}</p>
+        <h1>{html.escape(title)}</h1>
+        <p>{html.escape(subtitle)}</p>
+      </div>
+      <div class="home-stats">
+        <span>{len(items)}</span>
+        <small>条内容</small>
+      </div>
+    </section>
+    <section class="track-full-list">
+      {render_full_item_list(items)}
+    </section>
+"""
+    return page_shell(title, body, "assets/css/horizon.css", "assets/js/horizon.js")
+
+
+def render_full_item_list(items: list[NewsItem]) -> str:
+    if not items:
+        return '<p class="history-empty">暂无内容。</p>'
+    rendered = []
+    for item in items:
+        rendered.append(
+            f"""      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>{html.escape(item.source)}</span>
+          <strong>{html.escape(item.score or "?")}/10</strong>
+        </div>
+        <h2><a href="{html.escape(root_href(item.read_url))}">{html.escape(item.title)}</a></h2>
+        <p>{html.escape(item.summary)}</p>
+        <div class="portal-card-actions">
+          <a href="{html.escape(root_href(item.read_url))}">AI 精读</a>
+          <a href="{html.escape(root_href(item.html_url))}">日报定位</a>
+          <a href="{html.escape(item.source_url)}" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>"""
+        )
+    return "\n".join(rendered)
+
+
+def extract_read_text(item: NewsItem, label: str) -> str:
+    return extract_labeled_text(item.section_markdown, label)
+
+
+def build_read_page(item: NewsItem) -> str:
+    ai_view = extract_read_text(item, "AI 观点") or extract_read_text(item, "AI View") or item.manager_takeaway
+    practical = (
+        extract_read_text(item, "可复用方法")
+        or extract_read_text(item, "Practical Takeaways")
+        or ""
+    )
+    implementation = (
+        extract_read_text(item, "实操要点")
+        or extract_read_text(item, "Implementation Notes")
+        or ""
+    )
+    application = (
+        extract_read_text(item, "我可以怎么用")
+        or extract_read_text(item, "How I Can Use This")
+        or ""
+    )
+    risks = item.risks or ["该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。"]
+    tags = "、".join(item.tags) if item.tags else "AI"
+    sections = [
+        ("guide", "内容导读", f"<p>{html.escape(item.summary)}</p>"),
+        (
+            "facts",
+            "核心事实",
+            f"<ul><li>来源：{html.escape(item.source)}</li><li>评分：{html.escape(item.score or '?')}/10</li><li>标签：{html.escape(tags)}</li></ul>",
+        ),
+        ("translation", "完整 AI 转译", item.section_html),
+        ("context", "背景与上下文", f"<p>{html.escape(item.manager_takeaway)}</p>"),
+        ("importance", "为什么重要", f"<p>{html.escape(item.manager_takeaway)}</p>"),
+        ("view", "AI 观点", f"<p>{html.escape(ai_view)}</p>"),
+        (
+            "actions",
+            "可执行建议",
+            "<ul>"
+            + "".join(f"<li>{html.escape(action)}</li>" for action in item.actions)
+            + "</ul>"
+            + (f"<p>{html.escape(practical)}</p>" if practical else "")
+            + (f"<p>{html.escape(implementation)}</p>" if implementation else "")
+            + (f"<p>{html.escape(application)}</p>" if application else ""),
+        ),
+        ("risks", "风险与限制", "<ul>" + "".join(f"<li>{html.escape(risk)}</li>" for risk in risks) + "</ul>"),
+        (
+            "source",
+            "来源信息",
+            f'<p><a href="{html.escape(item.source_url)}" target="_blank" rel="noopener noreferrer">查看原文</a></p>'
+            f'<p><a href="../{html.escape(root_href(item.html_url))}">返回当日日报定位</a></p>',
+        ),
+    ]
+    nav = "\n".join(
+        f'        <a href="#{section_id}">{html.escape(label)}</a>'
+        for section_id, label, _ in sections
+    )
+    body_sections = "\n".join(
+        f"""        <section id="{section_id}" class="read-section">
+          <h2>{html.escape(label)}</h2>
+          {content}
+        </section>"""
+        for section_id, label, content in sections
+    )
+    body = f"""    <nav class="static-nav">
+      <a href="../index.html">返回首页</a>
+      <a href="{html.escape(item.source_url)}" target="_blank" rel="noopener noreferrer">原文</a>
+    </nav>
+    <section class="read-hero">
+      <p class="eyebrow">{html.escape(item.date)} · Horizon News AI 精读</p>
+      <h1>{html.escape(item.title)}</h1>
+      <p>{html.escape(item.summary)}</p>
+    </section>
+    <div class="read-layout">
+      <aside class="read-nav" aria-label="本页内容">
+        <p class="eyebrow">本页内容</p>
+{nav}
+      </aside>
+      <article class="read-article">
+{body_sections}
+      </article>
+    </div>
+"""
+    return page_shell(item.title, body, "../assets/css/horizon.css", "../assets/js/horizon.js")
 
 
 def strip_markdown(value: str) -> str:
@@ -250,10 +509,18 @@ def slugify(value: str) -> str:
 
 def extract_heading(markdown_text: str) -> tuple[str, str]:
     heading = markdown_text.splitlines()[0].strip()
-    match = re.match(r"#{2,3}\s+\[([^\]]+)\]\(([^)]+)\)", heading)
+    match = re.match(r"#{2,3}\s+\[([^\]]+)\]\(([^)]+)\)(?:\s+⭐️\s*([0-9.]+)\/10)?", heading)
     if match:
         return strip_markdown(match.group(1)), match.group(2).strip()
     return strip_markdown(heading.lstrip("# ")), ""
+
+
+def extract_score(markdown_text: str) -> str:
+    heading = markdown_text.splitlines()[0].strip()
+    match = re.search(r"⭐️\s*([0-9.]+)\/10", heading)
+    if match:
+        return match.group(1)
+    return ""
 
 
 def extract_labeled_text(section: str, label: str) -> str:
@@ -321,26 +588,42 @@ def build_actions(lang: str, tags: list[str]) -> list[str]:
     ]
 
 
-def split_news_sections(post: Post) -> list[str]:
-    sections = re.split(r"\n(?=#{2,3}\s+\[)", post.body_markdown)
-    return [
-        section.strip()
-        for section in sections
-        if re.match(r"^#{2,3}\s+\[", section.strip())
-    ]
+def group_from_prefix(prefix: str) -> str:
+    group = "first_hand_news"
+    for match in re.finditer(r"^##\s+(.+)$", prefix, flags=re.M):
+        heading = strip_markdown(match.group(1))
+        if "实战" in heading or "Practice" in heading:
+            group = "practice_insight"
+        elif "一手" in heading or "First-Hand" in heading:
+            group = "first_hand_news"
+    return group
+
+
+def split_news_sections(post: Post) -> list[tuple[str, str]]:
+    matches = list(re.finditer(r"(?m)^#{2,3}\s+\[", post.body_markdown))
+    sections: list[tuple[str, str]] = []
+    for idx, match in enumerate(matches):
+        start = match.start()
+        end = matches[idx + 1].start() if idx + 1 < len(matches) else len(post.body_markdown)
+        section = post.body_markdown[start:end].strip()
+        if section:
+            sections.append((group_from_prefix(post.body_markdown[:start]), section))
+    return sections
 
 
 def extract_news_items(posts: list[Post]) -> list[NewsItem]:
     items: list[NewsItem] = []
     for post in posts:
-        for index, section in enumerate(split_news_sections(post), start=1):
+        for index, (group, section) in enumerate(split_news_sections(post), start=1):
             title, source_url = extract_heading(section)
+            score = extract_score(section)
             tags = extract_tags(section)
             category = tags[0] if tags else "AI"
             source = extract_source(section)
             item_id = f"{post.date}-{post.lang}-{index:02d}-{slugify(title)}"
             detail_url = f"/data/news-detail/{item_id}.json"
             html_url = f"/daily/{post.output_name}#item-{index}"
+            read_url = f"/read/{item_id}.html"
             summary = extract_summary(section)
             manager_takeaway = (
                 extract_labeled_text(section, "背景")
@@ -361,6 +644,8 @@ def extract_news_items(posts: list[Post]) -> list[NewsItem]:
                     source=source,
                     source_url=source_url,
                     source_tier=infer_source_tier(source, source_url),
+                    group=group,
+                    score=score,
                     summary=summary,
                     manager_takeaway=manager_takeaway,
                     actions=build_actions(post.lang, tags),
@@ -368,6 +653,15 @@ def extract_news_items(posts: list[Post]) -> list[NewsItem]:
                     tags=tags,
                     detail_url=detail_url,
                     html_url=html_url,
+                    read_url=read_url,
+                    section_markdown=section,
+                    section_html=sanitize_html_fragment(
+                        markdown.markdown(
+                            section,
+                            extensions=["extra", "sane_lists"],
+                            output_format="html5",
+                        )
+                    ),
                 )
             )
     return items
@@ -404,10 +698,13 @@ def build_data_files(posts: list[Post]) -> None:
                 "category": item.category,
                 "source": item.source,
                 "source_tier": item.source_tier,
+                "group": item.group,
+                "score": item.score,
                 "summary": item.summary,
                 "manager_takeaway": item.manager_takeaway,
                 "detail_url": item.detail_url,
                 "html_url": item.html_url,
+                "read_url": item.read_url,
                 "audio_url": item.audio_url,
                 "tags": item.tags,
             }
@@ -428,6 +725,8 @@ def build_data_files(posts: list[Post]) -> None:
                 "source_tier": item.source_tier,
                 "published_at": item.date,
                 "category": item.category,
+                "group": item.group,
+                "score": item.score,
                 "summary": item.summary,
                 "what_happened": item.summary,
                 "why_it_matters": item.manager_takeaway,
@@ -436,6 +735,7 @@ def build_data_files(posts: list[Post]) -> None:
                 "risks": item.risks,
                 "audio_url": item.audio_url,
                 "html_url": item.html_url,
+                "read_url": item.read_url,
                 "tags": item.tags,
             },
         )
@@ -447,9 +747,16 @@ def clean_old_daily_pages() -> None:
         path.unlink()
 
 
+def clean_old_read_pages() -> None:
+    READ_DIR.mkdir(parents=True, exist_ok=True)
+    for path in READ_DIR.glob("*.html"):
+        path.unlink()
+
+
 def build() -> None:
     posts = load_posts()
     clean_old_daily_pages()
+    clean_old_read_pages()
     for post in posts:
         (DAILY_DIR / post.output_name).write_text(
             build_post_page(post, posts),
@@ -461,8 +768,39 @@ def build() -> None:
         encoding="utf-8",
         newline="\n",
     )
+    latest_zh = next((post for post in posts if post.lang == "zh"), None)
+    if latest_zh:
+        (DOCS_DIR / "firsthand.html").write_text(
+            build_track_page(
+                latest_zh,
+                "first_hand_news",
+                "一手资讯速递",
+                "15 条一手动态、发布、论文和产品更新，保留原文入口和 AI 摘要。",
+            ),
+            encoding="utf-8",
+            newline="\n",
+        )
+        (DOCS_DIR / "insights.html").write_text(
+            build_track_page(
+                latest_zh,
+                "practice_insight",
+                "实战与专家洞察",
+                "5 条偏实操、项目经验、专家观点和方法沉淀的深读内容。",
+            ),
+            encoding="utf-8",
+            newline="\n",
+        )
+    for item in extract_news_items(posts):
+        (READ_DIR / f"{item.id}.html").write_text(
+            build_read_page(item),
+            encoding="utf-8",
+            newline="\n",
+        )
     build_data_files(posts)
-    print(f"Built {len(posts)} static posts into {DAILY_DIR} and JSON into {DATA_DIR}")
+    print(
+        f"Built {len(posts)} static posts into {DAILY_DIR}, "
+        f"read pages into {READ_DIR}, and JSON into {DATA_DIR}"
+    )
 
 
 if __name__ == "__main__":

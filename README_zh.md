@@ -70,23 +70,28 @@
 
 ## 为什么需要 Horizon？
 
-好新闻分散在各处，坏信息却源源不断。Horizon 为你先完成第一轮筛选：从 Hacker News、Reddit、Telegram、RSS、Twitter/X、GitHub 和 OpenBB 抓取内容，合并重复新闻，用 AI 打分过滤，并为重要内容补充背景解释和社区讨论。
+Horizon 把每天分散的 AI 资讯整理成两条线：一手资讯用于选题和追踪，实战/专家洞察用于深度学习和方法沉淀。系统先抓取，再用 AI 分轨筛选，最后生成可追溯原文链接的日报。
 
-但 Horizon 不只是又一个摘要工具。AI 很擅长降低噪声，但新闻仍然需要人的品味：你信任哪些信息源，哪些评论改变了你对事件的理解，哪些小众来源值得被更多人看见。Horizon 通过可定制的信息源、筛选标准、模型、语言、分发方式、评论摘要和社区信息源官网，把这层“人味”保留下来。
+它不是简单摘要器，而是一个可以长期维护的信息流工作台。你可以自己维护信源清单、自由模型接入方式、每日配额和发布方式，让日报保持稳定输出，而不是靠临时手工整理。
+
+## 当前工作流
+
+1. 先在 `data/config.json` 或 `data/config.github.json` 里维护自由模型和信源。
+2. `uv run horizon --hours 24` 拉取最近 24 小时资讯。
+3. AI 自动分成 `一手资讯速递` 和 `实战与专家洞察` 两条轨道。
+4. `scripts/build_static_pages.py` 生成 `docs/index.html`、`docs/daily/` 和 `docs/data/`。
+5. `scripts/publish_daily.py` 负责本地提交、推送和发布。
+6. GitHub Actions 定时跑同一套流程，Cloudflare Pages 自动发布 `docs/`。
 
 ## 功能特性
 
-- **📡 关注你的信息源** — 将 Hacker News、RSS、Reddit、Telegram、Twitter/X、GitHub Release / 用户动态，以及 OpenBB 金融新闻观察列表纳入同一条 pipeline
-- **🤖 把噪声变成阅读清单** — 使用 Claude、GPT、Gemini、DeepSeek、豆包、MiniMax 或任意 OpenAI 兼容 API，为每条内容评分 0-10
-- **🔗 合并重复新闻** — 在生成日报前自动合并来自不同平台的相同故事
-- **🔍 补全背景知识** — 为陌生概念、公司、项目和技术术语补充网络搜索得到的背景解释
-- **💬 读到社区声音** — 收集并总结 Hacker News、Reddit 等来源的评论讨论
-- **🌐 生成双语日报** — 基于同一组信息源生成英文和中文日报
-- **📝 发布日报站点** — 将生成的 Markdown 发布为 GitHub Pages 静态日报站点
-- **📧 邮件分发** — 运行自托管 SMTP/IMAP 邮件列表，自动处理订阅与退订
-- **🔔 推送到聊天和自动化工具** — 将模板化结果发送到飞书、钉钉、Slack、Discord 或自定义 Webhook
-- **🧙 从兴趣开始配置** — 通过交互式向导根据你的兴趣生成个性化信息源配置
-- **⚙️ 调校你的新闻雷达** — 在单个 JSON 配置中定制信息源、阈值、模型、语言和分发方式
+- **📡 关注你的信息源** — 把 Hacker News、RSS、GitHub、Reddit、Telegram、Twitter/X 和 OpenBB 统一到一条 pipeline
+- **🤖 自由模型接入** — 支持任意 OpenAI-compatible 网关，通过 `HORIZON_AI_*` 环境变量切换
+- **🔗 双轨筛选** — 一手资讯 15 条，实战与专家洞察 5 条
+- **🔍 可追溯精读** — 每条内容都保留原文链接、背景解释和社区讨论
+- **🌐 双语输出** — 同一套内容同时生成中文和英文日报
+- **📝 自动发布** — 生成结果进入 GitHub 提交，再由 Cloudflare Pages 自动上线
+- **🧭 可维护信源** — 用单独的信源清单持续维护公开信息源和自定义来源
 
 ## 工作原理
 
@@ -251,43 +256,47 @@ cp data/config.example.json data/config.json  # 自定义信息源
 ```jsonc
 {
   "ai": {
-    "provider": "openai",
-    "model": "gpt-4",
-    "api_key_env": "OPENAI_API_KEY"
-  },
-  "sources": {
-    "rss": [
-      { "name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/" }
-    ]
+    "provider": "custom",
+    "model": "${HORIZON_AI_MODEL}",
+    "base_url": "${HORIZON_AI_BASE_URL}",
+    "api_key_env": "HORIZON_AI_API_KEY"
   },
   "filtering": {
-    "ai_score_threshold": 6.0
+    "ai_score_threshold": 7.0,
+    "category_groups": {
+      "first_hand_news": {
+        "limit": 15
+      },
+      "practice_insight": {
+        "limit": 5
+      }
+    }
   }
 }
 ```
 
-**均衡日报（可选）**
+**日报配额（可选）**
 
-可以限制日报总条数，并避免单一类别占据过多内容。类别来自
-`sources.rss[].category` 等信息源配置。
+可以把日报固定成两组：15 条一手资讯，5 条实战/专家洞察。类别来自
+`sources.rss[].category`、`sources.github[].category` 等信息源配置。
 
 ```jsonc
 {
   "filtering": {
-    "ai_score_threshold": 6.0,
+    "ai_score_threshold": 7.0,
     "max_items": 20,
     "category_groups": {
-      "ai": {
-        "limit": 5,
-        "categories": ["ai-news", "ai-tools", "machine-learning"]
+      "first_hand_news": {
+        "limit": 15,
+        "categories": ["first_hand_news"]
       },
-      "finance": {
+      "practice_insight": {
         "limit": 5,
-        "categories": ["finance", "business", "equities"]
+        "categories": ["practice_insight"]
       }
     },
     "default_group": "other",
-    "default_group_limit": 3
+    "default_group_limit": 0
   }
 }
 ```
@@ -296,6 +305,14 @@ cp data/config.example.json data/config.json  # 自定义信息源
 `category_groups` 和 `max_items` 时，筛选行为保持不变。
 
 `data/config.json` 里的任意字符串值都可以通过 `${VAR_NAME}` 引用环境变量。这适合用于 `ai.base_url`、私有 RSS 链接、Webhook 地址或自定义请求头模板等字段。
+
+自由模型接入时，把 `ai.provider` 设为 `custom`，并配置这三个环境变量：
+
+- `HORIZON_AI_API_KEY`
+- `HORIZON_AI_BASE_URL`
+- `HORIZON_AI_MODEL`
+
+只要是 OpenAI-compatible 接口，都可以接自建网关、免费额度模型或中转网关。
 
 完整配置参考请查看[配置指南](docs/configuration.md)。
 
@@ -333,13 +350,21 @@ Horizon 非常适合作为 **GitHub Actions** 定时任务运行。查看 [`.git
 | **GitHub** | 用户动态 & 仓库 Release | — |
 | **OpenBB** | 按观察列表 / provider 抓取金融公司新闻 | — |
 
+建议优先维护的公开信源方向：
+
+- 一手资讯：官方 Blog、Release、Changelog、RSS、GitHub Releases
+- 实战洞察：个人技术博客、工程复盘、长文 newsletter、开源作者经验帖
+- Obsidian + AI
+- AI 开源生态
+- 头部技术专家博客和 GitHub Release
+
 ## 日报可以去哪里
 
 Horizon 支持通过多种方式发布和分发生成的日报：
 
 | 方式 | 作用 |
 |------|------|
-| **GitHub Pages 日报站点** | 将生成的 Markdown 复制到 `docs/`，通过 GitHub Pages 发布为每日更新的静态日报站点 |
+| **GitHub Pages 日报站点** | 将生成的 Markdown 和静态 HTML 写入 `docs/`，再由 Cloudflare Pages 自动发布 |
 | **邮件订阅** | 通过 SMTP/IMAP 向订阅者发送日报，并自动处理订阅/退订请求 |
 | **Webhook 通知** | 在成功或失败时将结果推送到飞书、钉钉、Slack、Discord 或任意 Webhook 端点 |
 | **MCP Server** | 将抓取、打分、过滤、富化、摘要和完整 pipeline 暴露为工具，供 AI 助手调用 |
@@ -357,7 +382,7 @@ Horizon 支持通过多种方式发布和分发生成的日报：
 
 ## 项目状态
 
-Horizon 已经支持完整的日报流程：多源抓取、AI 打分、去重、背景补充、评论摘要、双语生成、GitHub Pages 发布、邮件分发、Webhook 推送、Docker 部署、MCP 集成和配置向导。
+Horizon 已经支持完整的日报流程：多源抓取、双轨打分、去重、背景补充、评论摘要、双语生成、GitHub 提交、Cloudflare 自动发布、邮件分发、Webhook 推送、Docker 部署、MCP 集成和配置向导。
 
 计划中的改进：
 

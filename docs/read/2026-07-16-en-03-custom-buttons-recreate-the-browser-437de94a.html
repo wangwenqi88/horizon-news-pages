@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custom buttons recreate the browser.</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="project-name">AI 资讯精读</h1>
+    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  </header>
+  <main class="main-content">
+    <nav class="static-nav">
+      <a href="../index.html">返回首页</a>
+      <a href="https://madcampos.dev/blog/2026/07/accessibility-from-scratch/" target="_blank" rel="noopener noreferrer">原文</a>
+    </nav>
+    <section class="read-hero">
+      <p class="eyebrow">2026-07-16 · Horizon News AI 精读</p>
+      <h1>Custom buttons recreate the browser.</h1>
+      <p>Mad Campos published an article arguing that creating a button from scratch means reimplementing a large amount of native browser behavior, especially accessibility behavior. The piece uses a satirical framing to show how much functionality developers lose when they replace a real HTML button with a custom element. This matters because custom UI components are common in modern frontend development, but small mistakes can make interfaces unusable for keyboard users and people relying on assistive technologies. The article reinforces a broader accessibility lesson: native HTML controls often provide correctness and compatibility that are difficult to reproduce reliably. MDN notes that adding role=&quot;button&quot; to another element only exposes it as a button to assistive technology; it does not automatically provide native click behavior, keyboard handling, or focus behavior. A technically correct custom button must handle focusability, Enter and Space activation, accessible naming, disabled states, and interaction differences across browsers and assistive technologies.</p>
+    </section>
+    <div class="read-layout">
+      <aside class="read-nav" aria-label="本页内容">
+        <p class="eyebrow">本页内容</p>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+      </aside>
+      <article class="read-article">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>Mad Campos published an article arguing that creating a button from scratch means reimplementing a large amount of native browser behavior, especially accessibility behavior. The piece uses a satirical framing to show how much functionality developers lose when they replace a real HTML button with a custom element. This matters because custom UI components are common in modern frontend development, but small mistakes can make interfaces unusable for keyboard users and people relying on assistive technologies. The article reinforces a broader accessibility lesson: native HTML controls often provide correctness and compatibility that are difficult to reproduce reliably. MDN notes that adding role=&quot;button&quot; to another element only exposes it as a button to assistive technology; it does not automatically provide native click behavior, keyboard handling, or focus behavior. A technically correct custom button must handle focusability, Enter and Space activation, accessible naming, disabled states, and interaction differences across browsers and assistive technologies.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：7.0/10</li><li>标签：accessibility、web-development、ui-components、html、frontend</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h2><a href="https://madcampos.dev/blog/2026/07/accessibility-from-scratch/" rel="noopener noreferrer" target="_blank">Custom buttons recreate the browser.</a> ⭐️ 7.0/10</h2>
+<p>Mad Campos published an article arguing that creating a button from scratch means reimplementing a large amount of native browser behavior, especially accessibility behavior. The piece uses a satirical framing to show how much functionality developers lose when they replace a real HTML button with a custom element. This matters because custom UI components are common in modern frontend development, but small mistakes can make interfaces unusable for keyboard users and people relying on assistive technologies. The article reinforces a broader accessibility lesson: native HTML controls often provide correctness and compatibility that are difficult to reproduce reliably. MDN notes that adding role="button" to another element only exposes it as a button to assistive technology; it does not automatically provide native click behavior, keyboard handling, or focus behavior. A technically correct custom button must handle focusability, Enter and Space activation, accessible naming, disabled states, and interaction differences across browsers and assistive technologies.</p>
+<p>hackernews · treve · Jul 16, 03:48 · <a href="https://news.ycombinator.com/item?id=48930136" rel="noopener noreferrer" target="_blank">Discussion</a></p>
+<p><strong>Background</strong>: HTML includes a native button element that browsers and operating systems already know how to expose to users, keyboards, and accessibility APIs. ARIA can add semantic meaning, such as role="button", but it generally does not add the full behavior of the native element by itself. Accessible names are the labels that assistive technologies use to identify controls, and browsers compute them from visible text, ARIA attributes, and related markup.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role" rel="noopener noreferrer" target="_blank">ARIA: button role - MDN Web Docs - Mozilla</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button" rel="noopener noreferrer" target="_blank">HTML button element - HTML | MDN</a></li>
+<li><a href="https://www.w3.org/TR/accname-1.2/" rel="noopener noreferrer" target="_blank">Accessible Name and Description Computation 1.2</a></li>
+</ul>
+</details>
+<p><strong>Discussion</strong>: The discussion is broadly sympathetic to the article’s point, with commenters comparing web developers’ repeated recreation of widgets to ignoring mature operating-system UI toolkits. Several commenters added nuance: native controls are preferable when they fit, but gaps such as complex comboboxes with server-side filtering can force custom implementations, and accessibility standards themselves can involve tradeoffs.</p>
+<p><strong>Tags</strong>: <code>#accessibility</code>, <code>#web-development</code>, <code>#ui-components</code>, <code>#html</code>, <code>#frontend</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>HTML includes a native button element that browsers and operating systems already know how to expose to users, keyboards, and accessibility APIs. ARIA can add semantic meaning, such as role=&quot;button&quot;, but it generally does not add the full behavior of the native element by itself. Accessible names are the labels that assistive technologies use to identify controls, and browsers compute them from visible text, ARIA attributes, and related markup.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>HTML includes a native button element that browsers and operating systems already know how to expose to users, keyboards, and accessibility APIs. ARIA can add semantic meaning, such as role=&quot;button&quot;, but it generally does not add the full behavior of the native element by itself. Accessible names are the labels that assistive technologies use to identify controls, and browsers compute them from visible text, ARIA attributes, and related markup.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>HTML includes a native button element that browsers and operating systems already know how to expose to users, keyboards, and accessibility APIs. ARIA can add semantic meaning, such as role=&quot;button&quot;, but it generally does not add the full behavior of the native element by itself. Accessible names are the labels that assistive technologies use to identify controls, and browsers compute them from visible text, ARIA attributes, and related markup.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for accessibility, web-development.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>The discussion is broadly sympathetic to the article’s point, with commenters comparing web developers’ repeated recreation of widgets to ignoring mature operating-system UI toolkits. Several commenters added nuance: native controls are preferable when they fit, but gaps such as complex comboboxes with server-side filtering can force custom implementations, and accessibility standards themselves can involve tradeoffs.</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://madcampos.dev/blog/2026/07/accessibility-from-scratch/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-16-en.html#item-3">返回当日日报定位</a></p>
+        </section>
+      </article>
+    </div>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

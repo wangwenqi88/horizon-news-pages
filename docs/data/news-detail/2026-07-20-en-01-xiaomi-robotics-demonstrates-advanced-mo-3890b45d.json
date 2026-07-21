@@ -8,6 +8,8 @@
   "source_tier": "B",
   "published_at": "2026-07-20",
   "category": "robotics",
+  "group": "first_hand_news",
+  "score": "8.0",
   "summary": "Xiaomi Robotics published a Xiaomi-Robotics-1 showcase demonstrating a robotic system performing advanced mobile manipulation tasks, including coordinated two-handed handling, deformable-object interaction, laundry-like handling, and thin affordance manipulation. The demo drew unusually strong technical discussion on Hacker News. These tasks are important because they combine mobility, perception, grasping, and force control in messy real-world settings rather than only in fixed industrial workcells. If such capabilities become reliable, they could expand robots from structured factory automation into household, service, logistics, and care-related applications. Commenters highlighted that the hard parts include coordinating two arms, moving the body while manipulating, handling deformable objects, grasping multiple objects at once, and manipulating thin affordances such as a bag zipper. The available material appears to be a demo rather than an independently benchmarked product release, so reliability, speed, generalization, and deployment constraints remain unclear.",
   "what_happened": "Xiaomi Robotics published a Xiaomi-Robotics-1 showcase demonstrating a robotic system performing advanced mobile manipulation tasks, including coordinated two-handed handling, deformable-object interaction, laundry-like handling, and thin affordance manipulation. The demo drew unusually strong technical discussion on Hacker News. These tasks are important because they combine mobility, perception, grasping, and force control in messy real-world settings rather than only in fixed industrial workcells. If such capabilities become reliable, they could expand robots from structured factory automation into household, service, logistics, and care-related applications. Commenters highlighted that the hard parts include coordinating two arms, moving the body while manipulating, handling deformable objects, grasping multiple objects at once, and manipulating thin affordances such as a bag zipper. The available material appears to be a demo rather than an independently benchmarked product release, so reliability, speed, generalization, and deployment constraints remain unclear.",
   "why_it_matters": "A mobile manipulator is a robot that combines a mobile base with one or more manipulators, allowing it to navigate through an environment and physically act on objects. Bimanual manipulation refers to using two arms or hands together, which is difficult because the robot must coordinate timing, contact forces, object pose, and collision avoidance. Deformable-object manipulation is especially challenging because objects such as cloth, bags, or laundry change shape during contact, making their state harder to perceive and predict than rigid objects.",
@@ -22,6 +24,7 @@
   ],
   "audio_url": "",
   "html_url": "/daily/2026-07-20-en.html#item-1",
+  "read_url": "/read/2026-07-20-en-01-xiaomi-robotics-demonstrates-advanced-mo-3890b45d.html",
   "tags": [
     "robotics",
     "humanoid-robots",

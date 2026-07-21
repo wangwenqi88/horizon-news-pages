@@ -18,7 +18,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_ARTIFACTS = [
     "docs/index.html",
+    "docs/firsthand.html",
+    "docs/insights.html",
     "docs/daily",
+    "docs/read",
     "docs/data",
     "docs/_posts",
 ]

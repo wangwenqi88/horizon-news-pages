@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Small models get a local-deployment benchmark.</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="project-name">AI 资讯精读</h1>
+    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  </header>
+  <main class="main-content">
+    <nav class="static-nav">
+      <a href="../index.html">返回首页</a>
+      <a href="https://arxiv.org/abs/2607.16202" target="_blank" rel="noopener noreferrer">原文</a>
+    </nav>
+    <section class="read-hero">
+      <p class="eyebrow">2026-07-21 · Horizon News AI 精读</p>
+      <h1>Small models get a local-deployment benchmark.</h1>
+      <p>A new arXiv paper, 2607.16202v1, evaluates nine open-weight small language models from 135M to 3B parameters on a 1,085-example, 16-topic multiple-choice benchmark for structured local deployment. It also tests parameter-efficient adaptation with 4-bit NF4 quantization and DoRA/LoRA-style adapters on an NVIDIA L4-class GPU budget. The result is useful for teams that need local, auditable, lower-cost AI systems rather than frontier-scale general-purpose models. It suggests that disciplined benchmarking plus lightweight fine-tuning can make some sub-3B models viable as specialized local experts for constrained workflows. In base evaluation, Qwen Coder 3B led with 75.67% strict accuracy, followed by Qwen2.5 1.5B at 67.10%, Qwen3.5 2B at 64.98%, and Granite 3.3 2B at 64.61%. On a shared 108-example held-out fine-tuning split, adaptation improved Qwen Coder 3B by 26.85 points, SmolLM2 1.7B by 25.92 points, Qwen2.5 1.5B by 19.44 points, SmolLM2 360M by 10.18 points, and SmolLM2 135M by 5.55 points.</p>
+    </section>
+    <div class="read-layout">
+      <aside class="read-nav" aria-label="本页内容">
+        <p class="eyebrow">本页内容</p>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+      </aside>
+      <article class="read-article">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>A new arXiv paper, 2607.16202v1, evaluates nine open-weight small language models from 135M to 3B parameters on a 1,085-example, 16-topic multiple-choice benchmark for structured local deployment. It also tests parameter-efficient adaptation with 4-bit NF4 quantization and DoRA/LoRA-style adapters on an NVIDIA L4-class GPU budget. The result is useful for teams that need local, auditable, lower-cost AI systems rather than frontier-scale general-purpose models. It suggests that disciplined benchmarking plus lightweight fine-tuning can make some sub-3B models viable as specialized local experts for constrained workflows. In base evaluation, Qwen Coder 3B led with 75.67% strict accuracy, followed by Qwen2.5 1.5B at 67.10%, Qwen3.5 2B at 64.98%, and Granite 3.3 2B at 64.61%. On a shared 108-example held-out fine-tuning split, adaptation improved Qwen Coder 3B by 26.85 points, SmolLM2 1.7B by 25.92 points, Qwen2.5 1.5B by 19.44 points, SmolLM2 360M by 10.18 points, and SmolLM2 135M by 5.55 points.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：rss</li><li>评分：7.0/10</li><li>标签：small-language-models、local-ai、benchmarking、parameter-efficient-finetuning、open-weight-models</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://arxiv.org/abs/2607.16202" rel="noopener noreferrer" target="_blank">Small models get a local-deployment benchmark.</a> ⭐️ 7.0/10</h3>
+<p>A new arXiv paper, 2607.16202v1, evaluates nine open-weight small language models from 135M to 3B parameters on a 1,085-example, 16-topic multiple-choice benchmark for structured local deployment. It also tests parameter-efficient adaptation with 4-bit NF4 quantization and DoRA/LoRA-style adapters on an NVIDIA L4-class GPU budget. The result is useful for teams that need local, auditable, lower-cost AI systems rather than frontier-scale general-purpose models. It suggests that disciplined benchmarking plus lightweight fine-tuning can make some sub-3B models viable as specialized local experts for constrained workflows. In base evaluation, Qwen Coder 3B led with 75.67% strict accuracy, followed by Qwen2.5 1.5B at 67.10%, Qwen3.5 2B at 64.98%, and Granite 3.3 2B at 64.61%. On a shared 108-example held-out fine-tuning split, adaptation improved Qwen Coder 3B by 26.85 points, SmolLM2 1.7B by 25.92 points, Qwen2.5 1.5B by 19.44 points, SmolLM2 360M by 10.18 points, and SmolLM2 135M by 5.55 points.</p>
+<p>rss · ArXiv AI · Jul 21, 04:00</p>
+<p><strong>Background</strong>: Small language models are attractive for local deployment because they can often run on cheaper hardware and may be easier to govern than very large cloud-hosted models. Parameter-efficient fine-tuning changes only a small number of trainable parameters, reducing memory and compute requirements compared with full fine-tuning. LoRA is a common adapter-based method, while DoRA decomposes pretrained weights into magnitude and direction components and uses LoRA-style updates for directional adaptation. NF4 is a 4-bit quantization format used to reduce model memory footprint during efficient fine-tuning and deployment.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://developer.nvidia.com/blog/introducing-dora-a-high-performing-alternative-to-lora-for-fine-tuning/" rel="noopener noreferrer" target="_blank">Introducing DoRA, a High-Performing Alternative to LoRA for ...</a></li>
+<li><a href="https://arxiv.org/abs/2402.09353" rel="noopener noreferrer" target="_blank">[2402.09353] DoRA: Weight-Decomposed Low-Rank Adaptation DoRA: Enhancing Parameter-Efficient Fine-Tuning with Dynamic ... Images [2405.17357] DoRA: Enhancing Parameter-Efficient Fine-Tuning ... GitHub - NVlabs/DoRA: [ICML2024 (Oral)] Official PyTorch ... Fine-tuning Guide | NVlabs/DoRA | DeepWiki Advanced LLM Fine-Tuning: LoRa, QLora, Dora &amp; Lora+ ...</a></li>
+<li><a href="https://www.emergentmind.com/topics/4-bit-normalfloat-nf4-quantization" rel="noopener noreferrer" target="_blank">4-bit NormalFloat (NF4) Quantization - emergentmind.com</a></li>
+</ul>
+</details>
+<p><strong>Tags</strong>: <code>#small-language-models</code>, <code>#local-ai</code>, <code>#benchmarking</code>, <code>#parameter-efficient-finetuning</code>, <code>#open-weight-models</code></p>
+<hr/>
+<h2>Practice &amp; Expert Insights</h2>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>Small language models are attractive for local deployment because they can often run on cheaper hardware and may be easier to govern than very large cloud-hosted models. Parameter-efficient fine-tuning changes only a small number of trainable parameters, reducing memory and compute requirements compared with full fine-tuning. LoRA is a common adapter-based method, while DoRA decomposes pretrained weights into magnitude and direction components and uses LoRA-style updates for directional adaptation. NF4 is a 4-bit quantization format used to reduce model memory footprint during efficient fine-tuning and deployment.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>Small language models are attractive for local deployment because they can often run on cheaper hardware and may be easier to govern than very large cloud-hosted models. Parameter-efficient fine-tuning changes only a small number of trainable parameters, reducing memory and compute requirements compared with full fine-tuning. LoRA is a common adapter-based method, while DoRA decomposes pretrained weights into magnitude and direction components and uses LoRA-style updates for directional adaptation. NF4 is a 4-bit quantization format used to reduce model memory footprint during efficient fine-tuning and deployment.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>Small language models are attractive for local deployment because they can often run on cheaper hardware and may be easier to govern than very large cloud-hosted models. Parameter-efficient fine-tuning changes only a small number of trainable parameters, reducing memory and compute requirements compared with full fine-tuning. LoRA is a common adapter-based method, while DoRA decomposes pretrained weights into magnitude and direction components and uses LoRA-style updates for directional adaptation. NF4 is a 4-bit quantization format used to reduce model memory footprint during efficient fine-tuning and deployment.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for small-language-models, local-ai.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://arxiv.org/abs/2607.16202" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-21-en.html#item-15">返回当日日报定位</a></p>
+        </section>
+      </article>
+    </div>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

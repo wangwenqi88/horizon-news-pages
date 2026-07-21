@@ -8,6 +8,8 @@
   "source_tier": "S",
   "published_at": "2026-07-20",
   "category": "AI Agents",
+  "group": "first_hand_news",
+  "score": "6.5",
   "summary": "A new arXiv v1 paper, GraphDx, proposes a knowledge-graph-enhanced multi-agent framework for sequential medical diagnosis. It reports experiments on MedQA and MIMIC-IV using DeepSeek-V3, Kimi-k2, and Llama-3.3, with diagnostic success rising from 50–68% to 79–93% and test costs falling by 20–54%. The work matters because medical diagnosis is not only a prediction problem but also a resource-allocation problem: each additional question, lab test, or procedure has cost and potential burden. If validated beyond the paper, this approach could make LLM-based clinical decision support more systematic, interpretable, and economically aware. GraphDx builds Medical Diagnosis Knowledge Graphs with quantized typicality, action-centric topology, and attributes for both diagnostic relevance and cost-sensitivity. Its three agents split the workflow into Perception, Reasoning, and Decision, with deterministic evidence scoring and cost-aware planning handled by the Reasoning Agent rather than left entirely to free-form LLM generation.",
   "what_happened": "A new arXiv v1 paper, GraphDx, proposes a knowledge-graph-enhanced multi-agent framework for sequential medical diagnosis. It reports experiments on MedQA and MIMIC-IV using DeepSeek-V3, Kimi-k2, and Llama-3.3, with diagnostic success rising from 50–68% to 79–93% and test costs falling by 20–54%. The work matters because medical diagnosis is not only a prediction problem but also a resource-allocation problem: each additional question, lab test, or procedure has cost and potential burden. If validated beyond the paper, this approach could make LLM-based clinical decision support more systematic, interpretable, and economically aware. GraphDx builds Medical Diagnosis Knowledge Graphs with quantized typicality, action-centric topology, and attributes for both diagnostic relevance and cost-sensitivity. Its three agents split the workflow into Perception, Reasoning, and Decision, with deterministic evidence scoring and cost-aware planning handled by the Reasoning Agent rather than left entirely to free-form LLM generation.",
   "why_it_matters": "Sequential diagnosis means gathering information over multiple steps, such as asking symptoms first and ordering tests only when they are expected to improve the diagnosis enough to justify their cost. A knowledge graph represents entities and relationships in a structured graph, which can make medical facts, symptoms, diseases, and actions easier to reason over than plain text alone. Recent medical AI work has explored combining LLM agents with knowledge graphs, such as KG4Diagnosis, to improve diagnostic reasoning and workflow structure. GraphDx fits into this trend but focuses specifically on balancing diagnostic success with the cost of information gathering.",
@@ -20,6 +22,7 @@
   "risks": [],
   "audio_url": "",
   "html_url": "/daily/2026-07-20-en.html#item-10",
+  "read_url": "/read/2026-07-20-en-10-graphdx-targets-cost-aware-sequential-di-b5a12cfb.html",
   "tags": [
     "AI Agents",
     "Medical AI",

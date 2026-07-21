@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-21-en-17-perfection-is-not-over-engineering-fb77abc1",
+  "date": "2026-07-21",
+  "lang": "en",
+  "title": "Perfection is not over-engineering.",
+  "source": "hackernews",
+  "source_url": "https://var0.xyz/posts/perfection-is-not-over-engineering.html",
+  "source_tier": "B",
+  "published_at": "2026-07-21",
+  "category": "software-engineering",
+  "group": "practice_insight",
+  "score": "7.0",
+  "summary": "The essay reframes over-engineering as solving the wrong problem or optimizing for the wrong constraints, rather than simply spending too much effort on quality. It argues that careful, high-quality system design can be justified when it is aligned with real requirements and user needs. This distinction matters because teams often use phrases like “do not let perfect be the enemy of good” to justify low-quality work or avoid hard design conversations. A clearer definition helps engineering teams decide when rigor reduces long-term risk and when it becomes waste. The article’s core claim is that “perfection” should mean fitness to requirements, not abstract completeness or endless polish. The main caveat is that requirements must be real and well understood; otherwise, the same pursuit of elegance can become premature optimization, edge-case obsession, or misdirected architecture.",
+  "what_happened": "The essay reframes over-engineering as solving the wrong problem or optimizing for the wrong constraints, rather than simply spending too much effort on quality. It argues that careful, high-quality system design can be justified when it is aligned with real requirements and user needs. This distinction matters because teams often use phrases like “do not let perfect be the enemy of good” to justify low-quality work or avoid hard design conversations. A clearer definition helps engineering teams decide when rigor reduces long-term risk and when it becomes waste. The article’s core claim is that “perfection” should mean fitness to requirements, not abstract completeness or endless polish. The main caveat is that requirements must be real and well understood; otherwise, the same pursuit of elegance can become premature optimization, edge-case obsession, or misdirected architecture.",
+  "why_it_matters": "In software engineering, over-engineering usually describes building more abstraction, flexibility, scalability, or process than the situation actually needs. Technical debt refers to future maintenance costs created by shortcuts, unclear design, or decisions that no longer fit changing requirements. Product development often involves uncertainty, so teams must balance learning quickly against building systems that are reliable, maintainable, and pleasant to work on.",
+  "manager_takeaway": "In software engineering, over-engineering usually describes building more abstraction, flexibility, scalability, or process than the situation actually needs. Technical debt refers to future maintenance costs created by shortcuts, unclear design, or decisions that no longer fit changing requirements. Product development often involves uncertainty, so teams must balance learning quickly against building systems that are reliable, maintainable, and pleasant to work on.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for software-engineering, engineering-culture.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The discussion is broadly sympathetic to pushing back against low standards, but commenters disagree on how safe the word “perfection” is as a framing device. Some argue that “not perfect” is often a practical way to reject obscure edge cases or premature optimization, while others worry that product thinking, bikeshedding, and emotional attachment to ideal solutions can make perfection harmful."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-21-en.html#item-17",
+  "read_url": "/read/2026-07-21-en-17-perfection-is-not-over-engineering-fb77abc1.html",
+  "tags": [
+    "software-engineering",
+    "engineering-culture",
+    "architecture",
+    "technical-debt",
+    "product-development"
+  ]
+}

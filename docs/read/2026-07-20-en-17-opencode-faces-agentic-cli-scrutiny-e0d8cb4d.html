@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenCode faces agentic CLI scrutiny.</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="project-name">AI 资讯精读</h1>
+    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  </header>
+  <main class="main-content">
+    <nav class="static-nav">
+      <a href="../index.html">返回首页</a>
+      <a href="https://wren.wtf/shower-thoughts/stop-using-opencode/" target="_blank" rel="noopener noreferrer">原文</a>
+    </nav>
+    <section class="read-hero">
+      <p class="eyebrow">2026-07-20 · Horizon News AI 精读</p>
+      <h1>OpenCode faces agentic CLI scrutiny.</h1>
+      <p>A critical blog post titled “Stop Using OpenCode” triggered an active Hacker News discussion about OpenCode’s design, security assumptions, prompt-cache behavior, filesystem scanning, and architecture. The debate uses OpenCode as a concrete example of broader risks in agentic coding CLIs. Agentic coding tools increasingly run inside developers’ terminals and can read files, execute commands, and modify code, so weak defaults or unclear trust boundaries can become real security and productivity risks. The discussion matters to developers, security teams, and tool builders who need to balance automation, control, and usability. The post reportedly criticizes repeated filesystem globbing, re-reading AGENTS.md, turn-0 system prompt changes such as inserting the current date, and the resulting prompt-cache misses across SSE turns. Commenters dispute whether these are severe security flaws, fixable annoyances, or misunderstandings of features such as command filtering, which some users see as steering rather than security enforcement.</p>
+    </section>
+    <div class="read-layout">
+      <aside class="read-nav" aria-label="本页内容">
+        <p class="eyebrow">本页内容</p>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+      </aside>
+      <article class="read-article">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>A critical blog post titled “Stop Using OpenCode” triggered an active Hacker News discussion about OpenCode’s design, security assumptions, prompt-cache behavior, filesystem scanning, and architecture. The debate uses OpenCode as a concrete example of broader risks in agentic coding CLIs. Agentic coding tools increasingly run inside developers’ terminals and can read files, execute commands, and modify code, so weak defaults or unclear trust boundaries can become real security and productivity risks. The discussion matters to developers, security teams, and tool builders who need to balance automation, control, and usability. The post reportedly criticizes repeated filesystem globbing, re-reading AGENTS.md, turn-0 system prompt changes such as inserting the current date, and the resulting prompt-cache misses across SSE turns. Commenters dispute whether these are severe security flaws, fixable annoyances, or misunderstandings of features such as command filtering, which some users see as steering rather than security enforcement.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：7.0/10</li><li>标签：agentic-coding、OpenCode、AI-security、developer-tools、HN-discussion</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://wren.wtf/shower-thoughts/stop-using-opencode/" rel="noopener noreferrer" target="_blank">OpenCode faces agentic CLI scrutiny.</a> ⭐️ 7.0/10</h3>
+<p>A critical blog post titled “Stop Using OpenCode” triggered an active Hacker News discussion about OpenCode’s design, security assumptions, prompt-cache behavior, filesystem scanning, and architecture. The debate uses OpenCode as a concrete example of broader risks in agentic coding CLIs. Agentic coding tools increasingly run inside developers’ terminals and can read files, execute commands, and modify code, so weak defaults or unclear trust boundaries can become real security and productivity risks. The discussion matters to developers, security teams, and tool builders who need to balance automation, control, and usability. The post reportedly criticizes repeated filesystem globbing, re-reading AGENTS.md, turn-0 system prompt changes such as inserting the current date, and the resulting prompt-cache misses across SSE turns. Commenters dispute whether these are severe security flaws, fixable annoyances, or misunderstandings of features such as command filtering, which some users see as steering rather than security enforcement.</p>
+<p>hackernews · alekq · Jul 20, 12:45 · <a href="https://news.ycombinator.com/item?id=48978112" rel="noopener noreferrer" target="_blank">Discussion</a></p>
+<p><strong>Background</strong>: OpenCode is described by its project site as an open-source AI coding agent that works in the terminal, IDE, or desktop. Its GitHub page describes it as a Go-based CLI application with a terminal user interface for interacting with AI models on coding, debugging, and related tasks. Agentic coding CLIs differ from passive autocomplete tools because they can coordinate multiple steps, inspect project files, call tools, and sometimes execute shell commands. That power makes prompt injection, credential leakage, unsafe tool use, and overtrust in AI output recurring concerns for this category of software.</p>
+<p><strong>AI View</strong>: High-engagement Hacker News discussion around a critical practitioner writeup on OpenCode and agentic CLI risks, including prompt-cache behavior, filesystem scanning, security assumptions, and architecture concerns. The piece appears somewhat polemical and lacks clear alternatives, but the 114-comment discussion adds useful nuance from users defending OpenCode, reframing issues as fixable annoyances, and broadening the critique to agentic coding CLIs generally.</p>
+<p><strong>Practical Takeaways</strong>: Treat agentic coding CLIs as semi-autonomous software operators, not as ordinary text editors or autocomplete plugins. Before adopting one, evaluate what files it can read, what commands it can run, how it constructs prompts, whether prompt changes defeat caching, and whether command filters are security controls or merely workflow guidance. Productivity gains should be measured alongside operational risks, especially when the tool is used inside repositories containing secrets, customer code, or regulated financial logic. A useful decision criterion is whether the tool’s permission model and logging are clear enough for the risk level of the project.</p>
+<p><strong>Implementation Notes</strong>: Start with a low-risk repository and observe the agent’s filesystem access, command suggestions, and prompt-context behavior before using it on sensitive code. Keep secrets out of the working tree, use environment separation, and avoid granting broad shell permissions unless the task genuinely requires them. Review configuration files such as AGENTS.md because small changes may alter prompt context, caching behavior, or agent instructions. Do not assume that command filtering is a security boundary unless the tool documentation explicitly guarantees that behavior and you have tested enforcement. Capture logs or transcripts for important sessions so that unexpected file reads, command attempts, or generated changes can be audited later.</p>
+<p><strong>How I Can Use This</strong>: For AI-agent workflows, this discussion is a reminder to document tool permissions, prompt sources, and review checkpoints as part of the operating procedure. In software delivery or financial-software project management, agentic CLI adoption should go through the same risk review as any tool that can read repositories and execute commands.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://opencode.ai/" rel="noopener noreferrer" target="_blank">OpenCode | The open source AI coding agent</a></li>
+<li><a href="https://github.com/opencode-ai/opencode" rel="noopener noreferrer" target="_blank">GitHub - opencode-ai/opencode: A powerful AI coding agent. Built for the terminal. · GitHub</a></li>
+<li><a href="https://witness.ai/blog/ai-coding-assistants-security/" rel="noopener noreferrer" target="_blank">8 Security Risks of AI Coding Assistants</a></li>
+</ul>
+</details>
+<p><strong>Discussion</strong>: The Hacker News discussion is mixed: some commenters see the article as a useful warning about agentic CLI dangers, while others argue that the title is exaggerated and the issues are mostly fixable annoyances. Several users defend OpenCode as highly productive in practice and criticize the post for focusing on architecture and security rhetoric without evaluating how well the tool helps build software. Others broaden the issue beyond OpenCode, arguing that many agentic coding CLIs share the same hard tradeoffs around permissions, caching, filesystem access, and command execution.</p>
+<p><strong>Tags</strong>: <code>#agentic-coding</code>, <code>#OpenCode</code>, <code>#AI-security</code>, <code>#developer-tools</code>, <code>#HN-discussion</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>OpenCode is described by its project site as an open-source AI coding agent that works in the terminal, IDE, or desktop. Its GitHub page describes it as a Go-based CLI application with a terminal user interface for interacting with AI models on coding, debugging, and related tasks. Agentic coding CLIs differ from passive autocomplete tools because they can coordinate multiple steps, inspect project files, call tools, and sometimes execute shell commands. That power makes prompt injection, credential leakage, unsafe tool use, and overtrust in AI output recurring concerns for this category of software.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>OpenCode is described by its project site as an open-source AI coding agent that works in the terminal, IDE, or desktop. Its GitHub page describes it as a Go-based CLI application with a terminal user interface for interacting with AI models on coding, debugging, and related tasks. Agentic coding CLIs differ from passive autocomplete tools because they can coordinate multiple steps, inspect project files, call tools, and sometimes execute shell commands. That power makes prompt injection, credential leakage, unsafe tool use, and overtrust in AI output recurring concerns for this category of software.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>High-engagement Hacker News discussion around a critical practitioner writeup on OpenCode and agentic CLI risks, including prompt-cache behavior, filesystem scanning, security assumptions, and architecture concerns. The piece appears somewhat polemical and lacks clear alternatives, but the 114-comment discussion adds useful nuance from users defending OpenCode, reframing issues as fixable annoyances, and broadening the critique to agentic coding CLIs generally.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for agentic-coding, OpenCode.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul><p>Treat agentic coding CLIs as semi-autonomous software operators, not as ordinary text editors or autocomplete plugins. Before adopting one, evaluate what files it can read, what commands it can run, how it constructs prompts, whether prompt changes defeat caching, and whether command filters are security controls or merely workflow guidance. Productivity gains should be measured alongside operational risks, especially when the tool is used inside repositories containing secrets, customer code, or regulated financial logic. A useful decision criterion is whether the tool’s permission model and logging are clear enough for the risk level of the project.</p><p>Start with a low-risk repository and observe the agent’s filesystem access, command suggestions, and prompt-context behavior before using it on sensitive code. Keep secrets out of the working tree, use environment separation, and avoid granting broad shell permissions unless the task genuinely requires them. Review configuration files such as AGENTS.md because small changes may alter prompt context, caching behavior, or agent instructions. Do not assume that command filtering is a security boundary unless the tool documentation explicitly guarantees that behavior and you have tested enforcement. Capture logs or transcripts for important sessions so that unexpected file reads, command attempts, or generated changes can be audited later.</p><p>For AI-agent workflows, this discussion is a reminder to document tool permissions, prompt sources, and review checkpoints as part of the operating procedure. In software delivery or financial-software project management, agentic CLI adoption should go through the same risk review as any tool that can read repositories and execute commands.</p>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>The Hacker News discussion is mixed: some commenters see the article as a useful warning about agentic CLI dangers, while others argue that the title is exaggerated and the issues are mostly fixable annoyances. Several users defend OpenCode as highly productive in practice and criticize the post for focusing on architecture and security rhetoric without evaluating how well the tool helps build software. Others broaden the issue beyond OpenCode, arguing that many agentic coding CLIs share the same hard tradeoffs around permissions, caching, filesystem access, and command execution.</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://wren.wtf/shower-thoughts/stop-using-opencode/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-20-en.html#item-17">返回当日日报定位</a></p>
+        </section>
+      </article>
+    </div>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

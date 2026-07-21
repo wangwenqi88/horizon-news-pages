@@ -8,6 +8,8 @@
   "source_tier": "B",
   "published_at": "2026-07-18",
   "category": "windows",
+  "group": "first_hand_news",
+  "score": "7.0",
   "summary": "VideoCardz 报道称，部分 LG 显示器可能通过 Windows Update 和设备元数据机制，让 Windows 自动安装 LG 配套软件，而不会弹出明确的用户同意提示。该行为由设备识别触发，例如连接 LG 显示器，而不是用户手动下载 LG 软件。 这件事重要，因为它把常规硬件识别变成了软件安装渠道，引发了隐私、安全和企业终端管理方面的担忧。它也凸显了 Windows 对 OEM 设备元数据以及通过 Microsoft 控制的更新路径分发配套应用的信任程度。 Microsoft 文档说明，制造商可以通过与硬件关联的设备元数据，配置 UWP 设备应用在设备连接时自动安装。社区给出的缓解方法包括通过组策略禁用自动下载制造商应用，或在家庭版 Windows 中通过设备安装设置关闭该选项。",
   "what_happened": "VideoCardz 报道称，部分 LG 显示器可能通过 Windows Update 和设备元数据机制，让 Windows 自动安装 LG 配套软件，而不会弹出明确的用户同意提示。该行为由设备识别触发，例如连接 LG 显示器，而不是用户手动下载 LG 软件。 这件事重要，因为它把常规硬件识别变成了软件安装渠道，引发了隐私、安全和企业终端管理方面的担忧。它也凸显了 Windows 对 OEM 设备元数据以及通过 Microsoft 控制的更新路径分发配套应用的信任程度。 Microsoft 文档说明，制造商可以通过与硬件关联的设备元数据，配置 UWP 设备应用在设备连接时自动安装。社区给出的缓解方法包括通过组策略禁用自动下载制造商应用，或在家庭版 Windows 中通过设备安装设置关闭该选项。",
   "why_it_matters": "Windows 设备元数据是用于识别已连接设备的信息，并且可以把该设备关联到驱动程序、图标、服务或配套应用。Microsoft 的 Windows 驱动文档说明，设备制造商可以为外设创建 UWP 设备应用，并将其配置为在设备连接时自动安装。这个机制原本是为了简化硬件设置，但如果非必要的厂商工具在缺少明确同意步骤的情况下出现，就可能让用户感到意外。",
@@ -22,6 +24,7 @@
   ],
   "audio_url": "",
   "html_url": "/daily/2026-07-18-zh.html#item-3",
+  "read_url": "/read/2026-07-18-zh-03-lg-windows-ead970bf.html",
   "tags": [
     "windows",
     "security",

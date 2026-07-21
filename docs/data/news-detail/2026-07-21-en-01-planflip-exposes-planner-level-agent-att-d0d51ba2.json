@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-21-en-01-planflip-exposes-planner-level-agent-att-d0d51ba2",
+  "date": "2026-07-21",
+  "lang": "en",
+  "title": "PlanFlip Exposes Planner-Level Agent Attacks",
+  "source": "rss",
+  "source_url": "https://arxiv.org/abs/2607.16199",
+  "source_tier": "S",
+  "published_at": "2026-07-21",
+  "category": "LLM security",
+  "group": "first_hand_news",
+  "score": "8.5",
+  "summary": "A new arXiv paper introduces PlanFlip, a framework for planning-phase prompt injection attacks against multi-agent LLM systems. Across 3,479 episodes and nine frontier models, the authors report that injected content in a Planner’s context can corrupt downstream Executor and Critic behavior through cascade amplification. The work is significant because many production agent systems use a Planner-Executor-Critic pattern and assume that stronger models or extra critic agents improve safety. PlanFlip challenges that assumption by showing that model capability can amplify vulnerability and that same-backbone redundancy may fail to detect corrupted plans. PlanFlip includes four attacks: GoalSubstitution, PriorityInversion, ContextPollution, and RoleConfusion, each disguised as plausible tool outputs to evade keyword filters. The paper reports GPT-5 with the highest attack success rate at 0.68, DeepSeek-R1 with StepShift = 0.00 across all attacks, and proposed defenses called GoalAnchorCheck and CrossAgentConsensus with detection rates up to 1.00.",
+  "what_happened": "A new arXiv paper introduces PlanFlip, a framework for planning-phase prompt injection attacks against multi-agent LLM systems. Across 3,479 episodes and nine frontier models, the authors report that injected content in a Planner’s context can corrupt downstream Executor and Critic behavior through cascade amplification. The work is significant because many production agent systems use a Planner-Executor-Critic pattern and assume that stronger models or extra critic agents improve safety. PlanFlip challenges that assumption by showing that model capability can amplify vulnerability and that same-backbone redundancy may fail to detect corrupted plans. PlanFlip includes four attacks: GoalSubstitution, PriorityInversion, ContextPollution, and RoleConfusion, each disguised as plausible tool outputs to evade keyword filters. The paper reports GPT-5 with the highest attack success rate at 0.68, DeepSeek-R1 with StepShift = 0.00 across all attacks, and proposed defenses called GoalAnchorCheck and CrossAgentConsensus with detection rates up to 1.00.",
+  "why_it_matters": "In a multi-agent LLM system, a Planner typically breaks a user goal into ordered subtasks, while Executor agents carry out those subtasks and Critic agents audit the results. Prompt injection is an attack in which malicious text is inserted into the model’s input or context to override intended instructions or redirect behavior. Agent systems are especially exposed because they often read tool outputs, documents, web pages, or memory entries that may contain untrusted text. PlanFlip focuses on the planning step because a single poisoned plan can influence every later subtask instead of only one isolated response.",
+  "manager_takeaway": "In a multi-agent LLM system, a Planner typically breaks a user goal into ordered subtasks, while Executor agents carry out those subtasks and Critic agents audit the results. Prompt injection is an attack in which malicious text is inserted into the model’s input or context to override intended instructions or redirect behavior. Agent systems are especially exposed because they often read tool outputs, documents, web pages, or memory entries that may contain untrusted text. PlanFlip focuses on the planning step because a single poisoned plan can influence every later subtask instead of only one isolated response.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for LLM security, multi-agent systems.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-21-en.html#item-1",
+  "read_url": "/read/2026-07-21-en-01-planflip-exposes-planner-level-agent-att-d0d51ba2.html",
+  "tags": [
+    "LLM security",
+    "multi-agent systems",
+    "prompt injection",
+    "AI agents",
+    "arXiv"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-21-en-05-a-hacker-wiped-romania-s-land-registry-d-0d5818e7",
+  "date": "2026-07-21",
+  "lang": "en",
+  "title": "A hacker wiped Romania's land registry database.",
+  "source": "hackernews",
+  "source_url": "https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database/",
+  "source_tier": "B",
+  "published_at": "2026-07-21",
+  "category": "cybersecurity",
+  "group": "first_hand_news",
+  "score": "7.5",
+  "summary": "Romania's national land registry reportedly suffered a destructive cyberattack that wiped key systems and forced officials to rebuild the agency network and migrate applications. Officials appear to be relying on recoverable backups while moving applications to Romania's Government Cloud under coordination by the Special Telecommunications Service. A land registry is critical public infrastructure because it underpins proof of property ownership, real-estate transactions, taxation, and legal disputes. The incident highlights how destructive attacks against public-sector IT can create societal risk unless backups, recovery plans, and institutional continuity are tested before a crisis. The most important technical caveat is that the attacker reportedly claimed backups were deleted, but community reports suggest the agency had an offline copy, which may prevent permanent data loss. A full rebuild and cloud migration can restore service, but it also requires careful integrity checks to ensure restored land records were not altered before destruction.",
+  "what_happened": "Romania's national land registry reportedly suffered a destructive cyberattack that wiped key systems and forced officials to rebuild the agency network and migrate applications. Officials appear to be relying on recoverable backups while moving applications to Romania's Government Cloud under coordination by the Special Telecommunications Service. A land registry is critical public infrastructure because it underpins proof of property ownership, real-estate transactions, taxation, and legal disputes. The incident highlights how destructive attacks against public-sector IT can create societal risk unless backups, recovery plans, and institutional continuity are tested before a crisis. The most important technical caveat is that the attacker reportedly claimed backups were deleted, but community reports suggest the agency had an offline copy, which may prevent permanent data loss. A full rebuild and cloud migration can restore service, but it also requires careful integrity checks to ensure restored land records were not altered before destruction.",
+  "why_it_matters": "Destructive cyberattacks often resemble wiper attacks, where the goal is to erase or render data unusable rather than simply steal it or encrypt it for ransom. For recovery planning, Recovery Time Objective, or RTO, describes how long a system can be offline, while Recovery Point Objective, or RPO, describes how much data loss is tolerable from the last valid backup. Offline or otherwise isolated backups matter because attackers who compromise production systems often try to delete online backups as well.",
+  "manager_takeaway": "Destructive cyberattacks often resemble wiper attacks, where the goal is to erase or render data unusable rather than simply steal it or encrypt it for ransom. For recovery planning, Recovery Time Objective, or RTO, describes how long a system can be offline, while Recovery Point Objective, or RPO, describes how much data loss is tolerable from the last valid backup. Offline or otherwise isolated backups matter because attackers who compromise production systems often try to delete online backups as well.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for cybersecurity, incident-response.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The discussion was concerned but cautiously relieved, with several commenters noting that an offline backup may have prevented a worst-case loss of land ownership evidence. Other comments focused on the reported Government Cloud migration, possible vendor-governance failures and corruption, attacker attribution claims, and comparisons to other public-sector data-loss disasters, though some attribution and governance claims remain speculative."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-21-en.html#item-5",
+  "read_url": "/read/2026-07-21-en-05-a-hacker-wiped-romania-s-land-registry-d-0d5818e7.html",
+  "tags": [
+    "cybersecurity",
+    "incident-response",
+    "critical-infrastructure",
+    "public-sector-it",
+    "backup-recovery"
+  ]
+}

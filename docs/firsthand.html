@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>一手资讯速递</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="assets/css/horizon.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="project-name">AI 资讯精读</h1>
+    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  </header>
+  <main class="main-content">
+    <nav class="static-nav">
+      <a href="index.html">返回首页</a>
+      <a href="daily/2026-07-21-zh.html">完整日报</a>
+    </nav>
+    <section class="home-hero">
+      <div>
+        <p class="eyebrow">2026-07-21 · ZH</p>
+        <h1>一手资讯速递</h1>
+        <p>15 条一手动态、发布、论文和产品更新，保留原文入口和 AI 摘要。</p>
+      </div>
+      <div class="home-stats">
+        <span>15</span>
+        <small>条内容</small>
+      </div>
+    </section>
+    <section class="track-full-list">
+            <article class="full-item">
+        <div class="portal-card-meta">
+          <span>rss</span>
+          <strong>8.5/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-01-planflip-ed715f97.html">PlanFlip 揭示智能体规划阶段攻击</a></h2>
+        <p>一篇新的 arXiv 论文提出了 PlanFlip，这是一个针对多智能体 LLM 系统规划阶段的提示注入攻击框架。作者在 3,479 个测试回合和九个前沿模型上评估后报告称，注入到规划器上下文中的内容可以通过级联放大破坏下游执行器和审查器的行为。 这项工作很重要，因为许多生产级智能体系统采用规划器、执行器和审查器模式，并假设更强的模型或额外的审查智能体会提升安全性。PlanFlip 挑战了这一假设，因为研究显示模型能力可能放大脆弱性，而使用同一模型骨干的冗余审查可能无法发现被篡改的计划。 PlanFlip 包含四种攻击：目标替换、优先级反转、上下文污染和角色混淆，并且都伪装成看似合理的工具输出来规避关键词过滤。论文报告称 GPT-5 的攻击成功率最高，达到 0.68；DeepSeek-R1 在所有攻击中的 StepShift 为 0.00；作者还提出了 GoalAnchorCheck 和 CrossAgentConsensus 两种防御方法，检测率最高达到 1.00。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-01-planflip-ed715f97.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-1">日报定位</a>
+          <a href="https://arxiv.org/abs/2607.16199" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>rss</span>
+          <strong>8.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-02-anthropic-98606817.html">Anthropic 十五亿美元版权和解获批</a></h2>
+        <p>法院已批准 Anthropic 的十五亿美元版权和解协议，解决了一起围绕受版权保护作品和 AI 训练数据的重大诉讼。该批准结束了这一具体案件，但并未解决在何种情况下可使用受版权保护材料训练 AI 模型的更广泛法律问题。 这笔和解金额巨大，使其成为 AI 公司、出版方、作者以及依赖大语言模型的企业都需要关注的标志性事件。它表明，训练数据来源和版权风险已经成为实质性的商业风险，而不只是抽象的法律争论。 该和解解决的是涉及 Anthropic 的单个案件，并没有为整个行业确立关于受版权保护训练数据的明确规则。技术读者应将其视为风险信号，而不是模型开发中的清晰法律标准。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-02-anthropic-98606817.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-2">日报定位</a>
+          <a href="https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>rss</span>
+          <strong>8.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-03-ai-46b29e32.html">AI 代理运行的确定性重放</a></h2>
+        <p>一篇新的 arXiv 论文介绍了 agrepl，这是一个基于 Go 的命令行框架，用于记录并确定性重放 AI 代理的执行过程。它通过传输层的中间人代理捕获外部交互，将其序列化为结构化轨迹，并在禁止出站网络访问的隔离环境中重放。 AI 代理很难调试，因为大语言模型采样、不断变化的 API 状态、CDN 头信息和运行环境噪声，都会让同一次运行难以复现。可靠的记录与重放层可以改善生产级代理系统团队在调试、可观测性、回归测试和事故分析方面的工作。 论文形式化描述了代理执行模型，定义了请求键匹配函数 K(s)，并声称证明了重放的确定性不变式。作者在五类工作负载和 250 次重放实例上报告了重放保真度 F = 1.0，以及每步中位延迟降低 98.3%，同时还加入了用于分类 HTTP 头差异的噪声感知对比算法。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-03-ai-46b29e32.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-3">日报定位</a>
+          <a href="https://arxiv.org/abs/2607.16200" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>rss</span>
+          <strong>8.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-04-openai-7bf54336.html">OpenAI 谈长周期模型安全</a></h2>
+        <p>OpenAI 发布了题为《长周期模型时代的安全与对齐》的博客文章，介绍了部署长时间运行的 AI 模型所获得的经验。文章强调了新出现的安全风险、已观察到的失败模式，以及在扩大访问范围过程中对防护措施进行的迭代改进。 长周期模型可以跨多个步骤持续行动，因此其失败比单轮聊天系统更难预测、发现和控制。OpenAI 的一手部署经验对构建 AI 智能体的团队很重要，因为它把安全描述为一种持续运营过程，而不是一次性具备的模型属性。 搜索结果显示，OpenAI 最初版本的防护措施是有意设计得较为保守的，并且 OpenAI 持续调优系统，以在不削弱保护能力的前提下减少不必要的中断。主要限制是，现有摘要没有提供详细的技术机制，因此其价值更多在于部署思路和风险分类，而不是可直接复用的代码或架构。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-04-openai-7bf54336.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-4">日报定位</a>
+          <a href="https://openai.com/index/safety-alignment-long-horizon-models" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>hackernews</span>
+          <strong>7.5/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-05-item-2e5fe19b.html">黑客清除了罗马尼亚土地登记数据库。</a></h2>
+        <p>罗马尼亚国家土地登记机构据称遭遇破坏性网络攻击，关键系统被清除，官员被迫重建机构网络并迁移应用。官员似乎正在依靠可恢复的备份，同时在特别电信服务机构协调下将应用迁移到罗马尼亚政府云。 土地登记系统是关键公共基础设施，因为它支撑财产权证明、房地产交易、税务和法律纠纷。该事件表明，针对公共部门信息系统的破坏性攻击可能造成社会性风险，除非备份、恢复计划和机构连续性在危机前已经过验证。 最重要的技术注意点是，攻击者据称声称备份已被删除，但社区信息显示该机构可能保有离线副本，这可能避免永久性数据丢失。全面重建和云迁移可以恢复服务，但也需要仔细进行完整性检查，以确认恢复的土地记录在被破坏前没有遭到篡改。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-05-item-2e5fe19b.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-5">日报定位</a>
+          <a href="https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database/" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>github</span>
+          <strong>7.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-06-claude-code-v2-1-216-58daaa9d.html">Claude Code v2.1.216 改进沙箱与会话。</a></h2>
+        <p>Anthropic 发布了 Claude Code v2.1.216，新增 sandbox.filesystem.disabled 设置，可在保留网络出口控制的同时跳过文件系统隔离。该补丁还修复了长会话中的二次复杂度变慢、OAuth 相关命令拒绝、网页端空闲后的提问处理、提及、钩子、工作树行为、后台代理会话恢复以及多项权限校验问题。 此版本对活跃的 Claude Code 用户很重要，因为它针对会直接打断编码流程的可靠性问题，尤其是长会话恢复缓慢以及权限或认证行为错误。它也反映出 AI 编码工具的运行复杂度正在上升，沙箱、后台代理、钩子、工作树和遥测都需要更可预测的行为。 最值得技术关注的修复是移除了消息规范化中随轮次数量呈二次增长的开销，此前该问题会导致长会话出现数秒卡顿和恢复缓慢。涉及安全性的改动包括改进 .claude 符号链接处理、陈旧守护进程锁文件处理、Windows 网络路径提示、PowerShell 校验中的不可见 Unicode、非 ASCII Bash 解析，以及隔离工作树中的 git 重定向问题。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-06-claude-code-v2-1-216-58daaa9d.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-6">日报定位</a>
+          <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.216" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>hackernews</span>
+          <strong>7.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-07-ai-22e5075b.html">中国 AI 模型施压西方实验室</a></h2>
+        <p>一篇 Stratechery 文章和一场大型 Hacker News 讨论分析了中国 AI 模型是否正在成为西方前沿 AI 实验室的重大竞争与地缘政治挑战。讨论重点包括开放模型发布、更低价格、编程工具的用户黏性、前沿实验室估值，以及信任和政治影响方面的担忧。 如果强大的中国模型继续提升，同时保持更低价格或更开放的发布方式，它们可能削弱 OpenAI 和 Anthropic 等西方提供商的定价能力与差异化优势。这个问题也超越商业层面，因为模型采用可能带来数据暴露、审查机制以及 AI 系统中地缘政治叙事的问题。 讨论强调了两类不同风险：一类是更便宜的开放或半开放模型带来的市场风险，另一类是依赖由中国组织控制的模型或托管推理服务所带来的信任风险。评论者对 Claude Code、Codex 和 Cursor 等 AI 编程工具的用户黏性存在分歧，一些人认为技术用户的切换成本并不高。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-07-ai-22e5075b.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-7">日报定位</a>
+          <a href="https://stratechery.com/2026/whos-afraid-of-chinese-models/" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>hackernews</span>
+          <strong>7.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-08-kimi-work-e21b3c69.html">Kimi Work 加入本地智能体竞赛</a></h2>
+        <p>Kimi 推出了 Kimi Work，这是一款面向深度工作流的桌面本地 AI 智能体，可以挂载本地文件夹、通过 WebBridge 浏览网页、在后台运行 Python，并执行定时任务。 这次发布让 Kimi 进入快速增长的智能体工作空间市场，这类工具正在把文件访问、浏览器控制、代码执行和任务自动化整合到一起。它也显示出类似 Claude 和 Codex 的工作流正在迅速从差异化能力变成基础功能。 官方页面将 Kimi Work 描述为能够协调专门智能体来解决复杂任务，其中 WebBridge 扮演自主网页智能体的角色。用户提出的主要注意点是，“本地”文件访问和“执行前询问”的保护机制，并不自动等同于所有数据处理都私密且无风险。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-08-kimi-work-e21b3c69.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-8">日报定位</a>
+          <a href="https://www.kimi.com/products/kimi-work" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>hackernews</span>
+          <strong>7.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-09-cursor-d6830c21.html">Cursor 测试编码智能体群。</a></h2>
+        <p>Cursor 发布了一篇官方博客文章，介绍了大规模编码智能体群实验，包括新的协调基础设施和自定义版本控制层。文章称，新系统峰值可达到约每秒 1,000 次提交，而早期浏览器智能体群在 Git 上的峰值约为每小时 1,000 次提交。 这篇文章显示出一种可能的转变：软件生成可能从一次使用一个编码模型，转向并行运行大量智能体和模型，其中编排能力和测试时计算会变得更加核心。如果这种方法在经济上可行，AI 编码工具的竞争重点可能会从单模型补全质量，转向大量并发工作者之间的协调、验证和成本控制。 最值得注意的技术说法是，Cursor 从零构建了一个新的版本控制系统，因为 Git 无法支撑目标吞吐量，而且版本控制层正是冲突和协调机制最先显现的位置。主要限制在于可复现性：博客没有公开完整的测试框架或代码，评论者也质疑用 Rust 从文档重建 SQLite 的任务是否可能受到训练数据污染或记忆化影响。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-09-cursor-d6830c21.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-9">日报定位</a>
+          <a href="https://cursor.com/blog/agent-swarm-model-economics" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>hackernews</span>
+          <strong>7.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-10-ai-1fb2379e.html">中国开放权重 AI 策略受到关注。</a></h2>
+        <p>一篇受到广泛讨论的观点文章认为，中国的开放权重 AI 模型策略可能正在超过更偏专有化的美国模型生态。该说法在 Hacker News 上引发了超过八百条评论的讨论，焦点包括采用数据、企业采购行为以及市场历史是否真的支持这一结论。 如果开放权重模型成为初创公司、开发者和成本敏感型企业的默认选择，AI 竞争优势可能会从封闭 API 提供商转向支持本地托管、定制和价格竞争的生态。这个争论也反映了控制、安全、商业化和广泛开发者采用之间的更大策略张力。 评论者质疑了文章中最强烈的一些说法，尤其是“八成初创公司使用中国模型”的说法，并指出许多初创公司仍然大量依赖 Claude 和 Codex 等美国服务。另一些人强调，开放权重并不等同于开源，因为模型权重可能可用，但训练数据、训练代码和完整可复现性仍可能不可用。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-10-ai-1fb2379e.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-10">日报定位</a>
+          <a href="https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>hackernews</span>
+          <strong>7.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-11-arxiv-ai-8a4e050c.html">arXiv 论文中的 AI 写作信号上升。</a></h2>
+        <p>Unslop 分析了 2021 年至 2026 年的 12,750 篇 arXiv 论文，并报告称 ChatGPT 发布后，被标记为机器写作的论文比例明显上升。根据作者在 Hacker News 上的总结，2026 年 1 月总体标记率约为 39%，其中计算机科学最高达到 65%，而数学领域变化很小。 这一发现表明，LLM 辅助写作可能已经深度进入部分学术出版流程，尤其是计算机科学领域。与此同时，讨论也强调，仅凭文本进行 AI 检测可能产生误导性结果，因此这些数字更适合作为有噪声的采用趋势信号，而不是证明某篇论文由 AI 写成的证据。 作者表示检测器经过调校以避免误报，使 ChatGPT 之前的检测率约为 0.4%，但评论者仍发现一些 LLM 时代之前的论文和博士论文被打出较高的机器写作分数。一个关键限制是，多个检测器分数的最终合并方式在讨论中并未完全可复现，这限制了外部验证偏差或校准错误的能力。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-11-arxiv-ai-8a4e050c.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-11">日报定位</a>
+          <a href="https://unslop.run/blog/measuring-ai-writing-on-arxiv" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>rss</span>
+          <strong>7.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-12-llm-bca6084e.html">LLM 表现出稳定的风险态度。</a></h2>
+        <p>一篇新的 arXiv 论文《Some Large Language Models Exhibit Consistent Risk Attitudes》提出了一个跨领域框架，用于衡量 LLM 如何把感知到的风险转化为决策。该研究在空间导航、临床分诊和金融配置任务中评估了六个代表性 LLM 和一百名人类参与者。 这一发现表明，风险态度可能是 LLM 的一种稳定行为维度，而不只是单个提示词或单一领域产生的偶然结果。这对 AI 安全、智能体评估和高风险部署很重要，因为用于医疗、金融或自主决策的系统可能需要被明确测量并对齐其风险倾向。 作者将情境风险信念与类别决策分离，然后使用回归模型估计每个智能体的信念到决策映射、风险敏感性和风险态度偏差。研究报告称，大多数被测 LLM 具有稳健的任务内一致性、跨领域排序稳定性，并且相比更广泛的人类基线，其风险态度分布更受限制。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-12-llm-bca6084e.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-12">日报定位</a>
+          <a href="https://arxiv.org/abs/2607.16197" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>rss</span>
+          <strong>7.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-13-gnn-cf8684df.html">新综述梳理基于 GNN 的链接预测。</a></h2>
+        <p>一篇新的 arXiv 论文《基于 GNN 的链接预测综述：技术、应用与挑战》以 arXiv:2607.16198v1 发布。该论文提出了一套分类体系，按照 GCN、GAE、GAT 和 GFormer 等编码器架构，以及知识图谱和推荐系统等应用场景来组织基于 GNN 的链接预测方法。 这篇综述的重要性在于，链接预测是图机器学习中的核心任务，用于推断结构化数据中缺失的关系或未来可能出现的关系。它围绕 GNN 编码器家族和应用领域来组织研究进展，有助于研究人员和实践者更系统地为图机器学习、知识图谱补全和推荐系统选择方法。 该论文强调以 GNN 为中心的视角，对比了基于 GCN、GAE、GAT 以及图转换器风格的 GFormer 方法的优势与局限。它是一篇参考型和分类体系型论文，而不是提出新模型或新基准结果的论文，因此其主要价值在于综合梳理、方法比较和识别开放挑战。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-13-gnn-cf8684df.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-13">日报定位</a>
+          <a href="https://arxiv.org/abs/2607.16198" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>rss</span>
+          <strong>7.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-14-goi-37e6db18.html">GOI 将文档语料转为类型化本体图。</a></h2>
+        <p>这篇 arXiv 论文提出了生成式本体归纳，即一种不依赖特定领域的 LLM 框架，可从文档语料中发现实体、维度、属性、关系和约束。它将结果导出为类型化的 YAML/JSON 图，并报告在四个测试本体中实现了 95% 到 100% 的结构主干覆盖率。 本体工程一直是知识密集型 AI、RAG、知识图谱和模式发现流程中的常见瓶颈。如果这种方法能够泛化，团队就可以从样例中启动结构化领域模型，而不必先手工设计用于抽取、校验或生成流水线的模式。 GOI 定义了包含六种节点类型和七种边类型的类型化图，论文还提出了节点覆盖得分，用来衡量生成输出中出现了多少结构性本体节点。作为对照的通用三字段模板在熟悉的发票模式上仍达到 97.8%，但在另外三个较不通用或更专业的本体上分别下降到 52.2%、62.2% 和 78.3%。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-14-goi-37e6db18.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-14">日报定位</a>
+          <a href="https://arxiv.org/abs/2607.16201" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+      <article class="full-item">
+        <div class="portal-card-meta">
+          <span>rss</span>
+          <strong>7.0/10</strong>
+        </div>
+        <h2><a href="read/2026-07-21-zh-15-item-8342ba0b.html">小模型有了本地部署基准。</a></h2>
+        <p>一篇新的 arXiv 论文 2607.16202v1 评估了九个开放权重小语言模型，参数规模从 1.35 亿到 30 亿，并使用了一个包含 1085 个样本、16 个主题的本地结构化部署多选基准。论文还在 NVIDIA L4 级别的显卡预算下，测试了使用 4 位 NF4 量化和 DoRA/LoRA 风格适配器的参数高效适配方法。 这一结果对需要本地、可审计、低成本 AI 系统，而不是前沿级通用大模型的团队很有价值。它表明，严谨的基准构建加上轻量微调，可能让部分 30 亿参数以下的模型胜任受限工作流中的本地专业任务。 在基础评估中，Qwen Coder 3B 以 75.67% 的严格准确率领先，其后是 67.10% 的 Qwen2.5 1.5B、64.98% 的 Qwen3.5 2B，以及 64.61% 的 Granite 3.3 2B。在共享的 108 个样本留出微调划分上，适配让 Qwen Coder 3B 提升了 26.85 个百分点，SmolLM2 1.7B 提升了 25.92 个百分点，Qwen2.5 1.5B 提升了 19.44 个百分点，SmolLM2 360M 提升了 10.18 个百分点，SmolLM2 135M 提升了 5.55 个百分点。</p>
+        <div class="portal-card-actions">
+          <a href="read/2026-07-21-zh-15-item-8342ba0b.html">AI 精读</a>
+          <a href="daily/2026-07-21-zh.html#item-15">日报定位</a>
+          <a href="https://arxiv.org/abs/2607.16202" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+    </section>
+
+  </main>
+  <script src="assets/js/horizon.js" defer></script>
+</body>
+</html>

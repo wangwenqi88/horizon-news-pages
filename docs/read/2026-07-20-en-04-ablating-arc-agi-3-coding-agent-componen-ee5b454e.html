@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ablating ARC-AGI-3 coding-agent components</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="project-name">AI 资讯精读</h1>
+    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  </header>
+  <main class="main-content">
+    <nav class="static-nav">
+      <a href="../index.html">返回首页</a>
+      <a href="https://arxiv.org/abs/2607.15439" target="_blank" rel="noopener noreferrer">原文</a>
+    </nav>
+    <section class="read-hero">
+      <p class="eyebrow">2026-07-20 · Horizon News AI 精读</p>
+      <h1>Ablating ARC-AGI-3 coding-agent components</h1>
+      <p>A new arXiv paper, 2607.15439v1, evaluates four nested Codex-based agents on public ARC-AGI-3 games to isolate the effects of executable world modeling, scheduled simplification, and exact replay verification. The study tests gpt-5.4 and gpt-5.5 at high and xhigh reasoning effort, with exploratory gpt-5.6-sol follow-ups. The results challenge the assumption that adding an executable world model is automatically better for coding agents, while reinforcing that stronger base models and higher reasoning effort reliably improve outcomes. This matters for agent researchers designing evaluation-time reasoning systems, because verification and simplification may be more valuable than a flexible executable deliverable alone. The textual baseline outperformed the flexible-interface executable world model in both gpt-5.5 settings, while scheduled simplification helped in three of four model-effort settings. The full verification treatment ranked first in all four main settings but used substantially more resources, and the gpt-5.6-sol public-set result is cautioned as saturation because the model postdates the games and held-out performance was not tested.</p>
+    </section>
+    <div class="read-layout">
+      <aside class="read-nav" aria-label="本页内容">
+        <p class="eyebrow">本页内容</p>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+      </aside>
+      <article class="read-article">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>A new arXiv paper, 2607.15439v1, evaluates four nested Codex-based agents on public ARC-AGI-3 games to isolate the effects of executable world modeling, scheduled simplification, and exact replay verification. The study tests gpt-5.4 and gpt-5.5 at high and xhigh reasoning effort, with exploratory gpt-5.6-sol follow-ups. The results challenge the assumption that adding an executable world model is automatically better for coding agents, while reinforcing that stronger base models and higher reasoning effort reliably improve outcomes. This matters for agent researchers designing evaluation-time reasoning systems, because verification and simplification may be more valuable than a flexible executable deliverable alone. The textual baseline outperformed the flexible-interface executable world model in both gpt-5.5 settings, while scheduled simplification helped in three of four model-effort settings. The full verification treatment ranked first in all four main settings but used substantially more resources, and the gpt-5.6-sol public-set result is cautioned as saturation because the model postdates the games and held-out performance was not tested.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：rss</li><li>评分：8.0/10</li><li>标签：AI agents、ARC-AGI、coding agents、LLM evaluation、world models</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://arxiv.org/abs/2607.15439" rel="noopener noreferrer" target="_blank">Ablating ARC-AGI-3 coding-agent components</a> ⭐️ 8.0/10</h3>
+<p>A new arXiv paper, 2607.15439v1, evaluates four nested Codex-based agents on public ARC-AGI-3 games to isolate the effects of executable world modeling, scheduled simplification, and exact replay verification. The study tests gpt-5.4 and gpt-5.5 at high and xhigh reasoning effort, with exploratory gpt-5.6-sol follow-ups. The results challenge the assumption that adding an executable world model is automatically better for coding agents, while reinforcing that stronger base models and higher reasoning effort reliably improve outcomes. This matters for agent researchers designing evaluation-time reasoning systems, because verification and simplification may be more valuable than a flexible executable deliverable alone. The textual baseline outperformed the flexible-interface executable world model in both gpt-5.5 settings, while scheduled simplification helped in three of four model-effort settings. The full verification treatment ranked first in all four main settings but used substantially more resources, and the gpt-5.6-sol public-set result is cautioned as saturation because the model postdates the games and held-out performance was not tested.</p>
+<p>rss · ArXiv AI · Jul 20, 04:00</p>
+<p><strong>Background</strong>: ARC-AGI-3 is described by ARC Prize as an interactive reasoning benchmark for AI agents, where agents must explore unfamiliar environments, infer goals, and act effectively. The ARC-AGI-3 paper frames the benchmark around novel, abstract, turn-based environments that require agents to build internal models of dynamics and plan. In this context, an executable world model means the agent maintains runnable code, such as Python, that predicts or simulates environment behavior before acting.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://arcprize.org/arc-agi/3" rel="noopener noreferrer" target="_blank">ARC-AGI-3</a></li>
+<li><a href="https://arxiv.org/abs/2603.24621" rel="noopener noreferrer" target="_blank">[2603.24621] ARC-AGI-3: A New Challenge for Frontier Agentic Intelligence</a></li>
+<li><a href="https://arxiv.org/abs/2605.05138" rel="noopener noreferrer" target="_blank">Executable World Models for ARC-AGI-3 in the Era of Coding Agents GitHub - swit001/agentic-world-model: Define executable ... Embodied AI Agents: Modeling the World - arXiv.org Agent World Model - GitHub Agent World Model (AWM) for Scalable Agentic RL Environments Executable World Models — What This Series Is Building ARC-AGI-3: Executable World Models and the Future of AI ...</a></li>
+</ul>
+</details>
+<p><strong>Tags</strong>: <code>#AI agents</code>, <code>#ARC-AGI</code>, <code>#coding agents</code>, <code>#LLM evaluation</code>, <code>#world models</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>ARC-AGI-3 is described by ARC Prize as an interactive reasoning benchmark for AI agents, where agents must explore unfamiliar environments, infer goals, and act effectively. The ARC-AGI-3 paper frames the benchmark around novel, abstract, turn-based environments that require agents to build internal models of dynamics and plan. In this context, an executable world model means the agent maintains runnable code, such as Python, that predicts or simulates environment behavior before acting.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>ARC-AGI-3 is described by ARC Prize as an interactive reasoning benchmark for AI agents, where agents must explore unfamiliar environments, infer goals, and act effectively. The ARC-AGI-3 paper frames the benchmark around novel, abstract, turn-based environments that require agents to build internal models of dynamics and plan. In this context, an executable world model means the agent maintains runnable code, such as Python, that predicts or simulates environment behavior before acting.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>ARC-AGI-3 is described by ARC Prize as an interactive reasoning benchmark for AI agents, where agents must explore unfamiliar environments, infer goals, and act effectively. The ARC-AGI-3 paper frames the benchmark around novel, abstract, turn-based environments that require agents to build internal models of dynamics and plan. In this context, an executable world model means the agent maintains runnable code, such as Python, that predicts or simulates environment behavior before acting.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for AI agents, ARC-AGI.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://arxiv.org/abs/2607.15439" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-20-en.html#item-4">返回当日日报定位</a></p>
+        </section>
+      </article>
+    </div>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

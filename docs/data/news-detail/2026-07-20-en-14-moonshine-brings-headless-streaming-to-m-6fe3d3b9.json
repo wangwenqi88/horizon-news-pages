@@ -8,6 +8,8 @@
   "source_tier": "S",
   "published_at": "2026-07-20",
   "category": "open-source",
+  "group": "first_hand_news",
+  "score": "6.0",
   "summary": "Moonshine is an open-source, Moonlight-compatible game-streaming server that can stream games from a PC to devices running Moonlight. Its key difference from Sunshine is that it creates its own compositor, so it can run headlessly instead of depending on an existing desktop session. This matters for users who want self-hosted, low-latency game streaming without locking the host machine’s visible desktop. It also fits a broader trend of replacing deprecated proprietary GameStream-style workflows with open-source, Linux-friendly streaming infrastructure. According to the creator’s comments, Moonshine creates an isolated compositor session and can run without a desktop environment, which can avoid interfering with the currently logged-in user. The project is still best understood as an alternative server for Moonlight clients rather than a replacement for Moonlight itself.",
   "what_happened": "Moonshine is an open-source, Moonlight-compatible game-streaming server that can stream games from a PC to devices running Moonlight. Its key difference from Sunshine is that it creates its own compositor, so it can run headlessly instead of depending on an existing desktop session. This matters for users who want self-hosted, low-latency game streaming without locking the host machine’s visible desktop. It also fits a broader trend of replacing deprecated proprietary GameStream-style workflows with open-source, Linux-friendly streaming infrastructure. According to the creator’s comments, Moonshine creates an isolated compositor session and can run without a desktop environment, which can avoid interfering with the currently logged-in user. The project is still best understood as an alternative server for Moonlight clients rather than a replacement for Moonlight itself.",
   "why_it_matters": "Moonlight is an open-source implementation of NVIDIA’s GameStream protocol that lets users stream PC games to supported client devices. In a typical streaming setup, the host renders the game, encodes the video and audio, sends them over the network, and receives keyboard, mouse, or controller input from the client. A compositor is the part of a graphical system that assembles application windows or surfaces into the final display output. A headless compositor can provide a display target without requiring a physical monitor or an active desktop session.",
@@ -22,6 +24,7 @@
   ],
   "audio_url": "",
   "html_url": "/daily/2026-07-20-en.html#item-14",
+  "read_url": "/read/2026-07-20-en-14-moonshine-brings-headless-streaming-to-m-6fe3d3b9.html",
   "tags": [
     "open-source",
     "game-streaming",

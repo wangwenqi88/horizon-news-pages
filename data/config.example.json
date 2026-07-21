@@ -1,14 +1,15 @@
 {
   "version": "1.0",
   "ai": {
-    "provider": "openai",
-    "model": "gpt-4",
-    "api_key_env": "OPENAI_API_KEY",
+    "provider": "custom",
+    "model": "${HORIZON_AI_MODEL}",
+    "base_url": "${HORIZON_AI_BASE_URL}",
+    "api_key_env": "HORIZON_AI_API_KEY",
     "temperature": 0.3,
     "max_tokens": 4096,
-    "throttle_sec": 0,
-    "analysis_concurrency": 1,
-    "enrichment_concurrency": 1
+    "languages": ["zh", "en"],
+    "analysis_concurrency": 3,
+    "enrichment_concurrency": 2
   },
   "email": {
     "enabled": false,
@@ -22,59 +23,100 @@
     "unsubscribe_keyword": "UNSUBSCRIBE"
   },
   "sources": {
-    "github": [
-      {
-        "type": "user_events",
-        "username": "torvalds",
-        "enabled": true
-      },
-      {
-        "type": "repo_releases",
-        "owner": "astral-sh",
-        "repo": "uv",
-        "enabled": true
-      }
-    ],
     "hackernews": {
       "enabled": true,
-      "fetch_top_stories": 20,
-      "min_score": 100
+      "fetch_top_stories": 30,
+      "min_score": 80
     },
     "rss": [
+      {
+        "name": "TechCrunch AI",
+        "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "enabled": true,
+        "category": "first_hand_news",
+        "max_items": 8
+      },
+      {
+        "name": "OpenAI Blog",
+        "url": "https://openai.com/blog/rss.xml",
+        "enabled": true,
+        "category": "first_hand_news",
+        "max_items": 5
+      },
+      {
+        "name": "Google AI Blog",
+        "url": "https://blog.google/technology/ai/rss/",
+        "enabled": true,
+        "category": "first_hand_news",
+        "max_items": 5
+      },
       {
         "name": "Simon Willison",
         "url": "https://simonwillison.net/atom/everything/",
         "enabled": true,
-        "category": "ai-tools"
+        "category": "practice_insight",
+        "max_items": 5
       },
       {
-        "name": "LWN.net (subscriber full-text)",
-        "url": "https://lwn.net/headlines/full_text?key=${LWN_KEY}",
-        "enabled": false,
-        "category": "linux"
+        "name": "Chip Huyen",
+        "url": "https://huyenchip.com/feed.xml",
+        "enabled": true,
+        "category": "practice_insight",
+        "max_items": 3
+      },
+      {
+        "name": "Latent Space",
+        "url": "https://www.latent.space/feed",
+        "enabled": true,
+        "category": "practice_insight",
+        "max_items": 5
+      }
+    ],
+    "github": [
+      {
+        "type": "repo_releases",
+        "owner": "anthropics",
+        "repo": "claude-code",
+        "enabled": true,
+        "category": "practice_insight"
+      },
+      {
+        "type": "repo_releases",
+        "owner": "openai",
+        "repo": "openai-cookbook",
+        "enabled": true,
+        "category": "practice_insight"
+      },
+      {
+        "type": "repo_releases",
+        "owner": "n8n-io",
+        "repo": "n8n",
+        "enabled": true,
+        "category": "practice_insight"
       }
     ],
     "reddit": {
-      "enabled": true,
+      "enabled": false,
       "subreddits": [
+        {
+          "subreddit": "AI",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 20,
+          "min_score": 10
+        },
         {
           "subreddit": "MachineLearning",
           "enabled": true,
           "sort": "hot",
           "time_filter": "day",
           "fetch_limit": 15,
-          "min_score": 50
+          "min_score": 20
         }
       ],
-      "users": [
-        {
-          "username": "iamthatis",
-          "enabled": true,
-          "sort": "new",
-          "fetch_limit": 10
-        }
-      ],
-      "fetch_comments": 5
+      "users": [],
+      "fetch_comments": 3
     },
     "twitter": {
       "enabled": false,
@@ -99,24 +141,27 @@
           "symbols": ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "TSLA"]
         }
       ]
-    },
-    "ossinsight": {
-      "enabled": false,
-      "period": "past_24_hours",
-      "languages": ["All", "Python", "TypeScript"],
-      "keywords": [],
-      "min_stars": 10,
-      "max_items": 30
     }
   },
   "filtering": {
-    "ai_score_threshold": 6.0,
+    "ai_score_threshold": 7.0,
     "quota_fill_score_threshold": 5.0,
     "time_window_hours": 24,
-    "max_items": null,
-    "category_groups": {},
+    "max_items": 20,
+    "category_groups": {
+      "first_hand_news": {
+        "name": "一手资讯速递",
+        "limit": 15,
+        "categories": ["first_hand_news"]
+      },
+      "practice_insight": {
+        "name": "实战与专家洞察",
+        "limit": 5,
+        "categories": ["practice_insight"]
+      }
+    },
     "default_group": "other",
-    "default_group_limit": null
+    "default_group_limit": 0
   },
   "webhook": {
     "enabled": false,

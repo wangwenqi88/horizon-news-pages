@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>黑盒审计测试大模型推理是否依赖前提</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="project-name">AI 资讯精读</h1>
+    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  </header>
+  <main class="main-content">
+    <nav class="static-nav">
+      <a href="../index.html">返回首页</a>
+      <a href="https://arxiv.org/abs/2607.13069" target="_blank" rel="noopener noreferrer">原文</a>
+    </nav>
+    <section class="read-hero">
+      <p class="eyebrow">2026-07-17 · Horizon News AI 精读</p>
+      <h1>黑盒审计测试大模型推理是否依赖前提</h1>
+      <p>一篇新的 arXiv 论文提出了干预式根基审计，这是一种黑盒方法，通过把某个前提中的谓词替换为全新符号，检查大模型的思维链步骤是否随之改变。该方法在 50 个 ProntoQA 问题上使用 GPT-4o 进行评估，报告的证明树依赖检测 F1 值为 0.806，谓词决定性依赖检测 F1 值为 0.885，优于 F1 值为 0.343 的自一致性基线。 这项工作针对一个关键的可解释性问题：思维链文本看起来可能逻辑正确，但模型答案未必真正依赖其声称使用的前提。如果这种方法能在合成基准之外得到验证，它可能帮助研究人员和评测者发现大模型推理系统中的“答案正确但推理错误”现象。 该审计在步骤层面运行，会把每个结论规范化为标准谓词形式，并比较一致谓词替换前后的输出变化。论文还报告称，在正确解答的问题中有 66% 至少包含一个对直接证明树依赖不敏感的对齐步骤，但这些都涉及实体引入前提，反映了一致替换评估器的一个盲点。</p>
+    </section>
+    <div class="read-layout">
+      <aside class="read-nav" aria-label="本页内容">
+        <p class="eyebrow">本页内容</p>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+      </aside>
+      <article class="read-article">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>一篇新的 arXiv 论文提出了干预式根基审计，这是一种黑盒方法，通过把某个前提中的谓词替换为全新符号，检查大模型的思维链步骤是否随之改变。该方法在 50 个 ProntoQA 问题上使用 GPT-4o 进行评估，报告的证明树依赖检测 F1 值为 0.806，谓词决定性依赖检测 F1 值为 0.885，优于 F1 值为 0.343 的自一致性基线。 这项工作针对一个关键的可解释性问题：思维链文本看起来可能逻辑正确，但模型答案未必真正依赖其声称使用的前提。如果这种方法能在合成基准之外得到验证，它可能帮助研究人员和评测者发现大模型推理系统中的“答案正确但推理错误”现象。 该审计在步骤层面运行，会把每个结论规范化为标准谓词形式，并比较一致谓词替换前后的输出变化。论文还报告称，在正确解答的问题中有 66% 至少包含一个对直接证明树依赖不敏感的对齐步骤，但这些都涉及实体引入前提，反映了一致替换评估器的一个盲点。</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：rss</li><li>评分：7.0/10</li><li>标签：LLM evaluation、chain-of-thought、AI interpretability、reasoning、arXiv</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h2><a href="https://arxiv.org/abs/2607.13069" rel="noopener noreferrer" target="_blank">黑盒审计测试大模型推理是否依赖前提</a> ⭐️ 7.0/10</h2>
+<p>一篇新的 arXiv 论文提出了干预式根基审计，这是一种黑盒方法，通过把某个前提中的谓词替换为全新符号，检查大模型的思维链步骤是否随之改变。该方法在 50 个 ProntoQA 问题上使用 GPT-4o 进行评估，报告的证明树依赖检测 F1 值为 0.806，谓词决定性依赖检测 F1 值为 0.885，优于 F1 值为 0.343 的自一致性基线。 这项工作针对一个关键的可解释性问题：思维链文本看起来可能逻辑正确，但模型答案未必真正依赖其声称使用的前提。如果这种方法能在合成基准之外得到验证，它可能帮助研究人员和评测者发现大模型推理系统中的“答案正确但推理错误”现象。 该审计在步骤层面运行，会把每个结论规范化为标准谓词形式，并比较一致谓词替换前后的输出变化。论文还报告称，在正确解答的问题中有 66% 至少包含一个对直接证明树依赖不敏感的对齐步骤，但这些都涉及实体引入前提，反映了一致替换评估器的一个盲点。</p>
+<p>rss · ArXiv ML · 7月17日 04:00</p>
+<p><strong>背景</strong>: 思维链推理要求大模型输出中间推理步骤，而不只是最终答案，但这些步骤并不一定忠实反映模型得出答案的真实过程。ProntoQA 是一个基于形式逻辑式本体构建的合成演绎推理基准，因此可以把生成的推理与已知证明链进行比较。证明树记录哪些前提支撑每个中间结论，因此可作为测试某个推理步骤是否应当依赖某个前提的真实标注。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://arxiv.org/html/2607.13069v1" rel="noopener noreferrer" target="_blank">Interventional Grounding Audits: Black-Box Premise-Dependency ...</a></li>
+<li><a href="https://www.emergentmind.com/topics/prontoqa" rel="noopener noreferrer" target="_blank">PrOntoQA : Synthetic Deductive Reasoning Benchmark</a></li>
+<li><a href="https://github.com/asaparov/prontoqa" rel="noopener noreferrer" target="_blank">GitHub - asaparov/ prontoqa : Synthetic question-answering dataset to...</a></li>
+</ul>
+</details>
+<p><strong>标签</strong>: <code>#LLM evaluation</code>, <code>#chain-of-thought</code>, <code>#AI interpretability</code>, <code>#reasoning</code>, <code>#arXiv</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>思维链推理要求大模型输出中间推理步骤，而不只是最终答案，但这些步骤并不一定忠实反映模型得出答案的真实过程。ProntoQA 是一个基于形式逻辑式本体构建的合成演绎推理基准，因此可以把生成的推理与已知证明链进行比较。证明树记录哪些前提支撑每个中间结论，因此可作为测试某个推理步骤是否应当依赖某个前提的真实标注。</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>思维链推理要求大模型输出中间推理步骤，而不只是最终答案，但这些步骤并不一定忠实反映模型得出答案的真实过程。ProntoQA 是一个基于形式逻辑式本体构建的合成演绎推理基准，因此可以把生成的推理与已知证明链进行比较。证明树记录哪些前提支撑每个中间结论，因此可作为测试某个推理步骤是否应当依赖某个前提的真实标注。</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>思维链推理要求大模型输出中间推理步骤，而不只是最终答案，但这些步骤并不一定忠实反映模型得出答案的真实过程。ProntoQA 是一个基于形式逻辑式本体构建的合成演绎推理基准，因此可以把生成的推理与已知证明链进行比较。证明树记录哪些前提支撑每个中间结论，因此可作为测试某个推理步骤是否应当依赖某个前提的真实标注。</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>判断团队近期是否有和LLM evaluation、chain-of-thought相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://arxiv.org/abs/2607.13069" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-17-zh.html#item-5">返回当日日报定位</a></p>
+        </section>
+      </article>
+    </div>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

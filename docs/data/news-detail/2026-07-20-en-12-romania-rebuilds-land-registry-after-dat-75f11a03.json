@@ -8,6 +8,8 @@
   "source_tier": "B",
   "published_at": "2026-07-20",
   "category": "cybersecurity",
+  "group": "first_hand_news",
+  "score": "6.0",
   "summary": "A hacker reportedly wiped Romania's land registry database, prompting officials to restore the public website and rebuild the agency's network from scratch. The available reports indicate that officials appear to have offline backups, reducing the risk of permanent loss. Land registry systems are critical infrastructure because they help establish property ownership, transactions, and legal certainty. A successful wipe of such a database shows how cyberattacks on government records can quickly become social, legal, and economic risks. The most important mitigating detail is the apparent existence of an offline copy, despite the hacker reportedly claiming that backups were deleted. The public material does not provide deep technical information about the intrusion path, malware, backup architecture, or recovery timeline.",
   "what_happened": "A hacker reportedly wiped Romania's land registry database, prompting officials to restore the public website and rebuild the agency's network from scratch. The available reports indicate that officials appear to have offline backups, reducing the risk of permanent loss. Land registry systems are critical infrastructure because they help establish property ownership, transactions, and legal certainty. A successful wipe of such a database shows how cyberattacks on government records can quickly become social, legal, and economic risks. The most important mitigating detail is the apparent existence of an offline copy, despite the hacker reportedly claiming that backups were deleted. The public material does not provide deep technical information about the intrusion path, malware, backup architecture, or recovery timeline.",
   "why_it_matters": "A land registry is a government record system that documents ownership and legal interests in land and property. If those records become unavailable or untrusted, citizens, courts, banks, and property buyers may struggle to verify who owns what. Offline backups are copies kept disconnected from the main network, making them harder for an attacker inside the network to erase or encrypt. Rebuilding a network from scratch usually means treating existing systems as untrusted and restoring services onto newly prepared infrastructure.",
@@ -22,6 +24,7 @@
   ],
   "audio_url": "",
   "html_url": "/daily/2026-07-20-en.html#item-12",
+  "read_url": "/read/2026-07-20-en-12-romania-rebuilds-land-registry-after-dat-75f11a03.html",
   "tags": [
     "cybersecurity",
     "critical-infrastructure",

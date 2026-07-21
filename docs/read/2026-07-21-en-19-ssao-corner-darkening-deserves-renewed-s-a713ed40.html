@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SSAO corner darkening deserves renewed scrutiny.</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="project-name">AI 资讯精读</h1>
+    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  </header>
+  <main class="main-content">
+    <nav class="static-nav">
+      <a href="../index.html">返回首页</a>
+      <a href="https://nothings.org/gamedev/ssao/" target="_blank" rel="noopener noreferrer">原文</a>
+    </nav>
+    <section class="read-hero">
+      <p class="eyebrow">2026-07-21 · Horizon News AI 精读</p>
+      <h1>SSAO corner darkening deserves renewed scrutiny.</h1>
+      <p>A 2012 graphics article, “Corners Don&#x27;t Look Like That,” has resurfaced in discussion, arguing that screen-space ambient occlusion often makes corners and creases look unrealistically dark. The renewed attention is less a new release than a practitioner-led reexamination of a long-used real-time rendering shortcut. SSAO became popular because it adds depth cues cheaply, but the article highlights how a performance-friendly effect can become an aesthetic convention that diverges from real lighting. This matters to game developers, rendering engineers, and technical artists choosing between visual readability, realism, and frame-time budgets. SSAO estimates occlusion using information already visible in screen space, so it cannot fully reason about off-screen geometry, real light placement, or physically accurate indirect illumination. Commenters also noted that newer approaches such as RTGI, path tracing, and AMD FidelityFX CACAO may reduce some artifacts, but the original critique remains useful as a visual diagnostic.</p>
+    </section>
+    <div class="read-layout">
+      <aside class="read-nav" aria-label="本页内容">
+        <p class="eyebrow">本页内容</p>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+      </aside>
+      <article class="read-article">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>A 2012 graphics article, “Corners Don&#x27;t Look Like That,” has resurfaced in discussion, arguing that screen-space ambient occlusion often makes corners and creases look unrealistically dark. The renewed attention is less a new release than a practitioner-led reexamination of a long-used real-time rendering shortcut. SSAO became popular because it adds depth cues cheaply, but the article highlights how a performance-friendly effect can become an aesthetic convention that diverges from real lighting. This matters to game developers, rendering engineers, and technical artists choosing between visual readability, realism, and frame-time budgets. SSAO estimates occlusion using information already visible in screen space, so it cannot fully reason about off-screen geometry, real light placement, or physically accurate indirect illumination. Commenters also noted that newer approaches such as RTGI, path tracing, and AMD FidelityFX CACAO may reduce some artifacts, but the original critique remains useful as a visual diagnostic.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：6.0/10</li><li>标签：computer-graphics、SSAO、rendering、game-development、technical-discussion</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://nothings.org/gamedev/ssao/" rel="noopener noreferrer" target="_blank">SSAO corner darkening deserves renewed scrutiny.</a> ⭐️ 6.0/10</h3>
+<p>A 2012 graphics article, “Corners Don't Look Like That,” has resurfaced in discussion, arguing that screen-space ambient occlusion often makes corners and creases look unrealistically dark. The renewed attention is less a new release than a practitioner-led reexamination of a long-used real-time rendering shortcut. SSAO became popular because it adds depth cues cheaply, but the article highlights how a performance-friendly effect can become an aesthetic convention that diverges from real lighting. This matters to game developers, rendering engineers, and technical artists choosing between visual readability, realism, and frame-time budgets. SSAO estimates occlusion using information already visible in screen space, so it cannot fully reason about off-screen geometry, real light placement, or physically accurate indirect illumination. Commenters also noted that newer approaches such as RTGI, path tracing, and AMD FidelityFX CACAO may reduce some artifacts, but the original critique remains useful as a visual diagnostic.</p>
+<p>hackernews · firephox · Jul 20, 15:07 · <a href="https://news.ycombinator.com/item?id=48979931" rel="noopener noreferrer" target="_blank">Discussion</a></p>
+<p><strong>Background</strong>: Ambient occlusion is a rendering technique that estimates how exposed a point in a scene is to ambient light; creases and contact areas often receive less ambient light and therefore appear darker. Screen-space ambient occlusion, or SSAO, is a real-time approximation that calculates this effect from the rendered image and depth-related data rather than from full scene-wide light transport. SSAO was popularized in games such as Crytek’s Crysis because it provided a convincing sense of local shape at a manageable performance cost. The tradeoff is that the effect can darken geometry based on proximity patterns rather than on actual lighting conditions.</p>
+<p><strong>AI View</strong>: A classic practitioner critique of screen-space ambient occlusion with useful visual reasoning for graphics engineers, but it is from 2012 and has little current news value or direct relevance to AI/ML workflows. The Hacker News discussion is moderately active and substantive, with commenters debating realism vs aesthetics, historical performance tradeoffs, and newer AO/RTGI approaches, which adds some expert-context value.</p>
+<p><strong>Practical Takeaways</strong>: Treat SSAO as an artistic and perceptual tool, not as a physically reliable lighting simulation. When evaluating AO, compare against reference photos or path-traced renders and ask whether the added darkness clarifies geometry or merely creates a familiar “game-like” grime. A useful decision rule is to tune or disable AO when it contradicts known light sources, makes corners uniformly dirty, or hides material and color information.</p>
+<p><strong>Implementation Notes</strong>: Use SSAO strength, radius, and bias as scene-dependent parameters rather than global constants. Test indoor corners, door frames, and contact shadows under multiple lighting setups, because those are where false darkening becomes most visible. Avoid judging the effect only in isolated screenshots; inspect it in motion and with final tone mapping, exposure, and material settings enabled. If the renderer supports alternatives, compare SSAO against CACAO-like AO, ray-traced global illumination, or path-traced reference frames before locking the art direction.</p>
+<p><strong>How I Can Use This</strong>: For content creation or technical documentation, this is a reminder to separate “looks better” from “is more accurate” and to show side-by-side visual evidence. For software delivery, the same lesson applies to graphics features: define acceptance criteria around user perception, performance cost, and known failure cases rather than around the mere presence of a named technique.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Screen_space_ambient_occlusion" rel="noopener noreferrer" target="_blank">Screen space ambient occlusion - Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Ambient_occlusion" rel="noopener noreferrer" target="_blank">Ambient occlusion - Wikipedia</a></li>
+<li><a href="https://learnopengl.com/Advanced-Lighting/SSAO" rel="noopener noreferrer" target="_blank">LearnOpenGL - SSAO</a></li>
+</ul>
+</details>
+<p><strong>Discussion</strong>: The discussion is mixed but substantive: some readers agree that SSAO is physically inaccurate and visually overused, while others argue that realism is not always the goal and that the effect was intended to improve shape readability cheaply. Several commenters emphasize historical constraints, noting that SSAO was long one of the best-performing AO options, while newer RTGI, path tracing, and CACAO-style approaches may offer better results.</p>
+<p><strong>Tags</strong>: <code>#computer-graphics</code>, <code>#SSAO</code>, <code>#rendering</code>, <code>#game-development</code>, <code>#technical-discussion</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>Ambient occlusion is a rendering technique that estimates how exposed a point in a scene is to ambient light; creases and contact areas often receive less ambient light and therefore appear darker. Screen-space ambient occlusion, or SSAO, is a real-time approximation that calculates this effect from the rendered image and depth-related data rather than from full scene-wide light transport. SSAO was popularized in games such as Crytek’s Crysis because it provided a convincing sense of local shape at a manageable performance cost. The tradeoff is that the effect can darken geometry based on proximity patterns rather than on actual lighting conditions.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>Ambient occlusion is a rendering technique that estimates how exposed a point in a scene is to ambient light; creases and contact areas often receive less ambient light and therefore appear darker. Screen-space ambient occlusion, or SSAO, is a real-time approximation that calculates this effect from the rendered image and depth-related data rather than from full scene-wide light transport. SSAO was popularized in games such as Crytek’s Crysis because it provided a convincing sense of local shape at a manageable performance cost. The tradeoff is that the effect can darken geometry based on proximity patterns rather than on actual lighting conditions.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>A classic practitioner critique of screen-space ambient occlusion with useful visual reasoning for graphics engineers, but it is from 2012 and has little current news value or direct relevance to AI/ML workflows. The Hacker News discussion is moderately active and substantive, with commenters debating realism vs aesthetics, historical performance tradeoffs, and newer AO/RTGI approaches, which adds some expert-context value.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for computer-graphics, SSAO.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul><p>Treat SSAO as an artistic and perceptual tool, not as a physically reliable lighting simulation. When evaluating AO, compare against reference photos or path-traced renders and ask whether the added darkness clarifies geometry or merely creates a familiar “game-like” grime. A useful decision rule is to tune or disable AO when it contradicts known light sources, makes corners uniformly dirty, or hides material and color information.</p><p>Use SSAO strength, radius, and bias as scene-dependent parameters rather than global constants. Test indoor corners, door frames, and contact shadows under multiple lighting setups, because those are where false darkening becomes most visible. Avoid judging the effect only in isolated screenshots; inspect it in motion and with final tone mapping, exposure, and material settings enabled. If the renderer supports alternatives, compare SSAO against CACAO-like AO, ray-traced global illumination, or path-traced reference frames before locking the art direction.</p><p>For content creation or technical documentation, this is a reminder to separate “looks better” from “is more accurate” and to show side-by-side visual evidence. For software delivery, the same lesson applies to graphics features: define acceptance criteria around user perception, performance cost, and known failure cases rather than around the mere presence of a named technique.</p>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>The discussion is mixed but substantive: some readers agree that SSAO is physically inaccurate and visually overused, while others argue that realism is not always the goal and that the effect was intended to improve shape readability cheaply. Several commenters emphasize historical constraints, noting that SSAO was long one of the best-performing AO options, while newer RTGI, path tracing, and CACAO-style approaches may offer better results.</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://nothings.org/gamedev/ssao/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-21-en.html#item-19">返回当日日报定位</a></p>
+        </section>
+      </article>
+    </div>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

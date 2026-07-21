@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-21-zh-06-claude-code-v2-1-216-58daaa9d",
+  "date": "2026-07-21",
+  "lang": "zh",
+  "title": "Claude Code v2.1.216 改进沙箱与会话。",
+  "source": "github",
+  "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.216",
+  "source_tier": "S",
+  "published_at": "2026-07-21",
+  "category": "claude-code",
+  "group": "first_hand_news",
+  "score": "7.0",
+  "summary": "Anthropic 发布了 Claude Code v2.1.216，新增 sandbox.filesystem.disabled 设置，可在保留网络出口控制的同时跳过文件系统隔离。该补丁还修复了长会话中的二次复杂度变慢、OAuth 相关命令拒绝、网页端空闲后的提问处理、提及、钩子、工作树行为、后台代理会话恢复以及多项权限校验问题。 此版本对活跃的 Claude Code 用户很重要，因为它针对会直接打断编码流程的可靠性问题，尤其是长会话恢复缓慢以及权限或认证行为错误。它也反映出 AI 编码工具的运行复杂度正在上升，沙箱、后台代理、钩子、工作树和遥测都需要更可预测的行为。 最值得技术关注的修复是移除了消息规范化中随轮次数量呈二次增长的开销，此前该问题会导致长会话出现数秒卡顿和恢复缓慢。涉及安全性的改动包括改进 .claude 符号链接处理、陈旧守护进程锁文件处理、Windows 网络路径提示、PowerShell 校验中的不可见 Unicode、非 ASCII Bash 解析，以及隔离工作树中的 git 重定向问题。",
+  "what_happened": "Anthropic 发布了 Claude Code v2.1.216，新增 sandbox.filesystem.disabled 设置，可在保留网络出口控制的同时跳过文件系统隔离。该补丁还修复了长会话中的二次复杂度变慢、OAuth 相关命令拒绝、网页端空闲后的提问处理、提及、钩子、工作树行为、后台代理会话恢复以及多项权限校验问题。 此版本对活跃的 Claude Code 用户很重要，因为它针对会直接打断编码流程的可靠性问题，尤其是长会话恢复缓慢以及权限或认证行为错误。它也反映出 AI 编码工具的运行复杂度正在上升，沙箱、后台代理、钩子、工作树和遥测都需要更可预测的行为。 最值得技术关注的修复是移除了消息规范化中随轮次数量呈二次增长的开销，此前该问题会导致长会话出现数秒卡顿和恢复缓慢。涉及安全性的改动包括改进 .claude 符号链接处理、陈旧守护进程锁文件处理、Windows 网络路径提示、PowerShell 校验中的不可见 Unicode、非 ASCII Bash 解析，以及隔离工作树中的 git 重定向问题。",
+  "why_it_matters": "Claude Code 是 Anthropic 面向编码流程的开发者工具，包含项目设置、斜杠命令、钩子以及代理式执行等能力。它的设置系统可以存放在项目或本地配置文件中，因此沙箱控制这类改动对团队运行方式很重要。钩子是在 Claude Code 编辑文件、完成任务或需要输入时自动运行的命令，因此与文件修改钩子相关的缺陷可能影响格式化、校验或项目规则执行。子代理和后台代理让用户可以把工作委托给专门代理或并行任务，所以在恢复会话后还原提示词、工具限制和会话状态非常重要。",
+  "manager_takeaway": "Claude Code 是 Anthropic 面向编码流程的开发者工具，包含项目设置、斜杠命令、钩子以及代理式执行等能力。它的设置系统可以存放在项目或本地配置文件中，因此沙箱控制这类改动对团队运行方式很重要。钩子是在 Claude Code 编辑文件、完成任务或需要输入时自动运行的命令，因此与文件修改钩子相关的缺陷可能影响格式化、校验或项目规则执行。子代理和后台代理让用户可以把工作委托给专门代理或并行任务，所以在恢复会话后还原提示词、工具限制和会话状态非常重要。",
+  "actions": [
+    "判断团队近期是否有和claude-code、anthropic相关的试用场景。",
+    "核对数据安全、权限边界和成本变化。",
+    "如果价值明确，安排一次小范围验证并记录复盘。"
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-21-zh.html#item-6",
+  "read_url": "/read/2026-07-21-zh-06-claude-code-v2-1-216-58daaa9d.html",
+  "tags": [
+    "claude-code",
+    "anthropic",
+    "developer-tools",
+    "ai-coding",
+    "release-notes"
+  ]
+}

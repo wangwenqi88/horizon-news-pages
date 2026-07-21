@@ -5,15 +5,15 @@ title: GitHub Pages 部署
 
 # Cloudflare Pages 部署
 
-本项目的公开阅读站点由 `docs/` 目录承载，日报精读会生成真实 HTML 文件并提交到 GitHub。Cloudflare Pages 只需要从 GitHub 仓库发布 `docs/` 目录。
+本项目的公开阅读站点由 `docs/` 承载。Horizon 先生成日报内容，再把静态 HTML 和结构化数据写入 `docs/`，最后由 Cloudflare Pages 直接从 GitHub 仓库自动发布。
 
 标准链路是：
 
-1. Horizon 采集 24 小时资讯。
-2. AI 筛选并生成中英文 Markdown。
-3. `scripts/build_static_pages.py` 生成静态 HTML 和 `docs/data/` 数据文件。
-4. GitHub 同步 `docs/` 公开产物。
-5. Cloudflare Pages 监听 GitHub `main` 分支并自动发布 `docs/`。
+1. Horizon 采集最近 24 小时资讯。
+2. AI 按双轨结构输出日报内容。
+3. `scripts/build_static_pages.py` 生成 `docs/index.html`、`docs/daily/` 和 `docs/data/`。
+4. `scripts/publish_daily.py` 或 GitHub Actions 把 `docs/` 相关产物提交回 GitHub。
+5. Cloudflare Pages 监听仓库 `main` 分支并自动部署。
 
 ## 发布方式
 
@@ -31,7 +31,7 @@ title: GitHub Pages 部署
    - `HORIZON_AI_MODEL`：模型名称。
    - `HORIZON_GITHUB_TOKEN`：可选，用于提高 GitHub API 访问额度；不配置时 workflow 使用 GitHub Actions 内置 token。
 7. 手动运行一次 `Daily Horizon Summary` workflow。
-8. 等待 workflow 把 `docs/index.html` 和 `docs/daily/*.html` 提交到 `main` 后，Cloudflare 会自动部署。
+8. 等待 workflow 把 `docs/index.html`、`docs/daily/*.html` 和 `docs/data/*` 提交到 `main` 后，Cloudflare 会自动部署。
 
 ## 每日更新
 
@@ -45,8 +45,11 @@ schedule:
 任务会复制 `data/config.github.json` 为运行配置，执行 `uv run horizon --hours 24`，生成 `docs/_posts/YYYY-MM-DD-summary-{lang}.md`，再执行 `scripts/build_static_pages.py` 生成：
 
 - `docs/index.html`
+- `docs/firsthand.html`
+- `docs/insights.html`
 - `docs/daily/YYYY-MM-DD-zh.html`
 - `docs/daily/YYYY-MM-DD-en.html`
+- `docs/read/*.html`
 
 这些 HTML 文件会提交回 `main`，Cloudflare Pages 监听 GitHub 更新后自动发布。
 
@@ -62,7 +65,7 @@ uv run python scripts/publish_daily.py
 
 - `python -m src.main --hours 24`
 - `python scripts/build_static_pages.py`
-- `git add docs/index.html docs/daily docs/data docs/_posts`
+- `git add docs/index.html docs/firsthand.html docs/insights.html docs/daily docs/read docs/data docs/_posts`
 - `git commit -m "Daily HTML summary: YYYY-MM-DD"`
 - `git push pages HEAD:main`
 
@@ -74,12 +77,15 @@ uv run python scripts/publish_daily.py --no-push
 
 ## 内容结构
 
-- `docs/index.html`：Cloudflare 发布入口，直接渲染最新中文日报。
+- `docs/index.html`：Cloudflare 发布入口，只展示当天精选内容和历史日报入口。
+- `docs/firsthand.html`：最新中文一手资讯完整列表。
+- `docs/insights.html`：最新中文实战与专家洞察完整列表。
 - `docs/daily/`：Cloudflare 发布的每日精读 HTML 页面。
+- `docs/read/`：每条资讯的 AI 精读页面。
 - `docs/index.md`：Jekyll 兼容入口，保留作备用。
 - `docs/_posts/`：每日精读 Markdown 源文件，运行时生成并强制提交。
 - `docs/assets/css/horizon.css`：阅读主页和日报样式。
-- `scripts/build_static_pages.py`：Markdown 到静态 HTML 的生成器。
+- `scripts/build_static_pages.py`：Markdown 到静态 HTML 和结构化数据的生成器。
 
 ## 注意事项
 

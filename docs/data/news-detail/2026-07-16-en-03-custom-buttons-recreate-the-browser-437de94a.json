@@ -8,6 +8,8 @@
   "source_tier": "B",
   "published_at": "2026-07-16",
   "category": "accessibility",
+  "group": "first_hand_news",
+  "score": "7.0",
   "summary": "Mad Campos published an article arguing that creating a button from scratch means reimplementing a large amount of native browser behavior, especially accessibility behavior. The piece uses a satirical framing to show how much functionality developers lose when they replace a real HTML button with a custom element. This matters because custom UI components are common in modern frontend development, but small mistakes can make interfaces unusable for keyboard users and people relying on assistive technologies. The article reinforces a broader accessibility lesson: native HTML controls often provide correctness and compatibility that are difficult to reproduce reliably. MDN notes that adding role=\"button\" to another element only exposes it as a button to assistive technology; it does not automatically provide native click behavior, keyboard handling, or focus behavior. A technically correct custom button must handle focusability, Enter and Space activation, accessible naming, disabled states, and interaction differences across browsers and assistive technologies.",
   "what_happened": "Mad Campos published an article arguing that creating a button from scratch means reimplementing a large amount of native browser behavior, especially accessibility behavior. The piece uses a satirical framing to show how much functionality developers lose when they replace a real HTML button with a custom element. This matters because custom UI components are common in modern frontend development, but small mistakes can make interfaces unusable for keyboard users and people relying on assistive technologies. The article reinforces a broader accessibility lesson: native HTML controls often provide correctness and compatibility that are difficult to reproduce reliably. MDN notes that adding role=\"button\" to another element only exposes it as a button to assistive technology; it does not automatically provide native click behavior, keyboard handling, or focus behavior. A technically correct custom button must handle focusability, Enter and Space activation, accessible naming, disabled states, and interaction differences across browsers and assistive technologies.",
   "why_it_matters": "HTML includes a native button element that browsers and operating systems already know how to expose to users, keyboards, and accessibility APIs. ARIA can add semantic meaning, such as role=\"button\", but it generally does not add the full behavior of the native element by itself. Accessible names are the labels that assistive technologies use to identify controls, and browsers compute them from visible text, ARIA attributes, and related markup.",
@@ -22,6 +24,7 @@
   ],
   "audio_url": "",
   "html_url": "/daily/2026-07-16-en.html#item-3",
+  "read_url": "/read/2026-07-16-en-03-custom-buttons-recreate-the-browser-437de94a.html",
   "tags": [
     "accessibility",
     "web-development",

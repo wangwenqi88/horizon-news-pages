@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenAI 谈长周期模型安全</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="project-name">AI 资讯精读</h1>
+    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  </header>
+  <main class="main-content">
+    <nav class="static-nav">
+      <a href="../index.html">返回首页</a>
+      <a href="https://openai.com/index/safety-alignment-long-horizon-models" target="_blank" rel="noopener noreferrer">原文</a>
+    </nav>
+    <section class="read-hero">
+      <p class="eyebrow">2026-07-21 · Horizon News AI 精读</p>
+      <h1>OpenAI 谈长周期模型安全</h1>
+      <p>OpenAI 发布了题为《长周期模型时代的安全与对齐》的博客文章，介绍了部署长时间运行的 AI 模型所获得的经验。文章强调了新出现的安全风险、已观察到的失败模式，以及在扩大访问范围过程中对防护措施进行的迭代改进。 长周期模型可以跨多个步骤持续行动，因此其失败比单轮聊天系统更难预测、发现和控制。OpenAI 的一手部署经验对构建 AI 智能体的团队很重要，因为它把安全描述为一种持续运营过程，而不是一次性具备的模型属性。 搜索结果显示，OpenAI 最初版本的防护措施是有意设计得较为保守的，并且 OpenAI 持续调优系统，以在不削弱保护能力的前提下减少不必要的中断。主要限制是，现有摘要没有提供详细的技术机制，因此其价值更多在于部署思路和风险分类，而不是可直接复用的代码或架构。</p>
+    </section>
+    <div class="read-layout">
+      <aside class="read-nav" aria-label="本页内容">
+        <p class="eyebrow">本页内容</p>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+      </aside>
+      <article class="read-article">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>OpenAI 发布了题为《长周期模型时代的安全与对齐》的博客文章，介绍了部署长时间运行的 AI 模型所获得的经验。文章强调了新出现的安全风险、已观察到的失败模式，以及在扩大访问范围过程中对防护措施进行的迭代改进。 长周期模型可以跨多个步骤持续行动，因此其失败比单轮聊天系统更难预测、发现和控制。OpenAI 的一手部署经验对构建 AI 智能体的团队很重要，因为它把安全描述为一种持续运营过程，而不是一次性具备的模型属性。 搜索结果显示，OpenAI 最初版本的防护措施是有意设计得较为保守的，并且 OpenAI 持续调优系统，以在不削弱保护能力的前提下减少不必要的中断。主要限制是，现有摘要没有提供详细的技术机制，因此其价值更多在于部署思路和风险分类，而不是可直接复用的代码或架构。</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：rss</li><li>评分：8.0/10</li><li>标签：AI safety、alignment、long-horizon agents、OpenAI、production AI</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://openai.com/index/safety-alignment-long-horizon-models" rel="noopener noreferrer" target="_blank">OpenAI 谈长周期模型安全</a> ⭐️ 8.0/10</h3>
+<p>OpenAI 发布了题为《长周期模型时代的安全与对齐》的博客文章，介绍了部署长时间运行的 AI 模型所获得的经验。文章强调了新出现的安全风险、已观察到的失败模式，以及在扩大访问范围过程中对防护措施进行的迭代改进。 长周期模型可以跨多个步骤持续行动，因此其失败比单轮聊天系统更难预测、发现和控制。OpenAI 的一手部署经验对构建 AI 智能体的团队很重要，因为它把安全描述为一种持续运营过程，而不是一次性具备的模型属性。 搜索结果显示，OpenAI 最初版本的防护措施是有意设计得较为保守的，并且 OpenAI 持续调优系统，以在不削弱保护能力的前提下减少不必要的中断。主要限制是，现有摘要没有提供详细的技术机制，因此其价值更多在于部署思路和风险分类，而不是可直接复用的代码或架构。</p>
+<p>rss · OpenAI Blog · 7月20日 10:00</p>
+<p><strong>背景</strong>: AI 对齐指的是让 AI 系统按照人类意图、价值和指令行事的努力，尤其是在模型面对模糊或陌生情境时。长周期智能体是指需要跨越较长行动序列完成任务的系统，通常涉及规划、适应、从错误中恢复，以及与真实环境交互。迭代式部署意味着逐步发布能力，观察真实使用中的行为，并在更大范围推广之前根据失败案例和测试结果更新防护措施。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://openai.com/index/safety-alignment-long-horizon-models/" rel="noopener noreferrer" target="_blank">Safety and alignment in an era of long-horizon models | OpenAI</a></li>
+<li><a href="https://www.ibm.com/think/topics/ai-alignment" rel="noopener noreferrer" target="_blank">What Is AI Alignment? | IBM</a></li>
+<li><a href="https://www.preprints.org/manuscript/202607.1328" rel="noopener noreferrer" target="_blank">Towards Long-Horizon Agents: A Survey [v1] | Preprints.org</a></li>
+</ul>
+</details>
+<p><strong>标签</strong>: <code>#AI safety</code>, <code>#alignment</code>, <code>#long-horizon agents</code>, <code>#OpenAI</code>, <code>#production AI</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>AI 对齐指的是让 AI 系统按照人类意图、价值和指令行事的努力，尤其是在模型面对模糊或陌生情境时。长周期智能体是指需要跨越较长行动序列完成任务的系统，通常涉及规划、适应、从错误中恢复，以及与真实环境交互。迭代式部署意味着逐步发布能力，观察真实使用中的行为，并在更大范围推广之前根据失败案例和测试结果更新防护措施。</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>AI 对齐指的是让 AI 系统按照人类意图、价值和指令行事的努力，尤其是在模型面对模糊或陌生情境时。长周期智能体是指需要跨越较长行动序列完成任务的系统，通常涉及规划、适应、从错误中恢复，以及与真实环境交互。迭代式部署意味着逐步发布能力，观察真实使用中的行为，并在更大范围推广之前根据失败案例和测试结果更新防护措施。</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>AI 对齐指的是让 AI 系统按照人类意图、价值和指令行事的努力，尤其是在模型面对模糊或陌生情境时。长周期智能体是指需要跨越较长行动序列完成任务的系统，通常涉及规划、适应、从错误中恢复，以及与真实环境交互。迭代式部署意味着逐步发布能力，观察真实使用中的行为，并在更大范围推广之前根据失败案例和测试结果更新防护措施。</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>判断团队近期是否有和AI safety、alignment相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://openai.com/index/safety-alignment-long-horizon-models" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-21-zh.html#item-4">返回当日日报定位</a></p>
+        </section>
+      </article>
+    </div>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

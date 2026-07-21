@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-21-en-18-coding-agents-make-reverse-engineering-c-09dbcc69",
+  "date": "2026-07-21",
+  "lang": "en",
+  "title": "Coding Agents Make Reverse Engineering Cheaper.",
+  "source": "rss",
+  "source_url": "https://simonwillison.net/2026/Jul/20/cheap-reverse-engineering/#atom-everything",
+  "source_tier": "A",
+  "published_at": "2026-07-21",
+  "category": "coding-agents",
+  "group": "practice_insight",
+  "score": "7.0",
+  "summary": "Simon Willison argues that coding agents are making it economically reasonable to reverse-engineer and automate undocumented home devices. His point is not that reverse engineering is new, but that AI-assisted coding lowers the cost of experimentation, failure, and later rewrites. This changes the return-on-investment threshold for small automations that previously felt too fragile or time-consuming to justify. Developers, hobbyists, and smart-home users may be more willing to build disposable integrations around unstable or undocumented interfaces. Willison emphasizes maintenance psychology as much as initial development speed: if code is cheap to generate, future breakage feels less like a permanent burden. The caveat is that undocumented APIs can still change without warning, so the underlying reliability risk does not disappear.",
+  "what_happened": "Simon Willison argues that coding agents are making it economically reasonable to reverse-engineer and automate undocumented home devices. His point is not that reverse engineering is new, but that AI-assisted coding lowers the cost of experimentation, failure, and later rewrites. This changes the return-on-investment threshold for small automations that previously felt too fragile or time-consuming to justify. Developers, hobbyists, and smart-home users may be more willing to build disposable integrations around unstable or undocumented interfaces. Willison emphasizes maintenance psychology as much as initial development speed: if code is cheap to generate, future breakage feels less like a permanent burden. The caveat is that undocumented APIs can still change without warning, so the underlying reliability risk does not disappear.",
+  "why_it_matters": "Reverse engineering means inferring how a device, protocol, or service works when official documentation is missing or incomplete. Home automation often depends on APIs or network behavior exposed by devices, but undocumented interfaces may be unstable and unsupported. AI coding agents, such as tools marketed for automated coding and code execution workflows, can help write, test, and revise scripts faster than a developer working entirely by hand.",
+  "manager_takeaway": "Reverse engineering means inferring how a device, protocol, or service works when official documentation is missing or incomplete. Home automation often depends on APIs or network behavior exposed by devices, but undocumented interfaces may be unstable and unsupported. AI coding agents, such as tools marketed for automated coding and code execution workflows, can help write, test, and revise scripts faster than a developer working entirely by hand.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for coding-agents, automation.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-21-en.html#item-18",
+  "read_url": "/read/2026-07-21-en-18-coding-agents-make-reverse-engineering-c-09dbcc69.html",
+  "tags": [
+    "coding-agents",
+    "automation",
+    "reverse-engineering",
+    "developer-productivity",
+    "AI-assisted-coding"
+  ]
+}

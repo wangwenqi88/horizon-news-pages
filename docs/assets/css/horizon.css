@@ -230,6 +230,214 @@ pre {
   align-items: start;
 }
 
+.home-actions,
+.portal-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.home-actions {
+  margin: 0 0 1rem;
+}
+
+.home-actions a,
+.portal-card-actions a {
+  border: 1px solid var(--hz-border);
+  border-radius: 6px;
+  padding: 0.46rem 0.72rem;
+  color: var(--hz-text);
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.home-actions a:hover,
+.portal-card-actions a:hover {
+  border-color: var(--hz-border-strong);
+  text-decoration: none;
+}
+
+.portal-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.portal-section,
+.full-item,
+.read-article {
+  border: 1px solid var(--hz-border);
+  border-radius: 8px;
+  background: rgba(8, 13, 25, 0.78);
+  box-shadow: var(--hz-shadow);
+}
+
+.portal-section {
+  padding: 1rem;
+}
+
+.portal-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.portal-section-head h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.portal-section-head .eyebrow,
+.portal-card-meta span,
+.read-hero .eyebrow,
+.read-nav .eyebrow {
+  margin: 0;
+  color: var(--hz-green);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.portal-card,
+.full-item {
+  border: 1px solid rgba(103, 232, 249, 0.14);
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.62);
+}
+
+.portal-card + .portal-card,
+.full-item + .full-item {
+  margin-top: 0.75rem;
+}
+
+.portal-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: var(--hz-text-muted);
+}
+
+.portal-card-meta strong {
+  color: var(--hz-amber);
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+
+.portal-card h3,
+.full-item h2 {
+  margin: 0.55rem 0;
+  line-height: 1.35;
+}
+
+.portal-card details {
+  margin: 0.7rem 0;
+}
+
+.track-full-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.read-hero {
+  margin-bottom: 1rem;
+  border: 1px solid var(--hz-border);
+  border-radius: 8px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  background:
+    linear-gradient(120deg, rgba(34, 211, 238, 0.16), transparent 45%),
+    rgba(15, 23, 42, 0.72);
+}
+
+.read-hero h1 {
+  max-width: 880px;
+  margin: 0.3rem 0 0.75rem;
+  color: #fff;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  line-height: 1.12;
+}
+
+.read-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.read-nav {
+  position: sticky;
+  top: 1rem;
+  display: grid;
+  gap: 0.35rem;
+  border: 1px solid var(--hz-border);
+  border-radius: 8px;
+  padding: 0.85rem;
+  background: rgba(8, 13, 25, 0.72);
+  backdrop-filter: blur(16px);
+}
+
+.read-nav a {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.48rem 0.58rem;
+  color: var(--hz-text-muted);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.read-nav a.is-active {
+  border-color: rgba(103, 232, 249, 0.38);
+  color: #fff;
+  background: rgba(103, 232, 249, 0.14);
+  box-shadow: 0 14px 34px rgba(34, 211, 238, 0.16);
+  transform: scale(1.04);
+}
+
+.read-nav a.is-active::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  margin-right: 0.45rem;
+  border-radius: 999px;
+  background: var(--hz-cyan);
+  vertical-align: -0.14em;
+}
+
+.read-article {
+  padding: clamp(1rem, 2.6vw, 2rem);
+}
+
+.read-section {
+  scroll-margin-top: 1.25rem;
+}
+
+.read-section + .read-section {
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(103, 232, 249, 0.14);
+}
+
+.read-section h2 {
+  margin-top: 0;
+  border-left: 3px solid var(--hz-cyan);
+  padding-left: 0.75rem;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .read-nav a {
+    transition: none;
+  }
+
+  .read-nav a.is-active {
+    transform: none;
+  }
+}
+
 .history-panel {
   position: sticky;
   top: 1rem;
@@ -630,7 +838,8 @@ hr + .tracks-layout {
   }
 
   .home-hero,
-  .home-layout {
+  .home-layout,
+  .read-layout {
     grid-template-columns: 1fr;
   }
 
@@ -642,6 +851,15 @@ hr + .tracks-layout {
     position: static;
     max-height: none;
     order: -1;
+  }
+
+  .read-nav {
+    position: static;
+  }
+
+  .portal-section-head {
+    align-items: start;
+    flex-direction: column;
   }
 
   .tracks-layout {

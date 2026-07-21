@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-21-en-03-deterministic-replay-for-ai-agent-runs-5f956387",
+  "date": "2026-07-21",
+  "lang": "en",
+  "title": "Deterministic Replay for AI Agent Runs",
+  "source": "rss",
+  "source_url": "https://arxiv.org/abs/2607.16200",
+  "source_tier": "S",
+  "published_at": "2026-07-21",
+  "category": "AI agents",
+  "group": "first_hand_news",
+  "score": "8.0",
+  "summary": "A new arXiv paper introduces agrepl, a Go-based CLI framework that records and deterministically replays AI agent executions. It captures external interactions through a transport-layer MITM proxy, serializes them as structured traces, and replays them in an isolated environment with no outbound network access. AI agents are difficult to debug because LLM sampling, changing API state, CDN headers, and runtime noise can make the same run impossible to reproduce. A reliable record/replay layer could improve agent debugging, observability, regression testing, and incident analysis for teams building production agent systems. The paper formalizes an agent execution model, defines a request-key matching function K(s), and claims a determinism invariant for replay. In evaluation across five workloads and 250 replay instances, the authors report replay fidelity F = 1.0 and a 98.3% median per-step latency reduction, while also adding a noise-aware diff algorithm for classifying HTTP header divergence.",
+  "what_happened": "A new arXiv paper introduces agrepl, a Go-based CLI framework that records and deterministically replays AI agent executions. It captures external interactions through a transport-layer MITM proxy, serializes them as structured traces, and replays them in an isolated environment with no outbound network access. AI agents are difficult to debug because LLM sampling, changing API state, CDN headers, and runtime noise can make the same run impossible to reproduce. A reliable record/replay layer could improve agent debugging, observability, regression testing, and incident analysis for teams building production agent systems. The paper formalizes an agent execution model, defines a request-key matching function K(s), and claims a determinism invariant for replay. In evaluation across five workloads and 250 replay instances, the authors report replay fidelity F = 1.0 and a 98.3% median per-step latency reduction, while also adding a noise-aware diff algorithm for classifying HTTP header divergence.",
+  "why_it_matters": "Modern AI agents often combine an LLM with external tools, web APIs, databases, or other services, so their behavior depends on both model outputs and external system state. Deterministic replay means rerunning a past execution so that the same inputs and external responses are supplied again, allowing developers to reproduce failures without calling live services. A MITM proxy sits between the client and server and can intercept HTTP or HTTPS traffic, which makes it a practical mechanism for recording model and tool calls. Existing observability tools commonly preserve logs, but logs alone may not recreate the exact sequence of external responses needed for a faithful replay.",
+  "manager_takeaway": "Modern AI agents often combine an LLM with external tools, web APIs, databases, or other services, so their behavior depends on both model outputs and external system state. Deterministic replay means rerunning a past execution so that the same inputs and external responses are supplied again, allowing developers to reproduce failures without calling live services. A MITM proxy sits between the client and server and can intercept HTTP or HTTPS traffic, which makes it a practical mechanism for recording model and tool calls. Existing observability tools commonly preserve logs, but logs alone may not recreate the exact sequence of external responses needed for a faithful replay.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI agents, deterministic replay.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-21-en.html#item-3",
+  "read_url": "/read/2026-07-21-en-03-deterministic-replay-for-ai-agent-runs-5f956387.html",
+  "tags": [
+    "AI agents",
+    "deterministic replay",
+    "observability",
+    "debugging",
+    "agent infrastructure"
+  ]
+}

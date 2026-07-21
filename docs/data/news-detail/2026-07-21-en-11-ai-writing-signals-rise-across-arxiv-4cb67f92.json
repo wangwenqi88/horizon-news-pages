@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-21-en-11-ai-writing-signals-rise-across-arxiv-4cb67f92",
+  "date": "2026-07-21",
+  "lang": "en",
+  "title": "AI writing signals rise across arXiv.",
+  "source": "hackernews",
+  "source_url": "https://unslop.run/blog/measuring-ai-writing-on-arxiv",
+  "source_tier": "B",
+  "published_at": "2026-07-21",
+  "category": "AI-detection",
+  "group": "first_hand_news",
+  "score": "7.0",
+  "summary": "Unslop analyzed 12,750 arXiv papers from 2021 through 2026 and reported a sharp increase in papers flagged as machine-written after ChatGPT’s release. In the author’s Hacker News summary, the estimated flag rate reached about 39% overall in January 2026, with computer science peaking at 65% and mathematics changing only slightly. The finding suggests that LLM-assisted writing may already be deeply embedded in parts of academic publishing, especially in computer science. At the same time, the discussion highlights that text-only AI detection can create misleading results, so the numbers are better treated as a noisy adoption signal than as proof that any individual paper was AI-written. The author says the detector was tuned to avoid false positives, producing a pre-ChatGPT detection rate of roughly 0.4%, but commenters still found old pre-LLM papers and dissertations receiving high machine-written scores. A key caveat is that the final combination of multiple detector scores was not fully reproducible from the discussion, which limits independent verification of bias or calibration errors.",
+  "what_happened": "Unslop analyzed 12,750 arXiv papers from 2021 through 2026 and reported a sharp increase in papers flagged as machine-written after ChatGPT’s release. In the author’s Hacker News summary, the estimated flag rate reached about 39% overall in January 2026, with computer science peaking at 65% and mathematics changing only slightly. The finding suggests that LLM-assisted writing may already be deeply embedded in parts of academic publishing, especially in computer science. At the same time, the discussion highlights that text-only AI detection can create misleading results, so the numbers are better treated as a noisy adoption signal than as proof that any individual paper was AI-written. The author says the detector was tuned to avoid false positives, producing a pre-ChatGPT detection rate of roughly 0.4%, but commenters still found old pre-LLM papers and dissertations receiving high machine-written scores. A key caveat is that the final combination of multiple detector scores was not fully reproducible from the discussion, which limits independent verification of bias or calibration errors.",
+  "why_it_matters": "arXiv is a widely used preprint repository where researchers post papers before or alongside formal peer review. AI-writing detectors typically estimate whether text resembles machine-generated writing by looking for statistical patterns such as predictability, repetitive phrasing, or unusually uniform sentence structure. Concepts often used in this area include perplexity, which relates to how predictable wording is to a language model, and burstiness, which relates to variation in sentence length or complexity. These signals can be useful at aggregate scale, but they are known to be unreliable for judging individual authorship, especially in technical or formulaic academic prose.",
+  "manager_takeaway": "arXiv is a widely used preprint repository where researchers post papers before or alongside formal peer review. AI-writing detectors typically estimate whether text resembles machine-generated writing by looking for statistical patterns such as predictability, repetitive phrasing, or unusually uniform sentence structure. Concepts often used in this area include perplexity, which relates to how predictable wording is to a language model, and burstiness, which relates to variation in sentence length or complexity. These signals can be useful at aggregate scale, but they are known to be unreliable for judging individual authorship, especially in technical or formulaic academic prose.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI-detection, arXiv.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The Hacker News discussion was broadly skeptical of treating detector scores as definitive, with several commenters reporting high AI scores for their own pre-LLM-era writing. Others focused on incentives: if institutions reward volume, polish, and speed, LLM-assisted writing may spread even when quality or authenticity is hard to measure. The author defended the aggregate approach by saying the detector was tuned conservatively, but commenters asked for more reproducibility and transparency."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-21-en.html#item-11",
+  "read_url": "/read/2026-07-21-en-11-ai-writing-signals-rise-across-arxiv-4cb67f92.html",
+  "tags": [
+    "AI-detection",
+    "arXiv",
+    "academic-publishing",
+    "LLM-adoption",
+    "measurement"
+  ]
+}

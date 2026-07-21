@@ -457,37 +457,37 @@ Content is scored 0-10:
 {
   "filtering": {
     "ai_score_threshold": 7.0,
+    "quota_fill_score_threshold": 5.0,
     "time_window_hours": 24,
     "max_items": 20,
     "category_groups": {
-      "ai": {
-        "name": "AI / Machine Learning",
-        "limit": 5,
-        "categories": ["ai-news", "ai-tools", "machine-learning", "llm"]
+      "first_hand_news": {
+        "name": "一手资讯速递",
+        "limit": 15,
+        "categories": ["first_hand_news"]
       },
-      "finance": {
-        "name": "Finance",
+      "practice_insight": {
+        "name": "实战与专家洞察",
         "limit": 5,
-        "categories": ["finance", "equities", "crypto"]
+        "categories": ["practice_insight"]
       }
     },
     "default_group": "other",
-    "default_group_limit": 3
+    "default_group_limit": 0
   }
 }
 ```
 
 - `ai_score_threshold`: Only include content scoring >= this value
+- `quota_fill_score_threshold`: Lower-score items that can be used to fill the two daily quotas
 - `time_window_hours`: Fetch content from last N hours
-- `max_items`: Optional final cap after all group limits are applied
-- `category_groups`: Optional map of quota groups. Each group requires a positive
-  `limit` and a non-empty `categories` list. Items within each group are kept by
-  AI score, highest first.
+- `max_items`: Final cap after all group limits are applied
+- `category_groups`: Quota groups for the two-track daily digest. Each group requires a positive
+  `limit` and a non-empty `categories` list. Items within each group are kept by AI score, highest first.
 - `category_groups.*.name`: Optional display name used in run logs
 - `default_group`: Group key for items whose category does not match any
   configured group. Default is `other`.
-- `default_group_limit`: Optional positive limit for unmatched items. If omitted,
-  unmatched items are unlimited except for `max_items`.
+- `default_group_limit`: Optional limit for unmatched items. `0` means unmatched items are dropped.
 
 Balanced digest filtering runs after AI score threshold filtering and topic
 deduplication, but before enrichment. This reduces enrichment calls to only the
@@ -764,9 +764,9 @@ With this layout, Horizon sends one interactive card containing the overview and
 
 ## Static Site
 
-Horizon writes generated summaries to `data/summaries/` and copies publishable Markdown into `docs/` for the GitHub Pages site. The repository includes a ready-to-use workflow at `.github/workflows/daily-summary.yml`.
+Horizon writes generated summaries to `data/summaries/` and copies publishable Markdown, static HTML, and structured JSON into `docs/` for the public site. The repository includes a ready-to-use workflow at `.github/workflows/daily-summary.yml`.
 
-To use GitHub Pages, enable Pages for the repository and run the scheduled workflow or trigger it manually. The generated site is built from the `docs/` directory.
+In the current publish flow, GitHub Actions or `scripts/publish_daily.py` commits the generated `docs/` artifacts back to `main`. Cloudflare Pages watches that branch and publishes the `docs/` directory automatically.
 
 ## MCP Server
 

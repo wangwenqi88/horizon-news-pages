@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-21-en-06-claude-code-v2-1-216-improves-sandboxing-b6101caf",
+  "date": "2026-07-21",
+  "lang": "en",
+  "title": "Claude Code v2.1.216 improves sandboxing and sessions.",
+  "source": "github",
+  "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.216",
+  "source_tier": "S",
+  "published_at": "2026-07-21",
+  "category": "claude-code",
+  "group": "first_hand_news",
+  "score": "7.0",
+  "summary": "Anthropic released Claude Code v2.1.216 with a new sandbox.filesystem.disabled setting that can skip filesystem isolation while retaining network egress control. The patch also fixes long-session quadratic slowdown, OAuth-related command denials, web idle-question handling, mentions, hooks, worktree behavior, background agent session restoration, and several permission-validation issues. This release matters for active Claude Code users because it targets reliability problems that can directly interrupt coding workflows, especially slow resumes in long sessions and incorrect permission or authentication behavior. It also reflects the growing operational complexity of AI coding tools, where sandboxing, background agents, hooks, worktrees, and telemetry all need predictable behavior. The most technically notable fix removes message-normalization work whose cost grew quadratically with turn count, which previously caused multi-second stalls and slow resume operations in long sessions. Security-sensitive changes include better handling of symlinks at .claude, stale daemon lockfiles, Windows network-path prompts, invisible Unicode in PowerShell validation, non-ASCII Bash parsing, and git redirection from isolated worktrees.",
+  "what_happened": "Anthropic released Claude Code v2.1.216 with a new sandbox.filesystem.disabled setting that can skip filesystem isolation while retaining network egress control. The patch also fixes long-session quadratic slowdown, OAuth-related command denials, web idle-question handling, mentions, hooks, worktree behavior, background agent session restoration, and several permission-validation issues. This release matters for active Claude Code users because it targets reliability problems that can directly interrupt coding workflows, especially slow resumes in long sessions and incorrect permission or authentication behavior. It also reflects the growing operational complexity of AI coding tools, where sandboxing, background agents, hooks, worktrees, and telemetry all need predictable behavior. The most technically notable fix removes message-normalization work whose cost grew quadratically with turn count, which previously caused multi-second stalls and slow resume operations in long sessions. Security-sensitive changes include better handling of symlinks at .claude, stale daemon lockfiles, Windows network-path prompts, invisible Unicode in PowerShell validation, non-ASCII Bash parsing, and git redirection from isolated worktrees.",
+  "why_it_matters": "Claude Code is Anthropic’s developer tool for using Claude in coding workflows, including project settings, slash commands, hooks, and agent-style execution. Its settings system can be stored in project or local configuration files, which makes changes such as sandbox controls operationally important for teams. Hooks are automated commands that can run when Claude Code edits files, finishes tasks, or needs input, so bugs around file-modifying hooks can affect formatting, validation, or project-rule enforcement. Subagents and background agents let users delegate work to specialized agents or parallel tasks, which explains why restoring prompts, tool restrictions, and session state is important after resume.",
+  "manager_takeaway": "Claude Code is Anthropic’s developer tool for using Claude in coding workflows, including project settings, slash commands, hooks, and agent-style execution. Its settings system can be stored in project or local configuration files, which makes changes such as sandbox controls operationally important for teams. Hooks are automated commands that can run when Claude Code edits files, finishes tasks, or needs input, so bugs around file-modifying hooks can affect formatting, validation, or project-rule enforcement. Subagents and background agents let users delegate work to specialized agents or parallel tasks, which explains why restoring prompts, tool restrictions, and session state is important after resume.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for claude-code, anthropic.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-21-en.html#item-6",
+  "read_url": "/read/2026-07-21-en-06-claude-code-v2-1-216-improves-sandboxing-b6101caf.html",
+  "tags": [
+    "claude-code",
+    "anthropic",
+    "developer-tools",
+    "ai-coding",
+    "release-notes"
+  ]
+}

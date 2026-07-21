@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-21-en-19-ssao-corner-darkening-deserves-renewed-s-a713ed40",
+  "date": "2026-07-21",
+  "lang": "en",
+  "title": "SSAO corner darkening deserves renewed scrutiny.",
+  "source": "hackernews",
+  "source_url": "https://nothings.org/gamedev/ssao/",
+  "source_tier": "B",
+  "published_at": "2026-07-21",
+  "category": "computer-graphics",
+  "group": "practice_insight",
+  "score": "6.0",
+  "summary": "A 2012 graphics article, “Corners Don't Look Like That,” has resurfaced in discussion, arguing that screen-space ambient occlusion often makes corners and creases look unrealistically dark. The renewed attention is less a new release than a practitioner-led reexamination of a long-used real-time rendering shortcut. SSAO became popular because it adds depth cues cheaply, but the article highlights how a performance-friendly effect can become an aesthetic convention that diverges from real lighting. This matters to game developers, rendering engineers, and technical artists choosing between visual readability, realism, and frame-time budgets. SSAO estimates occlusion using information already visible in screen space, so it cannot fully reason about off-screen geometry, real light placement, or physically accurate indirect illumination. Commenters also noted that newer approaches such as RTGI, path tracing, and AMD FidelityFX CACAO may reduce some artifacts, but the original critique remains useful as a visual diagnostic.",
+  "what_happened": "A 2012 graphics article, “Corners Don't Look Like That,” has resurfaced in discussion, arguing that screen-space ambient occlusion often makes corners and creases look unrealistically dark. The renewed attention is less a new release than a practitioner-led reexamination of a long-used real-time rendering shortcut. SSAO became popular because it adds depth cues cheaply, but the article highlights how a performance-friendly effect can become an aesthetic convention that diverges from real lighting. This matters to game developers, rendering engineers, and technical artists choosing between visual readability, realism, and frame-time budgets. SSAO estimates occlusion using information already visible in screen space, so it cannot fully reason about off-screen geometry, real light placement, or physically accurate indirect illumination. Commenters also noted that newer approaches such as RTGI, path tracing, and AMD FidelityFX CACAO may reduce some artifacts, but the original critique remains useful as a visual diagnostic.",
+  "why_it_matters": "Ambient occlusion is a rendering technique that estimates how exposed a point in a scene is to ambient light; creases and contact areas often receive less ambient light and therefore appear darker. Screen-space ambient occlusion, or SSAO, is a real-time approximation that calculates this effect from the rendered image and depth-related data rather than from full scene-wide light transport. SSAO was popularized in games such as Crytek’s Crysis because it provided a convincing sense of local shape at a manageable performance cost. The tradeoff is that the effect can darken geometry based on proximity patterns rather than on actual lighting conditions.",
+  "manager_takeaway": "Ambient occlusion is a rendering technique that estimates how exposed a point in a scene is to ambient light; creases and contact areas often receive less ambient light and therefore appear darker. Screen-space ambient occlusion, or SSAO, is a real-time approximation that calculates this effect from the rendered image and depth-related data rather than from full scene-wide light transport. SSAO was popularized in games such as Crytek’s Crysis because it provided a convincing sense of local shape at a manageable performance cost. The tradeoff is that the effect can darken geometry based on proximity patterns rather than on actual lighting conditions.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for computer-graphics, SSAO.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The discussion is mixed but substantive: some readers agree that SSAO is physically inaccurate and visually overused, while others argue that realism is not always the goal and that the effect was intended to improve shape readability cheaply. Several commenters emphasize historical constraints, noting that SSAO was long one of the best-performing AO options, while newer RTGI, path tracing, and CACAO-style approaches may offer better results."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-21-en.html#item-19",
+  "read_url": "/read/2026-07-21-en-19-ssao-corner-darkening-deserves-renewed-s-a713ed40.html",
+  "tags": [
+    "computer-graphics",
+    "SSAO",
+    "rendering",
+    "game-development",
+    "technical-discussion"
+  ]
+}
