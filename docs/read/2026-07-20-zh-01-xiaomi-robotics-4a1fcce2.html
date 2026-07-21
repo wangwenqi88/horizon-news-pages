@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://robotics.xiaomi.com/xiaomi-robotics-1.html" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-20 · Horizon News AI 精读</p>
-      <h1>Xiaomi Robotics 展示先进移动操作能力。</h1>
-      <p>Xiaomi Robotics 发布了 Xiaomi-Robotics-1 展示内容，演示一个机器人系统完成先进的移动操作任务，包括双手协同处理、可变形物体交互、类似洗衣的整理动作以及对细小可操作部件的操作。该演示在 Hacker News 上引发了较高热度的技术讨论。 这些任务很重要，因为它们把移动能力、感知、抓取和力控制结合到复杂的真实环境中，而不只是固定的工业工位里。如果这些能力变得可靠，机器人可能从结构化工厂自动化扩展到家庭、服务、物流和护理等应用场景。 评论者指出，难点包括双臂协调、在身体移动时进行操作、处理可变形物体、一次抓取多个物体，以及操作包袋拉链等细小可操作部件。现有材料更像是演示，而不是经过独立基准测试的产品发布，因此其可靠性、速度、泛化能力和部署限制仍不清楚。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-20 · Horizon News AI 精读</p>
+        <h1>Xiaomi Robotics 展示先进移动操作能力。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>8.0 分</span><span>robotics、humanoid-robots、robot-manipulation、embodied-ai、xiaomi</span></div>
+        <a class="source-cta" href="https://robotics.xiaomi.com/xiaomi-robotics-1.html" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>Xiaomi Robotics 发布了 Xiaomi-Robotics-1 展示内容，演示一个机器人系统完成先进的移动操作任务，包括双手协同处理、可变形物体交互、类似洗衣的整理动作以及对细小可操作部件的操作。该演示在 Hacker News 上引发了较高热度的技术讨论。 这些任务很重要，因为它们把移动能力、感知、抓取和力控制结合到复杂的真实环境中，而不只是固定的工业工位里。如果这些能力变得可靠，机器人可能从结构化工厂自动化扩展到家庭、服务、物流和护理等应用场景。 评论者指出，难点包括双臂协调、在身体移动时进行操作、处理可变形物体、一次抓取多个物体，以及操作包袋拉链等细小可操作部件。现有材料更像是演示，而不是经过独立基准测试的产品发布，因此其可靠性、速度、泛化能力和部署限制仍不清楚。</p>
@@ -86,8 +93,9 @@
           <h2>来源信息</h2>
           <p><a href="https://robotics.xiaomi.com/xiaomi-robotics-1.html" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-20-zh.html#item-1">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

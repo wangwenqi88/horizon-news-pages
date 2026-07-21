@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://arxiv.org/abs/2607.15280" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-20 · Horizon News AI 精读</p>
-      <h1>GraphDx 面向成本感知的序贯诊断。</h1>
-      <p>一篇新的 arXiv v1 论文提出了 GraphDx，这是一个由知识图谱增强的多智能体框架，用于序贯医学诊断。论文称其在 MedQA 和 MIMIC-IV 上使用 DeepSeek-V3、Kimi-k2 和 Llama-3.3 进行实验，将诊断成功率从 50–68% 提升到 79–93%，并将检查成本降低 20–54%。 这项工作重要，因为医学诊断不只是预测问题，也是资源分配问题：每一次额外询问、化验或检查都有成本和潜在负担。如果论文结果能在更多场景中得到验证，这种方法可能让基于大语言模型的临床决策支持更系统、更可解释，也更关注经济成本。 GraphDx 构建了医学诊断知识图谱，其中包含量化典型性、以行动为中心的拓扑结构，以及同时面向诊断相关性和成本敏感性的属性。它把流程拆分为感知、推理和决策三个智能体，其中确定性的证据评分和成本感知规划由推理智能体处理，而不是完全交给大语言模型自由生成。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-20 · Horizon News AI 精读</p>
+        <h1>GraphDx 面向成本感知的序贯诊断。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>S 级信源</span><span>6.5 分</span><span>AI Agents、Medical AI、Knowledge Graphs、LLM Reasoning、Cost-Aware Planning</span></div>
+        <a class="source-cta" href="https://arxiv.org/abs/2607.15280" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>一篇新的 arXiv v1 论文提出了 GraphDx，这是一个由知识图谱增强的多智能体框架，用于序贯医学诊断。论文称其在 MedQA 和 MIMIC-IV 上使用 DeepSeek-V3、Kimi-k2 和 Llama-3.3 进行实验，将诊断成功率从 50–68% 提升到 79–93%，并将检查成本降低 20–54%。 这项工作重要，因为医学诊断不只是预测问题，也是资源分配问题：每一次额外询问、化验或检查都有成本和潜在负担。如果论文结果能在更多场景中得到验证，这种方法可能让基于大语言模型的临床决策支持更系统、更可解释，也更关注经济成本。 GraphDx 构建了医学诊断知识图谱，其中包含量化典型性、以行动为中心的拓扑结构，以及同时面向诊断相关性和成本敏感性的属性。它把流程拆分为感知、推理和决策三个智能体，其中确定性的证据评分和成本感知规划由推理智能体处理，而不是完全交给大语言模型自由生成。</p>
@@ -84,8 +91,9 @@
           <h2>来源信息</h2>
           <p><a href="https://arxiv.org/abs/2607.15280" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-20-zh.html#item-10">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

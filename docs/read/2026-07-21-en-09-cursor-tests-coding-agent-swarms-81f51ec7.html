@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://cursor.com/blog/agent-swarm-model-economics" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-21 · Horizon News AI 精读</p>
-      <h1>Cursor tests coding-agent swarms.</h1>
-      <p>Cursor published an official blog post describing experiments with large-scale coding-agent swarms, including new coordination infrastructure and a custom version-control layer. The post claims the newer system can peak at around 1,000 commits per second, compared with an earlier browser swarm that peaked at roughly 1,000 commits per hour on Git. The post points to a possible shift from using one coding model at a time toward running many agents and models in parallel, where orchestration and test-time compute become central to software generation. If this approach becomes economical, AI coding tools may compete less on single-model completion quality and more on coordination, verification, and cost control across many concurrent workers. The most notable technical claim is that Cursor built a new VCS from scratch because Git could not support the desired throughput and because the VCS layer is where collisions and coordination mechanisms become visible. The main caveat is reproducibility: the blog does not share the full harness or code, and commenters questioned whether the SQLite-in-Rust task could be affected by training-data contamination or memorization.</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-21 · Horizon News AI 精读</p>
+        <h1>Cursor tests coding-agent swarms.</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>7.0 分</span><span>ai-agents、coding-agents、agent-swarms、model-economics、software-engineering</span></div>
+        <a class="source-cta" href="https://cursor.com/blog/agent-swarm-model-economics" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>Cursor published an official blog post describing experiments with large-scale coding-agent swarms, including new coordination infrastructure and a custom version-control layer. The post claims the newer system can peak at around 1,000 commits per second, compared with an earlier browser swarm that peaked at roughly 1,000 commits per hour on Git. The post points to a possible shift from using one coding model at a time toward running many agents and models in parallel, where orchestration and test-time compute become central to software generation. If this approach becomes economical, AI coding tools may compete less on single-model completion quality and more on coordination, verification, and cost control across many concurrent workers. The most notable technical claim is that Cursor built a new VCS from scratch because Git could not support the desired throughput and because the VCS layer is where collisions and coordination mechanisms become visible. The main caveat is reproducibility: the blog does not share the full harness or code, and commenters questioned whether the SQLite-in-Rust task could be affected by training-data contamination or memorization.</p>
@@ -86,8 +93,9 @@
           <h2>来源信息</h2>
           <p><a href="https://cursor.com/blog/agent-swarm-model-economics" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-21-en.html#item-9">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

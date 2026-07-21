@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://cursor.com/blog/agent-swarm-model-economics" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-21 · Horizon News AI 精读</p>
-      <h1>Cursor 测试编码智能体群。</h1>
-      <p>Cursor 发布了一篇官方博客文章，介绍了大规模编码智能体群实验，包括新的协调基础设施和自定义版本控制层。文章称，新系统峰值可达到约每秒 1,000 次提交，而早期浏览器智能体群在 Git 上的峰值约为每小时 1,000 次提交。 这篇文章显示出一种可能的转变：软件生成可能从一次使用一个编码模型，转向并行运行大量智能体和模型，其中编排能力和测试时计算会变得更加核心。如果这种方法在经济上可行，AI 编码工具的竞争重点可能会从单模型补全质量，转向大量并发工作者之间的协调、验证和成本控制。 最值得注意的技术说法是，Cursor 从零构建了一个新的版本控制系统，因为 Git 无法支撑目标吞吐量，而且版本控制层正是冲突和协调机制最先显现的位置。主要限制在于可复现性：博客没有公开完整的测试框架或代码，评论者也质疑用 Rust 从文档重建 SQLite 的任务是否可能受到训练数据污染或记忆化影响。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-21 · Horizon News AI 精读</p>
+        <h1>Cursor 测试编码智能体群。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>7.0 分</span><span>ai-agents、coding-agents、agent-swarms、model-economics、software-engineering</span></div>
+        <a class="source-cta" href="https://cursor.com/blog/agent-swarm-model-economics" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>Cursor 发布了一篇官方博客文章，介绍了大规模编码智能体群实验，包括新的协调基础设施和自定义版本控制层。文章称，新系统峰值可达到约每秒 1,000 次提交，而早期浏览器智能体群在 Git 上的峰值约为每小时 1,000 次提交。 这篇文章显示出一种可能的转变：软件生成可能从一次使用一个编码模型，转向并行运行大量智能体和模型，其中编排能力和测试时计算会变得更加核心。如果这种方法在经济上可行，AI 编码工具的竞争重点可能会从单模型补全质量，转向大量并发工作者之间的协调、验证和成本控制。 最值得注意的技术说法是，Cursor 从零构建了一个新的版本控制系统，因为 Git 无法支撑目标吞吐量，而且版本控制层正是冲突和协调机制最先显现的位置。主要限制在于可复现性：博客没有公开完整的测试框架或代码，评论者也质疑用 Rust 从文档重建 SQLite 的任务是否可能受到训练数据污染或记忆化影响。</p>
@@ -86,8 +93,9 @@
           <h2>来源信息</h2>
           <p><a href="https://cursor.com/blog/agent-swarm-model-economics" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-21-zh.html#item-9">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

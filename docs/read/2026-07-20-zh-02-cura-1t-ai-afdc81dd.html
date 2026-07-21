@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://arxiv.org/abs/2607.15314" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-20 · Horizon News AI 精读</p>
-      <h1>Cura 1T 瞄准智能体式医疗 AI</h1>
-      <p>一篇新的 arXiv 论文介绍了 Cura 1T，这是一个面向患者咨询、文本与图像临床推理、交互式诊断以及电子健康记录工具使用的万亿参数医疗专用大语言模型。该模型通过有人类把关的自我演化循环训练：规划目标能力、训练模型、评估基准轨迹，并根据发现的失败调整数据配比。 医疗 AI 助手需要同时具备沟通、临床推理和工作流执行能力，如果训练控制不当，强化一种能力可能会损害另一种能力。Cura 1T 的重要性在于，它把医疗大语言模型开发视为以数据为中心的迭代式智能体训练问题，而不是一次性的医疗微调步骤。 论文声称 Cura 1T 在其医疗评估套件中相对前沿基线排名靠前或接近最高，同时在领域外推理和智能体基准上仍具竞争力。实际采用仍取决于权重是否开放、评估是否透明、安全性分析是否充分、复现实验材料是否可得，以及人类把关机制在高风险临床场景中如何运作。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-20 · Horizon News AI 精读</p>
+        <h1>Cura 1T 瞄准智能体式医疗 AI</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>S 级信源</span><span>8.0 分</span><span>healthcare-ai、agentic-llms、medical-llms、self-evolution-training、arxiv</span></div>
+        <a class="source-cta" href="https://arxiv.org/abs/2607.15314" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>一篇新的 arXiv 论文介绍了 Cura 1T，这是一个面向患者咨询、文本与图像临床推理、交互式诊断以及电子健康记录工具使用的万亿参数医疗专用大语言模型。该模型通过有人类把关的自我演化循环训练：规划目标能力、训练模型、评估基准轨迹，并根据发现的失败调整数据配比。 医疗 AI 助手需要同时具备沟通、临床推理和工作流执行能力，如果训练控制不当，强化一种能力可能会损害另一种能力。Cura 1T 的重要性在于，它把医疗大语言模型开发视为以数据为中心的迭代式智能体训练问题，而不是一次性的医疗微调步骤。 论文声称 Cura 1T 在其医疗评估套件中相对前沿基线排名靠前或接近最高，同时在领域外推理和智能体基准上仍具竞争力。实际采用仍取决于权重是否开放、评估是否透明、安全性分析是否充分、复现实验材料是否可得，以及人类把关机制在高风险临床场景中如何运作。</p>
@@ -85,8 +92,9 @@
           <h2>来源信息</h2>
           <p><a href="https://arxiv.org/abs/2607.15314" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-20-zh.html#item-2">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

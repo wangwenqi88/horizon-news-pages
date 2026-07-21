@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://github.com/Saivineeth147/lora-speedrun" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-20 · Horizon News AI 精读</p>
-      <h1>LoRA Speedrun 衡量微调耗时</h1>
-      <p>LoRA Speedrun 是一个新的 GitHub 项目，提出用公开的真实耗时排行榜来比较快速 LoRA 微调技术。它把 LoRA 优化设计成类似速通的基准测试，更强调训练经过的实际时间，而不只是最终模型质量或理论算力。 这件事重要，因为许多实践者关心的是在真实硬件和时间限制下能多快完成模型适配。真实耗时排行榜可能推动更高效的训练方案，但它是否有用取决于基准是否覆盖足够多的任务、模型和硬件条件，从而具备泛化意义。 该项目聚焦于 LoRA 微调速度，因此真实耗时结果可能会受到实现细节、GPU 类型、数据流水线和基准任务选择的强烈影响。社区评论还指出，如果只使用单一任务和单一模型，排行榜可能会奖励针对榜单的过拟合，而不是奖励具有普遍价值的方法。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-20 · Horizon News AI 精读</p>
+        <h1>LoRA Speedrun 衡量微调耗时</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>S 级信源</span><span>6.0 分</span><span>LoRA、fine-tuning、benchmarking、model-efficiency、open-source</span></div>
+        <a class="source-cta" href="https://github.com/Saivineeth147/lora-speedrun" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>LoRA Speedrun 是一个新的 GitHub 项目，提出用公开的真实耗时排行榜来比较快速 LoRA 微调技术。它把 LoRA 优化设计成类似速通的基准测试，更强调训练经过的实际时间，而不只是最终模型质量或理论算力。 这件事重要，因为许多实践者关心的是在真实硬件和时间限制下能多快完成模型适配。真实耗时排行榜可能推动更高效的训练方案，但它是否有用取决于基准是否覆盖足够多的任务、模型和硬件条件，从而具备泛化意义。 该项目聚焦于 LoRA 微调速度，因此真实耗时结果可能会受到实现细节、GPU 类型、数据流水线和基准任务选择的强烈影响。社区评论还指出，如果只使用单一任务和单一模型，排行榜可能会奖励针对榜单的过拟合，而不是奖励具有普遍价值的方法。</p>
@@ -87,8 +94,9 @@
           <h2>来源信息</h2>
           <p><a href="https://github.com/Saivineeth147/lora-speedrun" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-20-zh.html#item-15">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

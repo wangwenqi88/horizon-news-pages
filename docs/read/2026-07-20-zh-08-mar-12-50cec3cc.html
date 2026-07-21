@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://arxiv.org/abs/2607.15442" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-20 · Horizon News AI 精读</p>
-      <h1>MAR-12 解释表情包中的有害幽默</h1>
-      <p>一篇新的 arXiv 论文《Beyond a Joke》提出了 MAR-12，这是一个基于视觉语言模型的框架，用于检测和解释幽默与仇恨可能同时存在的表情包。该框架在 PrideMM 和 Memotion 数据集上报告了最高 80.3% 的幽默检测准确率和 75.9% 的仇恨检测准确率。 有害表情包对内容审核系统很棘手，因为其含义常常取决于图像、文字、讽刺和文化语境之间的相互作用。MAR-12 的重要性在于，它不仅试图对内容进行分类，还试图给出结构化、可供人理解的推理，说明一个表情包为何具有幽默性、仇恨性或二者兼具。 MAR-12 会从十二个源自幽默理论和仇恨理论的结构化视角分析每个表情包，然后使用角色感知的软门控注意力机制为这些视角分配权重，最后由基于原型的分类器给出预测。论文还使用人工评审和基于 GPT-4 的评估来检验解释质量，但实际部署仍需要在更广泛的文化、平台和审核政策中验证。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-20 · Horizon News AI 精读</p>
+        <h1>MAR-12 解释表情包中的有害幽默</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>S 级信源</span><span>7.0 分</span><span>multimodal-ai、ai-safety、vision-language-models、explainability、content-moderation</span></div>
+        <a class="source-cta" href="https://arxiv.org/abs/2607.15442" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>一篇新的 arXiv 论文《Beyond a Joke》提出了 MAR-12，这是一个基于视觉语言模型的框架，用于检测和解释幽默与仇恨可能同时存在的表情包。该框架在 PrideMM 和 Memotion 数据集上报告了最高 80.3% 的幽默检测准确率和 75.9% 的仇恨检测准确率。 有害表情包对内容审核系统很棘手，因为其含义常常取决于图像、文字、讽刺和文化语境之间的相互作用。MAR-12 的重要性在于，它不仅试图对内容进行分类，还试图给出结构化、可供人理解的推理，说明一个表情包为何具有幽默性、仇恨性或二者兼具。 MAR-12 会从十二个源自幽默理论和仇恨理论的结构化视角分析每个表情包，然后使用角色感知的软门控注意力机制为这些视角分配权重，最后由基于原型的分类器给出预测。论文还使用人工评审和基于 GPT-4 的评估来检验解释质量，但实际部署仍需要在更广泛的文化、平台和审核政策中验证。</p>
@@ -85,8 +92,9 @@
           <h2>来源信息</h2>
           <p><a href="https://arxiv.org/abs/2607.15442" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-20-zh.html#item-8">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

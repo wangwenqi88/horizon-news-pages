@@ -50,6 +50,7 @@ ALLOWED_HTML_ATTRS = {
     "span": {"class", "data-tier"},
 }
 SAFE_URL_PREFIXES = ("http://", "https://", "mailto:", "#", "../", "/")
+SAFE_SOURCE_URL_PREFIXES = ("http://", "https://")
 
 
 @dataclass(frozen=True)
@@ -154,6 +155,13 @@ def sanitize_html_fragment(value: str) -> str:
     return str(soup)
 
 
+def sanitize_source_url(value: str) -> str:
+    value = value.strip()
+    if value.lower().startswith(SAFE_SOURCE_URL_PREFIXES):
+        return value
+    return ""
+
+
 def load_posts() -> list[Post]:
     if not POSTS_DIR.exists():
         return []
@@ -161,8 +169,26 @@ def load_posts() -> list[Post]:
     return sorted(posts, key=lambda post: (post.date, post.lang), reverse=True)
 
 
-def page_shell(title: str, body: str, css_href: str, js_src: str) -> str:
+def page_shell(
+    title: str,
+    body: str,
+    css_href: str,
+    js_src: str,
+    *,
+    active: str = "",
+    body_attr: str = "",
+    prefix: str = "",
+) -> str:
     escaped_title = html.escape(title)
+    root = prefix
+
+    def nav_class(name: str) -> str:
+        return ' class="active"' if name == active else ""
+
+    daily_link = ""
+    if active != "daily":
+        daily_link = f'<a class="header-daily-link" href="{root}daily/{html.escape(latest_daily_output())}">完整日报</a>'
+
     return f"""<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -172,18 +198,32 @@ def page_shell(title: str, body: str, css_href: str, js_src: str) -> str:
   <meta name="description" content="AI 资讯精读">
   <link rel="stylesheet" href="{css_href}">
 </head>
-<body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+<body{body_attr}>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="{root}index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a{nav_class("home")} href="{root}index.html">今日</a>
+        <a{nav_class("firsthand")} href="{root}firsthand.html">一手资讯</a>
+        <a{nav_class("insights")} href="{root}insights.html">专家洞察</a>
+        <a href="{root}index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions">{daily_link}<span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
+  <main>
 {body}
   </main>
   <script src="{js_src}" defer></script>
 </body>
 </html>
 """
+
+
+def latest_daily_output() -> str:
+    posts = load_posts()
+    latest = next((post for post in posts if post.lang == "zh"), posts[0] if posts else None)
+    return latest.output_name if latest else ""
 
 
 def build_post_page(post: Post, all_posts: list[Post]) -> str:
@@ -207,7 +247,7 @@ def build_post_page(post: Post, all_posts: list[Post]) -> str:
       {post.body_html}
     </article>
 """
-    return page_shell(post.title, body, "../assets/css/horizon.css", "../assets/js/horizon.js")
+    return page_shell(post.title, body, "../assets/css/horizon.css", "../assets/js/horizon.js", active="daily", prefix="../")
 
 
 def post_count(posts: list[Post], lang: str) -> int:
@@ -230,6 +270,31 @@ def build_history_list(posts: list[Post], latest: Post) -> str:
         </li>"""
         )
     return "      <ul class=\"history-list\">\n" + "\n".join(entries) + "\n      </ul>"
+
+
+def build_recent_reports(posts: list[Post], latest: Post) -> str:
+    zh_posts = [post for post in posts if post.lang == "zh" and post.output_name != latest.output_name][:3]
+    if not zh_posts:
+        return '<p class="history-empty">暂无历史日报。</p>'
+    entries = []
+    for post in zh_posts:
+        month_day = post.date[5:].replace("-", ".")
+        title = post.title.replace("Horizon Summary:", "").strip()
+        entries.append(
+            f'<a href="daily/{html.escape(post.output_name)}"><time>{html.escape(month_day)}</time><span>{html.escape(title)}</span></a>'
+        )
+    return "\n".join(entries)
+
+
+def weekday_label(date_value: str) -> str:
+    try:
+        return datetime.fromisoformat(date_value).strftime("%a").upper()
+    except ValueError:
+        return "TODAY"
+
+
+def dotted_date(date_value: str) -> str:
+    return date_value.replace("-", ".")
 
 
 def build_index(posts: list[Post]) -> str:
@@ -259,63 +324,55 @@ def build_index(posts: list[Post]) -> str:
         key=lambda item: float(item.score or 0),
         reverse=True,
     )[:3]
-    history_html = build_history_list(posts, latest)
+    recent_html = build_recent_reports(posts, latest)
     history_count = max(post_count(posts, "zh") - 1, 0)
-    body = f"""    <nav class="static-nav">
-      {sibling_link}
-    </nav>
-    <section class="home-hero">
-      <div>
-        <p class="eyebrow">Today · {html.escape(latest.date)}</p>
-        <h1>Horizon News</h1>
-        <p>首页只展示精选内容；完整日报分为一手资讯速递和实战与专家洞察两个页面。</p>
-      </div>
-      <div class="home-stats">
-        <span>{history_count}</span>
-        <small>历史日报</small>
-      </div>
-    </section>
-    <section class="home-actions" aria-label="日报入口">
-      <a href="firsthand.html">一手资讯速递</a>
-      <a href="insights.html">实战与专家洞察</a>
-      <a href="daily/{html.escape(latest.output_name)}">完整日报</a>
-    </section>
-    <div class="home-layout">
-      <div class="portal-stack">
-        <section class="portal-section">
-          <div class="portal-section-head">
-            <p class="eyebrow">Highlights</p>
-            <h2>今日必读</h2>
-          </div>
-          {render_item_cards(highlights, limit=3, compact=True)}
-        </section>
-        <section class="portal-section">
-          <div class="portal-section-head">
-            <p class="eyebrow">First-Hand News</p>
-            <h2>一手资讯精选</h2>
-            <a href="firsthand.html">查看 15 条</a>
-          </div>
-          {render_item_cards(news_items, limit=4)}
-        </section>
-        <section class="portal-section">
-          <div class="portal-section-head">
-            <p class="eyebrow">Practice</p>
-            <h2>实战与专家洞察精选</h2>
-            <a href="insights.html">查看 5 条</a>
-          </div>
-          {render_item_cards(insight_items, limit=2)}
-        </section>
-      </div>
-      <aside class="history-panel" aria-label="历史日报">
-        <div class="history-panel-header">
-          <p class="eyebrow">Archive</p>
-          <h2>历史日报</h2>
+    body = f"""    <section class="briefing" id="today">
+      <div class="section-shell briefing-grid">
+        <div>
+          <div class="date-line"><span>{html.escape(weekday_label(latest.date))}</span><time>{html.escape(dotted_date(latest.date))}</time><span>第 {history_count + 1} 期</span>{sibling_link}</div>
+          <p class="kicker">今日编辑判断</p>
+          <h1>AI 系统的竞争，正在从“信息更新”转向“可信实操”。</h1>
+          <p class="standfirst">今天的 Horizon News 用两条轨道处理资讯：一手资讯帮助快速掌握行业变化，实战与专家洞察沉淀可复用方法、项目经验和技术判断。</p>
         </div>
-{history_html}
-      </aside>
-    </div>
+        <div class="briefing-stats">
+          <div><strong>{len(items)}</strong><span>入选</span></div>
+          <div><strong>{len(news_items)}</strong><span>一手</span></div>
+          <div><strong>{len(insight_items)}</strong><span>洞察</span></div>
+          <div><strong>{history_count}</strong><span>历史</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="recent-reports" id="history">
+      <div class="section-shell recent-shell">
+        <div class="recent-label"><p class="kicker">Recent reports</p><h2>近期日报</h2></div>
+        <div class="recent-list">{recent_html}</div>
+        <a class="all-history-link" href="daily/{html.escape(latest.output_name)}">查看完整日报 →</a>
+      </div>
+    </section>
+    <section class="must-read section-shell">
+      <div class="section-heading">
+        <div><p class="kicker">Editor’s pick</p><h2>今日必读</h2></div>
+        <p>先读这 3 条，掌握今日主线</p>
+      </div>
+      {render_highlight_cards(highlights)}
+    </section>
+    <section class="intelligence section-shell">
+      <div class="section-heading">
+        <div><p class="kicker">Selected intelligence</p><h2>一手资讯精选</h2></div>
+        <p>精选 4 / {len(news_items)} · 每条含可展开 AI 总结</p>
+      </div>
+      <div class="firsthand-list compact-list">{render_firsthand_cards(news_items, limit=4)}</div>
+      <a class="track-more-link" href="firsthand.html">查看全部 {len(news_items)} 条一手资讯 →</a>
+      <div class="section-heading home-insight-heading">
+        <div><p class="kicker">Practitioner insight</p><h2>专家洞察精选</h2></div>
+        <p>精选 2 / {len(insight_items)}</p>
+      </div>
+      <div class="insights-grid">{render_expert_cards(insight_items, limit=2)}</div>
+      <a class="track-more-link" href="insights.html">查看全部 {len(insight_items)} 条专家洞察 →</a>
+      <div class="daily-cta"><div><span>FULL DAILY</span><strong>查看当日完整日报和原始分组</strong></div><a href="daily/{html.escape(latest.output_name)}">进入完整日报 →</a></div>
+    </section>
 """
-    return page_shell(latest.title, body, "assets/css/horizon.css", "assets/js/horizon.js")
+    return page_shell("Horizon News | 今日", body, "assets/css/horizon.css", "assets/js/horizon.js", active="home", body_attr=' data-page="home"')
 
 
 def root_href(url: str) -> str:
@@ -354,31 +411,126 @@ def render_item_cards(items: list[NewsItem], *, limit: int, compact: bool = Fals
     return "\n".join(cards)
 
 
+def score_value(score: str) -> int:
+    try:
+        return max(0, min(100, int(float(score) * 10)))
+    except ValueError:
+        return 60
+
+
+def render_value_pair(item: NewsItem) -> str:
+    score = score_value(item.score or "")
+    learning = min(100, score + (8 if item.group == "practice_insight" else 0))
+    return f"""<div class="value-pair">
+          <div class="value-row"><span>选题</span><div class="value-bar"><span style="width:{score}%"></span></div><b>{score}</b></div>
+          <div class="value-row learning"><span>学习</span><div class="value-bar"><span style="width:{learning}%"></span></div><b>{learning}</b></div>
+        </div>"""
+
+
+def render_highlight_cards(items: list[NewsItem]) -> str:
+    if not items:
+        return '<p class="history-empty">暂无内容。</p>'
+    lead = items[0]
+    side_items = items[1:3]
+    visuals = ["visual-robot", "visual-review", "visual-system"]
+    side_html = []
+    for index, item in enumerate(side_items, start=1):
+        side_html.append(
+            f"""<article class="side-story">
+          <div class="story-visual {visuals[index]}"><div class="mini-chart"><span style="height:86%"></span><span style="height:64%"></span><span style="height:38%"></span><span style="height:52%"></span></div><small>{html.escape(item.source_tier)} TIER / {html.escape(item.category.upper())}</small></div>
+          <div class="side-story-body">
+            <div class="story-meta"><span>{html.escape(item.category)}</span><span>{html.escape(item.score or "?")} 分</span></div>
+            <h3>{html.escape(item.title)}</h3>
+            <p>{html.escape(item.summary)}</p>
+            <a href="{html.escape(root_href(item.read_url))}" aria-label="进入 AI 精读">→</a>
+          </div>
+        </article>"""
+        )
+    while len(side_html) < 2:
+        side_html.append("")
+    return f"""<div class="must-grid">
+        <article class="lead-story">
+          <div class="story-visual {visuals[0]}"><div class="visual-label"><span>{html.escape(lead.category.upper())}</span><strong>{html.escape(lead.source_tier)}</strong></div><div class="motion-map"><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+          <div class="story-overlay">
+            <div class="story-meta"><span>{html.escape(lead.category)}</span><span>{html.escape(lead.score or "?")} 分</span></div>
+            <h3>{html.escape(lead.title)}</h3>
+            <p>{html.escape(lead.summary)}</p>
+            <div class="story-actions"><a href="{html.escape(root_href(lead.read_url))}">进入 AI 精读 →</a><button class="icon-button" data-save-id="{html.escape(lead.id)}" type="button" aria-label="收藏"><span class="icon-bookmark">☆</span></button></div>
+          </div>
+        </article>
+        {side_html[0]}
+        {side_html[1]}
+      </div>"""
+
+
+def render_firsthand_cards(items: list[NewsItem], *, limit: int | None = None) -> str:
+    selected = items if limit is None else items[:limit]
+    if not selected:
+        return '<p class="history-empty">暂无内容。</p>'
+    rendered = []
+    for index, item in enumerate(selected, start=1):
+        rendered.append(
+            f"""<article class="firsthand-card" data-topic="{html.escape(item.category)}">
+          <div class="firsthand-number">{index:02d}</div>
+          <div class="firsthand-content">
+            <div class="card-meta"><span>{html.escape(item.source)}</span><span>{html.escape(item.source_tier)} 级信源</span><span class="score-chip">{html.escape(item.score or "?")} 分</span></div>
+            <h2><a href="{html.escape(root_href(item.read_url))}">{html.escape(item.title)}</a></h2>
+            {render_value_pair(item)}
+            <details class="ai-summary"><summary class="summary-toggle">AI 总结 <b>⌄</b></summary><div class="summary-panel"><p>{html.escape(item.summary)}</p></div></details>
+            <div class="card-actions"><a class="primary-action" href="{html.escape(root_href(item.read_url))}">AI 精读 →</a><a class="secondary-action" href="{html.escape(item.source_url)}" target="_blank" rel="noopener noreferrer">原文</a><button class="item-save" data-save-id="{html.escape(item.id)}" type="button" aria-label="收藏">☆</button></div>
+          </div>
+        </article>"""
+        )
+    return "\n".join(rendered)
+
+
+def render_expert_cards(items: list[NewsItem], *, limit: int | None = None) -> str:
+    selected = items if limit is None else items[:limit]
+    if not selected:
+        return '<p class="history-empty">暂无内容。</p>'
+    rendered = []
+    for index, item in enumerate(selected, start=1):
+        actions = item.actions[:3] or ["结合自己的项目场景复盘是否可用。"]
+        risks = item.risks[:2] or ["关键判断仍需回看原文验证。"]
+        rendered.append(
+            f"""<article class="expert-card">
+          <div class="expert-top"><span class="expert-number">{index:02d}</span><div class="card-meta"><span>{html.escape(item.source)}</span><span class="score-chip">{html.escape(item.score or "?")} 分</span></div></div>
+          <h2><a href="{html.escape(root_href(item.read_url))}">{html.escape(item.title)}</a></h2>
+          <p class="expert-summary">{html.escape(item.summary)}</p>
+          <blockquote><strong>Horizon 判断</strong>{html.escape(item.manager_takeaway)}</blockquote>
+          <div class="expert-grid"><div><h3>行动建议</h3><ol>{"".join(f"<li>{html.escape(action)}</li>" for action in actions)}</ol></div><div><h3>风险提醒</h3><ol>{"".join(f"<li>{html.escape(risk)}</li>" for risk in risks)}</ol></div></div>
+          <div class="card-actions"><a class="primary-action" href="{html.escape(root_href(item.read_url))}">AI 精读 →</a><a class="secondary-action" href="{html.escape(item.source_url)}" target="_blank" rel="noopener noreferrer">原文</a><button class="item-save" data-save-id="{html.escape(item.id)}" type="button" aria-label="收藏">☆</button></div>
+        </article>"""
+        )
+    return "\n".join(rendered)
+
+
 def build_track_page(post: Post, group: str, title: str, subtitle: str) -> str:
     items = [
         item for item in extract_news_items([post])
         if item.lang == post.lang and item.group == group
     ]
-    body = f"""    <nav class="static-nav">
-      <a href="index.html">返回首页</a>
-      <a href="daily/{html.escape(post.output_name)}">完整日报</a>
-    </nav>
-    <section class="home-hero">
-      <div>
-        <p class="eyebrow">{html.escape(post.date)} · {html.escape(post.lang.upper())}</p>
+    if group == "first_hand_news":
+        list_html = f"""<div class="list-toolbar" role="search"><label><span aria-hidden="true">⌕</span><input id="news-search" type="search" placeholder="搜索标题、来源、专题或 AI 总结"></label><select id="topic-filter" aria-label="专题筛选"><option value="all">全部专题</option></select><strong id="list-count">显示 {len(items)} / {len(items)} 条</strong></div><div id="firsthand-list" class="firsthand-list">{render_firsthand_cards(items)}</div>"""
+        active = "firsthand"
+        hero_class = "list-hero"
+    else:
+        list_html = f'<div id="insights-list" class="insights-grid full-insights">{render_expert_cards(items)}</div>'
+        active = "insights"
+        hero_class = "list-hero insight-hero"
+    body = f"""    <section class="{hero_class}">
+      <div class="section-shell">
+        <p class="kicker">{html.escape(post.date)} · {html.escape(post.lang.upper())}</p>
         <h1>{html.escape(title)}</h1>
         <p>{html.escape(subtitle)}</p>
       </div>
-      <div class="home-stats">
-        <span>{len(items)}</span>
-        <small>条内容</small>
-      </div>
     </section>
-    <section class="track-full-list">
-      {render_full_item_list(items)}
+    <section class="section-shell list-page">
+      {list_html}
+      <div class="daily-cta"><div><span>FULL DAILY</span><strong>查看当日完整日报和原始分组</strong></div><a href="daily/{html.escape(post.output_name)}">进入完整日报 →</a></div>
     </section>
 """
-    return page_shell(title, body, "assets/css/horizon.css", "assets/js/horizon.js")
+    return page_shell(title, body, "assets/css/horizon.css", "assets/js/horizon.js", active=active)
 
 
 def render_full_item_list(items: list[NewsItem]) -> str:
@@ -467,26 +619,26 @@ def build_read_page(item: NewsItem) -> str:
         </section>"""
         for section_id, label, content in sections
     )
-    body = f"""    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="{html.escape(item.source_url)}" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">{html.escape(item.date)} · Horizon News AI 精读</p>
-      <h1>{html.escape(item.title)}</h1>
-      <p>{html.escape(item.summary)}</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+    body = f"""    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">{html.escape(item.date)} · Horizon News AI 精读</p>
+        <h1>{html.escape(item.title)}</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>{html.escape(item.source)}</span><span>{html.escape(item.source_tier)} 级信源</span><span>{html.escape(item.score or "?")} 分</span><span>{html.escape(tags)}</span></div>
+        <a class="source-cta" href="{html.escape(item.source_url)}" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
 {nav}
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
 {body_sections}
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 """
-    return page_shell(item.title, body, "../assets/css/horizon.css", "../assets/js/horizon.js")
+    return page_shell(item.title, body, "../assets/css/horizon.css", "../assets/js/horizon.js", prefix="../")
 
 
 def strip_markdown(value: str) -> str:
@@ -616,6 +768,7 @@ def extract_news_items(posts: list[Post]) -> list[NewsItem]:
     for post in posts:
         for index, (group, section) in enumerate(split_news_sections(post), start=1):
             title, source_url = extract_heading(section)
+            source_url = sanitize_source_url(source_url)
             score = extract_score(section)
             tags = extract_tags(section)
             category = tags[0] if tags else "AI"

@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://arxiv.org/abs/2607.13037" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-17 · Horizon News AI 精读</p>
-      <h1>OriginBlame 追踪 AI 训练数据来源。</h1>
-      <p>一篇新的 arXiv 论文提出了 OriginBlame，这是一个在记录级和词元级追踪数据来源的系统，可在 AI 数据处理流水线中传播作者身份信息。它能将数据贡献者的删除请求解析为精确的遗忘集，用于后续数据删除和机器遗忘。 这项工作针对一个实际治理缺口：机器遗忘方法需要准确知道哪些训练样本应被移除，但许多数据集只在文件或数据集这种粗粒度层面追踪来源。更精确的数据来源记录可以减少不必要的数据删除，并让 AI 模型训练方更容易处理贡献者撤回请求。 在对 219,555 个维基百科页面的评估中，记录级来源追踪将过度删除从 101 倍降至 1.3 倍。论文报告称，在维基数据上集成该系统会给 HuggingFace 流水线带来 1.3–4.0% 的吞吐开销，给 Datatrove 带来 2.1–19.0% 的吞吐开销，并在一个 1.7B 参数模型上相对于随机基线带来 42% 的机器遗忘改进。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-17 · Horizon News AI 精读</p>
+        <h1>OriginBlame 追踪 AI 训练数据来源。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>S 级信源</span><span>7.0 分</span><span>AI governance、data provenance、machine unlearning、training datasets、ML systems</span></div>
+        <a class="source-cta" href="https://arxiv.org/abs/2607.13037" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>一篇新的 arXiv 论文提出了 OriginBlame，这是一个在记录级和词元级追踪数据来源的系统，可在 AI 数据处理流水线中传播作者身份信息。它能将数据贡献者的删除请求解析为精确的遗忘集，用于后续数据删除和机器遗忘。 这项工作针对一个实际治理缺口：机器遗忘方法需要准确知道哪些训练样本应被移除，但许多数据集只在文件或数据集这种粗粒度层面追踪来源。更精确的数据来源记录可以减少不必要的数据删除，并让 AI 模型训练方更容易处理贡献者撤回请求。 在对 219,555 个维基百科页面的评估中，记录级来源追踪将过度删除从 101 倍降至 1.3 倍。论文报告称，在维基数据上集成该系统会给 HuggingFace 流水线带来 1.3–4.0% 的吞吐开销，给 Datatrove 带来 2.1–19.0% 的吞吐开销，并在一个 1.7B 参数模型上相对于随机基线带来 42% 的机器遗忘改进。</p>
@@ -85,8 +92,9 @@
           <h2>来源信息</h2>
           <p><a href="https://arxiv.org/abs/2607.13037" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-17-zh.html#item-3">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

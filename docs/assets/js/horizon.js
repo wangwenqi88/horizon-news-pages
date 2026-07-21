@@ -4,7 +4,7 @@
   /** Replace ⭐️ N/10 with a colored badge in h2, h3, and li elements */
   function processScoreBadges() {
     var scoreRe = /⭐️\s*(\d+(?:\.\d+)?)\/10/;
-    var targets = document.querySelectorAll('.main-content h2, .main-content h3, .main-content li');
+    var targets = document.querySelectorAll('main h2, main h3, main li');
     targets.forEach(function (el) {
       var m = el.innerHTML.match(scoreRe);
       if (!m) return;
@@ -23,7 +23,7 @@
 
   /** Add semantic classes to tag lines, source lines, and background paragraphs */
   function markSemanticElements() {
-    var paragraphs = document.querySelectorAll('.main-content p');
+    var paragraphs = document.querySelectorAll('main p');
     paragraphs.forEach(function (p) {
       var text = p.textContent.trim();
 
@@ -122,6 +122,8 @@
 
   /** Set up EN/中文 language toggle as a page-level control */
   function setupLanguageToggle() {
+    if (!document.querySelector('.digest-page')) return;
+
     // Create toggle buttons
     var toggle = document.createElement('div');
     toggle.className = 'lang-toggle';
@@ -210,7 +212,7 @@
   }
 
   function setupReadScrollspy() {
-    var nav = document.querySelector('.read-nav');
+    var nav = document.querySelector('.read-nav, .read-toc');
     if (!nav) return;
     var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
     var sections = links.map(function (link) {

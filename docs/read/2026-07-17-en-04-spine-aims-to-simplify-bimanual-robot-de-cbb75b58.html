@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://arxiv.org/abs/2607.13049" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-17 · Horizon News AI 精读</p>
-      <h1>SPINE aims to simplify bimanual robot deployment.</h1>
-      <p>A new arXiv paper introduces SPINE, short for Scalable Physical Integration with ageNtic Expertise, an agentic multi-agent framework for profiling, debugging, and deploying bimanual robots. In seven DOBOT X-Trainer scenarios, a novice using SPINE improved operationalization success from 75% to 100% versus less-structured Claude Code use, while reducing mean time-to-teleoperation from 16 minutes 45 seconds to 13 minutes 47 seconds. The work targets a practical bottleneck in embodied AI: getting model-driven robot behavior to run reliably on real hardware still often requires expert calibration and troubleshooting. If approaches like SPINE generalize, robotics teams, labs, and educators could deploy bimanual platforms faster with less dependence on scarce robotics specialists. SPINE uses two orchestrated workflows: a profile builder that creates robot-specific context and a debugger that iterates through diagnosis, repair, and validation until teleoperation works. The evaluation is promising but narrow: the main novice study used seven DOBOT X-Trainer debugging scenarios, and a transfer test on AgileX PiPER resolved 10 of 10 implanted bugs compared with 9 of 10 for an expert baseline in nearly the same time.</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-17 · Horizon News AI 精读</p>
+        <h1>SPINE aims to simplify bimanual robot deployment.</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>S 级信源</span><span>7.0 分</span><span>robotics、embodied-ai、agentic-ai、automation、debugging</span></div>
+        <a class="source-cta" href="https://arxiv.org/abs/2607.13049" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>A new arXiv paper introduces SPINE, short for Scalable Physical Integration with ageNtic Expertise, an agentic multi-agent framework for profiling, debugging, and deploying bimanual robots. In seven DOBOT X-Trainer scenarios, a novice using SPINE improved operationalization success from 75% to 100% versus less-structured Claude Code use, while reducing mean time-to-teleoperation from 16 minutes 45 seconds to 13 minutes 47 seconds. The work targets a practical bottleneck in embodied AI: getting model-driven robot behavior to run reliably on real hardware still often requires expert calibration and troubleshooting. If approaches like SPINE generalize, robotics teams, labs, and educators could deploy bimanual platforms faster with less dependence on scarce robotics specialists. SPINE uses two orchestrated workflows: a profile builder that creates robot-specific context and a debugger that iterates through diagnosis, repair, and validation until teleoperation works. The evaluation is promising but narrow: the main novice study used seven DOBOT X-Trainer debugging scenarios, and a transfer test on AgileX PiPER resolved 10 of 10 implanted bugs compared with 9 of 10 for an expert baseline in nearly the same time.</p>
@@ -85,8 +92,9 @@
           <h2>来源信息</h2>
           <p><a href="https://arxiv.org/abs/2607.13049" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-17-en.html#item-4">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

@@ -3,217 +3,165 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Horizon Summary: 2026-07-21 (ZH)</title>
+  <title>Horizon News | 今日</title>
   <meta name="description" content="AI 资讯精读">
   <link rel="stylesheet" href="assets/css/horizon.css">
 </head>
-<body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
-  </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="daily/2026-07-21-en.html">English</a>
-    </nav>
-    <section class="home-hero">
-      <div>
-        <p class="eyebrow">Today · 2026-07-21</p>
-        <h1>Horizon News</h1>
-        <p>首页只展示精选内容；完整日报分为一手资讯速递和实战与专家洞察两个页面。</p>
-      </div>
-      <div class="home-stats">
-        <span>4</span>
-        <small>历史日报</small>
-      </div>
-    </section>
-    <section class="home-actions" aria-label="日报入口">
-      <a href="firsthand.html">一手资讯速递</a>
-      <a href="insights.html">实战与专家洞察</a>
-      <a href="daily/2026-07-21-zh.html">完整日报</a>
-    </section>
-    <div class="home-layout">
-      <div class="portal-stack">
-        <section class="portal-section">
-          <div class="portal-section-head">
-            <p class="eyebrow">Highlights</p>
-            <h2>今日必读</h2>
-          </div>
-                  <article class="portal-card">
-          <div class="portal-card-meta">
-            <span>rss</span>
-            <strong>8.5/10</strong>
-          </div>
-          <h3><a href="read/2026-07-21-zh-01-planflip-ed715f97.html">PlanFlip 揭示智能体规划阶段攻击</a></h3>
-          <p>一篇新的 arXiv 论文提出了 PlanFlip，这是一个针对多智能体 LLM 系统规划阶段的提示注入攻击框架。作者在 3,479 个测试回合和九个前沿模型上评估后报告称，注入到规划器上下文中的内容可以通过级联放大破坏下游执行器和审查器的行为。 这项工作很重要，因为许多生产级智能体系统采用规划器、执行器和审查器模式，并假设更强的模型或额外的审查智能体会提升安全性。PlanFlip 挑战了这一假设，因为研究显示模型能力可能放大脆弱性，而使用同一模型骨干的冗余审查可能无法发现被篡改的计划。 PlanFlip 包含四种攻击：目标替换、优先级反转、上下文污染和角色混淆，并且都伪装成看似合理的工具输出来规避关键词过滤。论文报告称 GPT-5 的攻击成功率最高，达到 0.68；DeepSeek-R1 在所有攻击中的 StepShift 为 0.00；作者还提出了 GoalAnchorCheck 和 CrossAgentConsensus 两种防御方法，检测率最高达到 1.00。</p>
-          <div class="portal-card-actions">
-            <a href="read/2026-07-21-zh-01-planflip-ed715f97.html">AI 精读</a>
-            <a href="https://arxiv.org/abs/2607.16199" target="_blank" rel="noopener noreferrer">原文</a>
-          </div>
-        </article>
-        <article class="portal-card">
-          <div class="portal-card-meta">
-            <span>rss</span>
-            <strong>8.0/10</strong>
-          </div>
-          <h3><a href="read/2026-07-21-zh-02-anthropic-98606817.html">Anthropic 十五亿美元版权和解获批</a></h3>
-          <p>法院已批准 Anthropic 的十五亿美元版权和解协议，解决了一起围绕受版权保护作品和 AI 训练数据的重大诉讼。该批准结束了这一具体案件，但并未解决在何种情况下可使用受版权保护材料训练 AI 模型的更广泛法律问题。 这笔和解金额巨大，使其成为 AI 公司、出版方、作者以及依赖大语言模型的企业都需要关注的标志性事件。它表明，训练数据来源和版权风险已经成为实质性的商业风险，而不只是抽象的法律争论。 该和解解决的是涉及 Anthropic 的单个案件，并没有为整个行业确立关于受版权保护训练数据的明确规则。技术读者应将其视为风险信号，而不是模型开发中的清晰法律标准。</p>
-          <div class="portal-card-actions">
-            <a href="read/2026-07-21-zh-02-anthropic-98606817.html">AI 精读</a>
-            <a href="https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/" target="_blank" rel="noopener noreferrer">原文</a>
-          </div>
-        </article>
-        <article class="portal-card">
-          <div class="portal-card-meta">
-            <span>rss</span>
-            <strong>8.0/10</strong>
-          </div>
-          <h3><a href="read/2026-07-21-zh-03-ai-46b29e32.html">AI 代理运行的确定性重放</a></h3>
-          <p>一篇新的 arXiv 论文介绍了 agrepl，这是一个基于 Go 的命令行框架，用于记录并确定性重放 AI 代理的执行过程。它通过传输层的中间人代理捕获外部交互，将其序列化为结构化轨迹，并在禁止出站网络访问的隔离环境中重放。 AI 代理很难调试，因为大语言模型采样、不断变化的 API 状态、CDN 头信息和运行环境噪声，都会让同一次运行难以复现。可靠的记录与重放层可以改善生产级代理系统团队在调试、可观测性、回归测试和事故分析方面的工作。 论文形式化描述了代理执行模型，定义了请求键匹配函数 K(s)，并声称证明了重放的确定性不变式。作者在五类工作负载和 250 次重放实例上报告了重放保真度 F = 1.0，以及每步中位延迟降低 98.3%，同时还加入了用于分类 HTTP 头差异的噪声感知对比算法。</p>
-          <div class="portal-card-actions">
-            <a href="read/2026-07-21-zh-03-ai-46b29e32.html">AI 精读</a>
-            <a href="https://arxiv.org/abs/2607.16200" target="_blank" rel="noopener noreferrer">原文</a>
-          </div>
-        </article>
-        </section>
-        <section class="portal-section">
-          <div class="portal-section-head">
-            <p class="eyebrow">First-Hand News</p>
-            <h2>一手资讯精选</h2>
-            <a href="firsthand.html">查看 15 条</a>
-          </div>
-                  <article class="portal-card">
-          <div class="portal-card-meta">
-            <span>rss</span>
-            <strong>8.5/10</strong>
-          </div>
-          <h3><a href="read/2026-07-21-zh-01-planflip-ed715f97.html">PlanFlip 揭示智能体规划阶段攻击</a></h3>
-          <details>
-            <summary>AI 总结</summary>
-            <p>一篇新的 arXiv 论文提出了 PlanFlip，这是一个针对多智能体 LLM 系统规划阶段的提示注入攻击框架。作者在 3,479 个测试回合和九个前沿模型上评估后报告称，注入到规划器上下文中的内容可以通过级联放大破坏下游执行器和审查器的行为。 这项工作很重要，因为许多生产级智能体系统采用规划器、执行器和审查器模式，并假设更强的模型或额外的审查智能体会提升安全性。PlanFlip 挑战了这一假设，因为研究显示模型能力可能放大脆弱性，而使用同一模型骨干的冗余审查可能无法发现被篡改的计划。 PlanFlip 包含四种攻击：目标替换、优先级反转、上下文污染和角色混淆，并且都伪装成看似合理的工具输出来规避关键词过滤。论文报告称 GPT-5 的攻击成功率最高，达到 0.68；DeepSeek-R1 在所有攻击中的 StepShift 为 0.00；作者还提出了 GoalAnchorCheck 和 CrossAgentConsensus 两种防御方法，检测率最高达到 1.00。</p>
-          </details>
-          <div class="portal-card-actions">
-            <a href="read/2026-07-21-zh-01-planflip-ed715f97.html">AI 精读</a>
-            <a href="https://arxiv.org/abs/2607.16199" target="_blank" rel="noopener noreferrer">原文</a>
-          </div>
-        </article>
-        <article class="portal-card">
-          <div class="portal-card-meta">
-            <span>rss</span>
-            <strong>8.0/10</strong>
-          </div>
-          <h3><a href="read/2026-07-21-zh-02-anthropic-98606817.html">Anthropic 十五亿美元版权和解获批</a></h3>
-          <details>
-            <summary>AI 总结</summary>
-            <p>法院已批准 Anthropic 的十五亿美元版权和解协议，解决了一起围绕受版权保护作品和 AI 训练数据的重大诉讼。该批准结束了这一具体案件，但并未解决在何种情况下可使用受版权保护材料训练 AI 模型的更广泛法律问题。 这笔和解金额巨大，使其成为 AI 公司、出版方、作者以及依赖大语言模型的企业都需要关注的标志性事件。它表明，训练数据来源和版权风险已经成为实质性的商业风险，而不只是抽象的法律争论。 该和解解决的是涉及 Anthropic 的单个案件，并没有为整个行业确立关于受版权保护训练数据的明确规则。技术读者应将其视为风险信号，而不是模型开发中的清晰法律标准。</p>
-          </details>
-          <div class="portal-card-actions">
-            <a href="read/2026-07-21-zh-02-anthropic-98606817.html">AI 精读</a>
-            <a href="https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/" target="_blank" rel="noopener noreferrer">原文</a>
-          </div>
-        </article>
-        <article class="portal-card">
-          <div class="portal-card-meta">
-            <span>rss</span>
-            <strong>8.0/10</strong>
-          </div>
-          <h3><a href="read/2026-07-21-zh-03-ai-46b29e32.html">AI 代理运行的确定性重放</a></h3>
-          <details>
-            <summary>AI 总结</summary>
-            <p>一篇新的 arXiv 论文介绍了 agrepl，这是一个基于 Go 的命令行框架，用于记录并确定性重放 AI 代理的执行过程。它通过传输层的中间人代理捕获外部交互，将其序列化为结构化轨迹，并在禁止出站网络访问的隔离环境中重放。 AI 代理很难调试，因为大语言模型采样、不断变化的 API 状态、CDN 头信息和运行环境噪声，都会让同一次运行难以复现。可靠的记录与重放层可以改善生产级代理系统团队在调试、可观测性、回归测试和事故分析方面的工作。 论文形式化描述了代理执行模型，定义了请求键匹配函数 K(s)，并声称证明了重放的确定性不变式。作者在五类工作负载和 250 次重放实例上报告了重放保真度 F = 1.0，以及每步中位延迟降低 98.3%，同时还加入了用于分类 HTTP 头差异的噪声感知对比算法。</p>
-          </details>
-          <div class="portal-card-actions">
-            <a href="read/2026-07-21-zh-03-ai-46b29e32.html">AI 精读</a>
-            <a href="https://arxiv.org/abs/2607.16200" target="_blank" rel="noopener noreferrer">原文</a>
-          </div>
-        </article>
-        <article class="portal-card">
-          <div class="portal-card-meta">
-            <span>rss</span>
-            <strong>8.0/10</strong>
-          </div>
-          <h3><a href="read/2026-07-21-zh-04-openai-7bf54336.html">OpenAI 谈长周期模型安全</a></h3>
-          <details>
-            <summary>AI 总结</summary>
-            <p>OpenAI 发布了题为《长周期模型时代的安全与对齐》的博客文章，介绍了部署长时间运行的 AI 模型所获得的经验。文章强调了新出现的安全风险、已观察到的失败模式，以及在扩大访问范围过程中对防护措施进行的迭代改进。 长周期模型可以跨多个步骤持续行动，因此其失败比单轮聊天系统更难预测、发现和控制。OpenAI 的一手部署经验对构建 AI 智能体的团队很重要，因为它把安全描述为一种持续运营过程，而不是一次性具备的模型属性。 搜索结果显示，OpenAI 最初版本的防护措施是有意设计得较为保守的，并且 OpenAI 持续调优系统，以在不削弱保护能力的前提下减少不必要的中断。主要限制是，现有摘要没有提供详细的技术机制，因此其价值更多在于部署思路和风险分类，而不是可直接复用的代码或架构。</p>
-          </details>
-          <div class="portal-card-actions">
-            <a href="read/2026-07-21-zh-04-openai-7bf54336.html">AI 精读</a>
-            <a href="https://openai.com/index/safety-alignment-long-horizon-models" target="_blank" rel="noopener noreferrer">原文</a>
-          </div>
-        </article>
-        </section>
-        <section class="portal-section">
-          <div class="portal-section-head">
-            <p class="eyebrow">Practice</p>
-            <h2>实战与专家洞察精选</h2>
-            <a href="insights.html">查看 5 条</a>
-          </div>
-                  <article class="portal-card">
-          <div class="portal-card-meta">
-            <span>hackernews</span>
-            <strong>8.0/10</strong>
-          </div>
-          <h3><a href="read/2026-07-21-zh-16-ai-56a3a861.html">AI 加速数学反例发现。</a></h3>
-          <details>
-            <summary>AI 总结</summary>
-            <p>2026 年 7 月 20 日，Xena Project 的一篇文章认为，AI 系统越来越能够比人类数学家更快地为数学猜想找到反例。围绕该文的 Hacker News 讨论集中在快速证伪是否会提高研究效率，以及它是否会改变数学家选择问题的方式。 反例可以阻止研究者把数月或数年时间花在试图证明错误猜想上，因此更强的自动证伪能力可能实质性改变数学研究流程。这一变化也符合 AI 数学应用的更大趋势，即系统正从寻找证明扩展到检验猜想、形式化验证和研究优先级筛选。 这场讨论区分了两件事：提出一个看似可信的反例，以及给出一个可以被检查的反例，最好是在 Lean 这样的形式化系统中检查。一个重要限制是，快速证伪并不等同于深刻的数学理解，而且它也可能让人更容易生成大量低价值猜想，从而需要额外筛选。</p>
-          </details>
-          <div class="portal-card-actions">
-            <a href="read/2026-07-21-zh-16-ai-56a3a861.html">AI 精读</a>
-            <a href="https://xenaproject.wordpress.com/2026/07/20/human-mathematicians-are-being-outcounterexampled/" target="_blank" rel="noopener noreferrer">原文</a>
-          </div>
-        </article>
-        <article class="portal-card">
-          <div class="portal-card-meta">
-            <span>hackernews</span>
-            <strong>7.0/10</strong>
-          </div>
-          <h3><a href="read/2026-07-21-zh-17-item-9ac41338.html">追求完善并不是过度工程。</a></h3>
-          <details>
-            <summary>AI 总结</summary>
-            <p>这篇文章将过度工程重新定义为解决了错误的问题，或针对错误的约束进行优化，而不只是花太多精力追求质量。文章认为，只要与真实需求和用户需要一致，认真设计高质量系统就是合理的。 这种区分很重要，因为团队常常用“不要让完美成为好的敌人”之类的话来为低质量工作辩护，或回避艰难的设计讨论。更清晰的定义有助于工程团队判断严谨性何时能降低长期风险，何时会变成浪费。 文章的核心观点是，“完善”应当意味着符合需求，而不是抽象的完整性或无止境的打磨。主要限制在于需求必须真实且被充分理解；否则，同样的优雅追求可能变成过早优化、沉迷边缘情况，或方向错误的架构设计。</p>
-          </details>
-          <div class="portal-card-actions">
-            <a href="read/2026-07-21-zh-17-item-9ac41338.html">AI 精读</a>
-            <a href="https://var0.xyz/posts/perfection-is-not-over-engineering.html" target="_blank" rel="noopener noreferrer">原文</a>
-          </div>
-        </article>
-        </section>
-      </div>
-      <aside class="history-panel" aria-label="历史日报">
-        <div class="history-panel-header">
-          <p class="eyebrow">Archive</p>
-          <h2>历史日报</h2>
-        </div>
-      <ul class="history-list">
-        <li>
-          <a href="daily/2026-07-20-zh.html">
-            <span>2026-07-20</span>
-            <strong>Horizon Summary: 2026-07-20 (ZH)</strong>
-          </a>
-        </li>
-        <li>
-          <a href="daily/2026-07-18-zh.html">
-            <span>2026-07-18</span>
-            <strong>Horizon Summary: 2026-07-18 (ZH)</strong>
-          </a>
-        </li>
-        <li>
-          <a href="daily/2026-07-17-zh.html">
-            <span>2026-07-17</span>
-            <strong>Horizon Summary: 2026-07-17 (ZH)</strong>
-          </a>
-        </li>
-        <li>
-          <a href="daily/2026-07-16-zh.html">
-            <span>2026-07-16</span>
-            <strong>Horizon Summary: 2026-07-16 (ZH)</strong>
-          </a>
-        </li>
-      </ul>
-      </aside>
+<body data-page="home">
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a class="active" href="index.html">今日</a>
+        <a href="firsthand.html">一手资讯</a>
+        <a href="insights.html">专家洞察</a>
+        <a href="index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
     </div>
+  </header>
+  <main>
+    <section class="briefing" id="today">
+      <div class="section-shell briefing-grid">
+        <div>
+          <div class="date-line"><span>TUE</span><time>2026.07.21</time><span>第 5 期</span><a href="daily/2026-07-21-en.html">English</a></div>
+          <p class="kicker">今日编辑判断</p>
+          <h1>AI 系统的竞争，正在从“信息更新”转向“可信实操”。</h1>
+          <p class="standfirst">今天的 Horizon News 用两条轨道处理资讯：一手资讯帮助快速掌握行业变化，实战与专家洞察沉淀可复用方法、项目经验和技术判断。</p>
+        </div>
+        <div class="briefing-stats">
+          <div><strong>20</strong><span>入选</span></div>
+          <div><strong>15</strong><span>一手</span></div>
+          <div><strong>5</strong><span>洞察</span></div>
+          <div><strong>4</strong><span>历史</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="recent-reports" id="history">
+      <div class="section-shell recent-shell">
+        <div class="recent-label"><p class="kicker">Recent reports</p><h2>近期日报</h2></div>
+        <div class="recent-list"><a href="daily/2026-07-20-zh.html"><time>07.20</time><span>2026-07-20 (ZH)</span></a>
+<a href="daily/2026-07-18-zh.html"><time>07.18</time><span>2026-07-18 (ZH)</span></a>
+<a href="daily/2026-07-17-zh.html"><time>07.17</time><span>2026-07-17 (ZH)</span></a></div>
+        <a class="all-history-link" href="daily/2026-07-21-zh.html">查看完整日报 →</a>
+      </div>
+    </section>
+    <section class="must-read section-shell">
+      <div class="section-heading">
+        <div><p class="kicker">Editor’s pick</p><h2>今日必读</h2></div>
+        <p>先读这 3 条，掌握今日主线</p>
+      </div>
+      <div class="must-grid">
+        <article class="lead-story">
+          <div class="story-visual visual-robot"><div class="visual-label"><span>LLM SECURITY</span><strong>S</strong></div><div class="motion-map"><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+          <div class="story-overlay">
+            <div class="story-meta"><span>LLM security</span><span>8.5 分</span></div>
+            <h3>PlanFlip 揭示智能体规划阶段攻击</h3>
+            <p>一篇新的 arXiv 论文提出了 PlanFlip，这是一个针对多智能体 LLM 系统规划阶段的提示注入攻击框架。作者在 3,479 个测试回合和九个前沿模型上评估后报告称，注入到规划器上下文中的内容可以通过级联放大破坏下游执行器和审查器的行为。 这项工作很重要，因为许多生产级智能体系统采用规划器、执行器和审查器模式，并假设更强的模型或额外的审查智能体会提升安全性。PlanFlip 挑战了这一假设，因为研究显示模型能力可能放大脆弱性，而使用同一模型骨干的冗余审查可能无法发现被篡改的计划。 PlanFlip 包含四种攻击：目标替换、优先级反转、上下文污染和角色混淆，并且都伪装成看似合理的工具输出来规避关键词过滤。论文报告称 GPT-5 的攻击成功率最高，达到 0.68；DeepSeek-R1 在所有攻击中的 StepShift 为 0.00；作者还提出了 GoalAnchorCheck 和 CrossAgentConsensus 两种防御方法，检测率最高达到 1.00。</p>
+            <div class="story-actions"><a href="read/2026-07-21-zh-01-planflip-ed715f97.html">进入 AI 精读 →</a><button class="icon-button" data-save-id="2026-07-21-zh-01-planflip-ed715f97" type="button" aria-label="收藏"><span class="icon-bookmark">☆</span></button></div>
+          </div>
+        </article>
+        <article class="side-story">
+          <div class="story-visual visual-review"><div class="mini-chart"><span style="height:86%"></span><span style="height:64%"></span><span style="height:38%"></span><span style="height:52%"></span></div><small>A TIER / AI COPYRIGHT</small></div>
+          <div class="side-story-body">
+            <div class="story-meta"><span>AI copyright</span><span>8.0 分</span></div>
+            <h3>Anthropic 十五亿美元版权和解获批</h3>
+            <p>法院已批准 Anthropic 的十五亿美元版权和解协议，解决了一起围绕受版权保护作品和 AI 训练数据的重大诉讼。该批准结束了这一具体案件，但并未解决在何种情况下可使用受版权保护材料训练 AI 模型的更广泛法律问题。 这笔和解金额巨大，使其成为 AI 公司、出版方、作者以及依赖大语言模型的企业都需要关注的标志性事件。它表明，训练数据来源和版权风险已经成为实质性的商业风险，而不只是抽象的法律争论。 该和解解决的是涉及 Anthropic 的单个案件，并没有为整个行业确立关于受版权保护训练数据的明确规则。技术读者应将其视为风险信号，而不是模型开发中的清晰法律标准。</p>
+            <a href="read/2026-07-21-zh-02-anthropic-98606817.html" aria-label="进入 AI 精读">→</a>
+          </div>
+        </article>
+        <article class="side-story">
+          <div class="story-visual visual-system"><div class="mini-chart"><span style="height:86%"></span><span style="height:64%"></span><span style="height:38%"></span><span style="height:52%"></span></div><small>S TIER / AI AGENTS</small></div>
+          <div class="side-story-body">
+            <div class="story-meta"><span>AI agents</span><span>8.0 分</span></div>
+            <h3>AI 代理运行的确定性重放</h3>
+            <p>一篇新的 arXiv 论文介绍了 agrepl，这是一个基于 Go 的命令行框架，用于记录并确定性重放 AI 代理的执行过程。它通过传输层的中间人代理捕获外部交互，将其序列化为结构化轨迹，并在禁止出站网络访问的隔离环境中重放。 AI 代理很难调试，因为大语言模型采样、不断变化的 API 状态、CDN 头信息和运行环境噪声，都会让同一次运行难以复现。可靠的记录与重放层可以改善生产级代理系统团队在调试、可观测性、回归测试和事故分析方面的工作。 论文形式化描述了代理执行模型，定义了请求键匹配函数 K(s)，并声称证明了重放的确定性不变式。作者在五类工作负载和 250 次重放实例上报告了重放保真度 F = 1.0，以及每步中位延迟降低 98.3%，同时还加入了用于分类 HTTP 头差异的噪声感知对比算法。</p>
+            <a href="read/2026-07-21-zh-03-ai-46b29e32.html" aria-label="进入 AI 精读">→</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="intelligence section-shell">
+      <div class="section-heading">
+        <div><p class="kicker">Selected intelligence</p><h2>一手资讯精选</h2></div>
+        <p>精选 4 / 15 · 每条含可展开 AI 总结</p>
+      </div>
+      <div class="firsthand-list compact-list"><article class="firsthand-card" data-topic="LLM security">
+          <div class="firsthand-number">01</div>
+          <div class="firsthand-content">
+            <div class="card-meta"><span>rss</span><span>S 级信源</span><span class="score-chip">8.5 分</span></div>
+            <h2><a href="read/2026-07-21-zh-01-planflip-ed715f97.html">PlanFlip 揭示智能体规划阶段攻击</a></h2>
+            <div class="value-pair">
+          <div class="value-row"><span>选题</span><div class="value-bar"><span style="width:85%"></span></div><b>85</b></div>
+          <div class="value-row learning"><span>学习</span><div class="value-bar"><span style="width:85%"></span></div><b>85</b></div>
+        </div>
+            <details class="ai-summary"><summary class="summary-toggle">AI 总结 <b>⌄</b></summary><div class="summary-panel"><p>一篇新的 arXiv 论文提出了 PlanFlip，这是一个针对多智能体 LLM 系统规划阶段的提示注入攻击框架。作者在 3,479 个测试回合和九个前沿模型上评估后报告称，注入到规划器上下文中的内容可以通过级联放大破坏下游执行器和审查器的行为。 这项工作很重要，因为许多生产级智能体系统采用规划器、执行器和审查器模式，并假设更强的模型或额外的审查智能体会提升安全性。PlanFlip 挑战了这一假设，因为研究显示模型能力可能放大脆弱性，而使用同一模型骨干的冗余审查可能无法发现被篡改的计划。 PlanFlip 包含四种攻击：目标替换、优先级反转、上下文污染和角色混淆，并且都伪装成看似合理的工具输出来规避关键词过滤。论文报告称 GPT-5 的攻击成功率最高，达到 0.68；DeepSeek-R1 在所有攻击中的 StepShift 为 0.00；作者还提出了 GoalAnchorCheck 和 CrossAgentConsensus 两种防御方法，检测率最高达到 1.00。</p></div></details>
+            <div class="card-actions"><a class="primary-action" href="read/2026-07-21-zh-01-planflip-ed715f97.html">AI 精读 →</a><a class="secondary-action" href="https://arxiv.org/abs/2607.16199" target="_blank" rel="noopener noreferrer">原文</a><button class="item-save" data-save-id="2026-07-21-zh-01-planflip-ed715f97" type="button" aria-label="收藏">☆</button></div>
+          </div>
+        </article>
+<article class="firsthand-card" data-topic="AI copyright">
+          <div class="firsthand-number">02</div>
+          <div class="firsthand-content">
+            <div class="card-meta"><span>rss</span><span>A 级信源</span><span class="score-chip">8.0 分</span></div>
+            <h2><a href="read/2026-07-21-zh-02-anthropic-98606817.html">Anthropic 十五亿美元版权和解获批</a></h2>
+            <div class="value-pair">
+          <div class="value-row"><span>选题</span><div class="value-bar"><span style="width:80%"></span></div><b>80</b></div>
+          <div class="value-row learning"><span>学习</span><div class="value-bar"><span style="width:80%"></span></div><b>80</b></div>
+        </div>
+            <details class="ai-summary"><summary class="summary-toggle">AI 总结 <b>⌄</b></summary><div class="summary-panel"><p>法院已批准 Anthropic 的十五亿美元版权和解协议，解决了一起围绕受版权保护作品和 AI 训练数据的重大诉讼。该批准结束了这一具体案件，但并未解决在何种情况下可使用受版权保护材料训练 AI 模型的更广泛法律问题。 这笔和解金额巨大，使其成为 AI 公司、出版方、作者以及依赖大语言模型的企业都需要关注的标志性事件。它表明，训练数据来源和版权风险已经成为实质性的商业风险，而不只是抽象的法律争论。 该和解解决的是涉及 Anthropic 的单个案件，并没有为整个行业确立关于受版权保护训练数据的明确规则。技术读者应将其视为风险信号，而不是模型开发中的清晰法律标准。</p></div></details>
+            <div class="card-actions"><a class="primary-action" href="read/2026-07-21-zh-02-anthropic-98606817.html">AI 精读 →</a><a class="secondary-action" href="https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/" target="_blank" rel="noopener noreferrer">原文</a><button class="item-save" data-save-id="2026-07-21-zh-02-anthropic-98606817" type="button" aria-label="收藏">☆</button></div>
+          </div>
+        </article>
+<article class="firsthand-card" data-topic="AI agents">
+          <div class="firsthand-number">03</div>
+          <div class="firsthand-content">
+            <div class="card-meta"><span>rss</span><span>S 级信源</span><span class="score-chip">8.0 分</span></div>
+            <h2><a href="read/2026-07-21-zh-03-ai-46b29e32.html">AI 代理运行的确定性重放</a></h2>
+            <div class="value-pair">
+          <div class="value-row"><span>选题</span><div class="value-bar"><span style="width:80%"></span></div><b>80</b></div>
+          <div class="value-row learning"><span>学习</span><div class="value-bar"><span style="width:80%"></span></div><b>80</b></div>
+        </div>
+            <details class="ai-summary"><summary class="summary-toggle">AI 总结 <b>⌄</b></summary><div class="summary-panel"><p>一篇新的 arXiv 论文介绍了 agrepl，这是一个基于 Go 的命令行框架，用于记录并确定性重放 AI 代理的执行过程。它通过传输层的中间人代理捕获外部交互，将其序列化为结构化轨迹，并在禁止出站网络访问的隔离环境中重放。 AI 代理很难调试，因为大语言模型采样、不断变化的 API 状态、CDN 头信息和运行环境噪声，都会让同一次运行难以复现。可靠的记录与重放层可以改善生产级代理系统团队在调试、可观测性、回归测试和事故分析方面的工作。 论文形式化描述了代理执行模型，定义了请求键匹配函数 K(s)，并声称证明了重放的确定性不变式。作者在五类工作负载和 250 次重放实例上报告了重放保真度 F = 1.0，以及每步中位延迟降低 98.3%，同时还加入了用于分类 HTTP 头差异的噪声感知对比算法。</p></div></details>
+            <div class="card-actions"><a class="primary-action" href="read/2026-07-21-zh-03-ai-46b29e32.html">AI 精读 →</a><a class="secondary-action" href="https://arxiv.org/abs/2607.16200" target="_blank" rel="noopener noreferrer">原文</a><button class="item-save" data-save-id="2026-07-21-zh-03-ai-46b29e32" type="button" aria-label="收藏">☆</button></div>
+          </div>
+        </article>
+<article class="firsthand-card" data-topic="AI safety">
+          <div class="firsthand-number">04</div>
+          <div class="firsthand-content">
+            <div class="card-meta"><span>rss</span><span>S 级信源</span><span class="score-chip">8.0 分</span></div>
+            <h2><a href="read/2026-07-21-zh-04-openai-7bf54336.html">OpenAI 谈长周期模型安全</a></h2>
+            <div class="value-pair">
+          <div class="value-row"><span>选题</span><div class="value-bar"><span style="width:80%"></span></div><b>80</b></div>
+          <div class="value-row learning"><span>学习</span><div class="value-bar"><span style="width:80%"></span></div><b>80</b></div>
+        </div>
+            <details class="ai-summary"><summary class="summary-toggle">AI 总结 <b>⌄</b></summary><div class="summary-panel"><p>OpenAI 发布了题为《长周期模型时代的安全与对齐》的博客文章，介绍了部署长时间运行的 AI 模型所获得的经验。文章强调了新出现的安全风险、已观察到的失败模式，以及在扩大访问范围过程中对防护措施进行的迭代改进。 长周期模型可以跨多个步骤持续行动，因此其失败比单轮聊天系统更难预测、发现和控制。OpenAI 的一手部署经验对构建 AI 智能体的团队很重要，因为它把安全描述为一种持续运营过程，而不是一次性具备的模型属性。 搜索结果显示，OpenAI 最初版本的防护措施是有意设计得较为保守的，并且 OpenAI 持续调优系统，以在不削弱保护能力的前提下减少不必要的中断。主要限制是，现有摘要没有提供详细的技术机制，因此其价值更多在于部署思路和风险分类，而不是可直接复用的代码或架构。</p></div></details>
+            <div class="card-actions"><a class="primary-action" href="read/2026-07-21-zh-04-openai-7bf54336.html">AI 精读 →</a><a class="secondary-action" href="https://openai.com/index/safety-alignment-long-horizon-models" target="_blank" rel="noopener noreferrer">原文</a><button class="item-save" data-save-id="2026-07-21-zh-04-openai-7bf54336" type="button" aria-label="收藏">☆</button></div>
+          </div>
+        </article></div>
+      <a class="track-more-link" href="firsthand.html">查看全部 15 条一手资讯 →</a>
+      <div class="section-heading home-insight-heading">
+        <div><p class="kicker">Practitioner insight</p><h2>专家洞察精选</h2></div>
+        <p>精选 2 / 5</p>
+      </div>
+      <div class="insights-grid"><article class="expert-card">
+          <div class="expert-top"><span class="expert-number">01</span><div class="card-meta"><span>hackernews</span><span class="score-chip">8.0 分</span></div></div>
+          <h2><a href="read/2026-07-21-zh-16-ai-56a3a861.html">AI 加速数学反例发现。</a></h2>
+          <p class="expert-summary">2026 年 7 月 20 日，Xena Project 的一篇文章认为，AI 系统越来越能够比人类数学家更快地为数学猜想找到反例。围绕该文的 Hacker News 讨论集中在快速证伪是否会提高研究效率，以及它是否会改变数学家选择问题的方式。 反例可以阻止研究者把数月或数年时间花在试图证明错误猜想上，因此更强的自动证伪能力可能实质性改变数学研究流程。这一变化也符合 AI 数学应用的更大趋势，即系统正从寻找证明扩展到检验猜想、形式化验证和研究优先级筛选。 这场讨论区分了两件事：提出一个看似可信的反例，以及给出一个可以被检查的反例，最好是在 Lean 这样的形式化系统中检查。一个重要限制是，快速证伪并不等同于深刻的数学理解，而且它也可能让人更容易生成大量低价值猜想，从而需要额外筛选。</p>
+          <blockquote><strong>Horizon 判断</strong>反例是一个具体案例，用来说明某个一般性的数学命题是错误的。Lean 等形式化系统可以按照精确规则检查定义、证明以及某些反例是否有效，而不是依赖非正式直觉。Xena Project 与数学家通过形式化数学来学习 Lean 有关，近期 AI 数学研究也明确关注训练 LLM 生成可自动评估的形式化反例。</blockquote>
+          <div class="expert-grid"><div><h3>行动建议</h3><ol><li>判断团队近期是否有和AI-for-mathematics、formal-methods相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ol></div><div><h3>风险提醒</h3><ol><li>评论整体上认可更快发现反例的价值，因为它可以节省人类研究时间，其中一位评论者讲述了研究生阶段一个猜想很快被证伪的经历。其他人补充了雅可比猜想等历史警示案例，也有人从文化角度把这看作机器在人类珍视的智力技能上继续超越人类的又一例子。</li></ol></div></div>
+          <div class="card-actions"><a class="primary-action" href="read/2026-07-21-zh-16-ai-56a3a861.html">AI 精读 →</a><a class="secondary-action" href="https://xenaproject.wordpress.com/2026/07/20/human-mathematicians-are-being-outcounterexampled/" target="_blank" rel="noopener noreferrer">原文</a><button class="item-save" data-save-id="2026-07-21-zh-16-ai-56a3a861" type="button" aria-label="收藏">☆</button></div>
+        </article>
+<article class="expert-card">
+          <div class="expert-top"><span class="expert-number">02</span><div class="card-meta"><span>hackernews</span><span class="score-chip">7.0 分</span></div></div>
+          <h2><a href="read/2026-07-21-zh-17-item-9ac41338.html">追求完善并不是过度工程。</a></h2>
+          <p class="expert-summary">这篇文章将过度工程重新定义为解决了错误的问题，或针对错误的约束进行优化，而不只是花太多精力追求质量。文章认为，只要与真实需求和用户需要一致，认真设计高质量系统就是合理的。 这种区分很重要，因为团队常常用“不要让完美成为好的敌人”之类的话来为低质量工作辩护，或回避艰难的设计讨论。更清晰的定义有助于工程团队判断严谨性何时能降低长期风险，何时会变成浪费。 文章的核心观点是，“完善”应当意味着符合需求，而不是抽象的完整性或无止境的打磨。主要限制在于需求必须真实且被充分理解；否则，同样的优雅追求可能变成过早优化、沉迷边缘情况，或方向错误的架构设计。</p>
+          <blockquote><strong>Horizon 判断</strong>在软件工程中，过度工程通常指构建了超出实际场景所需的抽象、灵活性、可扩展性或流程。技术债是指由捷径、不清晰的设计，或已经不适应变化需求的决策所带来的未来维护成本。产品开发通常伴随不确定性，因此团队需要在快速学习与构建可靠、可维护、易于协作的系统之间取得平衡。</blockquote>
+          <div class="expert-grid"><div><h3>行动建议</h3><ol><li>判断团队近期是否有和software-engineering、engineering-culture相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ol></div><div><h3>风险提醒</h3><ol><li>讨论整体上支持反对低标准，但评论者对“完美”这个说法是否合适存在分歧。有人认为，“不追求完美”通常是在务实地拒绝罕见边缘情况或过早优化；也有人担心产品思维、无谓争论以及对理想方案的情绪依附会让完美追求变得有害。</li></ol></div></div>
+          <div class="card-actions"><a class="primary-action" href="read/2026-07-21-zh-17-item-9ac41338.html">AI 精读 →</a><a class="secondary-action" href="https://var0.xyz/posts/perfection-is-not-over-engineering.html" target="_blank" rel="noopener noreferrer">原文</a><button class="item-save" data-save-id="2026-07-21-zh-17-item-9ac41338" type="button" aria-label="收藏">☆</button></div>
+        </article></div>
+      <a class="track-more-link" href="insights.html">查看全部 5 条专家洞察 →</a>
+      <div class="daily-cta"><div><span>FULL DAILY</span><strong>查看当日完整日报和原始分组</strong></div><a href="daily/2026-07-21-zh.html">进入完整日报 →</a></div>
+    </section>
 
   </main>
   <script src="assets/js/horizon.js" defer></script>

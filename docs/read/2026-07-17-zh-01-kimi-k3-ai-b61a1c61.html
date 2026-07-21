@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://www.kimi.com/blog/kimi-k3" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-17 · Horizon News AI 精读</p>
-      <h1>Kimi K3 推动开放前沿 AI。</h1>
-      <p>Kimi 发布了 Kimi K3，并称其为迄今最强的旗舰模型和开放前沿 AI 模型。此次发布强调了强劲的基准测试表现、原生视觉能力、100 万标记上下文窗口，以及正在与领先商业大语言模型比较的激进定价。 Kimi K3 对前沿 AI 的经济模式施加了压力，因为它表明高端模型能力可能变得更便宜、更容易获得。这可能影响中美 AI 实验室、模型 API 提供商、基础设施厂商，以及在封闭和开放模型生态之间做选择的开发者。 根据 Kimi 的资料，Kimi K3 拥有 2.8 万亿参数，并基于 Kimi Delta Attention 这种混合线性注意力机制以及 Attention Residuals 构建。该模型还支持原生视觉理解和 100 万标记上下文窗口，而 Artificial Analysis 的第三方分析将其质量、价格、速度和上下文窗口指标与其他模型进行比较。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-17 · Horizon News AI 精读</p>
+        <h1>Kimi K3 推动开放前沿 AI。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>9.0 分</span><span>AI、LLMs、open-models、AI-economics、China-tech</span></div>
+        <a class="source-cta" href="https://www.kimi.com/blog/kimi-k3" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>Kimi 发布了 Kimi K3，并称其为迄今最强的旗舰模型和开放前沿 AI 模型。此次发布强调了强劲的基准测试表现、原生视觉能力、100 万标记上下文窗口，以及正在与领先商业大语言模型比较的激进定价。 Kimi K3 对前沿 AI 的经济模式施加了压力，因为它表明高端模型能力可能变得更便宜、更容易获得。这可能影响中美 AI 实验室、模型 API 提供商、基础设施厂商，以及在封闭和开放模型生态之间做选择的开发者。 根据 Kimi 的资料，Kimi K3 拥有 2.8 万亿参数，并基于 Kimi Delta Attention 这种混合线性注意力机制以及 Attention Residuals 构建。该模型还支持原生视觉理解和 100 万标记上下文窗口，而 Artificial Analysis 的第三方分析将其质量、价格、速度和上下文窗口指标与其他模型进行比较。</p>
@@ -86,8 +93,9 @@
           <h2>来源信息</h2>
           <p><a href="https://www.kimi.com/blog/kimi-k3" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-17-zh.html#item-1">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

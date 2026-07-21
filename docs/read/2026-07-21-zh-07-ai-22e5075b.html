@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://stratechery.com/2026/whos-afraid-of-chinese-models/" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-21 · Horizon News AI 精读</p>
-      <h1>中国 AI 模型施压西方实验室</h1>
-      <p>一篇 Stratechery 文章和一场大型 Hacker News 讨论分析了中国 AI 模型是否正在成为西方前沿 AI 实验室的重大竞争与地缘政治挑战。讨论重点包括开放模型发布、更低价格、编程工具的用户黏性、前沿实验室估值，以及信任和政治影响方面的担忧。 如果强大的中国模型继续提升，同时保持更低价格或更开放的发布方式，它们可能削弱 OpenAI 和 Anthropic 等西方提供商的定价能力与差异化优势。这个问题也超越商业层面，因为模型采用可能带来数据暴露、审查机制以及 AI 系统中地缘政治叙事的问题。 讨论强调了两类不同风险：一类是更便宜的开放或半开放模型带来的市场风险，另一类是依赖由中国组织控制的模型或托管推理服务所带来的信任风险。评论者对 Claude Code、Codex 和 Cursor 等 AI 编程工具的用户黏性存在分歧，一些人认为技术用户的切换成本并不高。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-21 · Horizon News AI 精读</p>
+        <h1>中国 AI 模型施压西方实验室</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>7.0 分</span><span>AI models、Chinese AI、open models、AI business、geopolitics</span></div>
+        <a class="source-cta" href="https://stratechery.com/2026/whos-afraid-of-chinese-models/" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>一篇 Stratechery 文章和一场大型 Hacker News 讨论分析了中国 AI 模型是否正在成为西方前沿 AI 实验室的重大竞争与地缘政治挑战。讨论重点包括开放模型发布、更低价格、编程工具的用户黏性、前沿实验室估值，以及信任和政治影响方面的担忧。 如果强大的中国模型继续提升，同时保持更低价格或更开放的发布方式，它们可能削弱 OpenAI 和 Anthropic 等西方提供商的定价能力与差异化优势。这个问题也超越商业层面，因为模型采用可能带来数据暴露、审查机制以及 AI 系统中地缘政治叙事的问题。 讨论强调了两类不同风险：一类是更便宜的开放或半开放模型带来的市场风险，另一类是依赖由中国组织控制的模型或托管推理服务所带来的信任风险。评论者对 Claude Code、Codex 和 Cursor 等 AI 编程工具的用户黏性存在分歧，一些人认为技术用户的切换成本并不高。</p>
@@ -79,8 +86,9 @@
           <h2>来源信息</h2>
           <p><a href="https://stratechery.com/2026/whos-afraid-of-chinese-models/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-21-zh.html#item-7">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

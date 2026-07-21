@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://nothings.org/gamedev/ssao/" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-21 · Horizon News AI 精读</p>
-      <h1>SSAO 的角落变暗值得重新审视。</h1>
-      <p>一篇 2012 年的图形学文章《Corners Don&#x27;t Look Like That》重新引发讨论，文章认为屏幕空间环境光遮蔽经常把角落和缝隙渲染得不真实地发黑。这次关注并不是新版本发布，而是从实践者角度重新审视一种长期使用的实时渲染近似方法。 SSAO 之所以流行，是因为它能以较低成本增加深度感，但这篇文章指出，性能友好的效果可能逐渐变成一种偏离真实光照的审美惯例。这对游戏开发者、渲染工程师和技术美术很重要，因为他们需要在视觉可读性、真实感和帧时间预算之间取舍。 SSAO 使用屏幕空间中已经可见的信息来估算遮蔽，因此无法完整处理屏幕外几何体、真实光源位置或物理准确的间接照明。评论者还提到，RTGI、路径追踪以及 AMD FidelityFX CACAO 等较新的方法可能减少部分伪影，但原文的批评仍然适合作为视觉诊断方法。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-21 · Horizon News AI 精读</p>
+        <h1>SSAO 的角落变暗值得重新审视。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>6.0 分</span><span>computer-graphics、SSAO、rendering、game-development、technical-discussion</span></div>
+        <a class="source-cta" href="https://nothings.org/gamedev/ssao/" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>一篇 2012 年的图形学文章《Corners Don&#x27;t Look Like That》重新引发讨论，文章认为屏幕空间环境光遮蔽经常把角落和缝隙渲染得不真实地发黑。这次关注并不是新版本发布，而是从实践者角度重新审视一种长期使用的实时渲染近似方法。 SSAO 之所以流行，是因为它能以较低成本增加深度感，但这篇文章指出，性能友好的效果可能逐渐变成一种偏离真实光照的审美惯例。这对游戏开发者、渲染工程师和技术美术很重要，因为他们需要在视觉可读性、真实感和帧时间预算之间取舍。 SSAO 使用屏幕空间中已经可见的信息来估算遮蔽，因此无法完整处理屏幕外几何体、真实光源位置或物理准确的间接照明。评论者还提到，RTGI、路径追踪以及 AMD FidelityFX CACAO 等较新的方法可能减少部分伪影，但原文的批评仍然适合作为视觉诊断方法。</p>
@@ -90,8 +97,9 @@
           <h2>来源信息</h2>
           <p><a href="https://nothings.org/gamedev/ssao/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-21-zh.html#item-19">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

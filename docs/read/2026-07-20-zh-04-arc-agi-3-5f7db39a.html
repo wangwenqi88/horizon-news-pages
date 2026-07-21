@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://arxiv.org/abs/2607.15439" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-20 · Horizon News AI 精读</p>
-      <h1>剖析 ARC-AGI-3 编码智能体组件</h1>
-      <p>一篇新的 arXiv 论文 2607.15439v1 在公开 ARC-AGI-3 游戏上评估了四种嵌套式 Codex 编码智能体，用于分离可执行世界建模、计划式简化和精确重放验证的影响。该研究测试了 gpt-5.4 和 gpt-5.5 在高与极高推理强度下的表现，并进行了 gpt-5.6-sol 的探索性后续实验。 结果挑战了“加入可执行世界模型就一定更好”的假设，同时强化了更强基础模型和更高推理强度会稳定提升结果的结论。这对设计评估阶段推理系统的智能体研究者很重要，因为验证和简化可能比单独提供灵活的可执行产物更有价值。 文本基线在两个 gpt-5.5 设置中都超过了灵活接口的可执行世界模型，而计划式简化在四个模型与推理强度组合中的三个组合里带来了提升。完整验证处理在四个主要设置中都排名第一，但消耗了更多资源；gpt-5.6-sol 在公开集合上的结果被作者提醒应视为公开集饱和，因为该模型晚于这些游戏出现，且未测试隐藏集表现。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-20 · Horizon News AI 精读</p>
+        <h1>剖析 ARC-AGI-3 编码智能体组件</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>S 级信源</span><span>8.0 分</span><span>AI agents、ARC-AGI、coding agents、LLM evaluation、world models</span></div>
+        <a class="source-cta" href="https://arxiv.org/abs/2607.15439" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>一篇新的 arXiv 论文 2607.15439v1 在公开 ARC-AGI-3 游戏上评估了四种嵌套式 Codex 编码智能体，用于分离可执行世界建模、计划式简化和精确重放验证的影响。该研究测试了 gpt-5.4 和 gpt-5.5 在高与极高推理强度下的表现，并进行了 gpt-5.6-sol 的探索性后续实验。 结果挑战了“加入可执行世界模型就一定更好”的假设，同时强化了更强基础模型和更高推理强度会稳定提升结果的结论。这对设计评估阶段推理系统的智能体研究者很重要，因为验证和简化可能比单独提供灵活的可执行产物更有价值。 文本基线在两个 gpt-5.5 设置中都超过了灵活接口的可执行世界模型，而计划式简化在四个模型与推理强度组合中的三个组合里带来了提升。完整验证处理在四个主要设置中都排名第一，但消耗了更多资源；gpt-5.6-sol 在公开集合上的结果被作者提醒应视为公开集饱和，因为该模型晚于这些游戏出现，且未测试隐藏集表现。</p>
@@ -85,8 +92,9 @@
           <h2>来源信息</h2>
           <p><a href="https://arxiv.org/abs/2607.15439" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-20-zh.html#item-4">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

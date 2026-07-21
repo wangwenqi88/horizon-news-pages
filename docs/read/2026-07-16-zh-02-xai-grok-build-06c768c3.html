@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://github.com/xai-org/grok-build" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-16 · Horizon News AI 精读</p>
-      <h1>xAI 开源 Grok Build。</h1>
-      <p>xAI 已经开源 Grok Build，这是其面向终端的 AI 编程代理和命令行界面，源代码已于 7 月 15 日在 GitHub 上提供。此次发布让开发者可以检查、修改和分叉 Grok Build 的编程代理框架与终端界面实现。 这件事重要，因为 Grok Build 来自一家主要 AI 公司，开源可能会加速围绕 AI 编程代理、终端工作流和第三方集成的实验。它也把隐私、遥测和信任问题变成社区可以直接审查的内容，而不只是从产品行为中推测。 根据 xAI 的产品页面，Grok Build 由 Grok 4.5 驱动，并包含原生子代理视图、Plan Mode 集成、鼠标支持和全屏终端界面。社区审阅者还注意到一些少见的实现组件，包括一个使用 Unicode 制表符在终端中渲染部分 Mermaid 图表的自包含渲染器。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-16 · Horizon News AI 精读</p>
+        <h1>xAI 开源 Grok Build。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>S 级信源</span><span>8.0 分</span><span>open-source、AI-tools、developer-tools、privacy、xAI</span></div>
+        <a class="source-cta" href="https://github.com/xai-org/grok-build" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>xAI 已经开源 Grok Build，这是其面向终端的 AI 编程代理和命令行界面，源代码已于 7 月 15 日在 GitHub 上提供。此次发布让开发者可以检查、修改和分叉 Grok Build 的编程代理框架与终端界面实现。 这件事重要，因为 Grok Build 来自一家主要 AI 公司，开源可能会加速围绕 AI 编程代理、终端工作流和第三方集成的实验。它也把隐私、遥测和信任问题变成社区可以直接审查的内容，而不只是从产品行为中推测。 根据 xAI 的产品页面，Grok Build 由 Grok 4.5 驱动，并包含原生子代理视图、Plan Mode 集成、鼠标支持和全屏终端界面。社区审阅者还注意到一些少见的实现组件，包括一个使用 Unicode 制表符在终端中渲染部分 Mermaid 图表的自包含渲染器。</p>
@@ -86,8 +93,9 @@
           <h2>来源信息</h2>
           <p><a href="https://github.com/xai-org/grok-build" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-16-zh.html#item-2">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://xenaproject.wordpress.com/2026/07/20/human-mathematicians-are-being-outcounterexampled/" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-21 · Horizon News AI 精读</p>
-      <h1>AI 加速数学反例发现。</h1>
-      <p>2026 年 7 月 20 日，Xena Project 的一篇文章认为，AI 系统越来越能够比人类数学家更快地为数学猜想找到反例。围绕该文的 Hacker News 讨论集中在快速证伪是否会提高研究效率，以及它是否会改变数学家选择问题的方式。 反例可以阻止研究者把数月或数年时间花在试图证明错误猜想上，因此更强的自动证伪能力可能实质性改变数学研究流程。这一变化也符合 AI 数学应用的更大趋势，即系统正从寻找证明扩展到检验猜想、形式化验证和研究优先级筛选。 这场讨论区分了两件事：提出一个看似可信的反例，以及给出一个可以被检查的反例，最好是在 Lean 这样的形式化系统中检查。一个重要限制是，快速证伪并不等同于深刻的数学理解，而且它也可能让人更容易生成大量低价值猜想，从而需要额外筛选。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-21 · Horizon News AI 精读</p>
+        <h1>AI 加速数学反例发现。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>8.0 分</span><span>AI-for-mathematics、formal-methods、counterexamples、research-workflows、mathematical-reasoning</span></div>
+        <a class="source-cta" href="https://xenaproject.wordpress.com/2026/07/20/human-mathematicians-are-being-outcounterexampled/" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>2026 年 7 月 20 日，Xena Project 的一篇文章认为，AI 系统越来越能够比人类数学家更快地为数学猜想找到反例。围绕该文的 Hacker News 讨论集中在快速证伪是否会提高研究效率，以及它是否会改变数学家选择问题的方式。 反例可以阻止研究者把数月或数年时间花在试图证明错误猜想上，因此更强的自动证伪能力可能实质性改变数学研究流程。这一变化也符合 AI 数学应用的更大趋势，即系统正从寻找证明扩展到检验猜想、形式化验证和研究优先级筛选。 这场讨论区分了两件事：提出一个看似可信的反例，以及给出一个可以被检查的反例，最好是在 Lean 这样的形式化系统中检查。一个重要限制是，快速证伪并不等同于深刻的数学理解，而且它也可能让人更容易生成大量低价值猜想，从而需要额外筛选。</p>
@@ -90,8 +97,9 @@
           <h2>来源信息</h2>
           <p><a href="https://xenaproject.wordpress.com/2026/07/20/human-mathematicians-are-being-outcounterexampled/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-21-zh.html#item-16">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

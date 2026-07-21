@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://arxiv.org/abs/2607.16198" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-21 · Horizon News AI 精读</p>
-      <h1>新综述梳理基于 GNN 的链接预测。</h1>
-      <p>一篇新的 arXiv 论文《基于 GNN 的链接预测综述：技术、应用与挑战》以 arXiv:2607.16198v1 发布。该论文提出了一套分类体系，按照 GCN、GAE、GAT 和 GFormer 等编码器架构，以及知识图谱和推荐系统等应用场景来组织基于 GNN 的链接预测方法。 这篇综述的重要性在于，链接预测是图机器学习中的核心任务，用于推断结构化数据中缺失的关系或未来可能出现的关系。它围绕 GNN 编码器家族和应用领域来组织研究进展，有助于研究人员和实践者更系统地为图机器学习、知识图谱补全和推荐系统选择方法。 该论文强调以 GNN 为中心的视角，对比了基于 GCN、GAE、GAT 以及图转换器风格的 GFormer 方法的优势与局限。它是一篇参考型和分类体系型论文，而不是提出新模型或新基准结果的论文，因此其主要价值在于综合梳理、方法比较和识别开放挑战。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-21 · Horizon News AI 精读</p>
+        <h1>新综述梳理基于 GNN 的链接预测。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>S 级信源</span><span>7.0 分</span><span>GNN、link-prediction、graph-ML、knowledge-graphs、recommendation-systems</span></div>
+        <a class="source-cta" href="https://arxiv.org/abs/2607.16198" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>一篇新的 arXiv 论文《基于 GNN 的链接预测综述：技术、应用与挑战》以 arXiv:2607.16198v1 发布。该论文提出了一套分类体系，按照 GCN、GAE、GAT 和 GFormer 等编码器架构，以及知识图谱和推荐系统等应用场景来组织基于 GNN 的链接预测方法。 这篇综述的重要性在于，链接预测是图机器学习中的核心任务，用于推断结构化数据中缺失的关系或未来可能出现的关系。它围绕 GNN 编码器家族和应用领域来组织研究进展，有助于研究人员和实践者更系统地为图机器学习、知识图谱补全和推荐系统选择方法。 该论文强调以 GNN 为中心的视角，对比了基于 GCN、GAE、GAT 以及图转换器风格的 GFormer 方法的优势与局限。它是一篇参考型和分类体系型论文，而不是提出新模型或新基准结果的论文，因此其主要价值在于综合梳理、方法比较和识别开放挑战。</p>
@@ -85,8 +92,9 @@
           <h2>来源信息</h2>
           <p><a href="https://arxiv.org/abs/2607.16198" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-21-zh.html#item-13">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>

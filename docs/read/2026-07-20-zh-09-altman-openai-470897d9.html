@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="../assets/css/horizon.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1 class="project-name">AI 资讯精读</h1>
-    <h2 class="project-tagline">Daily AI reading, committed as static HTML.</h2>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-21-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
   </header>
-  <main class="main-content">
-    <nav class="static-nav">
-      <a href="../index.html">返回首页</a>
-      <a href="https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything" target="_blank" rel="noopener noreferrer">原文</a>
-    </nav>
-    <section class="read-hero">
-      <p class="eyebrow">2026-07-20 · Horizon News AI 精读</p>
-      <h1>Altman 邮件揭示 OpenAI 开放模型策略。</h1>
-      <p>Simon Willison 引用了 Sam Altman 于 2022 年 10 月 1 日发给 OpenAI 董事会的一封新曝光邮件，该邮件在 2026 年的 Musk v. Altman 案件中公开。邮件中，Altman 描述了发布一个能力接近 GPT-3、可在消费级硬件本地运行的语言模型的计划，部分动机是在 Stability 或其他竞争者之前行动。 这封邮件的重要性在于，它把开放模型发布不仅描述为技术或公共利益决策，也描述为塑造市场的竞争策略。它为围绕开源 AI、开放权重、安全以及大型 AI 实验室是否借开放来扶持或阻止竞争者的争论增加了背景。 Altman 在引文中的理由是，这样的发布可能会阻止其他人发布类似强大的模型，并让新的相关项目更难获得融资。该引文并未显示 OpenAI 是否构建或发布了这个特定的 GPT-3 级本地模型，也未说明许可条款、训练数据，或该计划指的是开源还是仅开放权重。</p>
-    </section>
-    <div class="read-layout">
-      <aside class="read-nav" aria-label="本页内容">
-        <p class="eyebrow">本页内容</p>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-20 · Horizon News AI 精读</p>
+        <h1>Altman 邮件揭示 OpenAI 开放模型策略。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>A 级信源</span><span>7.0 分</span><span>openai、ai-ethics、open-source-ai、sam-altman、ai-industry</span></div>
+        <a class="source-cta" href="https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
         <a href="#guide">内容导读</a>
         <a href="#facts">核心事实</a>
         <a href="#translation">完整 AI 转译</a>
@@ -34,8 +41,8 @@
         <a href="#actions">可执行建议</a>
         <a href="#risks">风险与限制</a>
         <a href="#source">来源信息</a>
-      </aside>
-      <article class="read-article">
+        </aside>
+        <div class="read-body">
         <section id="guide" class="read-section">
           <h2>内容导读</h2>
           <p>Simon Willison 引用了 Sam Altman 于 2022 年 10 月 1 日发给 OpenAI 董事会的一封新曝光邮件，该邮件在 2026 年的 Musk v. Altman 案件中公开。邮件中，Altman 描述了发布一个能力接近 GPT-3、可在消费级硬件本地运行的语言模型的计划，部分动机是在 Stability 或其他竞争者之前行动。 这封邮件的重要性在于，它把开放模型发布不仅描述为技术或公共利益决策，也描述为塑造市场的竞争策略。它为围绕开源 AI、开放权重、安全以及大型 AI 实验室是否借开放来扶持或阻止竞争者的争论增加了背景。 Altman 在引文中的理由是，这样的发布可能会阻止其他人发布类似强大的模型，并让新的相关项目更难获得融资。该引文并未显示 OpenAI 是否构建或发布了这个特定的 GPT-3 级本地模型，也未说明许可条款、训练数据，或该计划指的是开源还是仅开放权重。</p>
@@ -85,8 +92,9 @@
           <h2>来源信息</h2>
           <p><a href="https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-20-zh.html#item-9">返回当日日报定位</a></p>
         </section>
-      </article>
-    </div>
+        </div>
+      </div>
+    </article>
 
   </main>
   <script src="../assets/js/horizon.js" defer></script>
