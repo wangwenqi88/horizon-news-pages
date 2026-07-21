@@ -22,7 +22,7 @@
   "risks": [
     "讨论整体偏怀疑但很务实。多位评论者认为，惯用的 shell 循环、find -print0 | xargs -0，或 GNU parallel 已经能解决这个问题；也有人认为想法不错，但批评其语法以及对 -- 的用法不符合习惯。反复出现的主题是，安全的批处理更多取决于正确的分隔符、引用方式和试运行可见性，而不只是再发明一个封装工具。"
   ],
-  "audio_url": "",
+  "audio_url": "/audio/daily/2026-07-21-zh.mp3",
   "html_url": "/daily/2026-07-21-zh.html#item-20",
   "read_url": "/read/2026-07-21-zh-20-bash-xargs-2dee1d80.html",
   "tags": [

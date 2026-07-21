@@ -22,7 +22,7 @@
   "risks": [
     "Hacker News 的讨论整体上既感兴趣又保持怀疑：一些读者认为这个实验像是未来编码工作流的早期预览，另一些读者则关注缺少可复现细节。多条评论质疑用 Rust 重建 SQLite 是否能证明真实能力，因为 SQLite 源代码或 Turso 相关的 Rust 重写项目可能已经出现在模型训练数据中。"
   ],
-  "audio_url": "",
+  "audio_url": "/audio/daily/2026-07-21-zh.mp3",
   "html_url": "/daily/2026-07-21-zh.html#item-9",
   "read_url": "/read/2026-07-21-zh-09-cursor-d6830c21.html",
   "tags": [

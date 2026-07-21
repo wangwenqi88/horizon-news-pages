@@ -23,6 +23,7 @@ PUBLIC_ARTIFACTS = [
     "docs/daily",
     "docs/read",
     "docs/data",
+    "docs/audio",
     "docs/_posts",
 ]
 

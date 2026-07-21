@@ -10,8 +10,12 @@ from __future__ import annotations
 import html
 import hashlib
 import json
+import os
 import re
+import subprocess
+import tempfile
 from dataclasses import dataclass
+from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -26,6 +30,7 @@ DAILY_DIR = DOCS_DIR / "daily"
 DATA_DIR = DOCS_DIR / "data"
 DETAIL_DIR = DATA_DIR / "news-detail"
 READ_DIR = DOCS_DIR / "read"
+AUDIO_DIR = DOCS_DIR / "audio" / "daily"
 ALLOWED_HTML_TAGS = {
     "a",
     "blockquote",
@@ -826,6 +831,14 @@ def clean_old_data_files() -> None:
         path.unlink()
 
 
+def clean_old_audio_files() -> None:
+    AUDIO_DIR.mkdir(parents=True, exist_ok=True)
+    keep_count = int(os.getenv("HORIZON_TTS_KEEP_DAYS", "14"))
+    audio_files = sorted(AUDIO_DIR.glob("*.mp3"), key=lambda path: path.name, reverse=True)
+    for path in audio_files[keep_count:]:
+        path.unlink()
+
+
 def write_json(path: Path, data: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
@@ -835,9 +848,149 @@ def write_json(path: Path, data: object) -> None:
     )
 
 
+def build_daily_audio_text(date: str, items: list[NewsItem], *, limit: int = 5) -> str:
+    selected = [item for item in items if item.date == date and item.lang == "zh"][:limit]
+
+    def brief(value: str, max_len: int = 110) -> str:
+        value = re.sub(r"\s+", " ", value).strip()
+        if len(value) <= max_len:
+            return value
+        return value[:max_len].rstrip("，。；、 ") + "。"
+
+    lines = [
+        f"这里是 {date} 的 AI 行动简报。",
+        "今天重点关注以下五个变化。",
+    ]
+    for index, item in enumerate(selected, start=1):
+        lines.append(f"第 {index} 条，{item.title}。")
+        if item.summary:
+            lines.append(brief(item.summary))
+        if item.actions:
+            lines.append(f"建议动作：{item.actions[0]}")
+    lines.append("以上就是今天的 AI 行动简报。")
+    return "\n".join(lines)
+
+
+def run_openai_tts(text: str, output_path: Path) -> bool:
+    api_key = os.getenv("HORIZON_TTS_API_KEY") or os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        return False
+
+    from openai import OpenAI
+
+    client = OpenAI(
+        api_key=api_key,
+        base_url=os.getenv("HORIZON_TTS_BASE_URL") or None,
+    )
+    response = client.audio.speech.create(
+        model=os.getenv("HORIZON_TTS_MODEL", "gpt-4o-mini-tts"),
+        voice=os.getenv("HORIZON_TTS_VOICE", "alloy"),
+        input=text,
+        response_format="mp3",
+    )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_bytes(response.read())
+    return output_path.exists() and output_path.stat().st_size > 0
+
+
+def run_windows_sapi_tts(text: str, output_path: Path) -> bool:
+    if os.name != "nt":
+        return False
+
+    ffmpeg = os.getenv("HORIZON_FFMPEG_PATH", "ffmpeg")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory() as temp_dir:
+        text_path = Path(temp_dir) / "brief.txt"
+        wav_path = Path(temp_dir) / "brief.wav"
+        script_path = Path(temp_dir) / "speak.ps1"
+        text_path.write_text(text, encoding="utf-8")
+        script_path.write_text(
+            "\n".join(
+                [
+                    "param([string]$TextPath, [string]$WavPath)",
+                    "Add-Type -AssemblyName System.Speech",
+                    "$text = Get-Content -LiteralPath $TextPath -Raw -Encoding UTF8",
+                    "$synth = New-Object System.Speech.Synthesis.SpeechSynthesizer",
+                    "$voice = $synth.GetInstalledVoices() | Where-Object { $_.VoiceInfo.Culture.Name -eq 'zh-CN' } | Select-Object -First 1",
+                    "if ($voice) { $synth.SelectVoice($voice.VoiceInfo.Name) }",
+                    "$synth.Rate = 0",
+                    "$synth.Volume = 100",
+                    "$synth.SetOutputToWaveFile($WavPath)",
+                    "$synth.Speak($text)",
+                    "$synth.Dispose()",
+                ]
+            ),
+            encoding="utf-8",
+        )
+        subprocess.run(
+            [
+                "powershell",
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                str(script_path),
+                str(text_path),
+                str(wav_path),
+            ],
+            cwd=ROOT,
+            check=True,
+        )
+        subprocess.run(
+            [
+                ffmpeg,
+                "-y",
+                "-i",
+                str(wav_path),
+                "-codec:a",
+                "libmp3lame",
+                "-b:a",
+                "96k",
+                str(output_path),
+            ],
+            cwd=ROOT,
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+    return output_path.exists() and output_path.stat().st_size > 0
+
+
+def generate_daily_audio(items: list[NewsItem]) -> dict[tuple[str, str], str]:
+    if os.getenv("HORIZON_TTS_ENABLED", "1") == "0":
+        return {}
+
+    clean_old_audio_files()
+    audio_urls: dict[tuple[str, str], str] = {}
+    dates = sorted({item.date for item in items if item.lang == "zh"}, reverse=True)
+    for date in dates[:1]:
+        output_path = AUDIO_DIR / f"{date}-zh.mp3"
+        if not output_path.exists() or os.getenv("HORIZON_TTS_FORCE", "0") == "1":
+            text = build_daily_audio_text(date, items)
+            try:
+                provider = os.getenv("HORIZON_TTS_PROVIDER", "auto").lower()
+                generated = False
+                if provider in {"auto", "openai"}:
+                    generated = run_openai_tts(text, output_path)
+                if not generated and provider in {"auto", "windows_sapi"}:
+                    generated = run_windows_sapi_tts(text, output_path)
+            except Exception as error:
+                print(f"Skipped TTS for {date}: {error}")
+                generated = False
+            if not generated:
+                continue
+        audio_urls[(date, "zh")] = f"/audio/daily/{output_path.name}"
+    return audio_urls
+
+
 def build_data_files(posts: list[Post]) -> None:
     clean_old_data_files()
     items = extract_news_items(posts)
+    daily_audio_urls = generate_daily_audio(items)
+    items = [
+        replace(item, audio_url=daily_audio_urls.get((item.date, item.lang), item.audio_url))
+        for item in items
+    ]
     now = datetime.now(timezone.utc).isoformat()
     index_payload = {
         "updated_at": now,

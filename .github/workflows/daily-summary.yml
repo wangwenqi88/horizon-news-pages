@@ -38,6 +38,10 @@ jobs:
         run: uv run horizon --hours 24
 
       - name: Build static HTML for Cloudflare Pages
+        env:
+          HORIZON_TTS_API_KEY: ${{ secrets.HORIZON_TTS_API_KEY }}
+          HORIZON_TTS_MODEL: ${{ vars.HORIZON_TTS_MODEL || 'gpt-4o-mini-tts' }}
+          HORIZON_TTS_VOICE: ${{ vars.HORIZON_TTS_VOICE || 'alloy' }}
         run: uv run python scripts/build_static_pages.py
 
       - name: Set current date as environment variable
@@ -47,7 +51,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html docs/firsthand.html docs/insights.html docs/daily docs/read docs/data docs/_posts
+          git add docs/index.html docs/firsthand.html docs/insights.html docs/daily docs/read docs/data docs/audio docs/_posts
           if git diff --cached --quiet; then
             echo "No generated HTML changes."
           else

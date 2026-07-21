@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T06:51:18.921097+00:00",
+  "updated_at": "2026-07-21T08:02:10.218980+00:00",
   "source": "horizon-news",
   "items": [
     {
@@ -17,7 +17,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-01-planflip-ed715f97.json",
       "html_url": "/daily/2026-07-21-zh.html#item-1",
       "read_url": "/read/2026-07-21-zh-01-planflip-ed715f97.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "LLM security",
         "multi-agent systems",
@@ -41,7 +41,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-02-anthropic-98606817.json",
       "html_url": "/daily/2026-07-21-zh.html#item-2",
       "read_url": "/read/2026-07-21-zh-02-anthropic-98606817.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "AI copyright",
         "Anthropic",
@@ -65,7 +65,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-03-ai-46b29e32.json",
       "html_url": "/daily/2026-07-21-zh.html#item-3",
       "read_url": "/read/2026-07-21-zh-03-ai-46b29e32.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "AI agents",
         "deterministic replay",
@@ -89,7 +89,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-04-openai-7bf54336.json",
       "html_url": "/daily/2026-07-21-zh.html#item-4",
       "read_url": "/read/2026-07-21-zh-04-openai-7bf54336.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "AI safety",
         "alignment",
@@ -113,7 +113,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-05-item-2e5fe19b.json",
       "html_url": "/daily/2026-07-21-zh.html#item-5",
       "read_url": "/read/2026-07-21-zh-05-item-2e5fe19b.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "cybersecurity",
         "incident-response",
@@ -137,7 +137,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-06-claude-code-v2-1-216-58daaa9d.json",
       "html_url": "/daily/2026-07-21-zh.html#item-6",
       "read_url": "/read/2026-07-21-zh-06-claude-code-v2-1-216-58daaa9d.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "claude-code",
         "anthropic",
@@ -161,7 +161,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-07-ai-22e5075b.json",
       "html_url": "/daily/2026-07-21-zh.html#item-7",
       "read_url": "/read/2026-07-21-zh-07-ai-22e5075b.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "AI models",
         "Chinese AI",
@@ -185,7 +185,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-08-kimi-work-e21b3c69.json",
       "html_url": "/daily/2026-07-21-zh.html#item-8",
       "read_url": "/read/2026-07-21-zh-08-kimi-work-e21b3c69.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "AI agents",
         "local agent",
@@ -209,7 +209,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-09-cursor-d6830c21.json",
       "html_url": "/daily/2026-07-21-zh.html#item-9",
       "read_url": "/read/2026-07-21-zh-09-cursor-d6830c21.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "ai-agents",
         "coding-agents",
@@ -233,7 +233,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-10-ai-1fb2379e.json",
       "html_url": "/daily/2026-07-21-zh.html#item-10",
       "read_url": "/read/2026-07-21-zh-10-ai-1fb2379e.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "open-weight-models",
         "AI-strategy",
@@ -257,7 +257,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-11-arxiv-ai-8a4e050c.json",
       "html_url": "/daily/2026-07-21-zh.html#item-11",
       "read_url": "/read/2026-07-21-zh-11-arxiv-ai-8a4e050c.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "AI-detection",
         "arXiv",
@@ -281,7 +281,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-12-llm-bca6084e.json",
       "html_url": "/daily/2026-07-21-zh.html#item-12",
       "read_url": "/read/2026-07-21-zh-12-llm-bca6084e.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "LLM evaluation",
         "AI safety",
@@ -305,7 +305,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-13-gnn-cf8684df.json",
       "html_url": "/daily/2026-07-21-zh.html#item-13",
       "read_url": "/read/2026-07-21-zh-13-gnn-cf8684df.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "GNN",
         "link-prediction",
@@ -329,7 +329,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-14-goi-37e6db18.json",
       "html_url": "/daily/2026-07-21-zh.html#item-14",
       "read_url": "/read/2026-07-21-zh-14-goi-37e6db18.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "ontology-induction",
         "large-language-models",
@@ -353,7 +353,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-15-item-8342ba0b.json",
       "html_url": "/daily/2026-07-21-zh.html#item-15",
       "read_url": "/read/2026-07-21-zh-15-item-8342ba0b.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "small-language-models",
         "local-ai",
@@ -377,7 +377,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-16-ai-56a3a861.json",
       "html_url": "/daily/2026-07-21-zh.html#item-16",
       "read_url": "/read/2026-07-21-zh-16-ai-56a3a861.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "AI-for-mathematics",
         "formal-methods",
@@ -401,7 +401,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-17-item-9ac41338.json",
       "html_url": "/daily/2026-07-21-zh.html#item-17",
       "read_url": "/read/2026-07-21-zh-17-item-9ac41338.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "software-engineering",
         "engineering-culture",
@@ -425,7 +425,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-18-item-269d5d0b.json",
       "html_url": "/daily/2026-07-21-zh.html#item-18",
       "read_url": "/read/2026-07-21-zh-18-item-269d5d0b.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "coding-agents",
         "automation",
@@ -449,7 +449,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-19-ssao-73b0b384.json",
       "html_url": "/daily/2026-07-21-zh.html#item-19",
       "read_url": "/read/2026-07-21-zh-19-ssao-73b0b384.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "computer-graphics",
         "SSAO",
@@ -473,7 +473,7 @@
       "detail_url": "/data/news-detail/2026-07-21-zh-20-bash-xargs-2dee1d80.json",
       "html_url": "/daily/2026-07-21-zh.html#item-20",
       "read_url": "/read/2026-07-21-zh-20-bash-xargs-2dee1d80.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-21-zh.mp3",
       "tags": [
         "shell",
         "bash",
