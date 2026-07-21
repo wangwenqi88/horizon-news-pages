@@ -833,7 +833,7 @@ def clean_old_data_files() -> None:
 
 def clean_old_audio_files() -> None:
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
-    keep_count = int(os.getenv("HORIZON_TTS_KEEP_DAYS", "14"))
+    keep_count = int(os.getenv("HORIZON_TTS_KEEP_DAYS", "7"))
     audio_files = sorted(AUDIO_DIR.glob("*.mp3"), key=lambda path: path.name, reverse=True)
     for path in audio_files[keep_count:]:
         path.unlink()
@@ -963,7 +963,7 @@ def generate_daily_audio(items: list[NewsItem]) -> dict[tuple[str, str], str]:
     clean_old_audio_files()
     audio_urls: dict[tuple[str, str], str] = {}
     dates = sorted({item.date for item in items if item.lang == "zh"}, reverse=True)
-    for date in dates[:1]:
+    for date in dates[:7]:
         output_path = AUDIO_DIR / f"{date}-zh.mp3"
         if not output_path.exists() or os.getenv("HORIZON_TTS_FORCE", "0") == "1":
             text = build_daily_audio_text(date, items)

@@ -22,7 +22,7 @@
   "risks": [
     "Hacker News 讨论整体偏正面但很务实：评论者赞赏开放权重发布、音频支持以及本地推理的可能性，同时也在追问其音频能力到底有多强。一些评论者把 Inkling 视为美国对 DeepSeek 或 Z.ai 等中国开放模型的潜在回应，另一些人则认为基于 Tinker 的微调是有吸引力的企业商业模式。讨论中还提到，现代模型开发已经变得非常复杂，包含大量独立的优化和评测步骤，而不再只是简单修改架构或损失函数。"
   ],
-  "audio_url": "",
+  "audio_url": "/audio/daily/2026-07-16-zh.mp3",
   "html_url": "/daily/2026-07-16-zh.html#item-1",
   "read_url": "/read/2026-07-16-zh-01-thinking-machines-inkling-b72e7f4b.html",
   "tags": [

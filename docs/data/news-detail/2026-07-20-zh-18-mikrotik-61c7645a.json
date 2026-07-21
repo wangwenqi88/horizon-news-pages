@@ -22,7 +22,7 @@
   "risks": [
     "整体讨论的态度是认可但谨慎：有经验的用户赞赏 MikroTik 的能力和性价比，但许多人也同意它的用户体验默认用户具备扎实的网络知识。评论者把它与 TP-Link Omada、Ubiquiti、OpenWRT、OPNsense 和 VyOS 进行比较，其中一些人更偏好适合“懂技术但不是网络工程师”的简化界面。一个值得注意的主题是，LLM 正在成为处理复杂 RouterOS 配置的实用辅助工具，例如站点到站点 VPN。"
   ],
-  "audio_url": "",
+  "audio_url": "/audio/daily/2026-07-20-zh.mp3",
   "html_url": "/daily/2026-07-20-zh.html#item-18",
   "read_url": "/read/2026-07-20-zh-18-mikrotik-61c7645a.html",
   "tags": [

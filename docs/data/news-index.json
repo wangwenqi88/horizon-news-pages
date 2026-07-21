@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T08:02:10.218980+00:00",
+  "updated_at": "2026-07-21T08:31:25.396078+00:00",
   "source": "horizon-news",
   "items": [
     {
@@ -977,7 +977,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-01-xiaomi-robotics-4a1fcce2.json",
       "html_url": "/daily/2026-07-20-zh.html#item-1",
       "read_url": "/read/2026-07-20-zh-01-xiaomi-robotics-4a1fcce2.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "robotics",
         "humanoid-robots",
@@ -1001,7 +1001,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-02-cura-1t-ai-afdc81dd.json",
       "html_url": "/daily/2026-07-20-zh.html#item-2",
       "read_url": "/read/2026-07-20-zh-02-cura-1t-ai-afdc81dd.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "healthcare-ai",
         "agentic-llms",
@@ -1025,7 +1025,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-03-item-e2e48808.json",
       "html_url": "/daily/2026-07-20-zh.html#item-3",
       "read_url": "/read/2026-07-20-zh-03-item-e2e48808.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "multi-agent-systems",
         "AI-reasoning",
@@ -1049,7 +1049,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-04-arc-agi-3-5f7db39a.json",
       "html_url": "/daily/2026-07-20-zh.html#item-4",
       "read_url": "/read/2026-07-20-zh-04-arc-agi-3-5f7db39a.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "AI agents",
         "ARC-AGI",
@@ -1073,7 +1073,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-05-gpt-wordpress-rce-8fd4e29d.json",
       "html_url": "/daily/2026-07-20-zh.html#item-5",
       "read_url": "/read/2026-07-20-zh-05-gpt-wordpress-rce-8fd4e29d.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "security",
         "wordpress",
@@ -1097,7 +1097,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-06-causal-audit-58ccd6a6.json",
       "html_url": "/daily/2026-07-20-zh.html#item-6",
       "read_url": "/read/2026-07-20-zh-06-causal-audit-58ccd6a6.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "causal-reasoning",
         "LLM-reasoning",
@@ -1121,7 +1121,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-07-anovax-e9e83c44.json",
       "html_url": "/daily/2026-07-20-zh.html#item-7",
       "read_url": "/read/2026-07-20-zh-07-anovax-e9e83c44.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "AI agents",
         "voice assistants",
@@ -1145,7 +1145,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-08-mar-12-50cec3cc.json",
       "html_url": "/daily/2026-07-20-zh.html#item-8",
       "read_url": "/read/2026-07-20-zh-08-mar-12-50cec3cc.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "multimodal-ai",
         "ai-safety",
@@ -1169,7 +1169,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-09-altman-openai-470897d9.json",
       "html_url": "/daily/2026-07-20-zh.html#item-9",
       "read_url": "/read/2026-07-20-zh-09-altman-openai-470897d9.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "openai",
         "ai-ethics",
@@ -1193,7 +1193,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-10-graphdx-c04933f5.json",
       "html_url": "/daily/2026-07-20-zh.html#item-10",
       "read_url": "/read/2026-07-20-zh-10-graphdx-c04933f5.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "AI Agents",
         "Medical AI",
@@ -1217,7 +1217,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-11-drawingvqa-f71f5e3f.json",
       "html_url": "/daily/2026-07-20-zh.html#item-11",
       "read_url": "/read/2026-07-20-zh-11-drawingvqa-f71f5e3f.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "multimodal-ai",
         "vqa-benchmark",
@@ -1241,7 +1241,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-12-item-7506453a.json",
       "html_url": "/daily/2026-07-20-zh.html#item-12",
       "read_url": "/read/2026-07-20-zh-12-item-7506453a.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "cybersecurity",
         "critical-infrastructure",
@@ -1265,7 +1265,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-13-item-2b4a780a.json",
       "html_url": "/daily/2026-07-20-zh.html#item-13",
       "read_url": "/read/2026-07-20-zh-13-item-2b4a780a.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "privacy",
         "biometrics",
@@ -1289,7 +1289,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-14-moonshine-moonlight-69d9eb6e.json",
       "html_url": "/daily/2026-07-20-zh.html#item-14",
       "read_url": "/read/2026-07-20-zh-14-moonshine-moonlight-69d9eb6e.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "open-source",
         "game-streaming",
@@ -1313,7 +1313,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-15-lora-speedrun-2a66a17d.json",
       "html_url": "/daily/2026-07-20-zh.html#item-15",
       "read_url": "/read/2026-07-20-zh-15-lora-speedrun-2a66a17d.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "LoRA",
         "fine-tuning",
@@ -1337,7 +1337,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-16-sre-esp32-fff44abf.json",
       "html_url": "/daily/2026-07-20-zh.html#item-16",
       "read_url": "/read/2026-07-20-zh-16-sre-esp32-fff44abf.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "embedded-systems",
         "ESP32",
@@ -1361,7 +1361,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-17-opencode-26d696c5.json",
       "html_url": "/daily/2026-07-20-zh.html#item-17",
       "read_url": "/read/2026-07-20-zh-17-opencode-26d696c5.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "agentic-coding",
         "OpenCode",
@@ -1385,7 +1385,7 @@
       "detail_url": "/data/news-detail/2026-07-20-zh-18-mikrotik-61c7645a.json",
       "html_url": "/daily/2026-07-20-zh.html#item-18",
       "read_url": "/read/2026-07-20-zh-18-mikrotik-61c7645a.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-20-zh.mp3",
       "tags": [
         "homelab",
         "networking",
@@ -1841,7 +1841,7 @@
       "detail_url": "/data/news-detail/2026-07-18-zh-01-gpt-5-6-0d6a2ce6.json",
       "html_url": "/daily/2026-07-18-zh.html#item-1",
       "read_url": "/read/2026-07-18-zh-01-gpt-5-6-0d6a2ce6.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-18-zh.mp3",
       "tags": [
         "AI for math",
         "convex optimization",
@@ -1865,7 +1865,7 @@
       "detail_url": "/data/news-detail/2026-07-18-zh-02-claude-code-v2-1-214-ebe3f5a1.json",
       "html_url": "/daily/2026-07-18-zh.html#item-2",
       "read_url": "/read/2026-07-18-zh-02-claude-code-v2-1-214-ebe3f5a1.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-18-zh.mp3",
       "tags": [
         "AI tooling",
         "security",
@@ -1889,7 +1889,7 @@
       "detail_url": "/data/news-detail/2026-07-18-zh-03-lg-windows-ead970bf.json",
       "html_url": "/daily/2026-07-18-zh.html#item-3",
       "read_url": "/read/2026-07-18-zh-03-lg-windows-ead970bf.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-18-zh.mp3",
       "tags": [
         "windows",
         "security",
@@ -1985,7 +1985,7 @@
       "detail_url": "/data/news-detail/2026-07-17-zh-01-kimi-k3-ai-b61a1c61.json",
       "html_url": "/daily/2026-07-17-zh.html#item-1",
       "read_url": "/read/2026-07-17-zh-01-kimi-k3-ai-b61a1c61.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-17-zh.mp3",
       "tags": [
         "AI",
         "LLMs",
@@ -2009,7 +2009,7 @@
       "detail_url": "/data/news-detail/2026-07-17-zh-02-google-ai-mode-24605e62.json",
       "html_url": "/daily/2026-07-17-zh.html#item-2",
       "read_url": "/read/2026-07-17-zh-02-google-ai-mode-24605e62.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-17-zh.mp3",
       "tags": [
         "AI assistants",
         "Google",
@@ -2033,7 +2033,7 @@
       "detail_url": "/data/news-detail/2026-07-17-zh-03-originblame-ai-e3cadc5f.json",
       "html_url": "/daily/2026-07-17-zh.html#item-3",
       "read_url": "/read/2026-07-17-zh-03-originblame-ai-e3cadc5f.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-17-zh.mp3",
       "tags": [
         "AI governance",
         "data provenance",
@@ -2057,7 +2057,7 @@
       "detail_url": "/data/news-detail/2026-07-17-zh-04-spine-eebcc9e9.json",
       "html_url": "/daily/2026-07-17-zh.html#item-4",
       "read_url": "/read/2026-07-17-zh-04-spine-eebcc9e9.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-17-zh.mp3",
       "tags": [
         "robotics",
         "embodied-ai",
@@ -2081,7 +2081,7 @@
       "detail_url": "/data/news-detail/2026-07-17-zh-05-item-dae08682.json",
       "html_url": "/daily/2026-07-17-zh.html#item-5",
       "read_url": "/read/2026-07-17-zh-05-item-dae08682.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-17-zh.mp3",
       "tags": [
         "LLM evaluation",
         "chain-of-thought",
@@ -2105,7 +2105,7 @@
       "detail_url": "/data/news-detail/2026-07-17-zh-06-ai-9bcdccdb.json",
       "html_url": "/daily/2026-07-17-zh.html#item-6",
       "read_url": "/read/2026-07-17-zh-06-ai-9bcdccdb.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-17-zh.mp3",
       "tags": [
         "AI agents",
         "self-improvement",
@@ -2273,7 +2273,7 @@
       "detail_url": "/data/news-detail/2026-07-16-zh-01-thinking-machines-inkling-b72e7f4b.json",
       "html_url": "/daily/2026-07-16-zh.html#item-1",
       "read_url": "/read/2026-07-16-zh-01-thinking-machines-inkling-b72e7f4b.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-16-zh.mp3",
       "tags": [
         "AI",
         "open-weights",
@@ -2297,7 +2297,7 @@
       "detail_url": "/data/news-detail/2026-07-16-zh-02-xai-grok-build-06c768c3.json",
       "html_url": "/daily/2026-07-16-zh.html#item-2",
       "read_url": "/read/2026-07-16-zh-02-xai-grok-build-06c768c3.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-16-zh.mp3",
       "tags": [
         "open-source",
         "AI-tools",
@@ -2321,7 +2321,7 @@
       "detail_url": "/data/news-detail/2026-07-16-zh-03-item-8a5424bc.json",
       "html_url": "/daily/2026-07-16-zh.html#item-3",
       "read_url": "/read/2026-07-16-zh-03-item-8a5424bc.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-16-zh.mp3",
       "tags": [
         "accessibility",
         "web-development",
@@ -2345,7 +2345,7 @@
       "detail_url": "/data/news-detail/2026-07-16-zh-04-ai-c495746c.json",
       "html_url": "/daily/2026-07-16-zh.html#item-4",
       "read_url": "/read/2026-07-16-zh-04-ai-c495746c.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-16-zh.mp3",
       "tags": [
         "open-source-ai",
         "ai-policy",
@@ -2369,7 +2369,7 @@
       "detail_url": "/data/news-detail/2026-07-16-zh-05-originblame-ai-e31d2fb5.json",
       "html_url": "/daily/2026-07-16-zh.html#item-5",
       "read_url": "/read/2026-07-16-zh-05-originblame-ai-e31d2fb5.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-16-zh.mp3",
       "tags": [
         "AI data provenance",
         "machine unlearning",
@@ -2393,7 +2393,7 @@
       "detail_url": "/data/news-detail/2026-07-16-zh-06-item-65cec248.json",
       "html_url": "/daily/2026-07-16-zh.html#item-6",
       "read_url": "/read/2026-07-16-zh-06-item-65cec248.html",
-      "audio_url": "",
+      "audio_url": "/audio/daily/2026-07-16-zh.mp3",
       "tags": [
         "AI agents",
         "self-improvement",
