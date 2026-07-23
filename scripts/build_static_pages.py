@@ -947,6 +947,15 @@ def run_tencent_tts(text: str, output_path: Path) -> bool:
         request.Volume = float(os.getenv("HORIZON_TENCENT_TTS_VOLUME", "0"))
         request.PrimaryLanguage = int(os.getenv("HORIZON_TENCENT_TTS_PRIMARY_LANGUAGE", "1"))
         request.SampleRate = int(os.getenv("HORIZON_TENCENT_TTS_SAMPLE_RATE", "16000"))
+        segment_rate = os.getenv("HORIZON_TENCENT_TTS_SEGMENT_RATE")
+        if segment_rate:
+            request.SegmentRate = int(segment_rate)
+        emotion_category = os.getenv("HORIZON_TENCENT_TTS_EMOTION_CATEGORY")
+        if emotion_category:
+            request.EmotionCategory = emotion_category
+        emotion_intensity = os.getenv("HORIZON_TENCENT_TTS_EMOTION_INTENSITY")
+        if emotion_intensity:
+            request.EmotionIntensity = int(emotion_intensity)
         response = client.TextToVoice(request)
         audio_chunks.append(b64decode(response.Audio))
 
