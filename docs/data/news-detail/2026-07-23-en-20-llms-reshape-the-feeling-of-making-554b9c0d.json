@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-23-en-20-llms-reshape-the-feeling-of-making-554b9c0d",
+  "date": "2026-07-23",
+  "lang": "en",
+  "title": "LLMs reshape the feeling of making.",
+  "source": "hackernews",
+  "source_url": "https://beej.us/blog/data/ai-making/",
+  "source_tier": "B",
+  "published_at": "2026-07-23",
+  "category": "AI-assisted coding",
+  "group": "practice_insight",
+  "score": "7.0",
+  "summary": "Beej's essay \"Making\" and the related Hacker News discussion examine how using LLMs to build software or creative projects can alter pride, authorship, and emotional connection to the finished work. The discussion matters because AI-assisted coding is no longer just a productivity question; it is also changing how developers understand craft, ownership, and satisfaction. Teams adopting LLM workflows may need to account for motivation and identity, not only speed and output. Commenters drew a distinction between people who enjoy designing systems and people who enjoy implementation details, arguing that LLMs may feel empowering to the former and alienating to the latter. Several participants also emphasized that using an LLM does not necessarily erase authorship if the human still sets the goals, constraints, taste, and direction.",
+  "what_happened": "Beej's essay \"Making\" and the related Hacker News discussion examine how using LLMs to build software or creative projects can alter pride, authorship, and emotional connection to the finished work. The discussion matters because AI-assisted coding is no longer just a productivity question; it is also changing how developers understand craft, ownership, and satisfaction. Teams adopting LLM workflows may need to account for motivation and identity, not only speed and output. Commenters drew a distinction between people who enjoy designing systems and people who enjoy implementation details, arguing that LLMs may feel empowering to the former and alienating to the latter. Several participants also emphasized that using an LLM does not necessarily erase authorship if the human still sets the goals, constraints, taste, and direction.",
+  "why_it_matters": "LLMs are increasingly used to generate code, text, design ideas, and project scaffolding from natural-language prompts. In software work, this can shift the human role from writing every line to specifying intent, reviewing outputs, and integrating pieces into a coherent system. That shift raises a cultural question: if the tool performs much of the visible construction, what part of the result still feels personally made?",
+  "manager_takeaway": "LLMs are increasingly used to generate code, text, design ideas, and project scaffolding from natural-language prompts. In software work, this can shift the human role from writing every line to specifying intent, reviewing outputs, and integrating pieces into a coherent system. That shift raises a cultural question: if the tool performs much of the visible construction, what part of the result still feels personally made?",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI-assisted coding, software craftsmanship.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The comments are thoughtful but divided: some people say they can still feel pride in LLM-assisted work because the end product and direction were theirs, while others feel disconnected when the implementation is largely delegated. A recurring theme is the contrast between joy in systems-level design and joy in hands-on details, plus concern that AI-generated submissions or art should be easier to identify."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-23-en.html#item-20",
+  "read_url": "/read/2026-07-23-en-20-llms-reshape-the-feeling-of-making-554b9c0d.html",
+  "tags": [
+    "AI-assisted coding",
+    "software craftsmanship",
+    "LLM workflows",
+    "developer culture",
+    "human-AI collaboration"
+  ]
+}

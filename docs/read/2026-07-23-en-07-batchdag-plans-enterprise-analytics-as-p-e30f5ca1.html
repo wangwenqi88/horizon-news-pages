@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BatchDAG Plans Enterprise Analytics as Parallel DAGs</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-23-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-23 · Horizon News AI 精读</p>
+        <h1>BatchDAG Plans Enterprise Analytics as Parallel DAGs</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>S 级信源</span><span>8.0 分</span><span>LLM orchestration、DAG execution、enterprise analytics、parallel processing、AI agents</span></div>
+        <a class="source-cta" href="https://arxiv.org/abs/2607.18241" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>The arXiv paper BatchDAG proposes an LLM planner that turns an ad-hoc enterprise question into a typed DAG of SQL queries, semantic searches, in-memory transforms, fan-outs, and single-shot analyses. A deterministic engine then executes the graph in parallel, and entity-aware batching cuts tool-call count by up to 47x. This targets a major scaling bottleneck for AI agents on enterprise data: sequential tool calls are slow, hard to attribute, and brittle on cross-entity questions. If it generalizes, teams could replace multiple hand-built workflows with one natural-language planning layer that is faster and easier to run. BatchDAG reports a 98.8% valid-DAG rate across 300 planning calls, and a controlled ablation found structured JSON intermediates reduced hallucinations by 27% versus prose summaries. On 12 transcript-heavy queries, it scored 3.74/5, beat a ReAct baseline at 3.09/5, and improved provenance with a 77% transcript-evidence rate.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：rss</li><li>评分：8.0/10</li><li>标签：LLM orchestration、DAG execution、enterprise analytics、parallel processing、AI agents</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://arxiv.org/abs/2607.18241" rel="noopener noreferrer" target="_blank">BatchDAG Plans Enterprise Analytics as Parallel DAGs</a> ⭐️ 8.0/10</h3>
+<p>The arXiv paper BatchDAG proposes an LLM planner that turns an ad-hoc enterprise question into a typed DAG of SQL queries, semantic searches, in-memory transforms, fan-outs, and single-shot analyses. A deterministic engine then executes the graph in parallel, and entity-aware batching cuts tool-call count by up to 47x. This targets a major scaling bottleneck for AI agents on enterprise data: sequential tool calls are slow, hard to attribute, and brittle on cross-entity questions. If it generalizes, teams could replace multiple hand-built workflows with one natural-language planning layer that is faster and easier to run. BatchDAG reports a 98.8% valid-DAG rate across 300 planning calls, and a controlled ablation found structured JSON intermediates reduced hallucinations by 27% versus prose summaries. On 12 transcript-heavy queries, it scored 3.74/5, beat a ReAct baseline at 3.09/5, and improved provenance with a 77% transcript-evidence rate.</p>
+<p>rss · ArXiv AI · Jul 23, 04:00</p>
+<p><strong>Background</strong>: A DAG, or directed acyclic graph, is a workflow structure where each step depends on earlier steps and no step loops back to form a cycle. That makes it useful for parallel execution, because independent branches can run once their inputs are ready. In this paper, the LLM acts as the planner rather than the executor, while the engine handles ordering and data flow. Entity-aware batching means grouping rows by logical entity before later fan-out steps so the system avoids repeating similar model calls.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://arxiv.org/abs/2607.18241" rel="noopener noreferrer" target="_blank">[2607.18241] BatchDAG: LLM-Planned Execution Graphs for Scalable...</a></li>
+<li><a href="https://www.emergentmind.com/topics/language-aware-batching" rel="noopener noreferrer" target="_blank">Language- Aware Batching</a></li>
+</ul>
+</details>
+<p><strong>Tags</strong>: <code>#LLM orchestration</code>, <code>#DAG execution</code>, <code>#enterprise analytics</code>, <code>#parallel processing</code>, <code>#AI agents</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>A DAG, or directed acyclic graph, is a workflow structure where each step depends on earlier steps and no step loops back to form a cycle. That makes it useful for parallel execution, because independent branches can run once their inputs are ready. In this paper, the LLM acts as the planner rather than the executor, while the engine handles ordering and data flow. Entity-aware batching means grouping rows by logical entity before later fan-out steps so the system avoids repeating similar model calls.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>A DAG, or directed acyclic graph, is a workflow structure where each step depends on earlier steps and no step loops back to form a cycle. That makes it useful for parallel execution, because independent branches can run once their inputs are ready. In this paper, the LLM acts as the planner rather than the executor, while the engine handles ordering and data flow. Entity-aware batching means grouping rows by logical entity before later fan-out steps so the system avoids repeating similar model calls.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>A DAG, or directed acyclic graph, is a workflow structure where each step depends on earlier steps and no step loops back to form a cycle. That makes it useful for parallel execution, because independent branches can run once their inputs are ready. In this paper, the LLM acts as the planner rather than the executor, while the engine handles ordering and data flow. Entity-aware batching means grouping rows by logical entity before later fan-out steps so the system avoids repeating similar model calls.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for LLM orchestration, DAG execution.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://arxiv.org/abs/2607.18241" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-23-en.html#item-7">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

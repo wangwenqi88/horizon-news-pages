@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bento: single-file HTML slide decks</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-23-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-23 · Horizon News AI 精读</p>
+        <h1>Bento: single-file HTML slide decks</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>7.0 分</span><span>local-first、html-apps、presentation-tools、ai-assisted-workflows、show-hn</span></div>
+        <a class="source-cta" href="https://bento.page/slides/" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>Bento is a slide-deck tool that packs editing, presenting, saving, printing, animations, and live collaboration into one HTML file. The creator says it works offline with no install or cloud login, and the default deck is about 560 KB. This is a strong example of local-first document software: users can edit and share a presentation without depending on a hosted service. It also fits AI-assisted workflows, where a browser-based deck can be handed to Claude Code, ChatGPT, or similar tools for transformation and iterative edits. The file keeps slide data in a JSON block near the top, while the app itself is embedded as a base64 blob loaded through a small shim that decompresses in the browser with DecompressionStream. The author says shared editing uses an encrypted blind relay, so the relay does not see the slide data, and the project is MIT licensed with reveal.js plus other libraries underneath.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：7.0/10</li><li>标签：local-first、html-apps、presentation-tools、ai-assisted-workflows、show-hn</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://bento.page/slides/" rel="noopener noreferrer" target="_blank">Bento: single-file HTML slide decks</a> ⭐️ 7.0/10</h3>
+<p>Bento is a slide-deck tool that packs editing, presenting, saving, printing, animations, and live collaboration into one HTML file. The creator says it works offline with no install or cloud login, and the default deck is about 560 KB. This is a strong example of local-first document software: users can edit and share a presentation without depending on a hosted service. It also fits AI-assisted workflows, where a browser-based deck can be handed to Claude Code, ChatGPT, or similar tools for transformation and iterative edits. The file keeps slide data in a JSON block near the top, while the app itself is embedded as a base64 blob loaded through a small shim that decompresses in the browser with DecompressionStream. The author says shared editing uses an encrypted blind relay, so the relay does not see the slide data, and the project is MIT licensed with reveal.js plus other libraries underneath.</p>
+<p>hackernews · starfallg · Jul 22, 15:19 · <a href="https://news.ycombinator.com/item?id=49008211" rel="noopener noreferrer" target="_blank">Discussion</a></p>
+<p><strong>Background</strong>: Local-first software is designed so the app works directly on the user's device, which makes it fast, offline-friendly, and easier to own. A single-file web app bundles code and assets into one HTML file, so the whole experience can be opened in a browser without installs or external fetches. A blind relay is a server that only forwards ciphertext, which enables collaboration without exposing plaintext to the relay.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://docs.expo.dev/guides/local-first/" rel="noopener noreferrer" target="_blank">Local - first architecture with Expo - Expo Documentation</a></li>
+<li><a href="https://dev.to/iamjephter/building-a-blind-relay-in-rust-with-tauri-at-the-edge-57gp" rel="noopener noreferrer" target="_blank">Architecting a Blind Relay : E2EE Clipboard Sync... - DEV Community</a></li>
+<li><a href="https://www.birjob.com/blog/local-first-software-2026" rel="noopener noreferrer" target="_blank">Local - First Software in 2026: How Linear, Replicache, and... | BirJob</a></li>
+</ul>
+</details>
+<p><strong>Discussion</strong>: Commenters were broadly enthusiastic and saw Bento as a convincing proof that HTML can replace traditional presentation workflows. Several people connected it to broader local-first and single-file web-app trends, while one user noted the irony that the tool is impressive even if they do not yet have a personal use for it.</p>
+<p><strong>Tags</strong>: <code>#local-first</code>, <code>#html-apps</code>, <code>#presentation-tools</code>, <code>#ai-assisted-workflows</code>, <code>#show-hn</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>Local-first software is designed so the app works directly on the user&#x27;s device, which makes it fast, offline-friendly, and easier to own. A single-file web app bundles code and assets into one HTML file, so the whole experience can be opened in a browser without installs or external fetches. A blind relay is a server that only forwards ciphertext, which enables collaboration without exposing plaintext to the relay.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>Local-first software is designed so the app works directly on the user&#x27;s device, which makes it fast, offline-friendly, and easier to own. A single-file web app bundles code and assets into one HTML file, so the whole experience can be opened in a browser without installs or external fetches. A blind relay is a server that only forwards ciphertext, which enables collaboration without exposing plaintext to the relay.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>Local-first software is designed so the app works directly on the user&#x27;s device, which makes it fast, offline-friendly, and easier to own. A single-file web app bundles code and assets into one HTML file, so the whole experience can be opened in a browser without installs or external fetches. A blind relay is a server that only forwards ciphertext, which enables collaboration without exposing plaintext to the relay.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for local-first, html-apps.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>Commenters were broadly enthusiastic and saw Bento as a convincing proof that HTML can replace traditional presentation workflows. Several people connected it to broader local-first and single-file web-app trends, while one user noted the irony that the tool is impressive even if they do not yet have a personal use for it.</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://bento.page/slides/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-23-en.html#item-12">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

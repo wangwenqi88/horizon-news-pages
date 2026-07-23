@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-23-en-12-bento-single-file-html-slide-decks-468eff5d",
+  "date": "2026-07-23",
+  "lang": "en",
+  "title": "Bento: single-file HTML slide decks",
+  "source": "hackernews",
+  "source_url": "https://bento.page/slides/",
+  "source_tier": "B",
+  "published_at": "2026-07-23",
+  "category": "local-first",
+  "group": "first_hand_news",
+  "score": "7.0",
+  "summary": "Bento is a slide-deck tool that packs editing, presenting, saving, printing, animations, and live collaboration into one HTML file. The creator says it works offline with no install or cloud login, and the default deck is about 560 KB. This is a strong example of local-first document software: users can edit and share a presentation without depending on a hosted service. It also fits AI-assisted workflows, where a browser-based deck can be handed to Claude Code, ChatGPT, or similar tools for transformation and iterative edits. The file keeps slide data in a JSON block near the top, while the app itself is embedded as a base64 blob loaded through a small shim that decompresses in the browser with DecompressionStream. The author says shared editing uses an encrypted blind relay, so the relay does not see the slide data, and the project is MIT licensed with reveal.js plus other libraries underneath.",
+  "what_happened": "Bento is a slide-deck tool that packs editing, presenting, saving, printing, animations, and live collaboration into one HTML file. The creator says it works offline with no install or cloud login, and the default deck is about 560 KB. This is a strong example of local-first document software: users can edit and share a presentation without depending on a hosted service. It also fits AI-assisted workflows, where a browser-based deck can be handed to Claude Code, ChatGPT, or similar tools for transformation and iterative edits. The file keeps slide data in a JSON block near the top, while the app itself is embedded as a base64 blob loaded through a small shim that decompresses in the browser with DecompressionStream. The author says shared editing uses an encrypted blind relay, so the relay does not see the slide data, and the project is MIT licensed with reveal.js plus other libraries underneath.",
+  "why_it_matters": "Local-first software is designed so the app works directly on the user's device, which makes it fast, offline-friendly, and easier to own. A single-file web app bundles code and assets into one HTML file, so the whole experience can be opened in a browser without installs or external fetches. A blind relay is a server that only forwards ciphertext, which enables collaboration without exposing plaintext to the relay.",
+  "manager_takeaway": "Local-first software is designed so the app works directly on the user's device, which makes it fast, offline-friendly, and easier to own. A single-file web app bundles code and assets into one HTML file, so the whole experience can be opened in a browser without installs or external fetches. A blind relay is a server that only forwards ciphertext, which enables collaboration without exposing plaintext to the relay.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for local-first, html-apps.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "Commenters were broadly enthusiastic and saw Bento as a convincing proof that HTML can replace traditional presentation workflows. Several people connected it to broader local-first and single-file web-app trends, while one user noted the irony that the tool is impressive even if they do not yet have a personal use for it."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-23-en.html#item-12",
+  "read_url": "/read/2026-07-23-en-12-bento-single-file-html-slide-decks-468eff5d.html",
+  "tags": [
+    "local-first",
+    "html-apps",
+    "presentation-tools",
+    "ai-assisted-workflows",
+    "show-hn"
+  ]
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI labs face a pelican benchmark check.</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-23-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-23 · Horizon News AI 精读</p>
+        <h1>AI labs face a pelican benchmark check.</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>7.0 分</span><span>AI evaluation、benchmarking、LLM behavior、SVG generation、Hacker News</span></div>
+        <a class="source-cta" href="https://dylancastillo.co/posts/pelicanmaxxing.html" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>Dylan Castillo published an investigation into whether AI labs are unusually good at Simon Willison’s “pelican riding a bicycle” SVG prompt. He generated 1,008 SVGs across 8 animals, 6 vehicles, and 7 labs, then compared the pelican-bicycle results with nearby animal-vehicle combinations. The post matters because it turns a joke-like prompt into a concrete case study in benchmark skepticism and possible benchmark overfitting. It shows how evaluators can look for suspicious specialization without relying only on vibes or single cherry-picked examples. The strongest oddity noted in the discussion was that all 21 pelican-bicycle images across the seven labs faced right, while right-facing images were common overall at about 60%. Castillo’s conclusion, as quoted in the comments, was that nothing clearly jumped out as proof of cheating or targeted optimization.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：7.0/10</li><li>标签：AI evaluation、benchmarking、LLM behavior、SVG generation、Hacker News</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://dylancastillo.co/posts/pelicanmaxxing.html" rel="noopener noreferrer" target="_blank">AI labs face a pelican benchmark check.</a> ⭐️ 7.0/10</h3>
+<p>Dylan Castillo published an investigation into whether AI labs are unusually good at Simon Willison’s “pelican riding a bicycle” SVG prompt. He generated 1,008 SVGs across 8 animals, 6 vehicles, and 7 labs, then compared the pelican-bicycle results with nearby animal-vehicle combinations. The post matters because it turns a joke-like prompt into a concrete case study in benchmark skepticism and possible benchmark overfitting. It shows how evaluators can look for suspicious specialization without relying only on vibes or single cherry-picked examples. The strongest oddity noted in the discussion was that all 21 pelican-bicycle images across the seven labs faced right, while right-facing images were common overall at about 60%. Castillo’s conclusion, as quoted in the comments, was that nothing clearly jumped out as proof of cheating or targeted optimization.</p>
+<p>hackernews · dcastm · Jul 22, 17:17 · <a href="https://news.ycombinator.com/item?id=49010129" rel="noopener noreferrer" target="_blank">Discussion</a></p>
+<p><strong>Background</strong>: The “pelican on a bicycle” SVG prompt is an informal visual generation test popularized by Simon Willison for seeing whether language models can produce structured vector images from text. SVG is a text-based vector graphics format, so a model must describe shapes, positions, and relationships in code rather than merely output pixels. Benchmark overfitting happens when a model becomes especially good at a known test pattern without necessarily improving on the broader task the benchmark is meant to represent. Castillo’s approach varied the animal and vehicle while keeping the prompt wording nearly identical, which helps distinguish prompt-specific memorization from general drawing ability.</p>
+<p><strong>AI View</strong>: A high-engagement Hacker News discussion around a practitioner-style investigation into whether AI labs may be overfitting or optimizing for a niche SVG generation benchmark. The post is more valuable as an evaluation-methodology and benchmark-skepticism case study than as first-hand news. Comments add useful context, including Simon Willison highlighting the robustness of the methodology and others debating plausible non-cheating explanations for observed patterns.</p>
+<p><strong>Practical Takeaways</strong>: A useful evaluation pattern is to test a suspected benchmark item against a controlled grid of nearby variants. Keep the prompt structure stable, vary only the key nouns or conditions, and compare whether the headline case is genuinely exceptional. This makes an informal benchmark harder to dismiss and helps separate real capability from memorization, data contamination, or prompt-specific tuning.</p>
+<p><strong>Implementation Notes</strong>: Use a factorial test matrix, such as animals by vehicles, rather than evaluating only one famous prompt. Generate multiple samples per cell and keep model, prompt wording, temperature, and scoring criteria as consistent as possible. Track simple measurable features, such as orientation, object inclusion, and relationship correctness, before making qualitative claims. Treat unusual clusters as hypotheses requiring follow-up, not as automatic evidence of cheating.</p>
+<p><strong>How I Can Use This</strong>: For AI agents and content workflows, this is a reminder to evaluate prompts with neighboring variants before trusting a single showcase output. In software delivery or financial-software project management, the same idea applies to acceptance tests: vary realistic edge cases so teams do not optimize only for the demo path.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://dylancastillo.co/posts/pelicanmaxxing.html" rel="noopener noreferrer" target="_blank">Are AI labs pelicanmaxxing ? – Dylan Castillo</a></li>
+<li><a href="https://arxiv.org/html/2412.03597" rel="noopener noreferrer" target="_blank">The Vulnerability of Language Model Benchmarks : Do They...</a></li>
+<li><a href="https://www.rival.tips/models/gemini-2.5-flash-preview-thinking/responses/gemini-2.5-flash-preview-thinking-svg-layout" rel="noopener noreferrer" target="_blank">SVG Layout Challenge | Gemini 2.5 Flash Preview (thinking)... | Rival</a></li>
+</ul>
+</details>
+<p><strong>Discussion</strong>: The Hacker News discussion was largely positive about the methodology, with Simon Willison praising the broader 1,008-SVG comparison as more robust than casual spot checks. Some commenters offered non-cheating explanations, such as bicycles often being drawn from the right side because the drivetrain is on the right. Others noted that even imperfect SVG output can still be impressive compared with how slowly many humans would draw the same scene by hand.</p>
+<p><strong>Tags</strong>: <code>#AI evaluation</code>, <code>#benchmarking</code>, <code>#LLM behavior</code>, <code>#SVG generation</code>, <code>#Hacker News</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>The “pelican on a bicycle” SVG prompt is an informal visual generation test popularized by Simon Willison for seeing whether language models can produce structured vector images from text. SVG is a text-based vector graphics format, so a model must describe shapes, positions, and relationships in code rather than merely output pixels. Benchmark overfitting happens when a model becomes especially good at a known test pattern without necessarily improving on the broader task the benchmark is meant to represent. Castillo’s approach varied the animal and vehicle while keeping the prompt wording nearly identical, which helps distinguish prompt-specific memorization from general drawing ability.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>The “pelican on a bicycle” SVG prompt is an informal visual generation test popularized by Simon Willison for seeing whether language models can produce structured vector images from text. SVG is a text-based vector graphics format, so a model must describe shapes, positions, and relationships in code rather than merely output pixels. Benchmark overfitting happens when a model becomes especially good at a known test pattern without necessarily improving on the broader task the benchmark is meant to represent. Castillo’s approach varied the animal and vehicle while keeping the prompt wording nearly identical, which helps distinguish prompt-specific memorization from general drawing ability.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>A high-engagement Hacker News discussion around a practitioner-style investigation into whether AI labs may be overfitting or optimizing for a niche SVG generation benchmark. The post is more valuable as an evaluation-methodology and benchmark-skepticism case study than as first-hand news. Comments add useful context, including Simon Willison highlighting the robustness of the methodology and others debating plausible non-cheating explanations for observed patterns.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for AI evaluation, benchmarking.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul><p>A useful evaluation pattern is to test a suspected benchmark item against a controlled grid of nearby variants. Keep the prompt structure stable, vary only the key nouns or conditions, and compare whether the headline case is genuinely exceptional. This makes an informal benchmark harder to dismiss and helps separate real capability from memorization, data contamination, or prompt-specific tuning.</p><p>Use a factorial test matrix, such as animals by vehicles, rather than evaluating only one famous prompt. Generate multiple samples per cell and keep model, prompt wording, temperature, and scoring criteria as consistent as possible. Track simple measurable features, such as orientation, object inclusion, and relationship correctness, before making qualitative claims. Treat unusual clusters as hypotheses requiring follow-up, not as automatic evidence of cheating.</p><p>For AI agents and content workflows, this is a reminder to evaluate prompts with neighboring variants before trusting a single showcase output. In software delivery or financial-software project management, the same idea applies to acceptance tests: vary realistic edge cases so teams do not optimize only for the demo path.</p>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>The Hacker News discussion was largely positive about the methodology, with Simon Willison praising the broader 1,008-SVG comparison as more robust than casual spot checks. Some commenters offered non-cheating explanations, such as bicycles often being drawn from the right side because the drivetrain is on the right. Others noted that even imperfect SVG output can still be impressive compared with how slowly many humans would draw the same scene by hand.</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://dylancastillo.co/posts/pelicanmaxxing.html" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-23-en.html#item-19">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

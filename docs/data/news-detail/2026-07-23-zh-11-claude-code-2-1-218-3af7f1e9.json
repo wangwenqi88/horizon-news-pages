@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-23-zh-11-claude-code-2-1-218-3af7f1e9",
+  "date": "2026-07-23",
+  "lang": "zh",
+  "title": "Claude Code 2.1.218 改进审查与可靠性",
+  "source": "github",
+  "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.218",
+  "source_tier": "S",
+  "published_at": "2026-07-23",
+  "category": "Claude Code",
+  "group": "first_hand_news",
+  "score": "7.0",
+  "summary": "Anthropic 发布了 Claude Code v2.1.218，其中一个重要工作流变化是：/code-review 现在会作为后台子代理运行，而不是占满当前对话。该版本还改进了屏幕阅读器体验，并修复了 Windows 路径损坏、对话丢失、MCP 错误报告、粘贴处理、Bedrock 计费、会话恢复和审查命令等问题。 后台 /code-review 的变化会让开发者更容易在不丢失对话上下文、不打断连续斜杠命令工作流的情况下进行代码审查。无障碍、Windows、MCP 和会话完整性相关修复也很重要，因为它们解决了一个越来越多用于终端、IDE 和外部工具环境的开发者工具中的日常可靠性问题。 Windows 修复专门针对包含 \\u 前缀片段的路径，例如 C:\\Users\\unicorn，此前这些路径会在工具输入中被错误转换成中日韩字符，导致文件无法访问。MCP 诊断现在会在连接失败时显示 HTTP 状态和错误文本，同时还会警告 MCP 配置值中隐藏的前后空白字符。",
+  "what_happened": "Anthropic 发布了 Claude Code v2.1.218，其中一个重要工作流变化是：/code-review 现在会作为后台子代理运行，而不是占满当前对话。该版本还改进了屏幕阅读器体验，并修复了 Windows 路径损坏、对话丢失、MCP 错误报告、粘贴处理、Bedrock 计费、会话恢复和审查命令等问题。 后台 /code-review 的变化会让开发者更容易在不丢失对话上下文、不打断连续斜杠命令工作流的情况下进行代码审查。无障碍、Windows、MCP 和会话完整性相关修复也很重要，因为它们解决了一个越来越多用于终端、IDE 和外部工具环境的开发者工具中的日常可靠性问题。 Windows 修复专门针对包含 \\u 前缀片段的路径，例如 C:\\Users\\unicorn，此前这些路径会在工具输入中被错误转换成中日韩字符，导致文件无法访问。MCP 诊断现在会在连接失败时显示 HTTP 状态和错误文本，同时还会警告 MCP 配置值中隐藏的前后空白字符。",
+  "why_it_matters": "Claude Code 是 Anthropic 的命令行编程助手，/code-review、/context 和 /mcp 等斜杠命令用于在编程会话中触发特定工作流。子代理是一类专门处理特定任务的辅助代理，例如代码审查，并且可以与主对话保持隔离。MCP，即模型上下文协议，是 Anthropic 推出的开放标准，用于把 AI 应用连接到外部工具、数据源和工作流。--ax-screen-reader 模式是 Claude Code 面向屏幕阅读器用户的无障碍模式，Anthropic 帮助文档说明该模式适用于 Claude Code 2.1.181 或更高版本。",
+  "manager_takeaway": "Claude Code 是 Anthropic 的命令行编程助手，/code-review、/context 和 /mcp 等斜杠命令用于在编程会话中触发特定工作流。子代理是一类专门处理特定任务的辅助代理，例如代码审查，并且可以与主对话保持隔离。MCP，即模型上下文协议，是 Anthropic 推出的开放标准，用于把 AI 应用连接到外部工具、数据源和工作流。--ax-screen-reader 模式是 Claude Code 面向屏幕阅读器用户的无障碍模式，Anthropic 帮助文档说明该模式适用于 Claude Code 2.1.181 或更高版本。",
+  "actions": [
+    "判断团队近期是否有和Claude Code、release notes相关的试用场景。",
+    "核对数据安全、权限边界和成本变化。",
+    "如果价值明确，安排一次小范围验证并记录复盘。"
+  ],
+  "risks": [],
+  "audio_url": "/audio/daily/2026-07-23-zh.mp3",
+  "html_url": "/daily/2026-07-23-zh.html#item-11",
+  "read_url": "/read/2026-07-23-zh-11-claude-code-2-1-218-3af7f1e9.html",
+  "tags": [
+    "Claude Code",
+    "release notes",
+    "developer tools",
+    "MCP",
+    "bug fixes"
+  ]
+}

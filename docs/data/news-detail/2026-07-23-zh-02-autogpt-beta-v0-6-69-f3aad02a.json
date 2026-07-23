@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-23-zh-02-autogpt-beta-v0-6-69-f3aad02a",
+  "date": "2026-07-23",
+  "lang": "zh",
+  "title": "AutoGPT Beta v0.6.69 增加界面、消息和模型更新",
+  "source": "github",
+  "source_url": "https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.6.69",
+  "source_tier": "S",
+  "published_at": "2026-07-23",
+  "category": "AutoGPT",
+  "group": "first_hand_news",
+  "score": "8.0",
+  "summary": "AutoGPT 发布了 autogpt-platform-beta-v0.6.69，带来重新设计的侧边栏和个人资料菜单、Slack 和 Telegram 的主动推送、主动消息的私信投递，以及带有防压缩丢失指南和自动引擎切换的 Agent 构建模式。此次更新还改进了批量部署、简化了 AutoPilot Agent 创建，并新增对 GPT-5.6、GPT-5.5、GPT-5.4 和 o 系列模型的支持。 这对把 AutoGPT 当作 Agent 平台使用的团队来说是一次有意义的产品更新，因为它同时改善了操作体验和执行流程。更好的模型支持和主动消息能力，让这个平台更适合面向生产环境的 Agent 部署，而不只是演示用途。 这次发布重点放在可靠性和可用性上：它修复了会话历史丢失、图验证与运行时不一致、iOS Safari 上 OAuth 窗口行为，以及若干文档和路径解析问题。它还减少了上下文压缩工作量，并保留了 MemoryFact 边属性，这对长时间运行的 Agent 工作流很重要。",
+  "what_happened": "AutoGPT 发布了 autogpt-platform-beta-v0.6.69，带来重新设计的侧边栏和个人资料菜单、Slack 和 Telegram 的主动推送、主动消息的私信投递，以及带有防压缩丢失指南和自动引擎切换的 Agent 构建模式。此次更新还改进了批量部署、简化了 AutoPilot Agent 创建，并新增对 GPT-5.6、GPT-5.5、GPT-5.4 和 o 系列模型的支持。 这对把 AutoGPT 当作 Agent 平台使用的团队来说是一次有意义的产品更新，因为它同时改善了操作体验和执行流程。更好的模型支持和主动消息能力，让这个平台更适合面向生产环境的 Agent 部署，而不只是演示用途。 这次发布重点放在可靠性和可用性上：它修复了会话历史丢失、图验证与运行时不一致、iOS Safari 上 OAuth 窗口行为，以及若干文档和路径解析问题。它还减少了上下文压缩工作量，并保留了 MemoryFact 边属性，这对长时间运行的 Agent 工作流很重要。",
+  "why_it_matters": "AutoGPT 是一个 AI Agent 平台，用于构建、部署和运行可以接收目标并借助 AI 模型与外部应用执行步骤的 Agent。该平台通常由负责核心逻辑的服务器和用于构建 Agent、管理工作流与定时任务的前端组成。OpenAI 的 o 系列推理模型面向复杂推理和多步规划，因此与 Agent 工作流关系很大。",
+  "manager_takeaway": "AutoGPT 是一个 AI Agent 平台，用于构建、部署和运行可以接收目标并借助 AI 模型与外部应用执行步骤的 Agent。该平台通常由负责核心逻辑的服务器和用于构建 Agent、管理工作流与定时任务的前端组成。OpenAI 的 o 系列推理模型面向复杂推理和多步规划，因此与 Agent 工作流关系很大。",
+  "actions": [
+    "判断团队近期是否有和AutoGPT、agent-platform相关的试用场景。",
+    "核对数据安全、权限边界和成本变化。",
+    "如果价值明确，安排一次小范围验证并记录复盘。"
+  ],
+  "risks": [],
+  "audio_url": "/audio/daily/2026-07-23-zh.mp3",
+  "html_url": "/daily/2026-07-23-zh.html#item-2",
+  "read_url": "/read/2026-07-23-zh-02-autogpt-beta-v0-6-69-f3aad02a.html",
+  "tags": [
+    "AutoGPT",
+    "agent-platform",
+    "release-notes",
+    "LLM-agents",
+    "OpenAI-models"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-23-en-04-eu-hits-google-with-890m-antitrust-fine-01fd45b3",
+  "date": "2026-07-23",
+  "lang": "en",
+  "title": "EU hits Google with €890M antitrust fine",
+  "source": "hackernews",
+  "source_url": "https://www.theguardian.com/technology/2026/jul/23/eu-fines-google-for-competition-breaches-over-search-and-apps",
+  "source_tier": "B",
+  "published_at": "2026-07-23",
+  "category": "antitrust",
+  "group": "first_hand_news",
+  "score": "8.0",
+  "summary": "The EU fined Google €890 million over competition breaches tied to its search and app businesses. The case has also sparked discussion about the legal path ahead and the broader market implications. This is a major antitrust penalty for one of the world's largest tech companies, so it could shape how regulators police dominant platforms in Europe. It also matters to competitors and app ecosystems because competition rulings can affect distribution, search placement, and market access. The fine is specifically linked to competition breaches in search and apps, rather than to a broad company-wide issue. Community discussion suggests some readers expect a lengthy legal challenge and are watching whether the courts uphold the EU's approach.",
+  "what_happened": "The EU fined Google €890 million over competition breaches tied to its search and app businesses. The case has also sparked discussion about the legal path ahead and the broader market implications. This is a major antitrust penalty for one of the world's largest tech companies, so it could shape how regulators police dominant platforms in Europe. It also matters to competitors and app ecosystems because competition rulings can affect distribution, search placement, and market access. The fine is specifically linked to competition breaches in search and apps, rather than to a broad company-wide issue. Community discussion suggests some readers expect a lengthy legal challenge and are watching whether the courts uphold the EU's approach.",
+  "why_it_matters": "The EU uses competition law to stop companies with strong market power from unfairly limiting rivals. In tech, these disputes often involve search, app distribution, and how prominently a company's own services appear relative to others.",
+  "manager_takeaway": "The EU uses competition law to stop companies with strong market power from unfairly limiting rivals. In tech, these disputes often involve search, app distribution, and how prominently a company's own services appear relative to others.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for antitrust, Google.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "Commenters were largely dismissive of the size of the fine, calling it \"pocket money\" or a normal cost of doing business for Google. Others focused on the legal process, especially the possibility of a long appeal and the interesting questions around Shopping, Hotels, and Flights markets."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-23-en.html#item-4",
+  "read_url": "/read/2026-07-23-en-04-eu-hits-google-with-890m-antitrust-fine-01fd45b3.html",
+  "tags": [
+    "antitrust",
+    "Google",
+    "EU regulation",
+    "competition law",
+    "tech policy"
+  ]
+}

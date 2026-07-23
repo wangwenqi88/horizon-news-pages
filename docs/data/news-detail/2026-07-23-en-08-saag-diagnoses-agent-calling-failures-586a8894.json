@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-23-en-08-saag-diagnoses-agent-calling-failures-586a8894",
+  "date": "2026-07-23",
+  "lang": "en",
+  "title": "SAAG diagnoses agent-calling failures.",
+  "source": "rss",
+  "source_url": "https://arxiv.org/abs/2607.18245",
+  "source_tier": "S",
+  "published_at": "2026-07-23",
+  "category": "AI agents",
+  "group": "first_hand_news",
+  "score": "8.0",
+  "summary": "A new arXiv paper introduces SAAG, a cascaded framework for evaluating agent-calling by separating failures into registry conformance, structural completeness, and argument grounding. The authors report experiments on a controlled benchmark derived from Glaive's function-calling dataset, using registry sizes of 5, 10, and 15 agents and three local models under 4B parameters. The framework matters because exact-match scoring can hide whether a model chose the wrong tool, produced malformed arguments, or hallucinated values for an otherwise correct call. More interpretable diagnostics could help teams build more reliable AI agents and design targeted self-repair loops instead of treating every failed call as the same kind of error. SAAG evaluates calls in three sequential stages, so later checks are interpreted only after earlier requirements are satisfied. In the reported experiments, structured feedback improved argument precision and reduced value hallucination compared with single-pass inference and uninformative binary feedback, but end-to-end F1 improvements were modest and varied by model.",
+  "what_happened": "A new arXiv paper introduces SAAG, a cascaded framework for evaluating agent-calling by separating failures into registry conformance, structural completeness, and argument grounding. The authors report experiments on a controlled benchmark derived from Glaive's function-calling dataset, using registry sizes of 5, 10, and 15 agents and three local models under 4B parameters. The framework matters because exact-match scoring can hide whether a model chose the wrong tool, produced malformed arguments, or hallucinated values for an otherwise correct call. More interpretable diagnostics could help teams build more reliable AI agents and design targeted self-repair loops instead of treating every failed call as the same kind of error. SAAG evaluates calls in three sequential stages, so later checks are interpreted only after earlier requirements are satisfied. In the reported experiments, structured feedback improved argument precision and reduced value hallucination compared with single-pass inference and uninformative binary feedback, but end-to-end F1 improvements were modest and varied by model.",
+  "why_it_matters": "Agent-calling, often discussed alongside function calling, lets a language model choose a predefined tool or agent and provide structured arguments for executing it. A registry is the available set of callable agents or functions, and schema conformance means the model's output follows the expected structure. Grounding, in this context, means that generated argument values should be supported by the user request or available context rather than invented. The Glaive function-calling dataset is a public dataset of about 52,000 samples for function-calling tasks, making it a relevant basis for controlled evaluation.",
+  "manager_takeaway": "Agent-calling, often discussed alongside function calling, lets a language model choose a predefined tool or agent and provide structured arguments for executing it. A registry is the available set of callable agents or functions, and schema conformance means the model's output follows the expected structure. Grounding, in this context, means that generated argument values should be supported by the user request or available context rather than invented. The Glaive function-calling dataset is a public dataset of about 52,000 samples for function-calling tasks, making it a relevant basis for controlled evaluation.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI agents, evaluation.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-23-en.html#item-8",
+  "read_url": "/read/2026-07-23-en-08-saag-diagnoses-agent-calling-failures-586a8894.html",
+  "tags": [
+    "AI agents",
+    "evaluation",
+    "function calling",
+    "grounding",
+    "self-repair"
+  ]
+}

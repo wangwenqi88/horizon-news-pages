@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Code 2.1.218 improves reviews and reliability</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-23-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-23 · Horizon News AI 精读</p>
+        <h1>Claude Code 2.1.218 improves reviews and reliability</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>github</span><span>S 级信源</span><span>7.0 分</span><span>Claude Code、release notes、developer tools、MCP、bug fixes</span></div>
+        <a class="source-cta" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.218" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>Anthropic released Claude Code v2.1.218 with a major workflow change: /code-review now runs as a background subagent instead of filling the active conversation. The release also adds screen-reader improvements and fixes issues involving Windows path corruption, conversation loss, MCP error reporting, paste handling, Bedrock metering, session resume, and review commands. The background /code-review change should make Claude Code more usable for developers who want code review without losing conversational context or disrupting stacked slash-command workflows. The accessibility, Windows, MCP, and session-integrity fixes matter because they address daily reliability problems in a developer tool increasingly used inside terminals, IDEs, and connected tool environments. The Windows fix specifically targets paths with \u-prefixed segments such as C:\Users\unicorn, which were being corrupted into CJK characters in tool inputs and making files inaccessible. MCP diagnostics now include HTTP status and error text for failed connections, while the release also warns about hidden leading or trailing whitespace in MCP configuration values.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：github</li><li>评分：7.0/10</li><li>标签：Claude Code、release notes、developer tools、MCP、bug fixes</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.218" rel="noopener noreferrer" target="_blank">Claude Code 2.1.218 improves reviews and reliability</a> ⭐️ 7.0/10</h3>
+<p>Anthropic released Claude Code v2.1.218 with a major workflow change: <code>/code-review</code> now runs as a background subagent instead of filling the active conversation. The release also adds screen-reader improvements and fixes issues involving Windows path corruption, conversation loss, MCP error reporting, paste handling, Bedrock metering, session resume, and review commands. The background <code>/code-review</code> change should make Claude Code more usable for developers who want code review without losing conversational context or disrupting stacked slash-command workflows. The accessibility, Windows, MCP, and session-integrity fixes matter because they address daily reliability problems in a developer tool increasingly used inside terminals, IDEs, and connected tool environments. The Windows fix specifically targets paths with <code>\u</code>-prefixed segments such as <code>C:\Users\unicorn</code>, which were being corrupted into CJK characters in tool inputs and making files inaccessible. MCP diagnostics now include HTTP status and error text for failed connections, while the release also warns about hidden leading or trailing whitespace in MCP configuration values.</p>
+<p>github · ashwin-ant · Jul 22, 21:24</p>
+<p><strong>Background</strong>: Claude Code is Anthropic’s command-line coding assistant, and slash commands such as <code>/code-review</code>, <code>/context</code>, and <code>/mcp</code> expose specific workflows inside a coding session. A subagent is a specialized helper that can handle a focused task, such as code review, with separation from the main conversation. MCP, or Model Context Protocol, is an open standard introduced by Anthropic for connecting AI applications to external tools, data sources, and workflows. The <code>--ax-screen-reader</code> mode is Claude Code’s accessibility mode for people using screen readers, and Anthropic’s help documentation says it is available in Claude Code version 2.1.181 or later.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://modelcontextprotocol.io/" rel="noopener noreferrer" target="_blank">What is the Model Context Protocol ( MCP )? - Model Context Protocol</a></li>
+<li><a href="https://support.claude.com/en/articles/15924927-use-claude-code-cli-with-a-screen-reader" rel="noopener noreferrer" target="_blank">Use Claude Code CLI with a screen reader | Claude Help Center</a></li>
+<li><a href="https://heyclau.de/entry/guides/subagents-code-review-triage" rel="noopener noreferrer" target="_blank">Use Subagents for Code Review and Triage — HeyClaude</a></li>
+</ul>
+</details>
+<p><strong>Tags</strong>: <code>#Claude Code</code>, <code>#release notes</code>, <code>#developer tools</code>, <code>#MCP</code>, <code>#bug fixes</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>Claude Code is Anthropic’s command-line coding assistant, and slash commands such as /code-review, /context, and /mcp expose specific workflows inside a coding session. A subagent is a specialized helper that can handle a focused task, such as code review, with separation from the main conversation. MCP, or Model Context Protocol, is an open standard introduced by Anthropic for connecting AI applications to external tools, data sources, and workflows. The --ax-screen-reader mode is Claude Code’s accessibility mode for people using screen readers, and Anthropic’s help documentation says it is available in Claude Code version 2.1.181 or later.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>Claude Code is Anthropic’s command-line coding assistant, and slash commands such as /code-review, /context, and /mcp expose specific workflows inside a coding session. A subagent is a specialized helper that can handle a focused task, such as code review, with separation from the main conversation. MCP, or Model Context Protocol, is an open standard introduced by Anthropic for connecting AI applications to external tools, data sources, and workflows. The --ax-screen-reader mode is Claude Code’s accessibility mode for people using screen readers, and Anthropic’s help documentation says it is available in Claude Code version 2.1.181 or later.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>Claude Code is Anthropic’s command-line coding assistant, and slash commands such as /code-review, /context, and /mcp expose specific workflows inside a coding session. A subagent is a specialized helper that can handle a focused task, such as code review, with separation from the main conversation. MCP, or Model Context Protocol, is an open standard introduced by Anthropic for connecting AI applications to external tools, data sources, and workflows. The --ax-screen-reader mode is Claude Code’s accessibility mode for people using screen readers, and Anthropic’s help documentation says it is available in Claude Code version 2.1.181 or later.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for Claude Code, release notes.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.218" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-23-en.html#item-11">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

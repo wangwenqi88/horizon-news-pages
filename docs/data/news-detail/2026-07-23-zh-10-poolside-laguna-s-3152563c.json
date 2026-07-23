@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-23-zh-10-poolside-laguna-s-3152563c",
+  "date": "2026-07-23",
+  "lang": "zh",
+  "title": "Poolside 的模型工厂与 Laguna S",
+  "source": "rss",
+  "source_url": "https://www.latent.space/p/poolside",
+  "source_tier": "A",
+  "published_at": "2026-07-23",
+  "category": "frontier-models",
+  "group": "first_hand_news",
+  "score": "8.0",
+  "summary": "Latent Space 采访了 Poolside AI 联合 CEO Eiso Kant，讨论他们如何用一个小型研究团队搭建紧凑的模型训练工厂。采访的重点是 Laguna S，这是一款 118B 的 MoE 编码模型，并被宣传为可与更大的开放权重编码模型竞争。 这件事重要在于，它展示了前沿编码模型的一种不同扩展路径：依靠更精细的基础设施和 MoE 设计，而不只是单纯堆参数。若 Poolside 的说法经得起验证，它可能会影响实验室构建高效 agentic 编码系统和长上下文模型的方式。 搜索结果中的模型是 Laguna S 2.1，被描述为一个总参数量 118B 的 MoE 模型，每个 token 激活 8B 参数，并支持最高 1M token 的上下文窗口。Poolside 还公布了若干基准结果，例如 Terminal-Bench 2.1 上 70.2% 和 DeepSWE 上 40.4%，但这些数据在独立验证前仍应视为厂商自报结果。",
+  "what_happened": "Latent Space 采访了 Poolside AI 联合 CEO Eiso Kant，讨论他们如何用一个小型研究团队搭建紧凑的模型训练工厂。采访的重点是 Laguna S，这是一款 118B 的 MoE 编码模型，并被宣传为可与更大的开放权重编码模型竞争。 这件事重要在于，它展示了前沿编码模型的一种不同扩展路径：依靠更精细的基础设施和 MoE 设计，而不只是单纯堆参数。若 Poolside 的说法经得起验证，它可能会影响实验室构建高效 agentic 编码系统和长上下文模型的方式。 搜索结果中的模型是 Laguna S 2.1，被描述为一个总参数量 118B 的 MoE 模型，每个 token 激活 8B 参数，并支持最高 1M token 的上下文窗口。Poolside 还公布了若干基准结果，例如 Terminal-Bench 2.1 上 70.2% 和 DeepSWE 上 40.4%，但这些数据在独立验证前仍应视为厂商自报结果。",
+  "why_it_matters": "MoE，即 mixture-of-experts，是一种模型设计方式：每个 token 只激活部分专家，因此总容量可以很大，而单 token 计算量仍然较低。Poolside 的 Laguna S 系列面向 agentic 编码和长周期任务，因此上下文长度和编码基准在这里尤其重要。开放权重编码模型之所以受到关注，是因为团队可以自行部署或二次调整，从而更好地控制成本和交付方式。",
+  "manager_takeaway": "MoE，即 mixture-of-experts，是一种模型设计方式：每个 token 只激活部分专家，因此总容量可以很大，而单 token 计算量仍然较低。Poolside 的 Laguna S 系列面向 agentic 编码和长周期任务，因此上下文长度和编码基准在这里尤其重要。开放权重编码模型之所以受到关注，是因为团队可以自行部署或二次调整，从而更好地控制成本和交付方式。",
+  "actions": [
+    "判断团队近期是否有和frontier-models、model-training相关的试用场景。",
+    "核对数据安全、权限边界和成本变化。",
+    "如果价值明确，安排一次小范围验证并记录复盘。"
+  ],
+  "risks": [],
+  "audio_url": "/audio/daily/2026-07-23-zh.mp3",
+  "html_url": "/daily/2026-07-23-zh.html#item-10",
+  "read_url": "/read/2026-07-23-zh-10-poolside-laguna-s-3152563c.html",
+  "tags": [
+    "frontier-models",
+    "model-training",
+    "mixture-of-experts",
+    "AI-coding",
+    "Poolside-AI"
+  ]
+}

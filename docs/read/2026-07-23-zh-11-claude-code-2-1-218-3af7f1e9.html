@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Code 2.1.218 改进审查与可靠性</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-23-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-23 · Horizon News AI 精读</p>
+        <h1>Claude Code 2.1.218 改进审查与可靠性</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>github</span><span>S 级信源</span><span>7.0 分</span><span>Claude Code、release notes、developer tools、MCP、bug fixes</span></div>
+        <a class="source-cta" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.218" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>Anthropic 发布了 Claude Code v2.1.218，其中一个重要工作流变化是：/code-review 现在会作为后台子代理运行，而不是占满当前对话。该版本还改进了屏幕阅读器体验，并修复了 Windows 路径损坏、对话丢失、MCP 错误报告、粘贴处理、Bedrock 计费、会话恢复和审查命令等问题。 后台 /code-review 的变化会让开发者更容易在不丢失对话上下文、不打断连续斜杠命令工作流的情况下进行代码审查。无障碍、Windows、MCP 和会话完整性相关修复也很重要，因为它们解决了一个越来越多用于终端、IDE 和外部工具环境的开发者工具中的日常可靠性问题。 Windows 修复专门针对包含 \u 前缀片段的路径，例如 C:\Users\unicorn，此前这些路径会在工具输入中被错误转换成中日韩字符，导致文件无法访问。MCP 诊断现在会在连接失败时显示 HTTP 状态和错误文本，同时还会警告 MCP 配置值中隐藏的前后空白字符。</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：github</li><li>评分：7.0/10</li><li>标签：Claude Code、release notes、developer tools、MCP、bug fixes</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.218" rel="noopener noreferrer" target="_blank">Claude Code 2.1.218 改进审查与可靠性</a> ⭐️ 7.0/10</h3>
+<p>Anthropic 发布了 Claude Code v2.1.218，其中一个重要工作流变化是：<code>/code-review</code> 现在会作为后台子代理运行，而不是占满当前对话。该版本还改进了屏幕阅读器体验，并修复了 Windows 路径损坏、对话丢失、MCP 错误报告、粘贴处理、Bedrock 计费、会话恢复和审查命令等问题。 后台 <code>/code-review</code> 的变化会让开发者更容易在不丢失对话上下文、不打断连续斜杠命令工作流的情况下进行代码审查。无障碍、Windows、MCP 和会话完整性相关修复也很重要，因为它们解决了一个越来越多用于终端、IDE 和外部工具环境的开发者工具中的日常可靠性问题。 Windows 修复专门针对包含 <code>\u</code> 前缀片段的路径，例如 <code>C:\Users\unicorn</code>，此前这些路径会在工具输入中被错误转换成中日韩字符，导致文件无法访问。MCP 诊断现在会在连接失败时显示 HTTP 状态和错误文本，同时还会警告 MCP 配置值中隐藏的前后空白字符。</p>
+<p>github · ashwin-ant · 7月22日 21:24</p>
+<p><strong>背景</strong>: Claude Code 是 Anthropic 的命令行编程助手，<code>/code-review</code>、<code>/context</code> 和 <code>/mcp</code> 等斜杠命令用于在编程会话中触发特定工作流。子代理是一类专门处理特定任务的辅助代理，例如代码审查，并且可以与主对话保持隔离。MCP，即模型上下文协议，是 Anthropic 推出的开放标准，用于把 AI 应用连接到外部工具、数据源和工作流。<code>--ax-screen-reader</code> 模式是 Claude Code 面向屏幕阅读器用户的无障碍模式，Anthropic 帮助文档说明该模式适用于 Claude Code 2.1.181 或更高版本。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://modelcontextprotocol.io/" rel="noopener noreferrer" target="_blank">What is the Model Context Protocol ( MCP )? - Model Context Protocol</a></li>
+<li><a href="https://support.claude.com/en/articles/15924927-use-claude-code-cli-with-a-screen-reader" rel="noopener noreferrer" target="_blank">Use Claude Code CLI with a screen reader | Claude Help Center</a></li>
+<li><a href="https://heyclau.de/entry/guides/subagents-code-review-triage" rel="noopener noreferrer" target="_blank">Use Subagents for Code Review and Triage — HeyClaude</a></li>
+</ul>
+</details>
+<p><strong>标签</strong>: <code>#Claude Code</code>, <code>#release notes</code>, <code>#developer tools</code>, <code>#MCP</code>, <code>#bug fixes</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>Claude Code 是 Anthropic 的命令行编程助手，/code-review、/context 和 /mcp 等斜杠命令用于在编程会话中触发特定工作流。子代理是一类专门处理特定任务的辅助代理，例如代码审查，并且可以与主对话保持隔离。MCP，即模型上下文协议，是 Anthropic 推出的开放标准，用于把 AI 应用连接到外部工具、数据源和工作流。--ax-screen-reader 模式是 Claude Code 面向屏幕阅读器用户的无障碍模式，Anthropic 帮助文档说明该模式适用于 Claude Code 2.1.181 或更高版本。</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>Claude Code 是 Anthropic 的命令行编程助手，/code-review、/context 和 /mcp 等斜杠命令用于在编程会话中触发特定工作流。子代理是一类专门处理特定任务的辅助代理，例如代码审查，并且可以与主对话保持隔离。MCP，即模型上下文协议，是 Anthropic 推出的开放标准，用于把 AI 应用连接到外部工具、数据源和工作流。--ax-screen-reader 模式是 Claude Code 面向屏幕阅读器用户的无障碍模式，Anthropic 帮助文档说明该模式适用于 Claude Code 2.1.181 或更高版本。</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>Claude Code 是 Anthropic 的命令行编程助手，/code-review、/context 和 /mcp 等斜杠命令用于在编程会话中触发特定工作流。子代理是一类专门处理特定任务的辅助代理，例如代码审查，并且可以与主对话保持隔离。MCP，即模型上下文协议，是 Anthropic 推出的开放标准，用于把 AI 应用连接到外部工具、数据源和工作流。--ax-screen-reader 模式是 Claude Code 面向屏幕阅读器用户的无障碍模式，Anthropic 帮助文档说明该模式适用于 Claude Code 2.1.181 或更高版本。</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>判断团队近期是否有和Claude Code、release notes相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.218" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-23-zh.html#item-11">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

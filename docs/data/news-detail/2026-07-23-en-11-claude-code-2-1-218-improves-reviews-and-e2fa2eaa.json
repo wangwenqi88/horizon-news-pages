@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-23-en-11-claude-code-2-1-218-improves-reviews-and-e2fa2eaa",
+  "date": "2026-07-23",
+  "lang": "en",
+  "title": "Claude Code 2.1.218 improves reviews and reliability",
+  "source": "github",
+  "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.218",
+  "source_tier": "S",
+  "published_at": "2026-07-23",
+  "category": "Claude Code",
+  "group": "first_hand_news",
+  "score": "7.0",
+  "summary": "Anthropic released Claude Code v2.1.218 with a major workflow change: /code-review now runs as a background subagent instead of filling the active conversation. The release also adds screen-reader improvements and fixes issues involving Windows path corruption, conversation loss, MCP error reporting, paste handling, Bedrock metering, session resume, and review commands. The background /code-review change should make Claude Code more usable for developers who want code review without losing conversational context or disrupting stacked slash-command workflows. The accessibility, Windows, MCP, and session-integrity fixes matter because they address daily reliability problems in a developer tool increasingly used inside terminals, IDEs, and connected tool environments. The Windows fix specifically targets paths with \\u-prefixed segments such as C:\\Users\\unicorn, which were being corrupted into CJK characters in tool inputs and making files inaccessible. MCP diagnostics now include HTTP status and error text for failed connections, while the release also warns about hidden leading or trailing whitespace in MCP configuration values.",
+  "what_happened": "Anthropic released Claude Code v2.1.218 with a major workflow change: /code-review now runs as a background subagent instead of filling the active conversation. The release also adds screen-reader improvements and fixes issues involving Windows path corruption, conversation loss, MCP error reporting, paste handling, Bedrock metering, session resume, and review commands. The background /code-review change should make Claude Code more usable for developers who want code review without losing conversational context or disrupting stacked slash-command workflows. The accessibility, Windows, MCP, and session-integrity fixes matter because they address daily reliability problems in a developer tool increasingly used inside terminals, IDEs, and connected tool environments. The Windows fix specifically targets paths with \\u-prefixed segments such as C:\\Users\\unicorn, which were being corrupted into CJK characters in tool inputs and making files inaccessible. MCP diagnostics now include HTTP status and error text for failed connections, while the release also warns about hidden leading or trailing whitespace in MCP configuration values.",
+  "why_it_matters": "Claude Code is Anthropic’s command-line coding assistant, and slash commands such as /code-review, /context, and /mcp expose specific workflows inside a coding session. A subagent is a specialized helper that can handle a focused task, such as code review, with separation from the main conversation. MCP, or Model Context Protocol, is an open standard introduced by Anthropic for connecting AI applications to external tools, data sources, and workflows. The --ax-screen-reader mode is Claude Code’s accessibility mode for people using screen readers, and Anthropic’s help documentation says it is available in Claude Code version 2.1.181 or later.",
+  "manager_takeaway": "Claude Code is Anthropic’s command-line coding assistant, and slash commands such as /code-review, /context, and /mcp expose specific workflows inside a coding session. A subagent is a specialized helper that can handle a focused task, such as code review, with separation from the main conversation. MCP, or Model Context Protocol, is an open standard introduced by Anthropic for connecting AI applications to external tools, data sources, and workflows. The --ax-screen-reader mode is Claude Code’s accessibility mode for people using screen readers, and Anthropic’s help documentation says it is available in Claude Code version 2.1.181 or later.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for Claude Code, release notes.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-23-en.html#item-11",
+  "read_url": "/read/2026-07-23-en-11-claude-code-2-1-218-improves-reviews-and-e2fa2eaa.html",
+  "tags": [
+    "Claude Code",
+    "release notes",
+    "developer tools",
+    "MCP",
+    "bug fixes"
+  ]
+}

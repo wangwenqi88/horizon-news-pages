@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-23-en-18-ptacek-warns-open-weight-models-may-hack-286add40",
+  "date": "2026-07-23",
+  "lang": "en",
+  "title": "Ptacek warns open-weight models may hack networks.",
+  "source": "rss",
+  "source_url": "https://simonwillison.net/2026/Jul/22/thomas-ptacek/#atom-everything",
+  "source_tier": "A",
+  "published_at": "2026-07-23",
+  "category": "AI security",
+  "group": "practice_insight",
+  "score": "8.0",
+  "summary": "Simon Willison highlighted a July 22, 2026 quote from security practitioner Thomas Ptacek arguing that a 2025 open-weights model, when paired with a penetration-testing harness, could likely perform sandbox escapes and scan or hack many networks. Ptacek’s point is that this capability may not require a frontier model, and that surprise may come from overestimating the strength of current AI sandboxes. The warning matters because it shifts AI security risk from a hypothetical frontier-lab problem to something that defenders may need to assume is available with downloadable models and tooling. Organizations deploying AI agents, code execution environments, or internal automation should treat sandboxing, network egress, and tool permissions as high-risk control points. The claim depends on adding a pentest harness, meaning the model would not act alone but would be given structured workflows, tools, memory, and evidence-driven execution. The caveat is that this is an expert judgment rather than a published benchmark in the provided material, so it should be read as a serious risk signal rather than measured proof.",
+  "what_happened": "Simon Willison highlighted a July 22, 2026 quote from security practitioner Thomas Ptacek arguing that a 2025 open-weights model, when paired with a penetration-testing harness, could likely perform sandbox escapes and scan or hack many networks. Ptacek’s point is that this capability may not require a frontier model, and that surprise may come from overestimating the strength of current AI sandboxes. The warning matters because it shifts AI security risk from a hypothetical frontier-lab problem to something that defenders may need to assume is available with downloadable models and tooling. Organizations deploying AI agents, code execution environments, or internal automation should treat sandboxing, network egress, and tool permissions as high-risk control points. The claim depends on adding a pentest harness, meaning the model would not act alone but would be given structured workflows, tools, memory, and evidence-driven execution. The caveat is that this is an expert judgment rather than a published benchmark in the provided material, so it should be read as a serious risk signal rather than measured proof.",
+  "why_it_matters": "Open-weights models are AI models whose learned parameters are made available for others to run, adapt, or integrate, even if they are not always fully open source. A penetration-testing harness is surrounding software that can guide a model through reconnaissance, evidence collection, attack-chain planning, and tool use rather than simply asking it free-form questions. A sandbox escape is a vulnerability where code or an agent breaks out of an intended isolation boundary and gains access to the host or broader environment. In AI deployments, that matters because agents may be connected to code interpreters, browsers, files, credentials, or internal networks.",
+  "manager_takeaway": "Open-weights models are AI models whose learned parameters are made available for others to run, adapt, or integrate, even if they are not always fully open source. A penetration-testing harness is surrounding software that can guide a model through reconnaissance, evidence collection, attack-chain planning, and tool use rather than simply asking it free-form questions. A sandbox escape is a vulnerability where code or an agent breaks out of an intended isolation boundary and gains access to the host or broader environment. In AI deployments, that matters because agents may be connected to code interpreters, browsers, files, credentials, or internal networks.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI security, sandbox escape.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-23-en.html#item-18",
+  "read_url": "/read/2026-07-23-en-18-ptacek-warns-open-weight-models-may-hack-286add40.html",
+  "tags": [
+    "AI security",
+    "sandbox escape",
+    "penetration testing",
+    "open-weights models",
+    "cybersecurity"
+  ]
+}

@@ -33,6 +33,7 @@ DATA_DIR = DOCS_DIR / "data"
 DETAIL_DIR = DATA_DIR / "news-detail"
 READ_DIR = DOCS_DIR / "read"
 AUDIO_DIR = DOCS_DIR / "audio" / "daily"
+LATEST_DAILY_OUTPUT = ""
 ALLOWED_HTML_TAGS = {
     "a",
     "blockquote",
@@ -228,6 +229,8 @@ def page_shell(
 
 
 def latest_daily_output() -> str:
+    if LATEST_DAILY_OUTPUT:
+        return LATEST_DAILY_OUTPUT
     posts = load_posts()
     latest = next((post for post in posts if post.lang == "zh"), posts[0] if posts else None)
     return latest.output_name if latest else ""
@@ -1135,7 +1138,10 @@ def clean_old_read_pages() -> None:
 
 
 def build() -> None:
+    global LATEST_DAILY_OUTPUT
     posts = load_posts()
+    latest_zh = next((post for post in posts if post.lang == "zh"), None)
+    LATEST_DAILY_OUTPUT = latest_zh.output_name if latest_zh else ""
     clean_old_daily_pages()
     clean_old_read_pages()
     for post in posts:
@@ -1149,7 +1155,6 @@ def build() -> None:
         encoding="utf-8",
         newline="\n",
     )
-    latest_zh = next((post for post in posts if post.lang == "zh"), None)
     if latest_zh:
         (DOCS_DIR / "firsthand.html").write_text(
             build_track_page(

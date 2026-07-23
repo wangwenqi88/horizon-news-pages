@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-23-en-01-terence-tao-probes-a-claimed-jacobian-co-7462f59d",
+  "date": "2026-07-23",
+  "lang": "en",
+  "title": "Terence Tao probes a claimed Jacobian counterexample with ChatGPT.",
+  "source": "hackernews",
+  "source_url": "https://chatgpt.com/share/6a5fdc7a-d6f8-83e8-bbea-8deb42cfed56",
+  "source_tier": "B",
+  "published_at": "2026-07-23",
+  "category": "LLM-assisted-research",
+  "group": "first_hand_news",
+  "score": "9.0",
+  "summary": "A shared ChatGPT conversation shows Terence Tao working through a claimed counterexample to the Jacobian Conjecture, following earlier Hacker News discussion of a Claude Fable-generated counterexample. The July 2026 Hacker News threads drew heavy engagement, with 133 comments on Tao's digestion thread and 508 comments on the earlier counterexample thread. If a valid counterexample exists, it would affect a long-standing open problem in affine algebraic geometry, so the mathematical stakes are high. Even if the claim remains unverified, the transcript is valuable because it shows how a top mathematician uses an LLM as an interactive reasoning aid rather than as an authority. Commenters emphasized that the alleged counterexample was not described as a simple brute-force find, but as a polynomial with specific structure that Tao repeatedly tried to simplify and reinterpret. The key caveat is that discussion of a claimed counterexample is not the same as peer-reviewed verification, and the transcript should be read as exploratory analysis.",
+  "what_happened": "A shared ChatGPT conversation shows Terence Tao working through a claimed counterexample to the Jacobian Conjecture, following earlier Hacker News discussion of a Claude Fable-generated counterexample. The July 2026 Hacker News threads drew heavy engagement, with 133 comments on Tao's digestion thread and 508 comments on the earlier counterexample thread. If a valid counterexample exists, it would affect a long-standing open problem in affine algebraic geometry, so the mathematical stakes are high. Even if the claim remains unverified, the transcript is valuable because it shows how a top mathematician uses an LLM as an interactive reasoning aid rather than as an authority. Commenters emphasized that the alleged counterexample was not described as a simple brute-force find, but as a polynomial with specific structure that Tao repeatedly tried to simplify and reinterpret. The key caveat is that discussion of a claimed counterexample is not the same as peer-reviewed verification, and the transcript should be read as exploratory analysis.",
+  "why_it_matters": "The Jacobian Conjecture concerns polynomial maps whose Jacobian determinant is a constant nonzero value, and asks whether such maps must have polynomial inverses. In broad terms, it is about when a polynomial transformation is guaranteed to be reversible within the same algebraic category. Because the conjecture has resisted proof or disproof for decades, any plausible counterexample attracts intense scrutiny. Claude Fable is described in the provided search results as a long-running-project-oriented Claude model, which explains why the earlier thread focused on an LLM-generated mathematical claim.",
+  "manager_takeaway": "The Jacobian Conjecture concerns polynomial maps whose Jacobian determinant is a constant nonzero value, and asks whether such maps must have polynomial inverses. In broad terms, it is about when a polynomial transformation is guaranteed to be reversible within the same algebraic category. Because the conjecture has resisted proof or disproof for decades, any plausible counterexample attracts intense scrutiny. Claude Fable is described in the provided search results as a long-running-project-oriented Claude model, which explains why the earlier thread focused on an LLM-generated mathematical claim.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for LLM-assisted-research, mathematics.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The discussion is broadly fascinated but cautious: commenters admire Tao's pointed, jargon-rich questioning and his repeated attempts to simplify the construction, while noting that non-experts could not extract the same value from the model. Several comments frame the transcript as an example of expert-in-the-loop AI, where the human supplies judgment, taste, and verification pressure."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-23-en.html#item-1",
+  "read_url": "/read/2026-07-23-en-01-terence-tao-probes-a-claimed-jacobian-co-7462f59d.html",
+  "tags": [
+    "LLM-assisted-research",
+    "mathematics",
+    "ChatGPT",
+    "expert-workflows",
+    "Hacker-News"
+  ]
+}

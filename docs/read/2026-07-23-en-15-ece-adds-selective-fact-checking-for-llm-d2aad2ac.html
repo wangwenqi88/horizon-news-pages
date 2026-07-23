@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ECE adds selective fact-checking for LLMs.</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-23-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-23 · Horizon News AI 精读</p>
+        <h1>ECE adds selective fact-checking for LLMs.</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>S 级信源</span><span>7.0 分</span><span>LLM fact-checking、AI agents、calibration、RAG evaluation、trustworthy AI</span></div>
+        <a class="source-cta" href="https://arxiv.org/abs/2607.18240" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>A new arXiv paper introduces Evidence Chain Evaluation, a selective LLM fact-checking framework that allows a verification agent to abstain with an uncertain verdict instead of forcing every claim into true or false. On ECE-Bench, the system reports 91.6% standard accuracy, 93.7% coverage, and 97.8% selective accuracy on answered claims. The work targets a practical reliability problem in LLM verification: high apparent accuracy can hide cases where the evidence is weak, sparse, or contradictory. For teams building RAG systems, fact-checking agents, or trustworthy AI workflows, abstention can be a safety mechanism that reduces overconfident wrong answers. The evaluated agent gathers evidence through web search, scholarly search, and executable checks, then returns a structured verdict with confidence and source-level metadata. The paper notes an important caveat: ECE does not beat the strongest retrieval baseline on aggregate calibration metrics such as Expected Calibration Error, Brier score, or AURC, even though it shows a useful selective-prediction trade-off by deferring 6 of 95 cases.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：rss</li><li>评分：7.0/10</li><li>标签：LLM fact-checking、AI agents、calibration、RAG evaluation、trustworthy AI</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://arxiv.org/abs/2607.18240" rel="noopener noreferrer" target="_blank">ECE adds selective fact-checking for LLMs.</a> ⭐️ 7.0/10</h3>
+<p>A new arXiv paper introduces Evidence Chain Evaluation, a selective LLM fact-checking framework that allows a verification agent to abstain with an uncertain verdict instead of forcing every claim into true or false. On ECE-Bench, the system reports 91.6% standard accuracy, 93.7% coverage, and 97.8% selective accuracy on answered claims. The work targets a practical reliability problem in LLM verification: high apparent accuracy can hide cases where the evidence is weak, sparse, or contradictory. For teams building RAG systems, fact-checking agents, or trustworthy AI workflows, abstention can be a safety mechanism that reduces overconfident wrong answers. The evaluated agent gathers evidence through web search, scholarly search, and executable checks, then returns a structured verdict with confidence and source-level metadata. The paper notes an important caveat: ECE does not beat the strongest retrieval baseline on aggregate calibration metrics such as Expected Calibration Error, Brier score, or AURC, even though it shows a useful selective-prediction trade-off by deferring 6 of 95 cases.</p>
+<p>rss · ArXiv AI · Jul 23, 04:00</p>
+<p><strong>Background</strong>: LLM fact-checking systems often evaluate a claim by retrieving or generating evidence and then producing a verdict. Selective prediction adds a third option: the system may refuse to answer when its evidence or confidence is insufficient. Calibration metrics such as Expected Calibration Error measure whether a model’s stated confidence matches its observed correctness. In this paper, Evidence Chain Evaluation focuses not only on the final answer but also on the quality and reliability of the evidence path used to reach it.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://arxiv.org/html/2607.18240" rel="noopener noreferrer" target="_blank">Calibrated Selective Fact - Checking via Evidence Chain Evaluation</a></li>
+<li><a href="https://aiwiki.ai/wiki/expected_calibration_error" rel="noopener noreferrer" target="_blank">Expected calibration error | AI Wiki</a></li>
+</ul>
+</details>
+<p><strong>Tags</strong>: <code>#LLM fact-checking</code>, <code>#AI agents</code>, <code>#calibration</code>, <code>#RAG evaluation</code>, <code>#trustworthy AI</code></p>
+<hr/>
+<h2>Practice &amp; Expert Insights</h2>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>LLM fact-checking systems often evaluate a claim by retrieving or generating evidence and then producing a verdict. Selective prediction adds a third option: the system may refuse to answer when its evidence or confidence is insufficient. Calibration metrics such as Expected Calibration Error measure whether a model’s stated confidence matches its observed correctness. In this paper, Evidence Chain Evaluation focuses not only on the final answer but also on the quality and reliability of the evidence path used to reach it.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>LLM fact-checking systems often evaluate a claim by retrieving or generating evidence and then producing a verdict. Selective prediction adds a third option: the system may refuse to answer when its evidence or confidence is insufficient. Calibration metrics such as Expected Calibration Error measure whether a model’s stated confidence matches its observed correctness. In this paper, Evidence Chain Evaluation focuses not only on the final answer but also on the quality and reliability of the evidence path used to reach it.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>LLM fact-checking systems often evaluate a claim by retrieving or generating evidence and then producing a verdict. Selective prediction adds a third option: the system may refuse to answer when its evidence or confidence is insufficient. Calibration metrics such as Expected Calibration Error measure whether a model’s stated confidence matches its observed correctness. In this paper, Evidence Chain Evaluation focuses not only on the final answer but also on the quality and reliability of the evidence path used to reach it.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for LLM fact-checking, AI agents.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://arxiv.org/abs/2607.18240" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-23-en.html#item-15">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-23-en-10-poolside-s-model-factory-and-laguna-s-7d08c732",
+  "date": "2026-07-23",
+  "lang": "en",
+  "title": "Poolside’s Model Factory and Laguna S",
+  "source": "rss",
+  "source_url": "https://www.latent.space/p/poolside",
+  "source_tier": "A",
+  "published_at": "2026-07-23",
+  "category": "frontier-models",
+  "group": "first_hand_news",
+  "score": "8.0",
+  "summary": "Latent Space interviewed Poolside AI co-CEO Eiso Kant about how a small research team built a compact model-training factory. The interview centers on Laguna S, Poolside’s 118B MoE coding model, which is being presented as competitive with much larger open-weight coding models. This is notable because it highlights a different scaling strategy for frontier coding models: more disciplined infrastructure and MoE design rather than simply maximizing parameter count. If Poolside’s claims hold up, it could influence how labs build efficient agentic coding systems and long-context models. The model referenced in the search results is Laguna S 2.1, described as a 118B total-parameter MoE model with 8B activated parameters per token and support for up to a 1M-token context window. Poolside also reports benchmark results such as 70.2% on Terminal-Bench 2.1 and 40.4% on DeepSWE, but those claims should still be read as vendor-reported until independently validated.",
+  "what_happened": "Latent Space interviewed Poolside AI co-CEO Eiso Kant about how a small research team built a compact model-training factory. The interview centers on Laguna S, Poolside’s 118B MoE coding model, which is being presented as competitive with much larger open-weight coding models. This is notable because it highlights a different scaling strategy for frontier coding models: more disciplined infrastructure and MoE design rather than simply maximizing parameter count. If Poolside’s claims hold up, it could influence how labs build efficient agentic coding systems and long-context models. The model referenced in the search results is Laguna S 2.1, described as a 118B total-parameter MoE model with 8B activated parameters per token and support for up to a 1M-token context window. Poolside also reports benchmark results such as 70.2% on Terminal-Bench 2.1 and 40.4% on DeepSWE, but those claims should still be read as vendor-reported until independently validated.",
+  "why_it_matters": "MoE, or mixture-of-experts, is a model design where only a subset of experts is activated for each token, so total capacity can be large while per-token compute stays lower. Poolside’s Laguna S line is positioned for agentic coding and long-horizon work, which is why context length and coding benchmarks matter here. Open-weight coding models are especially watched because they can be self-hosted or adapted by teams that want more control over cost and deployment.",
+  "manager_takeaway": "MoE, or mixture-of-experts, is a model design where only a subset of experts is activated for each token, so total capacity can be large while per-token compute stays lower. Poolside’s Laguna S line is positioned for agentic coding and long-horizon work, which is why context length and coding benchmarks matter here. Open-weight coding models are especially watched because they can be self-hosted or adapted by teams that want more control over cost and deployment.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for frontier-models, model-training.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-23-en.html#item-10",
+  "read_url": "/read/2026-07-23-en-10-poolside-s-model-factory-and-laguna-s-7d08c732.html",
+  "tags": [
+    "frontier-models",
+    "model-training",
+    "mixture-of-experts",
+    "AI-coding",
+    "Poolside-AI"
+  ]
+}

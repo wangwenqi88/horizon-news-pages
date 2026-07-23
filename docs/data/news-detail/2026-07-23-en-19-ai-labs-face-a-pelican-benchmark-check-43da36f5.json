@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-23-en-19-ai-labs-face-a-pelican-benchmark-check-43da36f5",
+  "date": "2026-07-23",
+  "lang": "en",
+  "title": "AI labs face a pelican benchmark check.",
+  "source": "hackernews",
+  "source_url": "https://dylancastillo.co/posts/pelicanmaxxing.html",
+  "source_tier": "B",
+  "published_at": "2026-07-23",
+  "category": "AI evaluation",
+  "group": "practice_insight",
+  "score": "7.0",
+  "summary": "Dylan Castillo published an investigation into whether AI labs are unusually good at Simon Willison’s “pelican riding a bicycle” SVG prompt. He generated 1,008 SVGs across 8 animals, 6 vehicles, and 7 labs, then compared the pelican-bicycle results with nearby animal-vehicle combinations. The post matters because it turns a joke-like prompt into a concrete case study in benchmark skepticism and possible benchmark overfitting. It shows how evaluators can look for suspicious specialization without relying only on vibes or single cherry-picked examples. The strongest oddity noted in the discussion was that all 21 pelican-bicycle images across the seven labs faced right, while right-facing images were common overall at about 60%. Castillo’s conclusion, as quoted in the comments, was that nothing clearly jumped out as proof of cheating or targeted optimization.",
+  "what_happened": "Dylan Castillo published an investigation into whether AI labs are unusually good at Simon Willison’s “pelican riding a bicycle” SVG prompt. He generated 1,008 SVGs across 8 animals, 6 vehicles, and 7 labs, then compared the pelican-bicycle results with nearby animal-vehicle combinations. The post matters because it turns a joke-like prompt into a concrete case study in benchmark skepticism and possible benchmark overfitting. It shows how evaluators can look for suspicious specialization without relying only on vibes or single cherry-picked examples. The strongest oddity noted in the discussion was that all 21 pelican-bicycle images across the seven labs faced right, while right-facing images were common overall at about 60%. Castillo’s conclusion, as quoted in the comments, was that nothing clearly jumped out as proof of cheating or targeted optimization.",
+  "why_it_matters": "The “pelican on a bicycle” SVG prompt is an informal visual generation test popularized by Simon Willison for seeing whether language models can produce structured vector images from text. SVG is a text-based vector graphics format, so a model must describe shapes, positions, and relationships in code rather than merely output pixels. Benchmark overfitting happens when a model becomes especially good at a known test pattern without necessarily improving on the broader task the benchmark is meant to represent. Castillo’s approach varied the animal and vehicle while keeping the prompt wording nearly identical, which helps distinguish prompt-specific memorization from general drawing ability.",
+  "manager_takeaway": "The “pelican on a bicycle” SVG prompt is an informal visual generation test popularized by Simon Willison for seeing whether language models can produce structured vector images from text. SVG is a text-based vector graphics format, so a model must describe shapes, positions, and relationships in code rather than merely output pixels. Benchmark overfitting happens when a model becomes especially good at a known test pattern without necessarily improving on the broader task the benchmark is meant to represent. Castillo’s approach varied the animal and vehicle while keeping the prompt wording nearly identical, which helps distinguish prompt-specific memorization from general drawing ability.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI evaluation, benchmarking.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The Hacker News discussion was largely positive about the methodology, with Simon Willison praising the broader 1,008-SVG comparison as more robust than casual spot checks. Some commenters offered non-cheating explanations, such as bicycles often being drawn from the right side because the drivetrain is on the right. Others noted that even imperfect SVG output can still be impressive compared with how slowly many humans would draw the same scene by hand."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-23-en.html#item-19",
+  "read_url": "/read/2026-07-23-en-19-ai-labs-face-a-pelican-benchmark-check-43da36f5.html",
+  "tags": [
+    "AI evaluation",
+    "benchmarking",
+    "LLM behavior",
+    "SVG generation",
+    "Hacker News"
+  ]
+}

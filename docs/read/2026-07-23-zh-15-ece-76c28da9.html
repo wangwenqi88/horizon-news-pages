@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ECE 为大模型加入选择性事实核查。</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-23-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-23 · Horizon News AI 精读</p>
+        <h1>ECE 为大模型加入选择性事实核查。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>rss</span><span>S 级信源</span><span>7.0 分</span><span>LLM fact-checking、AI agents、calibration、RAG evaluation、trustworthy AI</span></div>
+        <a class="source-cta" href="https://arxiv.org/abs/2607.18240" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>一篇新的 arXiv 论文提出了 Evidence Chain Evaluation，这是一种选择性 LLM 事实核查框架，允许验证智能体在不确定时给出“不确定”结论，而不是强制把每个声明判为真或假。该系统在 ECE-Bench 上报告了 91.6% 的标准准确率、93.7% 的覆盖率，以及在已回答声明上 97.8% 的选择性准确率。 这项工作针对 LLM 验证中的一个实际可靠性问题：表面上的高准确率可能掩盖证据薄弱、稀疏或相互矛盾的情况。对于构建 RAG 系统、事实核查智能体或可信 AI 流程的团队来说，允许放弃回答可以成为一种安全机制，减少过度自信的错误结论。 被评估的智能体通过网页搜索、学术搜索和可执行检查来收集证据，然后返回带有置信度和来源级元数据的结构化结论。论文也指出了一个重要限制：尽管 ECE 通过在 95 个案例中推迟回答 6 个案例展现了有用的选择性预测权衡，但它在 Expected Calibration Error、Brier score 或 AURC 等整体校准指标上并未超过最强的检索基线。</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：rss</li><li>评分：7.0/10</li><li>标签：LLM fact-checking、AI agents、calibration、RAG evaluation、trustworthy AI</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://arxiv.org/abs/2607.18240" rel="noopener noreferrer" target="_blank">ECE 为大模型加入选择性事实核查。</a> ⭐️ 7.0/10</h3>
+<p>一篇新的 arXiv 论文提出了 Evidence Chain Evaluation，这是一种选择性 LLM 事实核查框架，允许验证智能体在不确定时给出“不确定”结论，而不是强制把每个声明判为真或假。该系统在 ECE-Bench 上报告了 91.6% 的标准准确率、93.7% 的覆盖率，以及在已回答声明上 97.8% 的选择性准确率。 这项工作针对 LLM 验证中的一个实际可靠性问题：表面上的高准确率可能掩盖证据薄弱、稀疏或相互矛盾的情况。对于构建 RAG 系统、事实核查智能体或可信 AI 流程的团队来说，允许放弃回答可以成为一种安全机制，减少过度自信的错误结论。 被评估的智能体通过网页搜索、学术搜索和可执行检查来收集证据，然后返回带有置信度和来源级元数据的结构化结论。论文也指出了一个重要限制：尽管 ECE 通过在 95 个案例中推迟回答 6 个案例展现了有用的选择性预测权衡，但它在 Expected Calibration Error、Brier score 或 AURC 等整体校准指标上并未超过最强的检索基线。</p>
+<p>rss · ArXiv AI · 7月23日 04:00</p>
+<p><strong>背景</strong>: LLM 事实核查系统通常会通过检索或生成证据来评估一个声明，然后给出结论。选择性预测增加了第三种选择：当证据或置信度不足时，系统可以拒绝回答。Expected Calibration Error 等校准指标用于衡量模型声称的置信度是否与实际正确率相匹配。在这篇论文中，Evidence Chain Evaluation 不仅关注最终答案，也关注得出答案所依赖的证据路径的质量和可靠性。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://arxiv.org/html/2607.18240" rel="noopener noreferrer" target="_blank">Calibrated Selective Fact - Checking via Evidence Chain Evaluation</a></li>
+<li><a href="https://aiwiki.ai/wiki/expected_calibration_error" rel="noopener noreferrer" target="_blank">Expected calibration error | AI Wiki</a></li>
+</ul>
+</details>
+<p><strong>标签</strong>: <code>#LLM fact-checking</code>, <code>#AI agents</code>, <code>#calibration</code>, <code>#RAG evaluation</code>, <code>#trustworthy AI</code></p>
+<hr/>
+<h2>实战与专家洞察</h2>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>LLM 事实核查系统通常会通过检索或生成证据来评估一个声明，然后给出结论。选择性预测增加了第三种选择：当证据或置信度不足时，系统可以拒绝回答。Expected Calibration Error 等校准指标用于衡量模型声称的置信度是否与实际正确率相匹配。在这篇论文中，Evidence Chain Evaluation 不仅关注最终答案，也关注得出答案所依赖的证据路径的质量和可靠性。</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>LLM 事实核查系统通常会通过检索或生成证据来评估一个声明，然后给出结论。选择性预测增加了第三种选择：当证据或置信度不足时，系统可以拒绝回答。Expected Calibration Error 等校准指标用于衡量模型声称的置信度是否与实际正确率相匹配。在这篇论文中，Evidence Chain Evaluation 不仅关注最终答案，也关注得出答案所依赖的证据路径的质量和可靠性。</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>LLM 事实核查系统通常会通过检索或生成证据来评估一个声明，然后给出结论。选择性预测增加了第三种选择：当证据或置信度不足时，系统可以拒绝回答。Expected Calibration Error 等校准指标用于衡量模型声称的置信度是否与实际正确率相匹配。在这篇论文中，Evidence Chain Evaluation 不仅关注最终答案，也关注得出答案所依赖的证据路径的质量和可靠性。</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>判断团队近期是否有和LLM fact-checking、AI agents相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>该内容由 AI 基于公开资料转译和分析，关键事实仍应以原文和官方资料为准。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://arxiv.org/abs/2607.18240" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-23-zh.html#item-15">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

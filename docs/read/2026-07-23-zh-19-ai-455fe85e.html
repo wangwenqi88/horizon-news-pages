@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 实验室面临鹈鹕基准检验。</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-23-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-23 · Horizon News AI 精读</p>
+        <h1>AI 实验室面临鹈鹕基准检验。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>7.0 分</span><span>AI evaluation、benchmarking、LLM behavior、SVG generation、Hacker News</span></div>
+        <a class="source-cta" href="https://dylancastillo.co/posts/pelicanmaxxing.html" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>Dylan Castillo 发布了一项调查，研究 AI 实验室是否在 Simon Willison 的“鹈鹕骑自行车”SVG 提示词上表现异常出色。他生成了 1,008 个 SVG，覆盖 8 种动物、6 种交通工具和 7 个实验室，并将“鹈鹕骑自行车”的结果与相近的动物和交通工具组合进行比较。 这篇文章的重要性在于，它把一个看似玩笑的提示词变成了关于基准怀疑和潜在基准过拟合的具体案例研究。它展示了评估者如何在不只依赖直觉或单个精选样例的情况下，寻找可疑的专项优化迹象。 讨论中提到的最显著异常是，7 个实验室生成的全部 21 张“鹈鹕骑自行车”图像都朝右，而整体上朝右图像本来就很常见，约占 60%。根据评论引用的结论，Castillo 认为没有任何现象足以清楚证明存在作弊或定向优化。</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：7.0/10</li><li>标签：AI evaluation、benchmarking、LLM behavior、SVG generation、Hacker News</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://dylancastillo.co/posts/pelicanmaxxing.html" rel="noopener noreferrer" target="_blank">AI 实验室面临鹈鹕基准检验。</a> ⭐️ 7.0/10</h3>
+<p>Dylan Castillo 发布了一项调查，研究 AI 实验室是否在 Simon Willison 的“鹈鹕骑自行车”SVG 提示词上表现异常出色。他生成了 1,008 个 SVG，覆盖 8 种动物、6 种交通工具和 7 个实验室，并将“鹈鹕骑自行车”的结果与相近的动物和交通工具组合进行比较。 这篇文章的重要性在于，它把一个看似玩笑的提示词变成了关于基准怀疑和潜在基准过拟合的具体案例研究。它展示了评估者如何在不只依赖直觉或单个精选样例的情况下，寻找可疑的专项优化迹象。 讨论中提到的最显著异常是，7 个实验室生成的全部 21 张“鹈鹕骑自行车”图像都朝右，而整体上朝右图像本来就很常见，约占 60%。根据评论引用的结论，Castillo 认为没有任何现象足以清楚证明存在作弊或定向优化。</p>
+<p>hackernews · dcastm · 7月22日 17:17 · <a href="https://news.ycombinator.com/item?id=49010129" rel="noopener noreferrer" target="_blank">社区讨论</a></p>
+<p><strong>背景</strong>: “鹈鹕骑自行车”SVG 提示词是 Simon Willison 推广的一种非正式视觉生成测试，用来观察语言模型能否根据文本生成结构化矢量图。SVG 是一种基于文本的矢量图格式，因此模型需要用代码描述形状、位置和相互关系，而不只是输出像素。基准过拟合指的是模型对某个已知测试模式表现特别好，但不一定在该基准想代表的更广泛任务上真正提升。Castillo 的方法是在几乎保持提示词措辞不变的情况下替换动物和交通工具，这有助于区分针对特定提示词的记忆与一般绘图能力。</p>
+<p><strong>AI 观点</strong>: A high-engagement Hacker News discussion around a practitioner-style investigation into whether AI labs may be overfitting or optimizing for a niche SVG generation benchmark. The post is more valuable as an evaluation-methodology and benchmark-skepticism case study than as first-hand news. Comments add useful context, including Simon Willison highlighting the robustness of the methodology and others debating plausible non-cheating explanations for observed patterns.</p>
+<p><strong>可复用方法</strong>: 一个有用的评估模式是，把可疑的基准项目放到一组受控的相近变体中进行测试。应保持提示词结构稳定，只改变关键名词或条件，然后比较核心案例是否真的异常突出。这样可以让非正式基准更难被简单否定，并帮助区分真实能力、数据污染和针对特定提示词的调优。</p>
+<p><strong>实操要点</strong>: 应使用因子式测试矩阵，例如动物乘以交通工具，而不是只评估一个著名提示词。每个组合应生成多个样本，并尽量保持模型、提示词措辞、温度参数和评分标准一致。在提出定性判断之前，应先记录朝向、对象是否出现、关系是否正确等可测量特征。异常聚集应被视为需要继续验证的假设，而不能自动当作作弊证据。</p>
+<p><strong>我可以怎么用</strong>: 对于 AI 代理和内容创作流程，这提醒我们在信任单个展示样例之前，应使用相近变体评估提示词。在软件交付或金融软件项目管理中，同样的思路也适用于验收测试：应改变真实边界场景，避免团队只为演示路径做优化。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://dylancastillo.co/posts/pelicanmaxxing.html" rel="noopener noreferrer" target="_blank">Are AI labs pelicanmaxxing ? – Dylan Castillo</a></li>
+<li><a href="https://arxiv.org/html/2412.03597" rel="noopener noreferrer" target="_blank">The Vulnerability of Language Model Benchmarks : Do They...</a></li>
+<li><a href="https://www.rival.tips/models/gemini-2.5-flash-preview-thinking/responses/gemini-2.5-flash-preview-thinking-svg-layout" rel="noopener noreferrer" target="_blank">SVG Layout Challenge | Gemini 2.5 Flash Preview (thinking)... | Rival</a></li>
+</ul>
+</details>
+<p><strong>社区讨论</strong>: Hacker News 上的讨论总体认可这套方法，Simon Willison 称赞这种覆盖 1,008 个 SVG 的比较比随手抽查更稳健。一些评论者提出了非作弊解释，例如自行车常从右侧绘制，因为传动系统位于右侧。也有人指出，即使 SVG 输出并不完美，相比许多人手动画同一场景的速度和准确性，它仍然令人印象深刻。</p>
+<p><strong>标签</strong>: <code>#AI evaluation</code>, <code>#benchmarking</code>, <code>#LLM behavior</code>, <code>#SVG generation</code>, <code>#Hacker News</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>“鹈鹕骑自行车”SVG 提示词是 Simon Willison 推广的一种非正式视觉生成测试，用来观察语言模型能否根据文本生成结构化矢量图。SVG 是一种基于文本的矢量图格式，因此模型需要用代码描述形状、位置和相互关系，而不只是输出像素。基准过拟合指的是模型对某个已知测试模式表现特别好，但不一定在该基准想代表的更广泛任务上真正提升。Castillo 的方法是在几乎保持提示词措辞不变的情况下替换动物和交通工具，这有助于区分针对特定提示词的记忆与一般绘图能力。</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>“鹈鹕骑自行车”SVG 提示词是 Simon Willison 推广的一种非正式视觉生成测试，用来观察语言模型能否根据文本生成结构化矢量图。SVG 是一种基于文本的矢量图格式，因此模型需要用代码描述形状、位置和相互关系，而不只是输出像素。基准过拟合指的是模型对某个已知测试模式表现特别好，但不一定在该基准想代表的更广泛任务上真正提升。Castillo 的方法是在几乎保持提示词措辞不变的情况下替换动物和交通工具，这有助于区分针对特定提示词的记忆与一般绘图能力。</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>A high-engagement Hacker News discussion around a practitioner-style investigation into whether AI labs may be overfitting or optimizing for a niche SVG generation benchmark. The post is more valuable as an evaluation-methodology and benchmark-skepticism case study than as first-hand news. Comments add useful context, including Simon Willison highlighting the robustness of the methodology and others debating plausible non-cheating explanations for observed patterns.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>判断团队近期是否有和AI evaluation、benchmarking相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ul><p>一个有用的评估模式是，把可疑的基准项目放到一组受控的相近变体中进行测试。应保持提示词结构稳定，只改变关键名词或条件，然后比较核心案例是否真的异常突出。这样可以让非正式基准更难被简单否定，并帮助区分真实能力、数据污染和针对特定提示词的调优。</p><p>应使用因子式测试矩阵，例如动物乘以交通工具，而不是只评估一个著名提示词。每个组合应生成多个样本，并尽量保持模型、提示词措辞、温度参数和评分标准一致。在提出定性判断之前，应先记录朝向、对象是否出现、关系是否正确等可测量特征。异常聚集应被视为需要继续验证的假设，而不能自动当作作弊证据。</p><p>对于 AI 代理和内容创作流程，这提醒我们在信任单个展示样例之前，应使用相近变体评估提示词。在软件交付或金融软件项目管理中，同样的思路也适用于验收测试：应改变真实边界场景，避免团队只为演示路径做优化。</p>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>Hacker News 上的讨论总体认可这套方法，Simon Willison 称赞这种覆盖 1,008 个 SVG 的比较比随手抽查更稳健。一些评论者提出了非作弊解释，例如自行车常从右侧绘制，因为传动系统位于右侧。也有人指出，即使 SVG 输出并不完美，相比许多人手动画同一场景的速度和准确性，它仍然令人印象深刻。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://dylancastillo.co/posts/pelicanmaxxing.html" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-23-zh.html#item-19">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>
