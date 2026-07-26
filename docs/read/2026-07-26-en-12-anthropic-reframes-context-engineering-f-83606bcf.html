@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anthropic reframes context engineering for Claude 5 models.</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-26-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-26 · Horizon News AI 精读</p>
+        <h1>Anthropic reframes context engineering for Claude 5 models.</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>9.0 分</span><span>context engineering、Claude、prompt engineering、AI agents、workflow design</span></div>
+        <a class="source-cta" href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>Anthropic published official guidance on “the new rules of context engineering” for Claude 5-generation models, focusing on how practitioners should provide instructions, memory, and surrounding context. The piece is positioned as a practical playbook for making Claude behave more reliably in agents, coding workflows, and prompt-driven systems. For teams building with LLMs, reliability increasingly depends less on a single clever prompt and more on managing the whole information environment around the model. Official guidance from Anthropic can influence how developers design agent memory, coding assistants, evaluation harnesses, and production workflows around Claude. The guidance emphasizes context engineering rather than only prompt engineering, meaning the model’s behavior is shaped by instructions, retrieved information, memory, tool outputs, and task-specific state. The community discussion highlights important caveats: automatic memory, hidden reasoning behavior, hallucinated APIs, accidental edits, and vendor-specific tooling can all become reliability risks.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：9.0/10</li><li>标签：context engineering、Claude、prompt engineering、AI agents、workflow design</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" rel="noopener noreferrer" target="_blank">Anthropic reframes context engineering for Claude 5 models.</a> ⭐️ 9.0/10</h3>
+<p>Anthropic published official guidance on “the new rules of context engineering” for Claude 5-generation models, focusing on how practitioners should provide instructions, memory, and surrounding context. The piece is positioned as a practical playbook for making Claude behave more reliably in agents, coding workflows, and prompt-driven systems. For teams building with LLMs, reliability increasingly depends less on a single clever prompt and more on managing the whole information environment around the model. Official guidance from Anthropic can influence how developers design agent memory, coding assistants, evaluation harnesses, and production workflows around Claude. The guidance emphasizes context engineering rather than only prompt engineering, meaning the model’s behavior is shaped by instructions, retrieved information, memory, tool outputs, and task-specific state. The community discussion highlights important caveats: automatic memory, hidden reasoning behavior, hallucinated APIs, accidental edits, and vendor-specific tooling can all become reliability risks.</p>
+<p>hackernews · mellosouls · Jul 25, 20:42 · <a href="https://news.ycombinator.com/item?id=49051361" rel="noopener noreferrer" target="_blank">Discussion</a></p>
+<p><strong>Background</strong>: Context engineering is the practice of designing and managing the full informational environment in which a large language model operates. Compared with prompt engineering, it treats the prompt as only one part of a larger system that may include retrieval, memory, notes, tool results, and workflow state. Anthropic’s related engineering guidance for AI agents describes a pattern where agents keep only necessary information in working memory while using note-taking or persistence strategies for longer-running tasks.</p>
+<p><strong>AI View</strong>: This is official guidance from Anthropic on how to structure context for Claude 5-era models, so it is more of a practitioner playbook than broad news. It has strong practical value for people building agents, coding workflows, or prompt systems. The HN thread is highly engaged (403 score, 293 comments) and adds useful debate about model reliability, memory, and over-reliance on hidden behavior, which increases its value for experienced readers.</p>
+<p><strong>Practical Takeaways</strong>: Treat context as a managed resource, not as an ever-growing pile of instructions. Separate stable system instructions, task-specific requirements, retrieved facts, memory, and tool outputs so each piece has a clear purpose and scope. For coding agents, prefer explicit constraints, visible diffs, and verification steps over trusting the model to infer hidden intent from prior context. Use memory selectively, because helpful persistence can become harmful when the model draws assumptions from old or irrelevant work.</p>
+<p><strong>Implementation Notes</strong>: Define a context hierarchy that separates durable instructions from per-task instructions and transient evidence. Make memory opt-in or reviewable for high-risk workflows, especially when previous projects could bias current decisions. Require coding agents to show planned changes, generate diffs, and run tests or checks before applying edits. Keep portable prompt and workflow artifacts where possible, because vendor-specific context features may create migration risk. Add evaluations that test behavior under stale memory, conflicting instructions, missing APIs, and oversized context.</p>
+<p><strong>How I Can Use This</strong>: For AI agents and software delivery, this guidance suggests building a context pipeline rather than relying on one long prompt. In Obsidian or content workflows, it maps naturally to separating evergreen project notes, task briefs, source excerpts, and decision logs before handing context to an AI assistant. For financial-software project management, the same discipline helps reduce accidental assumptions by making requirements, constraints, approvals, and audit-relevant evidence explicit.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" rel="noopener noreferrer" target="_blank">Effective context engineering for AI agents \ Anthropic</a></li>
+<li><a href="https://wikova.com/wiki/TcRvIktG" rel="noopener noreferrer" target="_blank">Context Engineering for Large Language Models - Wikova</a></li>
+<li><a href="https://www.ibm.com/think/topics/ai-agent-memory" rel="noopener noreferrer" target="_blank">What Is AI Agent Memory? | IBM</a></li>
+</ul>
+</details>
+<p><strong>Discussion</strong>: The discussion is engaged but skeptical: several commenters argue that increasingly elaborate context rules reveal how poorly understood and unreliable these systems still are. Others worry about over-reliance on Claude’s automatic memory, hidden reasoning, hallucinated APIs, accidental code changes, and a possible shift from portable markdown-based harnesses toward Anthropic-specific tooling.</p>
+<p><strong>Tags</strong>: <code>#context engineering</code>, <code>#Claude</code>, <code>#prompt engineering</code>, <code>#AI agents</code>, <code>#workflow design</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>Context engineering is the practice of designing and managing the full informational environment in which a large language model operates. Compared with prompt engineering, it treats the prompt as only one part of a larger system that may include retrieval, memory, notes, tool results, and workflow state. Anthropic’s related engineering guidance for AI agents describes a pattern where agents keep only necessary information in working memory while using note-taking or persistence strategies for longer-running tasks.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>Context engineering is the practice of designing and managing the full informational environment in which a large language model operates. Compared with prompt engineering, it treats the prompt as only one part of a larger system that may include retrieval, memory, notes, tool results, and workflow state. Anthropic’s related engineering guidance for AI agents describes a pattern where agents keep only necessary information in working memory while using note-taking or persistence strategies for longer-running tasks.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>This is official guidance from Anthropic on how to structure context for Claude 5-era models, so it is more of a practitioner playbook than broad news. It has strong practical value for people building agents, coding workflows, or prompt systems. The HN thread is highly engaged (403 score, 293 comments) and adds useful debate about model reliability, memory, and over-reliance on hidden behavior, which increases its value for experienced readers.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for context engineering, Claude.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul><p>Treat context as a managed resource, not as an ever-growing pile of instructions. Separate stable system instructions, task-specific requirements, retrieved facts, memory, and tool outputs so each piece has a clear purpose and scope. For coding agents, prefer explicit constraints, visible diffs, and verification steps over trusting the model to infer hidden intent from prior context. Use memory selectively, because helpful persistence can become harmful when the model draws assumptions from old or irrelevant work.</p><p>Define a context hierarchy that separates durable instructions from per-task instructions and transient evidence. Make memory opt-in or reviewable for high-risk workflows, especially when previous projects could bias current decisions. Require coding agents to show planned changes, generate diffs, and run tests or checks before applying edits. Keep portable prompt and workflow artifacts where possible, because vendor-specific context features may create migration risk. Add evaluations that test behavior under stale memory, conflicting instructions, missing APIs, and oversized context.</p><p>For AI agents and software delivery, this guidance suggests building a context pipeline rather than relying on one long prompt. In Obsidian or content workflows, it maps naturally to separating evergreen project notes, task briefs, source excerpts, and decision logs before handing context to an AI assistant. For financial-software project management, the same discipline helps reduce accidental assumptions by making requirements, constraints, approvals, and audit-relevant evidence explicit.</p>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>The discussion is engaged but skeptical: several commenters argue that increasingly elaborate context rules reveal how poorly understood and unreliable these systems still are. Others worry about over-reliance on Claude’s automatic memory, hidden reasoning, hallucinated APIs, accidental code changes, and a possible shift from portable markdown-based harnesses toward Anthropic-specific tooling.</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-26-en.html#item-12">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-26-zh-16-git-rebase-71ce0c36",
+  "date": "2026-07-26",
+  "lang": "zh",
+  "title": "交互式 Git Rebase 没那么可怕",
+  "source": "hackernews",
+  "source_url": "https://cachebag.sh/journal/interactive-rebasing/",
+  "source_tier": "B",
+  "published_at": "2026-07-26",
+  "category": "Git",
+  "group": "practice_insight",
+  "score": "7.0",
+  "summary": "这篇文章强调，git rebase -i 更像是一个实用的整理工具，而不是一种危险的仪式。文章指出，只要开发者理解 --abort、reflog 和提交恢复，就可以更安心地在合并前重写堆叠提交。 交互式变基是 Git 中保持历史清晰的重要技能，尤其适合使用 squash merge 或堆叠分支的团队。把它讲得更安全，可以降低使用门槛，让提交历史更整洁，评审流程也更规范。 关键的安全网在于，变基过程中如果出错通常可以中止，而且只要对象还没有被垃圾回收，已经提交的内容往往可以通过 git reflog 找回。文章和讨论还指出，变基时的冲突往往比较晦涩，因此理解每一步重写后的历史非常重要。",
+  "what_happened": "这篇文章强调，git rebase -i 更像是一个实用的整理工具，而不是一种危险的仪式。文章指出，只要开发者理解 --abort、reflog 和提交恢复，就可以更安心地在合并前重写堆叠提交。 交互式变基是 Git 中保持历史清晰的重要技能，尤其适合使用 squash merge 或堆叠分支的团队。把它讲得更安全，可以降低使用门槛，让提交历史更整洁，评审流程也更规范。 关键的安全网在于，变基过程中如果出错通常可以中止，而且只要对象还没有被垃圾回收，已经提交的内容往往可以通过 git reflog 找回。文章和讨论还指出，变基时的冲突往往比较晦涩，因此理解每一步重写后的历史非常重要。",
+  "why_it_matters": "Git 有两种常见的分支整合方式：merge 和 rebase。rebase 会重写提交，让它们看起来像是建立在新的基础之上，从而让历史更线性、更容易阅读。交互式 rebase 还提供了一个类似菜单的模式，可以在最终确定历史之前重新排序、压缩、编辑或删除提交。堆叠分支或堆叠提交是一种多个分支按顺序相互依赖的工作流，因此 rebase 经常被用来保持这个堆栈整洁。",
+  "manager_takeaway": "Git 有两种常见的分支整合方式：merge 和 rebase。rebase 会重写提交，让它们看起来像是建立在新的基础之上，从而让历史更线性、更容易阅读。交互式 rebase 还提供了一个类似菜单的模式，可以在最终确定历史之前重新排序、压缩、编辑或删除提交。堆叠分支或堆叠提交是一种多个分支按顺序相互依赖的工作流，因此 rebase 经常被用来保持这个堆栈整洁。",
+  "actions": [
+    "判断团队近期是否有和Git、Developer Workflow相关的试用场景。",
+    "核对数据安全、权限边界和成本变化。",
+    "如果价值明确，安排一次小范围验证并记录复盘。"
+  ],
+  "risks": [
+    "评论者普遍认为，真正提升信心的关键，是知道 rebase 可以用 --abort 中止，而且很多情况还能通过 reflog 找回。也有读者分享了堆叠分支的工作流，并指出 rebase 冲突仍然可能很难理解，所以遇到问题时最好先停下来检查，再规划修复方案，而不是盲目往前推进。"
+  ],
+  "audio_url": "/audio/daily/2026-07-26-zh.mp3",
+  "html_url": "/daily/2026-07-26-zh.html#item-16",
+  "read_url": "/read/2026-07-26-zh-16-git-rebase-71ce0c36.html",
+  "tags": [
+    "Git",
+    "Developer Workflow",
+    "Software Engineering",
+    "Version Control",
+    "Engineering Practice"
+  ]
+}

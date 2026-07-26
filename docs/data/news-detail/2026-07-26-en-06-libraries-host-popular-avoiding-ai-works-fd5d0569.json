@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-26-en-06-libraries-host-popular-avoiding-ai-works-fd5d0569",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "Libraries Host Popular “Avoiding AI” Workshops",
+  "source": "rss",
+  "source_url": "https://techcrunch.com/2026/07/25/librarians-are-hosting-viral-avoiding-ai-workshops-for-people-who-are-fed-up-with-big-tech/",
+  "source_tier": "A",
+  "published_at": "2026-07-26",
+  "category": "AI adoption",
+  "group": "first_hand_news",
+  "score": "7.55",
+  "summary": "Libraries around the country are seeing unprecedented demand for “Avoiding AI” workshops. The trend shows that many people want practical ways to reduce their exposure to AI tools in everyday life. The demand reflects growing public concern about Big Tech, privacy, and the spread of AI into ordinary services. It also shows that libraries are becoming trusted places for digital literacy and consumer education. The workshops are specifically framed around avoiding or reducing exposure to AI rather than teaching people how to use it. The article gives no technical agenda, curriculum, or method details beyond the fact that demand has been unusually strong.",
+  "what_happened": "Libraries around the country are seeing unprecedented demand for “Avoiding AI” workshops. The trend shows that many people want practical ways to reduce their exposure to AI tools in everyday life. The demand reflects growing public concern about Big Tech, privacy, and the spread of AI into ordinary services. It also shows that libraries are becoming trusted places for digital literacy and consumer education. The workshops are specifically framed around avoiding or reducing exposure to AI rather than teaching people how to use it. The article gives no technical agenda, curriculum, or method details beyond the fact that demand has been unusually strong.",
+  "why_it_matters": "AI tools are now being built into many consumer products and online services, which means people may encounter them even when they are not looking for them. Libraries often host public education programs, so they can serve as neutral venues for topics like privacy, technology, and media literacy. In this case, the workshop name suggests a response to frustration with how widely AI is being introduced by Big Tech.",
+  "manager_takeaway": "AI tools are now being built into many consumer products and online services, which means people may encounter them even when they are not looking for them. Libraries often host public education programs, so they can serve as neutral venues for topics like privacy, technology, and media literacy. In this case, the workshop name suggests a response to frustration with how widely AI is being introduced by Big Tech.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI adoption, privacy.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-6",
+  "read_url": "/read/2026-07-26-en-06-libraries-host-popular-avoiding-ai-works-fd5d0569.html",
+  "tags": [
+    "AI adoption",
+    "privacy",
+    "public education",
+    "Big Tech",
+    "digital literacy"
+  ]
+}

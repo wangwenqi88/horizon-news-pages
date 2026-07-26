@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-26-en-11-monkeyocrv2-brings-multilingual-document-98152281",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "MonkeyOCRv2 brings multilingual document parsing to 0.7B",
+  "source": "rss",
+  "source_url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247907283&idx=2&sn=5df8a52712c79f67232ca9672d4cc34e",
+  "source_tier": "A",
+  "published_at": "2026-07-26",
+  "category": "OCR",
+  "group": "first_hand_news",
+  "score": "7.0",
+  "summary": "MonkeyOCRv2 was released as an open-source document AI model with a 0.7B document parsing variant. The project says it targets OCR and layout understanding across 17 languages, with both the data and models open sourced. A smaller multilingual parser can lower the cost of digitizing, extracting, and structuring documents for teams that do not want to run very large models. It is especially relevant for enterprises and developers working across languages, where OCR and layout understanding are often the bottlenecks. The technical report says MonkeyOCRv2 is built as a visual-text foundation model for document AI, and the 0.7B parsing model follows the common pattern of combining a frozen visual encoder with a large language model. The paper also describes MonkeyDoc v2, a pretraining corpus of 113 million images spanning 17 languages, and the GitHub repo notes a DFlash parsing release for up to 2x faster inference with vLLM serving.",
+  "what_happened": "MonkeyOCRv2 was released as an open-source document AI model with a 0.7B document parsing variant. The project says it targets OCR and layout understanding across 17 languages, with both the data and models open sourced. A smaller multilingual parser can lower the cost of digitizing, extracting, and structuring documents for teams that do not want to run very large models. It is especially relevant for enterprises and developers working across languages, where OCR and layout understanding are often the bottlenecks. The technical report says MonkeyOCRv2 is built as a visual-text foundation model for document AI, and the 0.7B parsing model follows the common pattern of combining a frozen visual encoder with a large language model. The paper also describes MonkeyDoc v2, a pretraining corpus of 113 million images spanning 17 languages, and the GitHub repo notes a DFlash parsing release for up to 2x faster inference with vLLM serving.",
+  "why_it_matters": "Document parsing goes beyond plain OCR. In addition to recognizing text, it tries to understand page layout, reading order, tables, and other structural relationships so the output can be used by downstream applications. Multilingual document parsing is harder because models must handle different scripts, layouts, and writing conventions in one system. In this release, MonkeyOCRv2 is presented as a visual-text model rather than a text-only OCR tool.",
+  "manager_takeaway": "Document parsing goes beyond plain OCR. In addition to recognizing text, it tries to understand page layout, reading order, tables, and other structural relationships so the output can be used by downstream applications. Multilingual document parsing is harder because models must handle different scripts, layouts, and writing conventions in one system. In this release, MonkeyOCRv2 is presented as a visual-text model rather than a text-only OCR tool.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for OCR, 文档解析.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-11",
+  "read_url": "/read/2026-07-26-en-11-monkeyocrv2-brings-multilingual-document-98152281.html",
+  "tags": [
+    "OCR",
+    "文档解析",
+    "开源模型",
+    "多语种AI",
+    "小模型"
+  ]
+}

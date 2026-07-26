@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-26-en-16-interactive-git-rebase-is-less-scary-tha-36bbd524",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "Interactive Git Rebase Is Less Scary Than It Looks",
+  "source": "hackernews",
+  "source_url": "https://cachebag.sh/journal/interactive-rebasing/",
+  "source_tier": "B",
+  "published_at": "2026-07-26",
+  "category": "Git",
+  "group": "practice_insight",
+  "score": "7.0",
+  "summary": "This post argues that git rebase -i is a practical cleanup tool rather than a dangerous rite of passage. It emphasizes that developers can safely use it to rewrite stacked commits before merging, especially when they understand --abort, reflog, and commit recovery. Interactive rebasing is a core Git skill for keeping history readable, especially in teams that squash merge or work with stacked branches. Making it feel safer lowers the barrier to cleaner commit history and more disciplined review workflows. The key safety net is that rebase operations can usually be aborted if things go wrong, and committed work is often recoverable through git reflog as long as the objects have not been garbage-collected. The post and discussion also highlight that conflicts during rebase can be cryptic, so understanding each step of the rewritten history matters.",
+  "what_happened": "This post argues that git rebase -i is a practical cleanup tool rather than a dangerous rite of passage. It emphasizes that developers can safely use it to rewrite stacked commits before merging, especially when they understand --abort, reflog, and commit recovery. Interactive rebasing is a core Git skill for keeping history readable, especially in teams that squash merge or work with stacked branches. Making it feel safer lowers the barrier to cleaner commit history and more disciplined review workflows. The key safety net is that rebase operations can usually be aborted if things go wrong, and committed work is often recoverable through git reflog as long as the objects have not been garbage-collected. The post and discussion also highlight that conflicts during rebase can be cryptic, so understanding each step of the rewritten history matters.",
+  "why_it_matters": "Git has two common ways to bring changes from one branch into another: merge and rebase. A rebase rewrites commits so they appear on top of a new base, which can make history linear and easier to read. Interactive rebase adds a menu-like mode where you can reorder, squash, edit, or drop commits before finalizing the new history. Stacked branches or stacked commits are a workflow where multiple branches build on one another in sequence, so rebasing is often used to keep that stack tidy.",
+  "manager_takeaway": "Git has two common ways to bring changes from one branch into another: merge and rebase. A rebase rewrites commits so they appear on top of a new base, which can make history linear and easier to read. Interactive rebase adds a menu-like mode where you can reorder, squash, edit, or drop commits before finalizing the new history. Stacked branches or stacked commits are a workflow where multiple branches build on one another in sequence, so rebasing is often used to keep that stack tidy.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for Git, Developer Workflow.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "Commenters broadly agreed that the main confidence boost comes from knowing rebase is reversible with --abort and often recoverable with reflog. Several readers also described stacked-branch workflows and noted that rebase conflicts can still be confusing, so it helps to stop, inspect, and plan the fix instead of pushing blindly through."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-16",
+  "read_url": "/read/2026-07-26-en-16-interactive-git-rebase-is-less-scary-tha-36bbd524.html",
+  "tags": [
+    "Git",
+    "Developer Workflow",
+    "Software Engineering",
+    "Version Control",
+    "Engineering Practice"
+  ]
+}

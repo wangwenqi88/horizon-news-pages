@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloudflare 新增 AI 爬虫控制</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-26-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-26 · Horizon News AI 精读</p>
+        <h1>Cloudflare 新增 AI 爬虫控制</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>8.0 分</span><span>Cloudflare、AI crawlers、SEO、content licensing、web publishing</span></div>
+        <a class="source-cta" href="https://blog.cloudflare.com/content-independence-day-ai-options/" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>Cloudflare 正在推出 AI Crawl Control，让客户可以监控 AI 爬虫活动，并对特定爬虫设置允许或阻止规则。对于新接入的域名，Cloudflare 表示，在展示广告的页面上，Training 和 Agent 流量将默认被阻止，而 Search 仍默认允许。 这改变了发布者和站点所有者对内容用途的控制方式，包括是否被用于 AI 训练、是否进入搜索结果，以及是否能被自动化代理访问。由于 Cloudflare 保护着大量网站，它的默认策略可能影响 SEO、广告支持型内容发布，以及开放网页访问与 AI 抓取之间的平衡。 Cloudflare 表示，AI Crawl Control 可以细粒度地查看爬虫活动，并允许运营者按爬虫分别设置规则，而不是使用单一的统一策略。围绕这次发布的讨论还强调，复合型爬虫可能会按照其全部行为来判断，这对同时承担搜索索引和模型训练的服务尤其重要。</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：8.0/10</li><li>标签：Cloudflare、AI crawlers、SEO、content licensing、web publishing</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://blog.cloudflare.com/content-independence-day-ai-options/" rel="noopener noreferrer" target="_blank">Cloudflare 新增 AI 爬虫控制</a> ⭐️ 8.0/10</h3>
+<p>Cloudflare 正在推出 AI Crawl Control，让客户可以监控 AI 爬虫活动，并对特定爬虫设置允许或阻止规则。对于新接入的域名，Cloudflare 表示，在展示广告的页面上，Training 和 Agent 流量将默认被阻止，而 Search 仍默认允许。 这改变了发布者和站点所有者对内容用途的控制方式，包括是否被用于 AI 训练、是否进入搜索结果，以及是否能被自动化代理访问。由于 Cloudflare 保护着大量网站，它的默认策略可能影响 SEO、广告支持型内容发布，以及开放网页访问与 AI 抓取之间的平衡。 Cloudflare 表示，AI Crawl Control 可以细粒度地查看爬虫活动，并允许运营者按爬虫分别设置规则，而不是使用单一的统一策略。围绕这次发布的讨论还强调，复合型爬虫可能会按照其全部行为来判断，这对同时承担搜索索引和模型训练的服务尤其重要。</p>
+<p>hackernews · alphabetatango · 7月25日 22:50 · <a href="https://news.ycombinator.com/item?id=49052564" rel="noopener noreferrer" target="_blank">社区讨论</a></p>
+<p><strong>背景</strong>: 爬虫是一种自动访问网页并收集内容的系统，通常用于搜索索引或其他分析。Cloudflare 的 AI Crawl Control 是一个用于观察这类流量并决定特定 AI 爬虫是否可以访问站点的产品。新的策略还区分了 Search、Agent 和 Training 流量，这说明并非所有自动化 AI 流量的用途都相同。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://www.cloudflare.com/ai-crawl-control/" rel="noopener noreferrer" target="_blank">AI Crawl Control | Cloudflare</a></li>
+<li><a href="https://developers.cloudflare.com/ai-crawl-control/" rel="noopener noreferrer" target="_blank">Overview · Cloudflare AI Crawl Control docs</a></li>
+</ul>
+</details>
+<p><strong>社区讨论</strong>: 讨论整体上很活跃，但观点分化明显：一部分评论者欢迎更清晰的控制能力，另一部分则认为 Cloudflare 正在强化自己对网页访问的把关权。一个反复出现的担忧是，广泛阻止机器人类别可能也会阻止由用户驱动的 AI 代理；还有评论指出，Google 共享的爬虫基础设施可能让 Search 与 Gemini 训练更难分离。</p>
+<p><strong>标签</strong>: <code>#Cloudflare</code>, <code>#AI crawlers</code>, <code>#SEO</code>, <code>#content licensing</code>, <code>#web publishing</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>爬虫是一种自动访问网页并收集内容的系统，通常用于搜索索引或其他分析。Cloudflare 的 AI Crawl Control 是一个用于观察这类流量并决定特定 AI 爬虫是否可以访问站点的产品。新的策略还区分了 Search、Agent 和 Training 流量，这说明并非所有自动化 AI 流量的用途都相同。</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>爬虫是一种自动访问网页并收集内容的系统，通常用于搜索索引或其他分析。Cloudflare 的 AI Crawl Control 是一个用于观察这类流量并决定特定 AI 爬虫是否可以访问站点的产品。新的策略还区分了 Search、Agent 和 Training 流量，这说明并非所有自动化 AI 流量的用途都相同。</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>爬虫是一种自动访问网页并收集内容的系统，通常用于搜索索引或其他分析。Cloudflare 的 AI Crawl Control 是一个用于观察这类流量并决定特定 AI 爬虫是否可以访问站点的产品。新的策略还区分了 Search、Agent 和 Training 流量，这说明并非所有自动化 AI 流量的用途都相同。</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>判断团队近期是否有和Cloudflare、AI crawlers相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>讨论整体上很活跃，但观点分化明显：一部分评论者欢迎更清晰的控制能力，另一部分则认为 Cloudflare 正在强化自己对网页访问的把关权。一个反复出现的担忧是，广泛阻止机器人类别可能也会阻止由用户驱动的 AI 代理；还有评论指出，Google 共享的爬虫基础设施可能让 Search 与 Gemini 训练更难分离。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://blog.cloudflare.com/content-independence-day-ai-options/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-26-zh.html#item-1">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-26-zh-03-monday-com-ai-5b2fcd86",
+  "date": "2026-07-26",
+  "lang": "zh",
+  "title": "Monday.com 加入 AI 裁员潮",
+  "source": "rss",
+  "source_url": "https://techcrunch.com/2026/07/25/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/",
+  "source_tier": "A",
+  "published_at": "2026-07-26",
+  "category": "AI layoffs",
+  "group": "first_hand_news",
+  "score": "7.85",
+  "summary": "TechCrunch 称，Monday.com 是最新一家把 AI 列为裁员因素的大型科技公司。该文以倒序方式持续整理 2026 年宣布大规模裁员、并把原因指向 AI 采用的科技雇主。 这则消息表明，AI 正在从“提升效率”的叙事，转变为科技公司直接进行人力规划调整的因素。它会影响员工、管理者和求职者，因为 AI 如今被用来解释团队结构、人员规模和职业预期的变化。 这不是针对单一公司的深度报道，而是聚焦于那些明确把 AI 列为裁员原因的大型科技公司。一个重要的限定是，提到 AI 并不一定表示 AI 就是裁员的唯一原因。",
+  "what_happened": "TechCrunch 称，Monday.com 是最新一家把 AI 列为裁员因素的大型科技公司。该文以倒序方式持续整理 2026 年宣布大规模裁员、并把原因指向 AI 采用的科技雇主。 这则消息表明，AI 正在从“提升效率”的叙事，转变为科技公司直接进行人力规划调整的因素。它会影响员工、管理者和求职者，因为 AI 如今被用来解释团队结构、人员规模和职业预期的变化。 这不是针对单一公司的深度报道，而是聚焦于那些明确把 AI 列为裁员原因的大型科技公司。一个重要的限定是，提到 AI 并不一定表示 AI 就是裁员的唯一原因。",
+  "why_it_matters": "AI 采用会改变哪些任务仍需要人工处理，从而影响团队规模和岗位分布。科技行业的公司通常会在产品策略、自动化或市场压力变化后调整人员配置。本文记录了 AI 如何越来越多地出现在这些决定的公开说明中。",
+  "manager_takeaway": "AI 采用会改变哪些任务仍需要人工处理，从而影响团队规模和岗位分布。科技行业的公司通常会在产品策略、自动化或市场压力变化后调整人员配置。本文记录了 AI 如何越来越多地出现在这些决定的公开说明中。",
+  "actions": [
+    "判断团队近期是否有和AI layoffs、future of work相关的试用场景。",
+    "核对数据安全、权限边界和成本变化。",
+    "如果价值明确，安排一次小范围验证并记录复盘。"
+  ],
+  "risks": [],
+  "audio_url": "/audio/daily/2026-07-26-zh.mp3",
+  "html_url": "/daily/2026-07-26-zh.html#item-3",
+  "read_url": "/read/2026-07-26-zh-03-monday-com-ai-5b2fcd86.html",
+  "tags": [
+    "AI layoffs",
+    "future of work",
+    "tech industry",
+    "automation",
+    "workplace impact"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-26-en-05-ai-coding-tools-force-exam-redesign-31fd81fc",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "AI coding tools force exam redesign.",
+  "source": "rss",
+  "source_url": "https://the-decoder.com/the-ai-coding-tutor-paradox-grows-as-educators-scramble-to-rethink-how-they-test-real-skills/",
+  "source_tier": "A",
+  "published_at": "2026-07-26",
+  "category": "AI教育",
+  "group": "first_hand_news",
+  "score": "7.6",
+  "summary": "An ACM survey of 763 computer science educators across 49 countries found that 68 percent have already changed their exams because of AI coding tools. The reported changes include more oral exams, proctored tests, and project-based work, with teaching shifting from simply writing code toward demonstrating understanding. The survey shows that AI coding assistants are changing not only how students learn programming, but also how schools judge whether students have real skills. This affects educators, students, employers, and parents because traditional code-writing exams may no longer reliably distinguish understanding from AI-assisted output. Nearly half of surveyed educators said they lack proven examples for integrating AI into their courses, which suggests that assessment reform is happening faster than shared teaching practice. The central tension is the “coding tutor paradox”: AI can help students learn, but it can also make it harder to verify what students actually know.",
+  "what_happened": "An ACM survey of 763 computer science educators across 49 countries found that 68 percent have already changed their exams because of AI coding tools. The reported changes include more oral exams, proctored tests, and project-based work, with teaching shifting from simply writing code toward demonstrating understanding. The survey shows that AI coding assistants are changing not only how students learn programming, but also how schools judge whether students have real skills. This affects educators, students, employers, and parents because traditional code-writing exams may no longer reliably distinguish understanding from AI-assisted output. Nearly half of surveyed educators said they lack proven examples for integrating AI into their courses, which suggests that assessment reform is happening faster than shared teaching practice. The central tension is the “coding tutor paradox”: AI can help students learn, but it can also make it harder to verify what students actually know.",
+  "why_it_matters": "AI coding tools can generate, complete, explain, or debug code from natural-language prompts, which makes them useful as learning aids and productivity tools. In computer science education, many traditional assessments ask students to write code, but that task can now be partly outsourced to AI. Oral exams, proctored tests, and project-based work are alternative assessment formats intended to reveal reasoning, design choices, debugging ability, and conceptual understanding.",
+  "manager_takeaway": "AI coding tools can generate, complete, explain, or debug code from natural-language prompts, which makes them useful as learning aids and productivity tools. In computer science education, many traditional assessments ask students to write code, but that task can now be partly outsourced to AI. Oral exams, proctored tests, and project-based work are alternative assessment formats intended to reveal reasoning, design choices, debugging ability, and conceptual understanding.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI教育, 编程学习.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-5",
+  "read_url": "/read/2026-07-26-en-05-ai-coding-tools-force-exam-redesign-31fd81fc.html",
+  "tags": [
+    "AI教育",
+    "编程学习",
+    "考试改革",
+    "AI编码工具",
+    "技能评估"
+  ]
+}

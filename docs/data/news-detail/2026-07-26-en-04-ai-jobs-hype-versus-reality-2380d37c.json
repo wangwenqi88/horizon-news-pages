@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-26-en-04-ai-jobs-hype-versus-reality-2380d37c",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "AI Jobs: Hype Versus Reality",
+  "source": "hackernews",
+  "source_url": "https://siepr.stanford.edu/publications/policy-brief/what-really-happening-jobs-separating-ai-hype-reality",
+  "source_tier": "B",
+  "published_at": "2026-07-26",
+  "category": "AI jobs",
+  "group": "first_hand_news",
+  "score": "7.62",
+  "summary": "A Stanford policy brief argues that AI's effect on jobs is more nuanced than the headlines suggest. The report says AI may first change which skills matter and how work is done before it produces clear, broad job losses. This matters because workers, managers, and policymakers often focus on job replacement when the more immediate change may be task reshaping and productivity shifts. If the brief is right, the biggest impact of AI could be on who gets hired, promoted, and rewarded for their skills. The discussion around the brief highlights a key caveat: labor-market effects can be hard to measure, especially when people debate what counts as \"AI exposure.\" Commenters also questioned whether the data really show unemployment trends from AI rather than broader business-cycle effects.",
+  "what_happened": "A Stanford policy brief argues that AI's effect on jobs is more nuanced than the headlines suggest. The report says AI may first change which skills matter and how work is done before it produces clear, broad job losses. This matters because workers, managers, and policymakers often focus on job replacement when the more immediate change may be task reshaping and productivity shifts. If the brief is right, the biggest impact of AI could be on who gets hired, promoted, and rewarded for their skills. The discussion around the brief highlights a key caveat: labor-market effects can be hard to measure, especially when people debate what counts as \"AI exposure.\" Commenters also questioned whether the data really show unemployment trends from AI rather than broader business-cycle effects.",
+  "why_it_matters": "A policy brief is a short research report meant to inform public debate and decision-making. In this case, the central question is whether AI is already changing the labor market or whether the visible effect is still mostly limited to productivity and skill demand. \"AI exposure\" usually means how much a job or task is likely to be affected by AI tools, but that can be difficult to define consistently.",
+  "manager_takeaway": "A policy brief is a short research report meant to inform public debate and decision-making. In this case, the central question is whether AI is already changing the labor market or whether the visible effect is still mostly limited to productivity and skill demand. \"AI exposure\" usually means how much a job or task is likely to be affected by AI tools, but that can be difficult to define consistently.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI jobs, future of work.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The comments were mixed and skeptical rather than uniformly supportive. Some readers argued that AI mainly amplifies the output of already-strong performers, while others said it may help less experienced workers more or that current studies miss the newest coding-agent wave. Several commenters also raised methodological concerns about unemployment charts and the definition of AI exposure."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-4",
+  "read_url": "/read/2026-07-26-en-04-ai-jobs-hype-versus-reality-2380d37c.html",
+  "tags": [
+    "AI jobs",
+    "future of work",
+    "AI productivity",
+    "labor market",
+    "AI policy"
+  ]
+}

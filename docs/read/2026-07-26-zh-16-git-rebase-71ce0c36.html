@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>交互式 Git Rebase 没那么可怕</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-26-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-26 · Horizon News AI 精读</p>
+        <h1>交互式 Git Rebase 没那么可怕</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>7.0 分</span><span>Git、Developer Workflow、Software Engineering、Version Control、Engineering Practice</span></div>
+        <a class="source-cta" href="https://cachebag.sh/journal/interactive-rebasing/" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>这篇文章强调，git rebase -i 更像是一个实用的整理工具，而不是一种危险的仪式。文章指出，只要开发者理解 --abort、reflog 和提交恢复，就可以更安心地在合并前重写堆叠提交。 交互式变基是 Git 中保持历史清晰的重要技能，尤其适合使用 squash merge 或堆叠分支的团队。把它讲得更安全，可以降低使用门槛，让提交历史更整洁，评审流程也更规范。 关键的安全网在于，变基过程中如果出错通常可以中止，而且只要对象还没有被垃圾回收，已经提交的内容往往可以通过 git reflog 找回。文章和讨论还指出，变基时的冲突往往比较晦涩，因此理解每一步重写后的历史非常重要。</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：7.0/10</li><li>标签：Git、Developer Workflow、Software Engineering、Version Control、Engineering Practice</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://cachebag.sh/journal/interactive-rebasing/" rel="noopener noreferrer" target="_blank">交互式 Git Rebase 没那么可怕</a> ⭐️ 7.0/10</h3>
+<p>这篇文章强调，<code>git rebase -i</code> 更像是一个实用的整理工具，而不是一种危险的仪式。文章指出，只要开发者理解 <code>--abort</code>、<code>reflog</code> 和提交恢复，就可以更安心地在合并前重写堆叠提交。 交互式变基是 Git 中保持历史清晰的重要技能，尤其适合使用 squash merge 或堆叠分支的团队。把它讲得更安全，可以降低使用门槛，让提交历史更整洁，评审流程也更规范。 关键的安全网在于，变基过程中如果出错通常可以中止，而且只要对象还没有被垃圾回收，已经提交的内容往往可以通过 <code>git reflog</code> 找回。文章和讨论还指出，变基时的冲突往往比较晦涩，因此理解每一步重写后的历史非常重要。</p>
+<p>hackernews · vinhnx · 7月26日 00:37 · <a href="https://news.ycombinator.com/item?id=49053385" rel="noopener noreferrer" target="_blank">社区讨论</a></p>
+<p><strong>背景</strong>: Git 有两种常见的分支整合方式：merge 和 rebase。rebase 会重写提交，让它们看起来像是建立在新的基础之上，从而让历史更线性、更容易阅读。交互式 rebase 还提供了一个类似菜单的模式，可以在最终确定历史之前重新排序、压缩、编辑或删除提交。堆叠分支或堆叠提交是一种多个分支按顺序相互依赖的工作流，因此 rebase 经常被用来保持这个堆栈整洁。</p>
+<p><strong>AI 观点</strong>: This is not current AI news, but it is a useful software engineering practice piece that demystifies interactive Git rebase, a common workflow skill for developers. The Hacker News discussion is active and substantive, with practitioners sharing real recovery strategies, stacked-commit workflows, and pain points around conflict resolution, which raises its practical value.</p>
+<p><strong>可复用方法</strong>: 把 <code>git rebase -i</code> 当成一种在集成前打磨提交历史的工作流，而不是最后才用的救援工具。若变基过程变得混乱或冲突很多，就先中止、检查提交图，并用 <code>reflog</code> 重新确认位置后再尝试。目标是做小而有意的历史调整，帮助评审和合并，而不是为了重写历史而重写。</p>
+<p><strong>实操要点</strong>: 开始之前先保持工作区干净，因为未提交的改动比已提交的改动更容易丢失。若结果看不懂，就用 <code>git rebase --abort</code> 中止，然后查看 <code>git reflog</code> 找回之前的 HEAD 或孤立提交的哈希。要注意，恢复能力取决于这些提交还没有被垃圾回收，所以如果需要撤销错误，不要拖太久。对于堆叠式工作流，最好让分支意图更明确，这样变基时更容易判断。</p>
+<p><strong>我可以怎么用</strong>: 对于 AI 辅助编码或软件交付，交互式 rebase 很适合作为一轮自动生成提交之后的收尾整理步骤。放到知识工作或项目管理里也一样：让历史更方便别人审阅，但始终保留可恢复的路径。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing.html" rel="noopener noreferrer" target="_blank">Git - Rebasing</a></li>
+<li><a href="https://rewind.com/blog/how-to-restore-deleted-branch-commit-git-reflog/" rel="noopener noreferrer" target="_blank">How to Restore a Deleted Branch or Commit with Git Reflog</a></li>
+<li><a href="https://andrewlock.net/working-with-stacked-branches-in-git-part-1/" rel="noopener noreferrer" target="_blank">Working with stacked branches in git (Part 1)</a></li>
+</ul>
+</details>
+<p><strong>社区讨论</strong>: 评论者普遍认为，真正提升信心的关键，是知道 rebase 可以用 <code>--abort</code> 中止，而且很多情况还能通过 <code>reflog</code> 找回。也有读者分享了堆叠分支的工作流，并指出 rebase 冲突仍然可能很难理解，所以遇到问题时最好先停下来检查，再规划修复方案，而不是盲目往前推进。</p>
+<p><strong>标签</strong>: <code>#Git</code>, <code>#Developer Workflow</code>, <code>#Software Engineering</code>, <code>#Version Control</code>, <code>#Engineering Practice</code></p>
+<hr/>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>Git 有两种常见的分支整合方式：merge 和 rebase。rebase 会重写提交，让它们看起来像是建立在新的基础之上，从而让历史更线性、更容易阅读。交互式 rebase 还提供了一个类似菜单的模式，可以在最终确定历史之前重新排序、压缩、编辑或删除提交。堆叠分支或堆叠提交是一种多个分支按顺序相互依赖的工作流，因此 rebase 经常被用来保持这个堆栈整洁。</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>Git 有两种常见的分支整合方式：merge 和 rebase。rebase 会重写提交，让它们看起来像是建立在新的基础之上，从而让历史更线性、更容易阅读。交互式 rebase 还提供了一个类似菜单的模式，可以在最终确定历史之前重新排序、压缩、编辑或删除提交。堆叠分支或堆叠提交是一种多个分支按顺序相互依赖的工作流，因此 rebase 经常被用来保持这个堆栈整洁。</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>This is not current AI news, but it is a useful software engineering practice piece that demystifies interactive Git rebase, a common workflow skill for developers. The Hacker News discussion is active and substantive, with practitioners sharing real recovery strategies, stacked-commit workflows, and pain points around conflict resolution, which raises its practical value.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>判断团队近期是否有和Git、Developer Workflow相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ul><p>把 git rebase -i 当成一种在集成前打磨提交历史的工作流，而不是最后才用的救援工具。若变基过程变得混乱或冲突很多，就先中止、检查提交图，并用 reflog 重新确认位置后再尝试。目标是做小而有意的历史调整，帮助评审和合并，而不是为了重写历史而重写。</p><p>开始之前先保持工作区干净，因为未提交的改动比已提交的改动更容易丢失。若结果看不懂，就用 git rebase --abort 中止，然后查看 git reflog 找回之前的 HEAD 或孤立提交的哈希。要注意，恢复能力取决于这些提交还没有被垃圾回收，所以如果需要撤销错误，不要拖太久。对于堆叠式工作流，最好让分支意图更明确，这样变基时更容易判断。</p><p>对于 AI 辅助编码或软件交付，交互式 rebase 很适合作为一轮自动生成提交之后的收尾整理步骤。放到知识工作或项目管理里也一样：让历史更方便别人审阅，但始终保留可恢复的路径。</p>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>评论者普遍认为，真正提升信心的关键，是知道 rebase 可以用 --abort 中止，而且很多情况还能通过 reflog 找回。也有读者分享了堆叠分支的工作流，并指出 rebase 冲突仍然可能很难理解，所以遇到问题时最好先停下来检查，再规划修复方案，而不是盲目往前推进。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://cachebag.sh/journal/interactive-rebasing/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-26-zh.html#item-16">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

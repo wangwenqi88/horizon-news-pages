@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GrapheneOS explains locked-device extraction defenses.</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-26-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-26 · Horizon News AI 精读</p>
+        <h1>GrapheneOS explains locked-device extraction defenses.</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>7.4 分</span><span>GrapheneOS、mobile security、privacy、data extraction、device encryption</span></div>
+        <a class="source-cta" href="https://discuss.grapheneos.org/d/40700-grapheneos-protections-against-data-extraction-from-locked-devices" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>GrapheneOS published a clarification about how it protects data on locked devices, emphasizing its locked-device auto-reboot feature first shipped in June 2021. The post highlights that rebooting returns the phone to Before First Unlock, or BFU, mode, where sensitive encryption keys are not available in memory. This matters because many data-extraction risks are higher after a phone has been unlocked once since boot, even if the screen is currently locked. Journalists, travelers, activists, lawyers, and privacy-conscious users can reduce exposure by keeping devices in, or returning devices to, the stronger BFU state. GrapheneOS says its auto-reboot timer reduces the time a locked phone remains in the weaker After First Unlock, or AFU, state; Apple and Google later added similar locked-device auto-reboot behavior in iOS 18.1 and Android 16. The protection is not a substitute for a strong passphrase, careful border-crossing planning, or reliable backups, and weak unlock methods such as simple patterns or short PINs remain a major limitation.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：7.4/10</li><li>标签：GrapheneOS、mobile security、privacy、data extraction、device encryption</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://discuss.grapheneos.org/d/40700-grapheneos-protections-against-data-extraction-from-locked-devices" rel="noopener noreferrer" target="_blank">GrapheneOS explains locked-device extraction defenses.</a> ⭐️ 7.4/10</h3>
+<p>GrapheneOS published a clarification about how it protects data on locked devices, emphasizing its locked-device auto-reboot feature first shipped in June 2021. The post highlights that rebooting returns the phone to Before First Unlock, or BFU, mode, where sensitive encryption keys are not available in memory. This matters because many data-extraction risks are higher after a phone has been unlocked once since boot, even if the screen is currently locked. Journalists, travelers, activists, lawyers, and privacy-conscious users can reduce exposure by keeping devices in, or returning devices to, the stronger BFU state. GrapheneOS says its auto-reboot timer reduces the time a locked phone remains in the weaker After First Unlock, or AFU, state; Apple and Google later added similar locked-device auto-reboot behavior in iOS 18.1 and Android 16. The protection is not a substitute for a strong passphrase, careful border-crossing planning, or reliable backups, and weak unlock methods such as simple patterns or short PINs remain a major limitation.</p>
+<p>hackernews · Cider9986 · Jul 26, 05:57 · <a href="https://news.ycombinator.com/item?id=49055169" rel="noopener noreferrer" target="_blank">Discussion</a></p>
+<p><strong>Background</strong>: Modern mobile operating systems use file-based encryption, but the device’s security posture changes depending on whether it has been unlocked since the last reboot. BFU means the device has booted but has not yet been unlocked, so many user data keys are unavailable; AFU means the user has unlocked it at least once, so more data may be accessible to the operating system while the device is merely screen-locked. Mobile forensic extraction tools often care deeply about this distinction because memory-resident keys and already-unlocked services can affect what can be extracted from a locked phone. GrapheneOS is a security- and privacy-focused Android-based operating system, and its auto-reboot feature is intended to move a forgotten or seized locked phone back into the stronger BFU condition.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://discuss.grapheneos.org/d/40700-grapheneos-protections-against-data-extraction-from-locked-devices" rel="noopener noreferrer" target="_blank">GrapheneOS protections against data extraction from locked ...</a></li>
+<li><a href="https://privacydevices.net/guides/lockdown-and-reboot-behaviour/" rel="noopener noreferrer" target="_blank">Lockdown &amp; Reboot Behaviour — Privacy Devices Australia</a></li>
+<li><a href="https://artemisforensics.com/file-recovery/unlocking-iphone-and-android-devices/" rel="noopener noreferrer" target="_blank">Unlocking iPhone and Android Devices: Data Preservation Tips</a></li>
+</ul>
+</details>
+<p><strong>Discussion</strong>: The discussion was broadly supportive of GrapheneOS’s security model, with commenters connecting the post to real-world cases involving journalists and device searches. Several commenters focused on operational gaps, especially the lack of a complete backup-and-restore workflow that would make it easier to wipe a phone before crossing a border. Others debated unlock-secret entropy and duress-password design, noting that pattern locks are weak and that a convincing decoy environment would be difficult but desirable in coercive scenarios.</p>
+<p><strong>Tags</strong>: <code>#GrapheneOS</code>, <code>#mobile security</code>, <code>#privacy</code>, <code>#data extraction</code>, <code>#device encryption</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>Modern mobile operating systems use file-based encryption, but the device’s security posture changes depending on whether it has been unlocked since the last reboot. BFU means the device has booted but has not yet been unlocked, so many user data keys are unavailable; AFU means the user has unlocked it at least once, so more data may be accessible to the operating system while the device is merely screen-locked. Mobile forensic extraction tools often care deeply about this distinction because memory-resident keys and already-unlocked services can affect what can be extracted from a locked phone. GrapheneOS is a security- and privacy-focused Android-based operating system, and its auto-reboot feature is intended to move a forgotten or seized locked phone back into the stronger BFU condition.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>Modern mobile operating systems use file-based encryption, but the device’s security posture changes depending on whether it has been unlocked since the last reboot. BFU means the device has booted but has not yet been unlocked, so many user data keys are unavailable; AFU means the user has unlocked it at least once, so more data may be accessible to the operating system while the device is merely screen-locked. Mobile forensic extraction tools often care deeply about this distinction because memory-resident keys and already-unlocked services can affect what can be extracted from a locked phone. GrapheneOS is a security- and privacy-focused Android-based operating system, and its auto-reboot feature is intended to move a forgotten or seized locked phone back into the stronger BFU condition.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>Modern mobile operating systems use file-based encryption, but the device’s security posture changes depending on whether it has been unlocked since the last reboot. BFU means the device has booted but has not yet been unlocked, so many user data keys are unavailable; AFU means the user has unlocked it at least once, so more data may be accessible to the operating system while the device is merely screen-locked. Mobile forensic extraction tools often care deeply about this distinction because memory-resident keys and already-unlocked services can affect what can be extracted from a locked phone. GrapheneOS is a security- and privacy-focused Android-based operating system, and its auto-reboot feature is intended to move a forgotten or seized locked phone back into the stronger BFU condition.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for GrapheneOS, mobile security.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>The discussion was broadly supportive of GrapheneOS’s security model, with commenters connecting the post to real-world cases involving journalists and device searches. Several commenters focused on operational gaps, especially the lack of a complete backup-and-restore workflow that would make it easier to wipe a phone before crossing a border. Others debated unlock-secret entropy and duress-password design, noting that pattern locks are weak and that a convincing decoy environment would be difficult but desirable in coercive scenarios.</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://discuss.grapheneos.org/d/40700-grapheneos-protections-against-data-extraction-from-locked-devices" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-26-en.html#item-7">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

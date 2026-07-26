@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Git Rebase Is Less Scary Than It Looks</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-26-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-26 · Horizon News AI 精读</p>
+        <h1>Interactive Git Rebase Is Less Scary Than It Looks</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>7.0 分</span><span>Git、Developer Workflow、Software Engineering、Version Control、Engineering Practice</span></div>
+        <a class="source-cta" href="https://cachebag.sh/journal/interactive-rebasing/" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>This post argues that git rebase -i is a practical cleanup tool rather than a dangerous rite of passage. It emphasizes that developers can safely use it to rewrite stacked commits before merging, especially when they understand --abort, reflog, and commit recovery. Interactive rebasing is a core Git skill for keeping history readable, especially in teams that squash merge or work with stacked branches. Making it feel safer lowers the barrier to cleaner commit history and more disciplined review workflows. The key safety net is that rebase operations can usually be aborted if things go wrong, and committed work is often recoverable through git reflog as long as the objects have not been garbage-collected. The post and discussion also highlight that conflicts during rebase can be cryptic, so understanding each step of the rewritten history matters.</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：7.0/10</li><li>标签：Git、Developer Workflow、Software Engineering、Version Control、Engineering Practice</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://cachebag.sh/journal/interactive-rebasing/" rel="noopener noreferrer" target="_blank">Interactive Git Rebase Is Less Scary Than It Looks</a> ⭐️ 7.0/10</h3>
+<p>This post argues that <code>git rebase -i</code> is a practical cleanup tool rather than a dangerous rite of passage. It emphasizes that developers can safely use it to rewrite stacked commits before merging, especially when they understand <code>--abort</code>, <code>reflog</code>, and commit recovery. Interactive rebasing is a core Git skill for keeping history readable, especially in teams that squash merge or work with stacked branches. Making it feel safer lowers the barrier to cleaner commit history and more disciplined review workflows. The key safety net is that rebase operations can usually be aborted if things go wrong, and committed work is often recoverable through <code>git reflog</code> as long as the objects have not been garbage-collected. The post and discussion also highlight that conflicts during rebase can be cryptic, so understanding each step of the rewritten history matters.</p>
+<p>hackernews · vinhnx · Jul 26, 00:37 · <a href="https://news.ycombinator.com/item?id=49053385" rel="noopener noreferrer" target="_blank">Discussion</a></p>
+<p><strong>Background</strong>: Git has two common ways to bring changes from one branch into another: merge and rebase. A rebase rewrites commits so they appear on top of a new base, which can make history linear and easier to read. Interactive rebase adds a menu-like mode where you can reorder, squash, edit, or drop commits before finalizing the new history. Stacked branches or stacked commits are a workflow where multiple branches build on one another in sequence, so rebasing is often used to keep that stack tidy.</p>
+<p><strong>AI View</strong>: This is not current AI news, but it is a useful software engineering practice piece that demystifies interactive Git rebase, a common workflow skill for developers. The Hacker News discussion is active and substantive, with practitioners sharing real recovery strategies, stacked-commit workflows, and pain points around conflict resolution, which raises its practical value.</p>
+<p><strong>Practical Takeaways</strong>: Treat <code>git rebase -i</code> as a history-editing workflow for polishing commits before integration, not as a last-resort recovery tool. If a rebase becomes confusing or conflict-heavy, abort early, inspect the commit graph, and use <code>reflog</code> to orient yourself before trying again. The goal is to make small, intentional history changes that help review and merging, not to rewrite history for its own sake.</p>
+<p><strong>Implementation Notes</strong>: Keep the worktree clean before starting, because uncommitted changes are easier to lose than committed ones. Use <code>git rebase --abort</code> when the result is not making sense, then inspect <code>git reflog</code> to find the previous HEAD or orphaned commit hashes. Be aware that recovery depends on those commits not being garbage-collected yet, so do not wait too long if you need to undo a mistake. For stacked work, it can help to make branch intent explicit so rebases are easier to reason about.</p>
+<p><strong>How I Can Use This</strong>: For AI-assisted coding or software delivery, interactive rebase is a useful final cleanup step after a burst of agent-generated commits. In knowledge work or project management, the same habit applies: make the history easier for others to review, but always keep a recovery path ready.</p>
+<details><summary>References</summary>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing.html" rel="noopener noreferrer" target="_blank">Git - Rebasing</a></li>
+<li><a href="https://rewind.com/blog/how-to-restore-deleted-branch-commit-git-reflog/" rel="noopener noreferrer" target="_blank">How to Restore a Deleted Branch or Commit with Git Reflog</a></li>
+<li><a href="https://andrewlock.net/working-with-stacked-branches-in-git-part-1/" rel="noopener noreferrer" target="_blank">Working with stacked branches in git (Part 1)</a></li>
+</ul>
+</details>
+<p><strong>Discussion</strong>: Commenters broadly agreed that the main confidence boost comes from knowing rebase is reversible with <code>--abort</code> and often recoverable with <code>reflog</code>. Several readers also described stacked-branch workflows and noted that rebase conflicts can still be confusing, so it helps to stop, inspect, and plan the fix instead of pushing blindly through.</p>
+<p><strong>Tags</strong>: <code>#Git</code>, <code>#Developer Workflow</code>, <code>#Software Engineering</code>, <code>#Version Control</code>, <code>#Engineering Practice</code></p>
+<hr/>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>Git has two common ways to bring changes from one branch into another: merge and rebase. A rebase rewrites commits so they appear on top of a new base, which can make history linear and easier to read. Interactive rebase adds a menu-like mode where you can reorder, squash, edit, or drop commits before finalizing the new history. Stacked branches or stacked commits are a workflow where multiple branches build on one another in sequence, so rebasing is often used to keep that stack tidy.</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>Git has two common ways to bring changes from one branch into another: merge and rebase. A rebase rewrites commits so they appear on top of a new base, which can make history linear and easier to read. Interactive rebase adds a menu-like mode where you can reorder, squash, edit, or drop commits before finalizing the new history. Stacked branches or stacked commits are a workflow where multiple branches build on one another in sequence, so rebasing is often used to keep that stack tidy.</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>This is not current AI news, but it is a useful software engineering practice piece that demystifies interactive Git rebase, a common workflow skill for developers. The Hacker News discussion is active and substantive, with practitioners sharing real recovery strategies, stacked-commit workflows, and pain points around conflict resolution, which raises its practical value.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>Check whether the team has a near-term pilot scenario for Git, Developer Workflow.</li><li>Review data security, permission boundaries, and cost impact.</li><li>Run a small validation and capture lessons if the value is clear.</li></ul><p>Treat git rebase -i as a history-editing workflow for polishing commits before integration, not as a last-resort recovery tool. If a rebase becomes confusing or conflict-heavy, abort early, inspect the commit graph, and use reflog to orient yourself before trying again. The goal is to make small, intentional history changes that help review and merging, not to rewrite history for its own sake.</p><p>Keep the worktree clean before starting, because uncommitted changes are easier to lose than committed ones. Use git rebase --abort when the result is not making sense, then inspect git reflog to find the previous HEAD or orphaned commit hashes. Be aware that recovery depends on those commits not being garbage-collected yet, so do not wait too long if you need to undo a mistake. For stacked work, it can help to make branch intent explicit so rebases are easier to reason about.</p><p>For AI-assisted coding or software delivery, interactive rebase is a useful final cleanup step after a burst of agent-generated commits. In knowledge work or project management, the same habit applies: make the history easier for others to review, but always keep a recovery path ready.</p>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>Commenters broadly agreed that the main confidence boost comes from knowing rebase is reversible with --abort and often recoverable with reflog. Several readers also described stacked-branch workflows and noted that rebase conflicts can still be confusing, so it helps to stop, inspect, and plan the fix instead of pushing blindly through.</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://cachebag.sh/journal/interactive-rebasing/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-26-en.html#item-16">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

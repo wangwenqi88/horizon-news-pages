@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-26-en-03-monday-com-joins-the-ai-layoff-trend-2f0d4295",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "Monday.com joins the AI-layoff trend",
+  "source": "rss",
+  "source_url": "https://techcrunch.com/2026/07/25/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/",
+  "source_tier": "A",
+  "published_at": "2026-07-26",
+  "category": "AI layoffs",
+  "group": "first_hand_news",
+  "score": "7.85",
+  "summary": "TechCrunch says Monday.com is the latest major tech company to cite AI as a factor in layoffs. The article is a running, reverse-chronological list of 2026 tech employers that have announced significant job cuts while pointing to AI adoption. The story shows AI moving from a productivity narrative into a direct workforce-planning issue for tech companies. It matters to employees, managers, and job seekers because AI is now being used to explain changes in team structure, headcount, and career expectations. This is a roundup rather than a single-company investigation, and it focuses only on larger tech firms that have explicitly named AI as a reason for layoffs. A key caveat is that citing AI does not necessarily mean AI was the only cause of the cuts.",
+  "what_happened": "TechCrunch says Monday.com is the latest major tech company to cite AI as a factor in layoffs. The article is a running, reverse-chronological list of 2026 tech employers that have announced significant job cuts while pointing to AI adoption. The story shows AI moving from a productivity narrative into a direct workforce-planning issue for tech companies. It matters to employees, managers, and job seekers because AI is now being used to explain changes in team structure, headcount, and career expectations. This is a roundup rather than a single-company investigation, and it focuses only on larger tech firms that have explicitly named AI as a reason for layoffs. A key caveat is that citing AI does not necessarily mean AI was the only cause of the cuts.",
+  "why_it_matters": "AI adoption can change which tasks need human attention, which in turn can reshape team size and role distribution. In the tech industry, companies often revise staffing after shifts in product strategy, automation, or market pressure. This article tracks how AI is increasingly appearing in the public explanation for those decisions.",
+  "manager_takeaway": "AI adoption can change which tasks need human attention, which in turn can reshape team size and role distribution. In the tech industry, companies often revise staffing after shifts in product strategy, automation, or market pressure. This article tracks how AI is increasingly appearing in the public explanation for those decisions.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI layoffs, future of work.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-3",
+  "read_url": "/read/2026-07-26-en-03-monday-com-joins-the-ai-layoff-trend-2f0d4295.html",
+  "tags": [
+    "AI layoffs",
+    "future of work",
+    "tech industry",
+    "automation",
+    "workplace impact"
+  ]
+}

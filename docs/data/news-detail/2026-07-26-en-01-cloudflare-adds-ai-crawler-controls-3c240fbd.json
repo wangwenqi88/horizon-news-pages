@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-26-en-01-cloudflare-adds-ai-crawler-controls-3c240fbd",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "Cloudflare adds AI crawler controls",
+  "source": "hackernews",
+  "source_url": "https://blog.cloudflare.com/content-independence-day-ai-options/",
+  "source_tier": "B",
+  "published_at": "2026-07-26",
+  "category": "Cloudflare",
+  "group": "first_hand_news",
+  "score": "8.0",
+  "summary": "Cloudflare is rolling out AI Crawl Control so customers can monitor AI crawler activity and set allow or block rules for specific crawlers. For new domains, Cloudflare says Training and Agent traffic will be blocked by default on pages that display ads, while Search remains allowed by default. This changes how publishers and site owners can control whether their content is used for AI training, surfaced in search, or accessed by automated agents. Because Cloudflare sits in front of many websites, its defaults can influence SEO, ad-supported publishing, and the broader balance between open web access and AI scraping. Cloudflare says AI Crawl Control provides granular visibility into crawler activity and lets operators set rules per crawler rather than using a single blanket policy. The discussion around the launch also highlights that multi-purpose crawlers may be evaluated according to all of their behaviors, which matters for services that combine search indexing with model training.",
+  "what_happened": "Cloudflare is rolling out AI Crawl Control so customers can monitor AI crawler activity and set allow or block rules for specific crawlers. For new domains, Cloudflare says Training and Agent traffic will be blocked by default on pages that display ads, while Search remains allowed by default. This changes how publishers and site owners can control whether their content is used for AI training, surfaced in search, or accessed by automated agents. Because Cloudflare sits in front of many websites, its defaults can influence SEO, ad-supported publishing, and the broader balance between open web access and AI scraping. Cloudflare says AI Crawl Control provides granular visibility into crawler activity and lets operators set rules per crawler rather than using a single blanket policy. The discussion around the launch also highlights that multi-purpose crawlers may be evaluated according to all of their behaviors, which matters for services that combine search indexing with model training.",
+  "why_it_matters": "A web crawler is an automated system that visits pages and collects content, often for search indexing or other analysis. Cloudflare's AI Crawl Control is a product for observing that traffic and choosing whether specific AI crawlers can access a site. The new policy also distinguishes between Search, Agent, and Training traffic, which reflects that not all automated AI traffic serves the same purpose.",
+  "manager_takeaway": "A web crawler is an automated system that visits pages and collects content, often for search indexing or other analysis. Cloudflare's AI Crawl Control is a product for observing that traffic and choosing whether specific AI crawlers can access a site. The new policy also distinguishes between Search, Agent, and Training traffic, which reflects that not all automated AI traffic serves the same purpose.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for Cloudflare, AI crawlers.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The discussion is mixed but active: some commenters welcome clearer controls, while others see Cloudflare as strengthening its gatekeeping power over who can access the web. A recurring concern is that blocking broad bot categories may also block user-directed AI agents, and one commenter argues that Google's shared crawler infrastructure could make Search and Gemini training harder to separate."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-1",
+  "read_url": "/read/2026-07-26-en-01-cloudflare-adds-ai-crawler-controls-3c240fbd.html",
+  "tags": [
+    "Cloudflare",
+    "AI crawlers",
+    "SEO",
+    "content licensing",
+    "web publishing"
+  ]
+}
