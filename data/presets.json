@@ -36,17 +36,24 @@
         },
         {
           "type": "rss",
-          "description": "Product Hunt — AI product discovery and launches",
-          "description_zh": "Product Hunt — AI 产品发现与发布",
-          "tags": ["ai", "products", "discovery"],
-          "config": { "name": "Product Hunt", "url": "https://www.producthunt.com/?format=rss", "category": "ai-tools" }
+          "description": "VentureBeat AI — business AI, tools, and applied product coverage",
+          "description_zh": "VentureBeat AI — 商业 AI、工具和应用产品报道",
+          "tags": ["ai", "business", "products"],
+          "config": { "name": "VentureBeat AI", "url": "https://venturebeat.com/category/ai/feed/", "category": "ai-news" }
         },
         {
           "type": "rss",
-          "description": "Microsoft AI Blog — Copilot and Microsoft AI product updates",
-          "description_zh": "Microsoft AI Blog — Copilot 和微软 AI 产品更新",
-          "tags": ["microsoft", "copilot", "product"],
-          "config": { "name": "Microsoft AI Blog", "url": "https://blogs.microsoft.com/ai/feed/", "category": "ai-news" }
+          "description": "The Decoder — accessible AI product and industry coverage",
+          "description_zh": "The Decoder — 通俗 AI 产品与产业报道",
+          "tags": ["ai", "products", "industry"],
+          "config": { "name": "The Decoder", "url": "https://the-decoder.com/feed/", "category": "ai-news" }
+        },
+        {
+          "type": "rss",
+          "description": "CNET AI — consumer AI products and everyday AI use",
+          "description_zh": "CNET AI — 消费级 AI 产品和日常 AI 使用",
+          "tags": ["consumer-ai", "products", "tools"],
+          "config": { "name": "CNET AI", "url": "https://www.cnet.com/rss/ai/", "category": "ai-tools" }
         },
         {
           "type": "github_user",

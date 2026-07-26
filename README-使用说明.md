@@ -93,7 +93,7 @@ GitHub Actions 每天北京时间 08:30 执行一次采集和生成：
 | `ai.api_key_env` | 默认读取 `HORIZON_AI_API_KEY` |
 | `sources.hackernews` | HN Top 30 热门，最低 80 分 |
 | `sources.reddit` | 当前默认停用，保留 6 个 AI 相关 subreddit 配置 |
-| `sources.rss` | 一手资讯源 + Product Hunt、OpenAI News、Microsoft AI、量子位、新智元等更大众化来源 + Simon Willison、Chip Huyen、Latent Space、Hugging Face、LangChain、LlamaIndex 等实战源 |
+| `sources.rss` | 一手资讯源 + VentureBeat AI、The Decoder、OpenAI News、MIT Technology Review AI、CNET AI、量子位、新智元等更大众化来源 + Simon Willison、Chip Huyen、Latent Space、Hugging Face、LangChain、LlamaIndex 等实战源 |
 | `sources.github` | 10 个 AI Agent / AI 工程仓库 Release，默认归入实战与专家洞察候选 |
 | `sources.rss[].max_items` | 单个 RSS 源最多进入分析的条数，ArXiv 当前限 5 条 |
 | `filtering.ai_score_threshold` | Horizon 重要性评分阈值，当前为 7 分 |
@@ -103,7 +103,7 @@ GitHub Actions 每天北京时间 08:30 执行一次采集和生成：
 
 ## 信息源覆盖
 
-**国外**：HN、TechCrunch AI、Product Hunt、OpenAI News、Microsoft AI Blog、ArXiv AI、GitHub AI 仓库 Release
+**国外**：HN、TechCrunch AI、VentureBeat AI、The Decoder、OpenAI News、MIT Technology Review AI、CNET AI、ArXiv AI、GitHub AI 仓库 Release
 
 **国内**：智谱AI、量子位、新智元
 
