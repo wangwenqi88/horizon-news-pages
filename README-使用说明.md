@@ -93,7 +93,7 @@ GitHub Actions 每天北京时间 08:30 执行一次采集和生成：
 | `ai.api_key_env` | 默认读取 `HORIZON_AI_API_KEY` |
 | `sources.hackernews` | HN Top 30 热门，最低 80 分 |
 | `sources.reddit` | 当前默认停用，保留 6 个 AI 相关 subreddit 配置 |
-| `sources.rss` | 一手资讯源 + Simon Willison、Chip Huyen、Latent Space、Hugging Face、LangChain、LlamaIndex 等实战源 |
+| `sources.rss` | 一手资讯源 + Product Hunt、OpenAI News、Microsoft AI、量子位、新智元等更大众化来源 + Simon Willison、Chip Huyen、Latent Space、Hugging Face、LangChain、LlamaIndex 等实战源 |
 | `sources.github` | 10 个 AI Agent / AI 工程仓库 Release，默认归入实战与专家洞察候选 |
 | `sources.rss[].max_items` | 单个 RSS 源最多进入分析的条数，ArXiv 当前限 5 条 |
 | `filtering.ai_score_threshold` | Horizon 重要性评分阈值，当前为 7 分 |
@@ -103,11 +103,11 @@ GitHub Actions 每天北京时间 08:30 执行一次采集和生成：
 
 ## 信息源覆盖
 
-**国外**：HN、TechCrunch AI、OpenAI Blog、ArXiv AI、GitHub AI 仓库 Release
+**国外**：HN、TechCrunch AI、Product Hunt、OpenAI News、Microsoft AI Blog、ArXiv AI、GitHub AI 仓库 Release
 
-**国内**：智谱AI
+**国内**：智谱AI、量子位、新智元
 
-**重点领域**：AI Agent 框架、LLM 新模型、自动化工具链、行业动态
+**重点领域**：AI Agent 框架、LLM 新模型、自动化工具链、面向普通用户的 AI 产品更新、行业动态
 
 ## 公开发布链路
 
@@ -142,6 +142,14 @@ HORIZON_AI_MODEL=你的模型名
 2. 只有 `source_type = rss/github_repo/community` 且抓取方式已支持的信源，才同步到运行配置 `data/config.json`。
 3. 聚合源只做线索发现；进入学习笔记或正式内容前，要追溯到官方、论文、仓库或一手发布。
 4. 每周复盘一次低质量/失效信源，连续 4 周无有效条目可降级或停用。
+
+## 一手资讯口径
+
+一手资讯不是越技术越好，而是优先服务小程序的“听得懂”入口：
+
+- 优先：AI 工具更新、ChatGPT / Claude / Gemini / Copilot 新功能、普通人工作流、内容创作、知识管理、办公提效、产品发布
+- 次优先：行业事件、商业合作、融资、策略调整、可解释的模型更新
+- 降低优先级：纯论文、纯 benchmark、底层推理/训练细节、工程师专属的小版本 release
 
 ## 自由模型接入
 

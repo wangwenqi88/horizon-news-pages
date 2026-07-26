@@ -28,6 +28,27 @@
           "config": { "name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "category": "ai-tools" }
         },
         {
+          "type": "rss",
+          "description": "OpenAI News — product releases and user-facing updates",
+          "description_zh": "OpenAI News — 产品发布与面向用户的更新",
+          "tags": ["openai", "product", "news"],
+          "config": { "name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "category": "ai-news" }
+        },
+        {
+          "type": "rss",
+          "description": "Product Hunt — AI product discovery and launches",
+          "description_zh": "Product Hunt — AI 产品发现与发布",
+          "tags": ["ai", "products", "discovery"],
+          "config": { "name": "Product Hunt", "url": "https://www.producthunt.com/?format=rss", "category": "ai-tools" }
+        },
+        {
+          "type": "rss",
+          "description": "Microsoft AI Blog — Copilot and Microsoft AI product updates",
+          "description_zh": "Microsoft AI Blog — Copilot 和微软 AI 产品更新",
+          "tags": ["microsoft", "copilot", "product"],
+          "config": { "name": "Microsoft AI Blog", "url": "https://blogs.microsoft.com/ai/feed/", "category": "ai-news" }
+        },
+        {
           "type": "github_user",
           "description": "Andrej Karpathy — AI educator and researcher",
           "description_zh": "Andrej Karpathy — AI 教育者与研究者",

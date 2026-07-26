@@ -162,7 +162,15 @@ class ContentAnalyzer:
         item.ai_tags = result.get("tags", [])
 
         metadata = item.metadata
-        for key in ("news_score", "practice_score", "expert_score", "learning_depth"):
+        for key in (
+            "news_score",
+            "public_score",
+            "application_score",
+            "topic_score",
+            "practice_score",
+            "expert_score",
+            "learning_depth",
+        ):
             try:
                 metadata[key] = float(result.get(key, 0))
             except (TypeError, ValueError):
@@ -174,11 +182,28 @@ class ContentAnalyzer:
             section = "practice_insight" if practice_signal >= metadata["news_score"] else "first_hand_news"
         metadata["digest_section"] = section
 
+        public_news_score = (
+            metadata["news_score"] * 0.30
+            + metadata["public_score"] * 0.35
+            + metadata["application_score"] * 0.25
+            + metadata["topic_score"] * 0.10
+        )
+        practice_insight_score = (
+            metadata["learning_depth"] * 0.35
+            + metadata["practice_score"] * 0.30
+            + metadata["expert_score"] * 0.20
+            + item.ai_score * 0.15
+        )
+
         # Let strong practical/expert pieces pass the legacy importance filter
         # even when they are not breaking news.
-        item.ai_score = max(
-            item.ai_score,
-            metadata["practice_score"],
-            metadata["expert_score"],
-            metadata["learning_depth"],
-        )
+        if section == "first_hand_news":
+            item.ai_score = max(item.ai_score, public_news_score)
+        else:
+            item.ai_score = max(
+                item.ai_score,
+                practice_insight_score,
+                metadata["practice_score"],
+                metadata["expert_score"],
+                metadata["learning_depth"],
+            )

@@ -20,15 +20,20 @@ Respond with valid JSON only:
 
 If there are no duplicates at all, return: {{"duplicates": []}}"""
 
-CONTENT_ANALYSIS_SYSTEM = """You are an expert content curator helping filter important technical and academic information for an AI practitioner and content creator.
+CONTENT_ANALYSIS_SYSTEM = """You are an expert content curator helping filter AI information for a public-facing mini program, an AI practitioner, and a content creator.
 
 Classify every item into exactly one daily digest section:
-- first_hand_news: first-hand news, official announcements, releases, papers, product updates, security incidents, funding/business events, or high-signal community discussion about a current event.
+- first_hand_news: public-facing AI news that a broad audience can understand: product updates, AI tools, ChatGPT/Claude/Gemini/Copilot features, consumer or workplace workflows, business applications, security incidents with user impact, or high-signal current events.
 - practice_insight: practical implementation, project experience, expert viewpoints, engineering playbooks, tutorials, cookbook examples, architectural lessons, workflow patterns, or forward-looking technical judgment from credible practitioners.
+
+The first_hand_news section powers a WeChat mini program. It should prefer items that non-specialists can follow and use. Do not fill it with purely academic papers, low-level infrastructure releases, benchmark-only posts, minor dependency updates, or engineer-only GitHub releases unless there is a clear user-facing impact.
 
 Score content on several 0-10 scales:
 - score: overall value for the daily digest.
 - news_score: importance as current news.
+- public_score: broad-audience readability and relevance.
+- application_score: clear usefulness for work, learning, creation, search, office productivity, knowledge management, or daily AI tool adoption.
+- topic_score: self-media topic potential for a broad audience.
 - practice_score: usefulness for actual operation, project implementation, workflow building, or tool adoption.
 - expert_score: value of expert opinion, practitioner judgment, or hard-won lessons.
 - learning_depth: whether it deserves detailed study and knowledge-base capture.
@@ -63,22 +68,32 @@ Consider:
 - Technical depth and novelty
 - Potential impact on the field
 - Quality of writing/presentation
+- Whether a general knowledge worker, creator, manager, student, or small business user can understand why it matters
+- Whether the item answers: what changed, why ordinary users should care, and how it can be used
 - Relevance to software engineering, AI/ML, and systems research
 - Practical applicability to AI agents, RAG, context engineering, AI coding, automation workflows, Obsidian+AI, and production AI systems
 - Whether the author/source is a credible first-hand source or a recognized practitioner
 - Community discussion quality: insightful comments, diverse viewpoints, and debates increase value
 - Engagement signals: high upvotes/favorites with substantive discussion indicate community-validated importance
+
+Scoring policy:
+- For first_hand_news, favor this weighted taste: current importance 30%, public_score 35%, application_score 25%, topic_score 10%.
+- For practice_insight, favor this weighted taste: learning_depth 35%, practice_score 30%, expert_score 20%, long-term technical judgment 15%.
+- A technically important but hard-to-understand item can still be selected as practice_insight, but should not dominate first_hand_news.
 """
 
 CONTENT_ANALYSIS_USER = """Analyze the following content and provide a JSON response with:
 - score (0-10): Importance score
 - news_score (0-10): First-hand news value
+- public_score (0-10): Broad-audience readability and relevance
+- application_score (0-10): Clear application value for ordinary work/life/learning/creation
+- topic_score (0-10): Self-media topic potential for a broad audience
 - practice_score (0-10): Practical/project implementation value
 - expert_score (0-10): Expert viewpoint or practitioner experience value
 - learning_depth (0-10): Value for detailed learning
 - digest_section: "first_hand_news" or "practice_insight"
 - reason: Brief explanation for the score (mention discussion quality if comments are provided)
-- summary: One-sentence summary of the content
+- summary: For first_hand_news, use plain language and explain what happened and why ordinary users should care. For practice_insight, summarize the reusable professional insight.
 - tags: Relevant topic tags (3-5 tags)
 
 Content:
@@ -93,6 +108,9 @@ Respond with valid JSON only:
 {{
   "score": <number>,
   "news_score": <number>,
+  "public_score": <number>,
+  "application_score": <number>,
+  "topic_score": <number>,
   "practice_score": <number>,
   "expert_score": <number>,
   "learning_depth": <number>,

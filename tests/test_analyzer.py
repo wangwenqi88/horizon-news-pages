@@ -94,3 +94,35 @@ def test_analyze_batch_concurrent_preserves_order(monkeypatch):
     result = asyncio.run(analyzer.analyze_batch(items))
 
     assert [item.id for item in result] == [item.id for item in items]
+
+
+def test_analyze_item_stores_public_readability_scores():
+    class FakeClient:
+        async def complete(self, system, user):  # type: ignore[no-untyped-def]
+            return """
+            {
+              "score": 6,
+              "news_score": 8,
+              "public_score": 9,
+              "application_score": 8,
+              "topic_score": 7,
+              "practice_score": 2,
+              "expert_score": 1,
+              "learning_depth": 3,
+              "digest_section": "first_hand_news",
+              "reason": "Useful and easy to understand",
+              "summary": "A user-facing AI tool update.",
+              "tags": ["ai-tools", "product"]
+            }
+            """
+
+    analyzer = ContentAnalyzer(FakeClient())
+    item = _make_item("rss:test:public")
+
+    asyncio.run(analyzer._analyze_item(item))
+
+    assert item.metadata["public_score"] == 9.0
+    assert item.metadata["application_score"] == 8.0
+    assert item.metadata["topic_score"] == 7.0
+    assert item.metadata["digest_section"] == "first_hand_news"
+    assert item.ai_score == 8.25
