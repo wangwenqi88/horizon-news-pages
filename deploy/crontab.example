@@ -1,0 +1,8 @@
+# Horizon News daily run.
+# Install with: crontab deploy/crontab.example
+# Time below is server local time. On a server using Asia/Shanghai, this runs at 08:30 daily.
+
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+
+30 8 * * * cd /opt/horizon-news && ./scripts/server_run.sh

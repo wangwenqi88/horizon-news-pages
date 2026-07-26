@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Horizon News daily
+
+[Timer]
+OnCalendar=*-*-* 08:30:00
+Persistent=true
+Unit=horizon-news.service
+
+[Install]
+WantedBy=timers.target

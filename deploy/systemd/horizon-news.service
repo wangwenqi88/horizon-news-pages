@@ -1,0 +1,14 @@
+[Unit]
+Description=Horizon News daily collection and publish
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/horizon-news
+ExecStart=/opt/horizon-news/scripts/server_run.sh
+Environment=TZ=Asia/Shanghai
+
+# Keep logs in project logs/ through server_run.sh. systemd also records stdout/stderr.
+StandardOutput=journal
+StandardError=journal

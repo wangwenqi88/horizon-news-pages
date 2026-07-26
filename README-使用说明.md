@@ -65,7 +65,17 @@ uv run python scripts/publish_daily.py --no-push
 
 ### 方式二：服务器定时运行
 
-服务器脚本为 `scripts/daily-run.sh`。它执行完整链路：采集、生成 HTML、提交 `docs/` 公开产物并推送到 GitHub。
+服务器标准入口为 `scripts/server_run.sh`。它执行完整链路：加载 `.env`、防并发锁、写入日志、采集、生成 HTML、提交 `docs/` 公开产物并推送到 GitHub。
+
+```bash
+./scripts/server_run.sh
+./scripts/server_run.sh --no-push
+./scripts/server_run.sh --hours 48
+```
+
+`scripts/daily-run.sh` 保留为兼容入口，内部会转到 `server_run.sh`。
+
+部署说明见：`docs/deployment.md`。
 
 ### 方式三：由 Claude 代为运行
 

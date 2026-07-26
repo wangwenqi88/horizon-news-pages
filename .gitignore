@@ -49,12 +49,14 @@ data/x_cookies_*.json
 # Logs
 logs/*.log
 *.log
+.run/
 
 # macOS
 .DS_Store
 
 # uv
 .uv/
+.uv-cache/
 
 # todo
 todo.txt
