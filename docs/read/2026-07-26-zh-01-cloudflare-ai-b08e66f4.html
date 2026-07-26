@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloudflare 扩展 AI 爬虫控制。</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-26-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-26 · Horizon News AI 精读</p>
+        <h1>Cloudflare 扩展 AI 爬虫控制。</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>8.0 分</span><span>Cloudflare、AI crawlers、website owners、search engines、AI policy</span></div>
+        <a class="source-cta" href="https://blog.cloudflare.com/content-independence-day-ai-options/" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>Cloudflare 宣布了新的 AI 流量选项，将爬虫分为搜索、训练和代理三类，并让客户更直接地控制这些类别。对于新接入 Cloudflare 的域名，在展示广告的页面上，训练和代理流量将默认被阻止，而搜索流量默认允许。 由于 Cloudflare 位于许多网站的前端，它的默认设置可能影响出版商、AI 公司、搜索引擎和个人 AI 代理访问网页内容的方式。这一变化也凸显了内容可见性、广告支持型出版、AI 训练访问以及代表用户行动的自动化助手之间的新冲突。 一个值得注意的 9 月 15 日政策变化是，同时具备搜索和训练行为的多用途爬虫将按照其所有行为被允许或阻止；评论者指出，这可能影响 Googlebot，因为 Google 将共享爬虫基础设施用于搜索和 Gemini 训练。这让网站所有者获得了更大的控制权，但也带来风险：阻止训练流量可能意外降低搜索可见性，或阻止服务用户的代理。</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：8.0/10</li><li>标签：Cloudflare、AI crawlers、website owners、search engines、AI policy</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://blog.cloudflare.com/content-independence-day-ai-options/" rel="noopener noreferrer" target="_blank">Cloudflare 扩展 AI 爬虫控制。</a> ⭐️ 8.0/10</h3>
+<p>Cloudflare 宣布了新的 AI 流量选项，将爬虫分为搜索、训练和代理三类，并让客户更直接地控制这些类别。对于新接入 Cloudflare 的域名，在展示广告的页面上，训练和代理流量将默认被阻止，而搜索流量默认允许。 由于 Cloudflare 位于许多网站的前端，它的默认设置可能影响出版商、AI 公司、搜索引擎和个人 AI 代理访问网页内容的方式。这一变化也凸显了内容可见性、广告支持型出版、AI 训练访问以及代表用户行动的自动化助手之间的新冲突。 一个值得注意的 9 月 15 日政策变化是，同时具备搜索和训练行为的多用途爬虫将按照其所有行为被允许或阻止；评论者指出，这可能影响 Googlebot，因为 Google 将共享爬虫基础设施用于搜索和 Gemini 训练。这让网站所有者获得了更大的控制权，但也带来风险：阻止训练流量可能意外降低搜索可见性，或阻止服务用户的代理。</p>
+<p>hackernews · alphabetatango · 7月25日 22:50 · <a href="https://news.ycombinator.com/item?id=49052564" rel="noopener noreferrer" target="_blank">社区讨论</a></p>
+<p><strong>背景</strong>: 网页爬虫是自动获取网页的程序，常见用途包括搜索索引、AI 模型训练，或由 AI 代理完成用户任务。传统上，网站会使用 robots.txt 等机制表达爬取偏好，但这些规则主要是建议性质，是否遵守取决于爬虫本身。Cloudflare 的新控制将 AI 相关流量分为搜索、代理和训练类别，使网站所有者能够在网络边缘实施策略，而不只是依赖站点文件。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://www.theneurondaily.com/p/cloudflare-draws-an-ai-bot-line" rel="noopener noreferrer" target="_blank">Cloudflare draws an AI bot line</a></li>
+<li><a href="https://ai.plainenglish.io/how-to-ensure-cloudflare-is-not-blocking-ai-bots-october-2025-quick-demo-03fd8d6fed12" rel="noopener noreferrer" target="_blank">How to ensure Cloudflare is not blocking AI bots (October 2025 quick...)</a></li>
+<li><a href="https://pixis.ai/blog/robots-txt-for-ai-crawlers-gptbot-perplexitybot-geo-audit/" rel="noopener noreferrer" target="_blank">Robots.txt for AI Crawlers : GPTBot, PerplexityBot &amp; GEO Audit | Pixis</a></li>
+</ul>
+</details>
+<p><strong>社区讨论</strong>: 社区讨论很活跃，也带有明显怀疑态度：评论者欢迎更多控制权，但担心 Cloudflare 正在成为过于强势的网页访问守门人。多位评论者认为，广泛阻止机器人可能伤害合法的用户代理；另一些人则关注一个出人意料的影响，即如果搜索和训练基础设施没有分离，Googlebot 可能会受到影响。</p>
+<p><strong>标签</strong>: <code>#Cloudflare</code>, <code>#AI crawlers</code>, <code>#website owners</code>, <code>#search engines</code>, <code>#AI policy</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>网页爬虫是自动获取网页的程序，常见用途包括搜索索引、AI 模型训练，或由 AI 代理完成用户任务。传统上，网站会使用 robots.txt 等机制表达爬取偏好，但这些规则主要是建议性质，是否遵守取决于爬虫本身。Cloudflare 的新控制将 AI 相关流量分为搜索、代理和训练类别，使网站所有者能够在网络边缘实施策略，而不只是依赖站点文件。</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>网页爬虫是自动获取网页的程序，常见用途包括搜索索引、AI 模型训练，或由 AI 代理完成用户任务。传统上，网站会使用 robots.txt 等机制表达爬取偏好，但这些规则主要是建议性质，是否遵守取决于爬虫本身。Cloudflare 的新控制将 AI 相关流量分为搜索、代理和训练类别，使网站所有者能够在网络边缘实施策略，而不只是依赖站点文件。</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>网页爬虫是自动获取网页的程序，常见用途包括搜索索引、AI 模型训练，或由 AI 代理完成用户任务。传统上，网站会使用 robots.txt 等机制表达爬取偏好，但这些规则主要是建议性质，是否遵守取决于爬虫本身。Cloudflare 的新控制将 AI 相关流量分为搜索、代理和训练类别，使网站所有者能够在网络边缘实施策略，而不只是依赖站点文件。</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>判断团队近期是否有和Cloudflare、AI crawlers相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ul>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>社区讨论很活跃，也带有明显怀疑态度：评论者欢迎更多控制权，但担心 Cloudflare 正在成为过于强势的网页访问守门人。多位评论者认为，广泛阻止机器人可能伤害合法的用户代理；另一些人则关注一个出人意料的影响，即如果搜索和训练基础设施没有分离，Googlebot 可能会受到影响。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://blog.cloudflare.com/content-independence-day-ai-options/" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-26-zh.html#item-1">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

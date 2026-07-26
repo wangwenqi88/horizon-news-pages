@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-26-en-02-libraries-teach-people-to-avoid-ai-8ba30b9b",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "Libraries teach people to avoid AI.",
+  "source": "rss",
+  "source_url": "https://techcrunch.com/2026/07/25/librarians-are-hosting-viral-avoiding-ai-workshops-for-people-who-are-fed-up-with-big-tech/",
+  "source_tier": "A",
+  "published_at": "2026-07-26",
+  "category": "AI adoption",
+  "group": "first_hand_news",
+  "score": "7.71",
+  "summary": "TechCrunch reports that libraries around the United States are seeing viral demand for “Avoiding AI” workshops. The workshops respond to ordinary users who want practical ways to limit AI exposure, protect privacy, and regain control over daily technology use. The story shows that AI adoption is not only a technical or enterprise issue but also a consumer trust and digital literacy issue. Public libraries are becoming a visible place where people seek neutral guidance about Big Tech, privacy, and personal choice. The provided report highlights demand rather than a detailed curriculum, so the exact tools, settings, and methods taught in the workshops are not specified. The important signal is the scale of public interest in opting out or reducing exposure, not a specific technical breakthrough.",
+  "what_happened": "TechCrunch reports that libraries around the United States are seeing viral demand for “Avoiding AI” workshops. The workshops respond to ordinary users who want practical ways to limit AI exposure, protect privacy, and regain control over daily technology use. The story shows that AI adoption is not only a technical or enterprise issue but also a consumer trust and digital literacy issue. Public libraries are becoming a visible place where people seek neutral guidance about Big Tech, privacy, and personal choice. The provided report highlights demand rather than a detailed curriculum, so the exact tools, settings, and methods taught in the workshops are not specified. The important signal is the scale of public interest in opting out or reducing exposure, not a specific technical breakthrough.",
+  "why_it_matters": "Public libraries often provide digital literacy programs that help people understand everyday technologies in a non-commercial setting. As AI features are added to search, productivity software, social platforms, and consumer devices, some users may feel they have less control over when AI is involved. Privacy concerns also grow when services collect data to personalize, automate, or improve technology experiences. In this context, an “Avoiding AI” workshop is less about rejecting all technology and more about teaching users how to make informed choices.",
+  "manager_takeaway": "Public libraries often provide digital literacy programs that help people understand everyday technologies in a non-commercial setting. As AI features are added to search, productivity software, social platforms, and consumer devices, some users may feel they have less control over when AI is involved. Privacy concerns also grow when services collect data to personalize, automate, or improve technology experiences. In this context, an “Avoiding AI” workshop is less about rejecting all technology and more about teaching users how to make informed choices.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI adoption, privacy.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-2",
+  "read_url": "/read/2026-07-26-en-02-libraries-teach-people-to-avoid-ai-8ba30b9b.html",
+  "tags": [
+    "AI adoption",
+    "privacy",
+    "Big Tech",
+    "digital literacy",
+    "public libraries"
+  ]
+}

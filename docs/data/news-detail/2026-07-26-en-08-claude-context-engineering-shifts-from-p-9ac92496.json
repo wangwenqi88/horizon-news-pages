@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-26-en-08-claude-context-engineering-shifts-from-p-9ac92496",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "Claude context engineering shifts from prompts to workflows",
+  "source": "hackernews",
+  "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+  "source_tier": "B",
+  "published_at": "2026-07-26",
+  "category": "Claude",
+  "group": "practice_insight",
+  "score": "8.5",
+  "summary": "Anthropic published a Claude blog post arguing that newer Claude-generation models need deliberate context engineering rather than vague one-shot prompts. The core change is a recommended workflow that structures instructions, memory, requirements, examples, and review loops so the model receives the right information at the right time. This matters for teams using Claude for coding, agent workflows, and production LLM applications because model quality increasingly depends on the surrounding harness, not only the base model. It also reflects a broader industry shift from prompt engineering as wording tricks toward context management as a software-engineering discipline. The post’s practical emphasis is on making requirements explicit, supplying relevant examples, managing memory carefully, and using review loops instead of assuming the model will infer everything correctly. The main caveat is that more context is not automatically better: irrelevant memory, hidden assumptions, and over-complicated instruction stacks can make behavior harder to debug.",
+  "what_happened": "Anthropic published a Claude blog post arguing that newer Claude-generation models need deliberate context engineering rather than vague one-shot prompts. The core change is a recommended workflow that structures instructions, memory, requirements, examples, and review loops so the model receives the right information at the right time. This matters for teams using Claude for coding, agent workflows, and production LLM applications because model quality increasingly depends on the surrounding harness, not only the base model. It also reflects a broader industry shift from prompt engineering as wording tricks toward context management as a software-engineering discipline. The post’s practical emphasis is on making requirements explicit, supplying relevant examples, managing memory carefully, and using review loops instead of assuming the model will infer everything correctly. The main caveat is that more context is not automatically better: irrelevant memory, hidden assumptions, and over-complicated instruction stacks can make behavior harder to debug.",
+  "why_it_matters": "Context engineering means deliberately designing and controlling the information included in an LLM call, such as task instructions, retrieved documents, examples, tool outputs, and prior conversation state. This differs from narrow prompt engineering because it focuses less on clever phrasing and more on what data reaches the model during each step of a workflow. Anthropic’s own prompt-engineering guidance emphasizes that prompts are human-readable and useful for debugging, while broader context-engineering discussions stress that multi-step systems need careful control over what enters the context window.",
+  "manager_takeaway": "Context engineering means deliberately designing and controlling the information included in an LLM call, such as task instructions, retrieved documents, examples, tool outputs, and prior conversation state. This differs from narrow prompt engineering because it focuses less on clever phrasing and more on what data reaches the model during each step of a workflow. Anthropic’s own prompt-engineering guidance emphasizes that prompts are human-readable and useful for debugging, while broader context-engineering discussions stress that multi-step systems need careful control over what enters the context window.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for Claude, context-engineering.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The Hacker News discussion is skeptical but practically engaged: commenters question why top coding models still hallucinate APIs, make unwanted changes, or require elaborate system prompts and AI reviewers. Several comments worry that automatic memory can introduce hidden assumptions, while others see complex context tooling as potential vendor lock-in compared with portable Markdown-based instructions."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-8",
+  "read_url": "/read/2026-07-26-en-08-claude-context-engineering-shifts-from-p-9ac92496.html",
+  "tags": [
+    "Claude",
+    "context-engineering",
+    "AI-coding",
+    "prompt-engineering",
+    "LLM-workflows"
+  ]
+}

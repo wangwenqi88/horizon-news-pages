@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude 上下文工程转向工作流</title>
+  <meta name="description" content="AI 资讯精读">
+  <link rel="stylesheet" href="../assets/css/horizon.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark">H</span><span><strong>Horizon News</strong><small>AI 资讯精读</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="../index.html">今日</a>
+        <a href="../firsthand.html">一手资讯</a>
+        <a href="../insights.html">专家洞察</a>
+        <a href="../index.html#history">历史日报</a>
+      </nav>
+      <div class="header-actions"><a class="header-daily-link" href="../daily/2026-07-26-zh.html">完整日报</a><span class="saved-counter" title="收藏数量"><span aria-hidden="true">☆</span><span data-saved-count>0</span></span></div>
+    </div>
+  </header>
+  <main>
+    <article class="section-shell read-article">
+      <section class="read-hero">
+        <p class="kicker">2026-07-26 · Horizon News AI 精读</p>
+        <h1>Claude 上下文工程转向工作流</h1>
+        <p class="read-disclaimer">Horizon News 的完整 AI 转译、结构化整理与分析，不等同于原作者全文；引用、研究和决策请回看原文。</p>
+        <div class="read-meta"><span>hackernews</span><span>B 级信源</span><span>8.5 分</span><span>Claude、context-engineering、AI-coding、prompt-engineering、LLM-workflows</span></div>
+        <a class="source-cta" href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" target="_blank" rel="noopener noreferrer">查看原文 →</a>
+      </section>
+      <div class="read-layout">
+        <aside class="read-toc read-nav" aria-label="本页内容">
+          <strong>本页内容</strong>
+        <a href="#guide">内容导读</a>
+        <a href="#facts">核心事实</a>
+        <a href="#translation">完整 AI 转译</a>
+        <a href="#context">背景与上下文</a>
+        <a href="#importance">为什么重要</a>
+        <a href="#view">AI 观点</a>
+        <a href="#actions">可执行建议</a>
+        <a href="#risks">风险与限制</a>
+        <a href="#source">来源信息</a>
+        </aside>
+        <div class="read-body">
+        <section id="guide" class="read-section">
+          <h2>内容导读</h2>
+          <p>Anthropic 发布了一篇 Claude 博客文章，强调新一代 Claude 模型更需要有意识的上下文工程，而不是模糊的一次性提示词。其核心变化是一套推荐工作流：把指令、记忆、需求、示例和审查循环结构化，让模型在合适的时机获得合适的信息。 这对使用 Claude 做编码、智能体工作流和生产级 LLM 应用的团队很重要，因为效果越来越取决于模型周围的执行框架，而不只是基础模型本身。它也反映了行业趋势：提示词工程正在从文字技巧转向更像软件工程的上下文管理。 这篇文章的实用重点是明确需求、提供相关示例、谨慎管理记忆，并使用审查循环，而不是假设模型会自动正确推断所有内容。主要注意点是，上下文并非越多越好：无关记忆、隐藏假设和过度复杂的指令堆叠都可能让行为更难调试。</p>
+        </section>
+        <section id="facts" class="read-section">
+          <h2>核心事实</h2>
+          <ul><li>来源：hackernews</li><li>评分：8.5/10</li><li>标签：Claude、context-engineering、AI-coding、prompt-engineering、LLM-workflows</li></ul>
+        </section>
+        <section id="translation" class="read-section">
+          <h2>完整 AI 转译</h2>
+          <h3><a href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" rel="noopener noreferrer" target="_blank">Claude 上下文工程转向工作流</a> ⭐️ 8.5/10</h3>
+<p>Anthropic 发布了一篇 Claude 博客文章，强调新一代 Claude 模型更需要有意识的上下文工程，而不是模糊的一次性提示词。其核心变化是一套推荐工作流：把指令、记忆、需求、示例和审查循环结构化，让模型在合适的时机获得合适的信息。 这对使用 Claude 做编码、智能体工作流和生产级 LLM 应用的团队很重要，因为效果越来越取决于模型周围的执行框架，而不只是基础模型本身。它也反映了行业趋势：提示词工程正在从文字技巧转向更像软件工程的上下文管理。 这篇文章的实用重点是明确需求、提供相关示例、谨慎管理记忆，并使用审查循环，而不是假设模型会自动正确推断所有内容。主要注意点是，上下文并非越多越好：无关记忆、隐藏假设和过度复杂的指令堆叠都可能让行为更难调试。</p>
+<p>hackernews · mellosouls · 7月25日 20:42 · <a href="https://news.ycombinator.com/item?id=49051361" rel="noopener noreferrer" target="_blank">社区讨论</a></p>
+<p><strong>背景</strong>: 上下文工程是指有意识地设计和控制一次 LLM 调用中包含的信息，例如任务指令、检索到的文档、示例、工具输出和先前对话状态。它不同于狭义的提示词工程，因为重点不只是措辞技巧，而是每个工作流步骤中哪些数据会进入模型。Anthropic 自己的提示词工程指南强调提示词具有人类可读性并有助于调试，而更广义的上下文工程讨论则强调，多步骤系统需要仔细控制进入上下文窗口的信息。</p>
+<p><strong>AI 观点</strong>: A high-signal official Claude blog post on context engineering, relevant to AI coding, agent workflows, prompt design, memory use, and production LLM usage. It is not ideal as broad public news because the topic is fairly technical and mainly valuable to builders and power users, but it has strong practical value for teams trying to get better results from Claude-style models. Hacker News engagement is very high, with 393 points and 286 comments; the discussion includes useful skepticism about over-complicated prompting, model reliability, hallucinated APIs, and memory behavior, which adds practitioner perspective.</p>
+<p><strong>可复用方法</strong>: 应把上下文视为一个经过工程化设计的输入管线，而不是单条提示词。在要求 Claude 执行任务之前，应区分长期指令、当前任务需求、示例、约束和审查标准，让每类信息都有明确作用。对于编码工作流，应要求模型进行较小范围的修改，并给出明确验收标准，然后通过审查或验证步骤检查结果，而不是期待第一次就完美完成。记忆和检索到的上下文应保持足够可观察，使人能判断模型可能正在使用哪些假设。</p>
+<p><strong>实操要点</strong>: 可以先编写一个简短的项目指令文件，定义编码约定、禁止的修改、测试期望和审查规则。任务提示应保持具体，包括涉及的文件或 API、预期行为，以及在可能时给出可接受输出的示例。应加入验证循环，让模型或独立流程将变更与需求进行对照，但不要把这种审查当成测试的替代品。需要谨慎审计记忆使用，因为过时或无关的记忆可能以难以察觉的方式影响决策。不要把所有规则都塞进每次请求中；应优先使用覆盖任务所需的最小相关上下文。</p>
+<p><strong>我可以怎么用</strong>: 对于 AI 智能体和软件交付，这意味着应像管理项目产物一样管理提示词：进行版本控制、审查，并绑定验收标准。在 Obsidian 或其他知识管理系统中，这也提示我们应区分稳定的项目记忆和临时任务笔记，让智能体能检索上下文，同时避免从无关笔记中过度推断。</p>
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" rel="noopener noreferrer" target="_blank">Prompt engineering overview - Anthropic</a></li>
+<li><a href="https://blog.n8n.io/context-engineering-llm/" rel="noopener noreferrer" target="_blank">Context Engineering for LLMs : Strategies and Patterns – n8n Blog</a></li>
+<li><a href="https://www.emergentmind.com/topics/context-engineering-for-large-language-models-llms" rel="noopener noreferrer" target="_blank">Context Engineering for LLMs</a></li>
+</ul>
+</details>
+<p><strong>社区讨论</strong>: Hacker News 的讨论总体上带有怀疑但也很务实：评论者质疑为什么顶级编码模型仍会编造 API、做出未要求的修改，或需要复杂的系统提示词和 AI 审查器。一些评论担心自动记忆会引入隐藏假设，另一些人则认为复杂的上下文工具可能造成供应商锁定，不如可移植的 Markdown 指令透明。</p>
+<p><strong>标签</strong>: <code>#Claude</code>, <code>#context-engineering</code>, <code>#AI-coding</code>, <code>#prompt-engineering</code>, <code>#LLM-workflows</code></p>
+<hr/>
+<p></p>
+        </section>
+        <section id="context" class="read-section">
+          <h2>背景与上下文</h2>
+          <p>上下文工程是指有意识地设计和控制一次 LLM 调用中包含的信息，例如任务指令、检索到的文档、示例、工具输出和先前对话状态。它不同于狭义的提示词工程，因为重点不只是措辞技巧，而是每个工作流步骤中哪些数据会进入模型。Anthropic 自己的提示词工程指南强调提示词具有人类可读性并有助于调试，而更广义的上下文工程讨论则强调，多步骤系统需要仔细控制进入上下文窗口的信息。</p>
+        </section>
+        <section id="importance" class="read-section">
+          <h2>为什么重要</h2>
+          <p>上下文工程是指有意识地设计和控制一次 LLM 调用中包含的信息，例如任务指令、检索到的文档、示例、工具输出和先前对话状态。它不同于狭义的提示词工程，因为重点不只是措辞技巧，而是每个工作流步骤中哪些数据会进入模型。Anthropic 自己的提示词工程指南强调提示词具有人类可读性并有助于调试，而更广义的上下文工程讨论则强调，多步骤系统需要仔细控制进入上下文窗口的信息。</p>
+        </section>
+        <section id="view" class="read-section">
+          <h2>AI 观点</h2>
+          <p>A high-signal official Claude blog post on context engineering, relevant to AI coding, agent workflows, prompt design, memory use, and production LLM usage. It is not ideal as broad public news because the topic is fairly technical and mainly valuable to builders and power users, but it has strong practical value for teams trying to get better results from Claude-style models. Hacker News engagement is very high, with 393 points and 286 comments; the discussion includes useful skepticism about over-complicated prompting, model reliability, hallucinated APIs, and memory behavior, which adds practitioner perspective.</p>
+        </section>
+        <section id="actions" class="read-section">
+          <h2>可执行建议</h2>
+          <ul><li>判断团队近期是否有和Claude、context-engineering相关的试用场景。</li><li>核对数据安全、权限边界和成本变化。</li><li>如果价值明确，安排一次小范围验证并记录复盘。</li></ul><p>应把上下文视为一个经过工程化设计的输入管线，而不是单条提示词。在要求 Claude 执行任务之前，应区分长期指令、当前任务需求、示例、约束和审查标准，让每类信息都有明确作用。对于编码工作流，应要求模型进行较小范围的修改，并给出明确验收标准，然后通过审查或验证步骤检查结果，而不是期待第一次就完美完成。记忆和检索到的上下文应保持足够可观察，使人能判断模型可能正在使用哪些假设。</p><p>可以先编写一个简短的项目指令文件，定义编码约定、禁止的修改、测试期望和审查规则。任务提示应保持具体，包括涉及的文件或 API、预期行为，以及在可能时给出可接受输出的示例。应加入验证循环，让模型或独立流程将变更与需求进行对照，但不要把这种审查当成测试的替代品。需要谨慎审计记忆使用，因为过时或无关的记忆可能以难以察觉的方式影响决策。不要把所有规则都塞进每次请求中；应优先使用覆盖任务所需的最小相关上下文。</p><p>对于 AI 智能体和软件交付，这意味着应像管理项目产物一样管理提示词：进行版本控制、审查，并绑定验收标准。在 Obsidian 或其他知识管理系统中，这也提示我们应区分稳定的项目记忆和临时任务笔记，让智能体能检索上下文，同时避免从无关笔记中过度推断。</p>
+        </section>
+        <section id="risks" class="read-section">
+          <h2>风险与限制</h2>
+          <ul><li>Hacker News 的讨论总体上带有怀疑但也很务实：评论者质疑为什么顶级编码模型仍会编造 API、做出未要求的修改，或需要复杂的系统提示词和 AI 审查器。一些评论担心自动记忆会引入隐藏假设，另一些人则认为复杂的上下文工具可能造成供应商锁定，不如可移植的 Markdown 指令透明。</li></ul>
+        </section>
+        <section id="source" class="read-section">
+          <h2>来源信息</h2>
+          <p><a href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" target="_blank" rel="noopener noreferrer">查看原文</a></p><p><a href="../daily/2026-07-26-zh.html#item-8">返回当日日报定位</a></p>
+        </section>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  <script src="../assets/js/horizon.js" defer></script>
+</body>
+</html>

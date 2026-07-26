@@ -1,0 +1,35 @@
+{
+  "id": "2026-07-26-en-05-grapheneos-hardens-locked-phone-data-pro-f43ca7e2",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "GrapheneOS hardens locked-phone data protection.",
+  "source": "hackernews",
+  "source_url": "https://discuss.grapheneos.org/d/40700-grapheneos-protections-against-data-extraction-from-locked-devices",
+  "source_tier": "B",
+  "published_at": "2026-07-26",
+  "category": "mobile_security",
+  "group": "first_hand_news",
+  "score": "7.2",
+  "summary": "GrapheneOS highlighted how its security model helps resist data extraction from locked Android devices, especially when a phone has rebooted into Before First Unlock mode. The discussion emphasized strong device passwords, the 18-hour auto-reboot feature, and planning for backups before scenarios such as device seizure, border searches, or theft. Locked-phone extraction is a real concern for journalists, travelers, activists, and privacy-conscious users whose devices may be searched or seized. GrapheneOS’s approach shows how mobile security increasingly depends not only on encryption, but also on device state, password entropy, reboot behavior, and operational planning. The key protection is that after reboot, the device enters Before First Unlock mode, where much of the user data remains protected by file-based encryption until the correct credential is entered. The protection is only as strong as the user’s unlock secret, so short PINs, weak patterns, and poor backup habits remain practical weaknesses.",
+  "what_happened": "GrapheneOS highlighted how its security model helps resist data extraction from locked Android devices, especially when a phone has rebooted into Before First Unlock mode. The discussion emphasized strong device passwords, the 18-hour auto-reboot feature, and planning for backups before scenarios such as device seizure, border searches, or theft. Locked-phone extraction is a real concern for journalists, travelers, activists, and privacy-conscious users whose devices may be searched or seized. GrapheneOS’s approach shows how mobile security increasingly depends not only on encryption, but also on device state, password entropy, reboot behavior, and operational planning. The key protection is that after reboot, the device enters Before First Unlock mode, where much of the user data remains protected by file-based encryption until the correct credential is entered. The protection is only as strong as the user’s unlock secret, so short PINs, weak patterns, and poor backup habits remain practical weaknesses.",
+  "why_it_matters": "GrapheneOS is a privacy- and security-focused mobile operating system based on Android compatibility, with additional hardening beyond the Android Open Source Project. Modern Android devices use file-based encryption, which can expose different amounts of data depending on whether the device is in Before First Unlock or After First Unlock state. Before First Unlock means the phone has booted but the user has not yet entered the main credential, so encryption keys for much user data are not available in the same way as after unlock. Auto-reboot features are useful because they can move a locked but previously unlocked phone back into this more protected state.",
+  "manager_takeaway": "GrapheneOS is a privacy- and security-focused mobile operating system based on Android compatibility, with additional hardening beyond the Android Open Source Project. Modern Android devices use file-based encryption, which can expose different amounts of data depending on whether the device is in Before First Unlock or After First Unlock state. Before First Unlock means the phone has booted but the user has not yet entered the main credential, so encryption keys for much user data are not available in the same way as after unlock. Auto-reboot features are useful because they can move a locked but previously unlocked phone back into this more protected state.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for mobile_security, privacy.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [
+    "The Hacker News discussion was broadly supportive of GrapheneOS’s security posture, but commenters focused on practical tradeoffs. Several users argued that GrapheneOS still needs a complete backup and restore workflow so people can wipe phones before border crossings, while others debated password entropy, weak Android pattern locks, and whether duress-password behavior should be plausible or indistinguishable to an attacker."
+  ],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-5",
+  "read_url": "/read/2026-07-26-en-05-grapheneos-hardens-locked-phone-data-pro-f43ca7e2.html",
+  "tags": [
+    "mobile_security",
+    "privacy",
+    "GrapheneOS",
+    "data_protection",
+    "smartphone_safety"
+  ]
+}

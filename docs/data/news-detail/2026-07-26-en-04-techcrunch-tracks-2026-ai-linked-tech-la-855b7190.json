@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-26-en-04-techcrunch-tracks-2026-ai-linked-tech-la-855b7190",
+  "date": "2026-07-26",
+  "lang": "en",
+  "title": "TechCrunch Tracks 2026 AI-Linked Tech Layoffs",
+  "source": "rss",
+  "source_url": "https://techcrunch.com/2026/07/25/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/",
+  "source_tier": "A",
+  "published_at": "2026-07-26",
+  "category": "AI layoffs",
+  "group": "first_hand_news",
+  "score": "7.6",
+  "summary": "TechCrunch published a running 2026 tracker of major tech companies that have announced significant layoffs while citing AI as a stated factor. The latest entry highlighted in the news item is Monday.com, alongside 20 other companies in the roundup. The roundup shows that AI is no longer only a product strategy or efficiency story; it is increasingly being cited in workforce restructuring decisions. This matters to tech workers, managers, investors, and job seekers because it affects hiring expectations, career planning, and perceptions of how automation will reshape ordinary roles. The article is described as a reverse-chronological running list, so it is a tracker rather than a single investigative report about one company. The key caveat is that companies citing AI does not necessarily prove AI was the only or primary cause of each layoff; it indicates that AI was part of the stated rationale.",
+  "what_happened": "TechCrunch published a running 2026 tracker of major tech companies that have announced significant layoffs while citing AI as a stated factor. The latest entry highlighted in the news item is Monday.com, alongside 20 other companies in the roundup. The roundup shows that AI is no longer only a product strategy or efficiency story; it is increasingly being cited in workforce restructuring decisions. This matters to tech workers, managers, investors, and job seekers because it affects hiring expectations, career planning, and perceptions of how automation will reshape ordinary roles. The article is described as a reverse-chronological running list, so it is a tracker rather than a single investigative report about one company. The key caveat is that companies citing AI does not necessarily prove AI was the only or primary cause of each layoff; it indicates that AI was part of the stated rationale.",
+  "why_it_matters": "Tech companies often announce layoffs during broader restructuring efforts, which can include cost reduction, product reprioritization, or changes in operating models. In the current AI cycle, companies may frame layoffs around automation, productivity gains, or shifting investment toward AI-related products and infrastructure. For workers, the important distinction is whether AI directly replaces tasks, changes the skill mix required for a role, or is used as a general explanation for a broader business reset.",
+  "manager_takeaway": "Tech companies often announce layoffs during broader restructuring efforts, which can include cost reduction, product reprioritization, or changes in operating models. In the current AI cycle, companies may frame layoffs around automation, productivity gains, or shifting investment toward AI-related products and infrastructure. For workers, the important distinction is whether AI directly replaces tasks, changes the skill mix required for a role, or is used as a general explanation for a broader business reset.",
+  "actions": [
+    "Check whether the team has a near-term pilot scenario for AI layoffs, tech industry.",
+    "Review data security, permission boundaries, and cost impact.",
+    "Run a small validation and capture lessons if the value is clear."
+  ],
+  "risks": [],
+  "audio_url": "",
+  "html_url": "/daily/2026-07-26-en.html#item-4",
+  "read_url": "/read/2026-07-26-en-04-techcrunch-tracks-2026-ai-linked-tech-la-855b7190.html",
+  "tags": [
+    "AI layoffs",
+    "tech industry",
+    "future of work",
+    "workplace automation",
+    "AI business impact"
+  ]
+}
